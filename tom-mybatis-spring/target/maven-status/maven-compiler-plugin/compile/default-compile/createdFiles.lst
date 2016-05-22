@@ -1,0 +1,8 @@
+cn\itcast\zjw\domain\UserQueryVo.class
+cn\itcast\zjw\service\inter\UserServiceInter.class
+cn\itcast\zjw\service\UserServiceImpl.class
+cn\itcast\zjw\mapper\UserMapper.class
+cn\itcast\zjw\util\MyBatisUtil.class
+cn\itcast\zjw\domain\User.class
+cn\itcast\zjw\util\MyBatisUtil$GetSqlSessionFactory.class
+cn\itcast\zjw\domain\UserCustomer.class
