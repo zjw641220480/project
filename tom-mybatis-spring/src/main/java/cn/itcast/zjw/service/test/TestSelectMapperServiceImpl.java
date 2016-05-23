@@ -1,10 +1,13 @@
 package cn.itcast.zjw.service.test;
 
 import java.util.List;
+import java.util.Locale;
 
 import javax.annotation.Resource;
 
 import org.apache.ibatis.session.SqlSession;
+import org.apache.log4j.or.jms.MessageRenderer;
+import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Service;
 
 import cn.itcast.zjw.domain.UserCustomer;
@@ -22,6 +25,8 @@ import cn.itcast.zjw.util.MyBatisUtil;
 public class TestSelectMapperServiceImpl implements TestSelectMapperInter{
 	@Resource(name="testSelectMapper")
 	private	TestSelectMapper testSelectMapper;
+	@Resource(name="messageSource")
+	private MessageSource messageSource;
 	/**
 	 * Description <code>没有和Spring进行整合时候测试和数据库的连通性</code>
 	 * @return List<UserCustomer>
@@ -43,6 +48,7 @@ public class TestSelectMapperServiceImpl implements TestSelectMapperInter{
 	 */
 	public List<UserCustomer> testMybatisSpring(){
 		List<UserCustomer> lists = testSelectMapper.testSelect();
+		System.out.println("配置文件中的值为:\t"+messageSource.getMessage("tongdun.name", null, Locale.CHINA));
 		return lists;
 	}
 }
