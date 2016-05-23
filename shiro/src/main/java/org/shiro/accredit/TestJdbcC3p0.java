@@ -3,7 +3,7 @@ package org.shiro.accredit;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.junit.Test;
-import org.tom.util.shiro.ShiroUtil;
+import org.shiro.util.ShiroUtil;
 
 public class TestJdbcC3p0 {
 	@Test

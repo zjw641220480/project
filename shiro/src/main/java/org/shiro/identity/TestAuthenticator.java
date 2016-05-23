@@ -1,14 +1,9 @@
 package org.shiro.identity;
 
-import java.util.Iterator;
-
-import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
-import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.subject.Subject;
-import org.junit.Assert;
 import org.junit.Test;
-import org.tom.util.shiro.ShiroUtil;
+import org.shiro.util.ShiroUtil;
 
 public class TestAuthenticator {
 	@Test

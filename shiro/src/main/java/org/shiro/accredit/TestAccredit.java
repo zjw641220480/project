@@ -1,15 +1,12 @@
 package org.shiro.accredit;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 
 import org.apache.shiro.authc.UsernamePasswordToken;
-import org.apache.shiro.authz.UnauthorizedException;
 import org.apache.shiro.subject.Subject;
 import org.junit.Assert;
 import org.junit.Test;
-import org.tom.util.shiro.ShiroUtil;
+import org.shiro.util.ShiroUtil;
 
 public class TestAccredit {
 	/**

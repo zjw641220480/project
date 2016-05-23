@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace命名空间,作用就是对sql进行分类化管理,理解sql隔离
+	注意:如果后期使用mapper代理进行开发,namespace就有了特殊重要的意义;
+ -->
+<mapper namespace="test">
+	<!-- 在映射文件中要配置很多的sql语句 -->
+	<!-- 需求:通过id查询用户表的记录 -->
+	<!-- 通过select来执行数据库查询
+		id:标识映射文件中的sql,称为statement的id;
+		将来回 sql语句封装到mapperdStatement对象中,所以将id称为statement的id;
+		#{}表示一个占位符;
+		parameterType:指定输入参数的类型,这里指定为int型;
+		id=#{id}:大括号中的id就表示接收输入的参数.参数的名称就是id,如果输入参数是简单类型,#{}中的参数名可以任意,可以是value或者其他名称;
+		resultType:指定sql的输出结果,所映射的java对象select指定resultType表示将单条记录映射成的java对象,
+		这里面包括了两个很重要的:一个是输入的参数类型,一个是输出的参数类型;
+	 -->
+	 <select id="findUserById" parameterType="int" resultType="cn.itcast.zjw.mybatis.domain.User">
+	 	SELECT * FROM USER WHERE id=#{id};
+	 </select> 
+	 <!-- 根据用户名称模糊查询用户信息,可能返回多条;
+	 resultType:指定的就是单挑记录所映射的java对象类型,不论查询出来的是单条还是多条;
+	 ${}:表示拼接sql串,将接收到参数的内容,不加任何的修饰,拼接到sql中;
+	 注意:有什么隐患,使用${}拼接sql,可 能会引起sql注入;
+	 ${value}:接收输入参数的内容,如果传入内容是简单类型,${}中只能使用value
+	  -->
+	 <select id="findUserByName" parameterType="java.lang.String" resultType="cn.itcast.zjw.mybatis.domain.User">
+	 	<!-- 
+	 	这个是使用占位符进行模糊查询时候的sql写法; -->
+	 	SELECT * FROM USER WHERE username LIKE #{value};
+	 	<!-- SELECT * FROM USER WHERE username LIKE '%${value}%'; -->
+	 </select>
+	 <!-- 添加用户
+	 	parameterType:指定输入的参数类型是pojo(包括用户信息);
+	 	#{}中指定pojo的属性名,接收到pojo对象的属性值,mybatis也是通过OGNL获取对象的属性值;
+	  -->
+	 <insert id="insetUser" parameterType="cn.itcast.zjw.mybatis.domain.User">
+	 
+	  <!-- 将插入数据的主键返回,返回到user对象中, 
+	  	SELECT LAST_INSERT_ID();得到刚才insert进去记录的主键值,只适用于自增主键
+	  	keyProperty:将查询到的主键值设置到parameterType指定对象的那个属性;
+	  	order:SELECT LAST_INSERT_ID()执行顺序,相对于insert语句来说它的执行顺序;
+	  	resultType:指定SELECT LAST_INSERT_ID()的返回结果类型;int和java.lang.Integer都是可以的
+	  	-->
+	  	<selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+	  		SELECT LAST_INSERT_ID();
+	  	</selectKey> 
+	  	<!-- 这里可以不用写id,因为id是自增的,是有MySql自己进行维护的,这里写了也是没用的-->
+	  	INSERT INTO USER (id,username,birthday,sex,address) VALUE(#{id},#{username},#{birthday},#{sex},#{address});
+	 	<!-- INSERT INTO USER (username,birthday,sex,address) VALUE(#{username},#{birthday},#{sex},#{address}); -->
+	 </insert>
+	 <insert id="insertPerson" parameterType="cn.itcast.zjw.mybatis.domain.Person">
+	 	<!-- 
+	  		使用mysql的uuid生成主键,
+	  		执行的过程:
+	  		首先通过uuid()得到主键值,将主键值设置到user对象的id属性中,
+	  		其次在insert执行的时候,从user对象中取出id属性值;
+	  	 -->
+	  <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.String">
+	  		SELECT REPLACE(UUID(),'-','');
+	  	</selectKey>
+	  	insert into person(id,pname,age)values(#{id},#{pname},#{age})
+	 </insert>
+	 <!-- 删除用户
+	 	根据id进行删除用户,需要输入id的值
+	  -->
+	  <delete id="deleteUser" parameterType="java.lang.Integer">
+	  	DELETE FROM USER WHERE id=#{id};
+	  </delete>
+	 <!-- 更新用户
+	 	分析:
+	 	需要传入用户的id;
+	 	需要穿入用户的更新信息;
+	 	parameterType:指定user对象,包括id和跟新信息,注意:id必须存在.
+	 	#{id}:从输入对象user中获取id属性值;
+	  -->
+	  <update id="updateUser" parameterType="cn.itcast.zjw.mybatis.domain.User">
+	  	UPDATE USER SET username=#{username},birthday=#{birthday},sex=#{sex},address=#{address} WHERE id=#{id};
+	  </update>
+</mapper>

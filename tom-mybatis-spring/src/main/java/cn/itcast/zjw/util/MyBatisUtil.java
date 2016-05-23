@@ -25,7 +25,7 @@ import org.tom.util.logger.LoggerUtil;
  * @since  1.6
  */
 public class MyBatisUtil {
-	private static String configPath = "SqlMapConfig.xml";
+	private static String configPath = "mybatis/SqlMapConfig.xml";
 	/**
 	 * @Method: getSqlSession
 	 * @Description:获得SqlSession
