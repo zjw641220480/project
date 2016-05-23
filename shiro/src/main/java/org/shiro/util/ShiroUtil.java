@@ -1,4 +1,4 @@
-package org.tom.util.shiro;
+package org.shiro.util;
 
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.config.IniSecurityManagerFactory;
