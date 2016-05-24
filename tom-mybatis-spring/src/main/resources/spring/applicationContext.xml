@@ -53,9 +53,14 @@
 		<!-- 使用mapper代理配置SqlSessionFactory时候这里需要特别注意 -->
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
 	</bean>
+	<!-- 使用JdbcTemplate -->
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
 	<!-- 引入事务配置,这里使用的直接是相对路径了 -->
 	<import resource="applicationContext-transaction.xml"/>
 	<import resource="applicationContext-properties.xml"/>
+	<import resource="applicationContext-quartz.xml"/>
 	<!-- <import resource="applicationContext-transaction.xml"/> <import resource="applicationContext-service.xml"/> -->
 	<!-- <import resource="spring/applicationContext-service.xml"/> <import 
 		resource="spring/applicationContext-transaction.xml"/> <import resource="spring/springmvc.xml"/> -->

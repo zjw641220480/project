@@ -3,21 +3,15 @@ package cn.itcast.zjw.service.test;
 import java.util.List;
 import java.util.Locale;
 
-import javax.servlet.ServletContext;
-import javax.servlet.http.HttpServletRequest;
-
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.MessageSource;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.web.context.WebApplicationContext;
-import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import cn.itcast.zjw.domain.UserCustomer;
 
 public class TestSelectMapperServiceImplTest {
-	TestSelectMapperServiceImpl testSelectMapperServiceImpl = new TestSelectMapperServiceImpl();
 	ApplicationContext applicationContext = new ClassPathXmlApplicationContext(
 			"spring/applicationContext.xml");
 
@@ -29,6 +23,8 @@ public class TestSelectMapperServiceImplTest {
 	 */
 	@Test
 	public void testTestSelect() {
+		//未和MyBatis整合时候使用
+		TestSelectMapperServiceImpl testSelectMapperServiceImpl = new TestSelectMapperServiceImpl();
 		List<UserCustomer> userCustomers = testSelectMapperServiceImpl
 				.testSelect();
 		System.out.println(userCustomers);
@@ -58,6 +54,7 @@ public class TestSelectMapperServiceImplTest {
 
 	@Test
 	public void testProperties() {
+		@SuppressWarnings("resource")
 		MessageSource resources = new ClassPathXmlApplicationContext(
 				"spring/applicationContext.xml");
 		String message = resources.getMessage("tongdun.name", null, "Default",
