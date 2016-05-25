@@ -25,6 +25,8 @@ import org.springframework.web.servlet.ModelAndView;
 import cn.itcast.zjw.domain.UserCustomer;
 import cn.itcast.zjw.service.test.TestSelectMapperServiceImpl;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 @Controller
 @RequestMapping("/test")
 public class TestController {
@@ -124,6 +126,11 @@ public class TestController {
 		ApiResponse apiResponse = new ApiResponse();
 		setApiResponse(apiResponse, "testPostResponseJson");
 		return apiResponse;
+	}
+	@RequestMapping(value={"/testPostJosn"},method=RequestMethod.POST)
+	public @ResponseBody String testPostJosn(@RequestBody ObjectMapper objectMapper){
+		System.out.println("TestController.testPostJosn()");
+		return null;
 	}
 	/** 
 	 * @MethodName:setApiResponse

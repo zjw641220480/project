@@ -55,6 +55,7 @@
 	</bean>
 	<!-- 引入事务配置,这里使用的直接是相对路径了 -->
 	<import resource="applicationContext-transaction.xml"/>
+	<import resource="applicationContext-properties.xml"/>
 	<!-- <import resource="applicationContext-transaction.xml"/> <import resource="applicationContext-service.xml"/> -->
 	<!-- <import resource="spring/applicationContext-service.xml"/> <import 
 		resource="spring/applicationContext-transaction.xml"/> <import resource="spring/springmvc.xml"/> -->
