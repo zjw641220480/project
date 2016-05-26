@@ -4,7 +4,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.junit.Test;
 
-import cn.itcast.zjw.domain.hibernate.Pserson;
+import cn.itcast.zjw.domain.hibernate.Person;
 import cn.itcast.zjw.util.HibernateUtil;
 
 /**
@@ -19,7 +19,7 @@ public class GeneratorTest extends HibernateUtil{
 		Session session = sessionFactory.openSession();
 		Transaction transaction = session.beginTransaction();
 		
-		Pserson person = new Pserson();
+		Person person = new Person();
 		person.setPname("小小");
 		person.setPsex("女");
 		
@@ -47,7 +47,7 @@ public class GeneratorTest extends HibernateUtil{
 		Session session = sessionFactory.openSession();
 		Transaction transaction = session.beginTransaction();
 		
-		Pserson person = new Pserson();
+		Person person = new Person();
 		person.setPname("上海");
 		person.setPsex("女");
 		
@@ -74,7 +74,7 @@ public class GeneratorTest extends HibernateUtil{
 		Session session = sessionFactory.openSession();
 		Transaction transaction = session.beginTransaction();
 		
-		Pserson person = new Pserson();
+		Person person = new Person();
 		person.setPname("上海");
 		person.setPsex("女");
 		
@@ -91,7 +91,7 @@ public class GeneratorTest extends HibernateUtil{
 		Session session = sessionFactory.openSession();
 		Transaction transaction = session.beginTransaction();
 		
-		Pserson person = new Pserson();
+		Person person = new Person();
 		person.setPname("上海");
 		person.setPsex("女");
 		

@@ -6,7 +6,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.junit.Test;
 
-import cn.itcast.zjw.domain.hibernate.Pserson;
+import cn.itcast.zjw.domain.hibernate.Person;
 import cn.itcast.zjw.util.HibernateUtil;
 
 
@@ -27,7 +27,7 @@ public class PersonTest extends HibernateUtil{
 		
 		Transaction transaction = session.beginTransaction();
 		
-		Pserson person = new Pserson();
+		Person person = new Person();
 		person.setPname("上海");
 		//person.setPsex("女");
 		//save中的参数必须是在映射文件(*.hbm.xml)中配置的持久化类;
@@ -46,8 +46,8 @@ public class PersonTest extends HibernateUtil{
 	public void testQueryPerson(){
 		Session session = sessionFactory.openSession();
 		@SuppressWarnings("unchecked")
-		List<Pserson> list = session.createQuery("from Pserson").list();
-		for(Pserson p:list){
+		List<Person> list = session.createQuery("from Pserson").list();
+		for(Person p:list){
 			System.out.println(p.getPname());
 		}
 		session.close();
@@ -67,7 +67,7 @@ public class PersonTest extends HibernateUtil{
 		 * 利用session.get方法产生一个对象,调用的是默认的构造函数;所以一个持久化类中必须有一个
 		 * 默认的构造函数;
 		 * */
-		Pserson person = (Pserson) session.get(Pserson.class, 1l);
+		Person person = (Person) session.get(Person.class, 1l);
 		System.out.println(person.getPname());
 		session.close();
 	}
@@ -88,7 +88,7 @@ public class PersonTest extends HibernateUtil{
 		 * 也就是说,删除之前先查找出来要删除的对象;然后是删除这个对象;
 		 * 如果说数据库中不存在此数据,删除的时候,总是会报告错误
 		 * */
-		Pserson person = (Pserson) session.get(Pserson.class, 4l);
+		Person person = (Person) session.get(Person.class, 4l);
 		session.delete(person);
 		/*
 		 * 1:新创建一个person对象,
@@ -118,7 +118,7 @@ public class PersonTest extends HibernateUtil{
 		 * 2:进行修改,
 		 * 3:执行update操作;
 		 * */
-		Pserson person = (Pserson) session.get(Pserson.class, 3l);
+		Person person = (Person) session.get(Person.class, 3l);
 		person.setPname("uueyy");
 		//session.update(person);这一句话只是把person对象转化为持久化对象,
 		//在上面的时候session.get方法已经把person转化为持久化对象;
@@ -130,7 +130,7 @@ public class PersonTest extends HibernateUtil{
 	public void testClear(){
 		Session session = sessionFactory.openSession();
 		Transaction transaction = session.beginTransaction();
-		Pserson person = (Pserson) session.get(Pserson.class, 3l);
+		Person person = (Person) session.get(Person.class, 3l);
 		person.setPname("往往");
 		session.clear();//把session中的所有对象清空;
 		session.update(person);//把对象从托管状态转化为持久化状态;而且这句话必须放置在clear方法的后面
@@ -141,7 +141,7 @@ public class PersonTest extends HibernateUtil{
 	public void testEvict(){
 		Session session = sessionFactory.openSession();
 		Transaction transaction = session.beginTransaction();
-		Pserson person = (Pserson) session.get(Pserson.class, 3l);
+		Person person = (Person) session.get(Person.class, 3l);
 		person.setPname("aaa");
 		session.evict(person);//把session中的一个对象清空,
 		session.update(person);//把对象的状态转变为持久化状态;
@@ -152,7 +152,7 @@ public class PersonTest extends HibernateUtil{
 	public void testSession(){
 		Session session = sessionFactory.openSession();
 		Transaction transaction = session.beginTransaction();
-		Pserson person = (Pserson) session.get(Pserson.class, 3l);
+		Person person = (Person) session.get(Person.class, 3l);
 		person.setPname("张家界");
 		session.update(person);
 		transaction.commit();
@@ -178,16 +178,16 @@ public class PersonTest extends HibernateUtil{
 		 * */
 		Session session = sessionFactory.openSession();
 		Transaction transaction = session.beginTransaction();
-		Pserson person = new Pserson();
+		Person person = new Person();
 		person.setPname("往往");
 		person.setPsex("nv");
 		session.save(person);
 		
-		Pserson person3 = new Pserson();
+		Person person3 = new Person();
 		person3.setPname("往往");
 		person3.setPsex("nv");
 		
-		Pserson person2 = (Pserson) session.get(Pserson.class, 3l);
+		Person person2 = (Person) session.get(Person.class, 3l);
 		person2.setPname("afdsdfa");
 		//这一句话虽然并没有发出update方法,但是其也照样执行了,更改了数据库中3的值;
 		transaction.commit();
@@ -197,7 +197,7 @@ public class PersonTest extends HibernateUtil{
 	public void testMutiplyoption2(){
 		Session session = sessionFactory.openSession();
 		Transaction transaction = session.beginTransaction();
-		Pserson person = new Pserson();
+		Person person = new Person();
 		person.setPname("fja");
 		person.setPsex("nv");
 		session.save(person);

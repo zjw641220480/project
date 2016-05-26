@@ -13,7 +13,7 @@
 		table 可以不写 默认值和类名一样
 		catalog 这个是数据库名称,一般可以不写
 	-->
-	<class name="cn.itcast.zjw.domain.hibernate.Pserson">
+	<class name="cn.itcast.zjw.domain.hibernate.Person">
 		<!-- 
 			标识属性和数据库中的主键对应;
 			name	javaBean中属性的名称;
@@ -24,7 +24,7 @@
 			<!-- 
 				主键的产生器:就是告诉hibernate容器用什么样的方式产生主键;	
 			 -->
-			<generator class="native"></generator>
+			<generator class="identity"></generator>
 		</id>
 		<!-- 描述一般属性 -->
 		<property name="pname" column="pname" length="20" type="string">
