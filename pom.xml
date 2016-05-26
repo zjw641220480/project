@@ -62,6 +62,6 @@
 	    <module>tom-mybatis-spring</module>
 	    <module>tom-webservice</module>
 	    <module>tom-hibernate-struts</module>
-    <module>tom-spring</module>
-  </modules>
+	    <module>tom-ajax</module>
+	</modules>
 </project>

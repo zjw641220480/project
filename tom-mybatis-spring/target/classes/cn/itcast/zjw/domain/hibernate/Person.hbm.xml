@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<!-- 
+		hibernate的一个映射文件,类中属性和其所对应表中的列名之间的对应;
+		就是配置一个持久化类,就是用来描述一个持久化类的,
+		这个映射文件是说明持久化类中的属性,和其所对应表中的列名是如何进行映射起来的;
+	 -->
+	<!-- 
+		就是用来描述一个持久化类的 
+		name 类的全名;
+		table 可以不写 默认值和类名一样
+		catalog 这个是数据库名称,一般可以不写
+	-->
+	<class name="cn.itcast.zjw.domain.hibernate.Pserson">
+		<!-- 
+			标识属性和数据库中的主键对应;
+			name	javaBean中属性的名称;
+			column	数据库表中的列名称;
+		 -->
+		<!--  描述主键属性 -->
+		<id name="pid" column="pid" length="200" type="java.lang.Long">
+			<!-- 
+				主键的产生器:就是告诉hibernate容器用什么样的方式产生主键;	
+			 -->
+			<generator class="native"></generator>
+		</id>
+		<!-- 描述一般属性 -->
+		<property name="pname" column="pname" length="20" type="string">
+		</property>
+		<property name="psex" column="psex" length="10" type="java.lang.String"></property>
+	</class>
+</hibernate-mapping>

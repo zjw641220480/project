@@ -32,6 +32,6 @@
 	</environments>
 	<!-- 加载映射文件 -->
 	<mappers>
-		<package name="cn.itcast.zjw.mapper"/>
+		<package name="cn.itcast.zjw.dao"/>
 	</mappers>
 </configuration>

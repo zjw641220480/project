@@ -10,9 +10,9 @@ import org.springframework.context.MessageSource;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import cn.itcast.zjw.domain.UserCustomer;
+import cn.itcast.zjw.service.mappertest.TestSelectMapperServiceImpl;
 
 public class TestSelectMapperServiceImplTest {
-	TestSelectMapperServiceImpl testSelectMapperServiceImpl = new TestSelectMapperServiceImpl();
 	ApplicationContext applicationContext = new ClassPathXmlApplicationContext(
 			"spring/applicationContext.xml");
 
@@ -24,6 +24,8 @@ public class TestSelectMapperServiceImplTest {
 	 */
 	@Test
 	public void testTestSelect() {
+		//未和MyBatis整合时候使用
+		TestSelectMapperServiceImpl testSelectMapperServiceImpl = new TestSelectMapperServiceImpl();
 		List<UserCustomer> userCustomers = testSelectMapperServiceImpl
 				.testSelect();
 		System.out.println(userCustomers);
@@ -59,6 +61,7 @@ public class TestSelectMapperServiceImplTest {
 
 	@Test
 	public void testProperties() {
+		@SuppressWarnings("resource")
 		MessageSource resources = new ClassPathXmlApplicationContext(
 				"spring/applicationContext.xml");
 		String message = resources.getMessage("tongdun.name", null, "Default",

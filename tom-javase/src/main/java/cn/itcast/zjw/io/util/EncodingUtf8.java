@@ -19,7 +19,11 @@ public class EncodingUtf8 {
 	public static int getCount() {
 		return count;
 	}
-
+	public static void main(String[] args) {
+		String path = "D:\\BaiduYunDownload\\hibernate_day01\\src\\cn\\itcast\\hibernate\\test/PersonTest.java";
+		File file = new File(path);
+		encodingUtf8.updateAllFilesEncoding(file);
+	}
 	/** 
 	 * @MethodName:getAllFiles
 	 * @Desription:给定一个目录,更改该目录下文件的编码
@@ -42,7 +46,7 @@ public class EncodingUtf8 {
 
 	/** 
 	 * @MethodName:updateAllFilesEncoding
-	 * @Desription:取得文件编码,并更改该文件编码
+	 * @Desription:取得文件编码,并更改该文件编码(一个文件)
 	 * @date:2016年5月24日
 	 * @author TOM
 	 * @param file  

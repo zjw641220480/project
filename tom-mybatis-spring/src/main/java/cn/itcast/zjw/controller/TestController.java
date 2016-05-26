@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import cn.itcast.zjw.domain.UserCustomer;
-import cn.itcast.zjw.service.test.TestSelectMapperServiceImpl;
+import cn.itcast.zjw.service.mappertest.TestSelectMapperServiceImpl;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
