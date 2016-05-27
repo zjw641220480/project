@@ -5,6 +5,17 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
 	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
   <display-name></display-name>	
+   <!-- 加载Spring的容器 -->
+  <context-param>
+  	<param-name>contextConfigLocation</param-name>
+  	<!-- <param-value>/WEB-INF/classes/spring/applicationContext.xml</param-value> -->
+  	<param-value>classpath:spring/applicationContext.xml</param-value>
+  	<!-- 下面一种方式配置的时候容易出现问题 -->
+  <!-- 	<param-value>classpath*:spring/applicationContext*.xml</param-value> -->
+  </context-param>
+  <listener>
+  	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
   <!-- 服务端支持跨域 -->
   <filter>
 		<filter-name>CORS</filter-name>
@@ -34,17 +45,7 @@
 		<filter-name>CORS</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
-  <!-- 加载Spring的容器 -->
-  <context-param>
-  	<param-name>contextConfigLocation</param-name>
-  	<!-- <param-value>/WEB-INF/classes/spring/applicationContext.xml</param-value> -->
-  	<param-value>classpath:spring/applicationContext.xml</param-value>
-  	<!-- 下面一种方式配置的时候容易出现问题 -->
-  <!-- 	<param-value>classpath*:spring/applicationContext*.xml</param-value> -->
-  </context-param>
-  <listener>
-  	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-  </listener>
+ 
   <!-- 配置前端控制器 -->
   <servlet>
   	<servlet-name>springMvc</servlet-name>

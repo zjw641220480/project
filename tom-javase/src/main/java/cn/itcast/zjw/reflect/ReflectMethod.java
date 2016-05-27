@@ -16,7 +16,7 @@ public class ReflectMethod {
 		Class personClass = Class.forName("cn.itcast.zjw.reflect.Person");
 		//得到所有方法
 		personClass.getDeclaredConstructors();
-		//得到指定方法,传递两个参数,第一个参数,方法的名称,第二个参数,通过方法来设置的值;
+		//得到指定方法,传递两个参数,第一个参数,方法的名称,第二个参数,方法的输入参数
 		Method methodName = personClass.getDeclaredMethod("setName", String.class);
 		//得到Person实例
 		Person person = (Person) personClass.newInstance();

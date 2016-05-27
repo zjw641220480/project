@@ -16,7 +16,7 @@ import cn.itcast.zjw.domain.Student;
  * Set无序,不可以重复元素,
  * 	HashSet:数据结构是Hash表,线程是非同步的,保证期内元素唯一性的原理:判断元素的hashCode值是否相同,
  * 		如果相同还会继续判断元素的equals方法是否为真,
- * 	TreeSet:可以对Set集合中的元素进行排序,但是在TreeSet中判断元素是否一致,并不是根据HashCode来实现的;
+ * TreeSet:可以对Set集合中的元素进行排序,但是在TreeSet中判断元素是否一致,并不是根据HashCode来实现的;
  * 		但是若要比较元素的equals方法,那么还是需要重写对象的hashCode和equals()方法,底层数据结构是二叉树,
  * 		保证数据唯一性的依据是compareTo方法;和Hash值无关
  * TreeSet排序的第一种方式:让元素自身具备比较性,元素需要实现Compareable接口,覆盖接口中的compareTo方法;
@@ -32,7 +32,7 @@ import cn.itcast.zjw.domain.Student;
  * ClassName: TreeDemo 
  * @Description: TODO
  * @author Tom
- * @date 2016年4月7日
+ * @date 2016年5月27日
  */
 public class TreeSetDemo {
 	TreeSet<Object> treeSet = null;
@@ -42,13 +42,11 @@ public class TreeSetDemo {
 		treeSet = new TreeSet<Object>();
 		TreeSetDemo = new TreeSetDemo();
 	}
-	/**
-	 * TreeSet简单使用,
-	 * @Description: TODO   
-	 * @return void  
-	 * @throws
-	 * @author Tom
-	 * @date 2016年4月9日
+	/** 
+	 * @MethodName:testTreeSetSimble
+	 * @Desription:TreeSet简单使用,
+	 * @date:2016年5月27日
+	 * @author TOM  
 	 */
 	@Test
 	public void testTreeSetSimble(){
@@ -56,17 +54,15 @@ public class TreeSetDemo {
 		treeSet.add("ajava2");
 		treeSet.add("vjava3");	
 		treeSet.add("bjava4");
-		TreeSetDemo.syso(treeSet);
+		System.out.println();
 	}
-	/**
+	/** 
 	 * 实用TreeSet对Student对象进行排序;
 	 * 对象javaBean自身实现Comapreable接口,具备比较性;
-	 * 这里需要注意,排序时候,当主要条件相同时候,一定判断次要条件,
-	 * @Description: TODO 
-	 * @return void  
-	 * @throws
-	 * @author Tom
-	 * @date 2016年4月9日
+	 * @MethodName:testTreeSetStudentCompareTo
+	 * @Desription:
+	 * @date:2016年5月27日
+	 * @author TOM  
 	 */
 	@Test
 	public void testTreeSetStudentCompareTo(){
@@ -75,17 +71,18 @@ public class TreeSetDemo {
 		treeSet.add(new Student("zhansan",26));
 		treeSet.add(new Student("zhansan",27));
 		//这一个元素在比较的时候需要注意
-		treeSet.add(new Student("zhan",27));
+		
+		treeSet.add(new Student("test",27,"男"));
+		treeSet.add(new Student("test",27,"女"));
 		TreeSetDemo.syso(treeSet);
 	}
-	/**
+	/** 
 	 * 当元素不具备比较性,或者具备的比较性不是所需要的,这时需要让容器自身具备比较性,
 	 * 定义了比较器,将比较器对象作为参数传递给TreeSet集合的构造函数
-	 * @Description: TODO   
-	 * @return void  
-	 * @throws
-	 * @author Tom
-	 * @date 2016年4月9日
+	 * @MethodName:testTreeSetStudent
+	 * @Desription:
+	 * @date:2016年5月27日
+	 * @author TOM  
 	 */
 	@Test
 	public void testTreeSetStudent(){
@@ -94,7 +91,7 @@ public class TreeSetDemo {
 				Student stu1 = (Student) o1;
 				Student stu2 = (Student) o2;
 				if(!(o1 instanceof Student) || !(o2 instanceof Student)){
-					throw new RuntimeException("所比较对象不一致");
+					throw new RuntimeException("所属较对象不一致");
 				}
 				//return 	stu1.getName().compareTo(stu2.getName());
 				int num = stu1.getName().compareTo(stu2.getName());
@@ -114,14 +111,12 @@ public class TreeSetDemo {
 		TreeSetDemo.syso(treeSet);
 	}
 	
-	/**
-	 * 便利循环打印;
-	 * @Description: TODO
-	 * @param treeSet   
-	 * @return void  
-	 * @throws
-	 * @author Tom
-	 * @date 2016年4月9日
+	/** 
+	 * @MethodName:syso
+	 * @Desription:便利循环打印;
+	 * @date:2016年5月27日
+	 * @author TOM
+	 * @param treeSet  
 	 */
 	private void syso(TreeSet<Object> treeSet){
 		Iterator<Object> iterator = treeSet.iterator();
