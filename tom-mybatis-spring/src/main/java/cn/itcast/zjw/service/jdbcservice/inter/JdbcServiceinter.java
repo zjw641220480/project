@@ -18,4 +18,5 @@ import cn.itcast.zjw.domain.UserCustomer;
  */
 public interface JdbcServiceinter {
 	public int insertUser(UserCustomer userCustomer);
+	public int selectPrimaryKey(UserCustomer userCustomer);
 }

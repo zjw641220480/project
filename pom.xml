@@ -41,11 +41,6 @@
 			<artifactId>log4j</artifactId>
 			<version>1.2.17</version>
 		</dependency>
-		<!-- <dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-mapper-asl</artifactId>
-			<version>1.9.9</version>
-		</dependency> -->
 		<!-- druid连接 -->
 		<dependency>
 			<groupId>com.alibaba</groupId>
@@ -53,12 +48,6 @@
 			<version>0.2.23</version>
 		</dependency>
 		<!-- HttpClient -->
-		<dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpclient</artifactId>
-			<version>4.5.1</version>
-		</dependency>
-		
 	</dependencies>
 	<build>
 		<finalName>project</finalName>
@@ -70,8 +59,9 @@
 	    <module>tom-jersey</module>
 	    <module>tom-javase</module>
 	    <module>tom-mybatis</module>
-    <module>tom-mybatis-spring</module>
-    <module>tom-webservice</module>
-    <module>tom-hibernate-struts</module>
+	    <module>tom-mybatis-spring</module>
+	    <module>tom-webservice</module>
+	    <module>tom-hibernate-struts</module>
+    	<module>tom-jsjquery</module>
   </modules>
 </project>

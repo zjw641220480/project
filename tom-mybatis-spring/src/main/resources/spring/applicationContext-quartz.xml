@@ -13,23 +13,24 @@
         http://www.springframework.org/schema/tx
         http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 	<!-- 第一种继承方式 -->
-	<bean name="extendsjob"
+	<!-- <bean name="extendsjob"
 		class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
-		<property name="jobClass" value="cn.itcast.zjw.quartz.Job" />
+		<property name="jobClass" value="cn.itcast.zjw.spring.quartz.Job" />
 		<property name="jobDataAsMap">
 			<map>
 				<entry key="timeout" value="0" />
 			</map>
 		</property>
-	</bean>
-	<bean id="extendssimpleTrigger"
+	</bean> -->
+	<!-- 这种方式只支持频率方式的调用 -->
+	<!-- <bean id="extendssimpleTrigger"
 		class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean">
 		<property name="jobDetail" ref="extendsjob" />
-		<property name="startDelay" value="0" /><!-- 调度工厂实例化后，经过0秒开始执行调度 -->
-		<property name="repeatInterval" value="4000" /><!-- 每2秒调度一次 -->
-	</bean>
+		<property name="startDelay" value="0" />调度工厂实例化后，经过0秒开始执行调度
+		<property name="repeatInterval" value="4000" />每2秒调度一次
+	</bean> -->
 	<!-- 第二种最正常的POJO形式 -->
-	<bean id="taskJob" class="cn.itcast.zjw.quartz.Jobs" />
+	<bean id="taskJob" class="cn.itcast.zjw.spring.quartz.Jobs" />
 	<bean id="jobDetail"
 		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
 		<property name="group" value="job_work" />
@@ -52,7 +53,7 @@
 			<ref bean="jobDetail" />
 		</property>
 		<property name="cronExpression">
-			<value>0/5 * * * * ?</value>
+			<value>0 1/10 * * * ?</value>
 		</property>
 	</bean>
 	<!-- 调度工厂 -->
@@ -61,7 +62,7 @@
 		<property name="triggers">
 			<list>
 				<ref bean="myTrigger" />
-				<ref bean="extendssimpleTrigger" />
+				
 			</list>
 		</property>
 	</bean>

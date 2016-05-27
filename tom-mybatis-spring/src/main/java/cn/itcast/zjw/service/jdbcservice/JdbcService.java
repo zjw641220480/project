@@ -10,8 +10,8 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
+import cn.itcast.zjw.dao.jdbcdao.MyJdbcDao;
 import cn.itcast.zjw.domain.UserCustomer;
-import cn.itcast.zjw.jdbcdao.MyJdbcDao;
 import cn.itcast.zjw.service.jdbcservice.inter.JdbcServiceinter;
 
 /** 
@@ -31,6 +31,9 @@ public class JdbcService implements JdbcServiceinter{
 	 */
 	public int insertUser(UserCustomer userCustomer) {
 		return myJdbcDao.insertUser(userCustomer);
+	}
+	public int selectPrimaryKey(UserCustomer userCustomer) {
+		return myJdbcDao.selectPrimaryKey(userCustomer);
 	}
 
 }

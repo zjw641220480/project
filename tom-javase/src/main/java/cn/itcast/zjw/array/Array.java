@@ -1,4 +1,4 @@
-package cn.itcast.zjw.array;
+﻿package cn.itcast.zjw.array;
 
 public class Array {
 	static int[] arr;

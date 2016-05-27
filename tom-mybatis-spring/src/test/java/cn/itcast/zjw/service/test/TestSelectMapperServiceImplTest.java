@@ -10,6 +10,7 @@ import org.springframework.context.MessageSource;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import cn.itcast.zjw.domain.UserCustomer;
+import cn.itcast.zjw.service.mappertest.TestSelectMapperServiceImpl;
 
 public class TestSelectMapperServiceImplTest {
 	ApplicationContext applicationContext = new ClassPathXmlApplicationContext(
@@ -43,6 +44,12 @@ public class TestSelectMapperServiceImplTest {
 		System.out.println(sqlSessionFactory);
 	}
 
+	/** 
+	 * @MethodName:testMybatisSpring
+	 * @Desription:mybatis和Spring结合后的测试
+	 * @date:2016年5月24日
+	 * @author TOM  
+	 */
 	@Test
 	public void testMybatisSpring() {
 		TestSelectMapperServiceImpl testSelectMapperServiceImpl = (TestSelectMapperServiceImpl) applicationContext
@@ -59,7 +66,7 @@ public class TestSelectMapperServiceImplTest {
 				"spring/applicationContext.xml");
 		String message = resources.getMessage("tongdun.name", null, "Default",
 				null);
-		String mymessage = resources.getMessage("tongdun.name", null, Locale.CHINA);
+		String mymessage = resources.getMessage("tongdun.name", null, null);
 		System.out.println(message + "\tmessage");
 		System.out.println(mymessage);
 		System.out.println("jieshu");
