@@ -13,7 +13,7 @@
         http://www.springframework.org/schema/tx
         http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
         <!-- DI和IOC扫描各个层的类 -->
-        <context:component-scan base-package="cn.itcast.zjw"></context:component-scan>
+    <context:component-scan base-package="cn.itcast.zjw"></context:component-scan>
 	<!-- 读取(加载)数据库连接的配置参数 -->
 	<context:property-placeholder
 		location="classpath:mybatis/mylocalhostdb.properties" />
@@ -63,7 +63,4 @@
 	<import resource="applicationContext-transaction.xml"/>
 	<import resource="applicationContext-properties.xml"/>
 	<import resource="applicationContext-quartz.xml"/>
-	<!-- <import resource="applicationContext-transaction.xml"/> <import resource="applicationContext-service.xml"/> -->
-	<!-- <import resource="spring/applicationContext-service.xml"/> <import 
-		resource="spring/applicationContext-transaction.xml"/> <import resource="spring/springmvc.xml"/> -->
 </beans>
