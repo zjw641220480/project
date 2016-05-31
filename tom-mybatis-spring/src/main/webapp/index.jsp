@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -24,6 +25,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     This is my JSP page. <br>
-    ${requestScope.testRequest }
+    ${requestScope.testRequest }<br />
+   <%--  校验器返回的错误信息:${requestScope.objectErrors }<br> --%>
+    <form:form modelAttribute="userCustomer" action="${pageContext.request.contextPath }/test/testJsp">
+		<%-- <form:errors path="*" /> --%>
+		用户名:<form:input path="username"/><form:errors path="username" cssClass="errorClass" /><br />
+		
+		地址:<form:input path="address" /><form:errors path="address" cssClass="errorClass" /><br />
+		
+		<button type="submit">提交</button>
+    </form:form>
   </body>
 </html>
