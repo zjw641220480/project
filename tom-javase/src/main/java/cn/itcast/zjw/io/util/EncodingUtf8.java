@@ -20,9 +20,10 @@ public class EncodingUtf8 {
 		return count;
 	}
 	public static void main(String[] args) {
-		String path = "D:\\BaiduYunDownload\\hibernate_day01\\src\\cn\\itcast\\hibernate\\test/PersonTest.java";
+		String path = "D:\\BaiduYunDownload\\mybatis-springmvc\\src\\cn\\itcast\\zjw\\ssm";
 		File file = new File(path);
-		encodingUtf8.updateAllFilesEncoding(file);
+		//encodingUtf8.updateAllFilesEncoding(file);
+		encodingUtf8.getAllFiles(file);
 	}
 	/** 
 	 * @MethodName:getAllFiles

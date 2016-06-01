@@ -3,10 +3,11 @@ package cn.itcast.zjw.domain;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.validation.constraints.Size;
+
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectReader;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize.Inclusion;
 
@@ -20,6 +21,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize.Inclusion;
 public class User implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private int id;
+	@Size(min = 4, max = 10, message = "{items.name.length.error}")
 	private String username;
 	private String sex;
 	private Date birthday;

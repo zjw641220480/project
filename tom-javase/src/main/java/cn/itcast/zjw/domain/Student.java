@@ -1,6 +1,14 @@
 package cn.itcast.zjw.domain;
 
+/** 
+ * @ClassName:Student
+ * @Description:
+ * @author TOM
+ * @date 2016年5月27日 下午12:58:46
+ * @version V1.0.0
+ */ 
 public class Student implements Comparable<Object>{//改接口强制让学生具备比较性
+	private String sex;
 	private String name;
 	private int age;
 	public Student(String name, int age) {
@@ -9,6 +17,16 @@ public class Student implements Comparable<Object>{//改接口强制让学生具
 	}
 	public Student(){
 		
+	}
+	public Student(String name,int age,String sex){
+		this.age = age;
+		this.name = name;
+	}
+	public String getSex() {
+		return sex;
+	}
+	public void setSex(String sex) {
+		this.sex = sex;
 	}
 	public String getName() {
 		return name;
