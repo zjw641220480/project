@@ -13,13 +13,16 @@ import org.junit.Test;
 
 
 /**
- * @Description <br/>
- *              <p>
- *              转换流的使用:转换流的一个重要作用就是编码的改变 InputStreamReader:字节流转换为字符流的桥梁
- *              OutputStreamWriter:字符流通向字节流的桥梁
- *              </p>
- * @author TOM
- * @date 2016年5月19日 下午6:03:40
+ *  转换流的使用:转换流的一个重要作用就是编码的改变 InputStreamReader:
+ *  	字节流转换为字符流的桥梁OutputStreamWriter,InputStreamReader;
+ */
+/** 
+ * @ClassName: ZhuanHuan
+ * @Description:
+ * @Time 2016年6月1日 下午9:04:32
+ * @author: TOM
+ * @version 1.0.0
+ * @since  1.6
  */
 public class ZhuanHuan {
 	/**

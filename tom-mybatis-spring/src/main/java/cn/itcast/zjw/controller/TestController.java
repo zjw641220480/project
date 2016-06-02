@@ -15,9 +15,9 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.validation.ObjectError;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -30,7 +30,17 @@ import cn.itcast.zjw.domain.UserCustomer;
 import cn.itcast.zjw.service.mappertest.TestSelectMapperServiceImpl;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-
+/*
+ * GET方式提交的数据不能绑定到POJO上面,
+ * RequestBody和ResponseBody都是在RESTful中所使用的;
+ * */
+/** 
+ * @ClassName:TestController
+ * @Description:
+ * @author TOM
+ * @date 2016年5月31日 下午1:43:36
+ * @version V1.0.0
+ */ 
 @Controller
 @RequestMapping("/test")
 public class TestController {
@@ -147,9 +157,54 @@ public class TestController {
 		return null;
 	}
 
+	/** 
+	 * @MethodName:testValidated
+	 * @Desription:RESTful风格的返回类型,校验器错误信息返回
+	 * @param model
+	 * @param userCustomer
+	 * @param bindingResult
+	 * @return  
+	 * @date:2016年5月31日
+	 * @author TOM
+	 */
 	@RequestMapping(value = { "/testAll" }, method = RequestMethod.POST)
 	public @ResponseBody
 	ApiResponse testValidated(Model model, @Validated @RequestBody UserCustomer userCustomer,BindingResult bindingResult) {
+		// 获取校验错误信息
+		System.out.println(userCustomer);
+		System.out.println("TestController.testValidated()");
+		System.out.println(bindingResult.hasErrors());
+		ApiResponse apiResponse = new ApiResponse();
+		setApiResponse(apiResponse, "testPostResponseJsonTrue");
+		Map<String, Object> mapResult = new HashMap<String,Object>();
+		if (bindingResult.hasErrors()) {
+			// 输出校验错误信息
+			List<ObjectError> objectErrors = bindingResult.getAllErrors();
+			for (ObjectError objectError : objectErrors) {
+				// 输出错误信息
+				//RESTful中使用StringBuffer进行累加的方式;
+				mapResult.put("error", objectError);
+			}
+			// 将错误信息传递到页面
+			apiResponse.setResult(mapResult);
+			return apiResponse;
+		}
+		setApiResponse(apiResponse, "RESTful风格的返回");
+		return apiResponse;
+	}
+	
+	/** 
+	 * @MethodName:test
+	 * @Desription:正常返回jsp风格的返回类型,校验器错误信息返回
+	 * @param model
+	 * @param userCustomer
+	 * @param bindingResult
+	 * @return  
+	 * @date:2016年5月31日
+	 * @author TOM
+	 */
+	@RequestMapping(value = { "/testJsp" }, method = {RequestMethod.POST,RequestMethod.GET})
+	public String test(Model model, @Validated UserCustomer userCustomer,BindingResult bindingResult) {
 		// 获取校验错误信息
 		System.out.println(userCustomer);
 		System.out.println("TestController.testValidated()");
@@ -164,13 +219,9 @@ public class TestController {
 			// 将错误信息传递到页面
 			model.addAttribute("objectErrors", objectErrors);
 			// 返回String进行指定jsp的时候,而且是forwar的请求转发需要加上全路径名
-			ApiResponse apiResponse = new ApiResponse();
-			setApiResponse(apiResponse, "testPostResponseJsonTrue");
-			return apiResponse;
+			return "index";
 		}
-		ApiResponse apiResponse = new ApiResponse();
-		setApiResponse(apiResponse, "testPostResponseJsonFalse");
-		return apiResponse;
+		return "index";
 	}
 
 	/**

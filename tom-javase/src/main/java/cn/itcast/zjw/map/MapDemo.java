@@ -56,13 +56,14 @@ public class MapDemo {
 		map.put("2", "v2");
 		map.put("3", "v3");
 		map.put("4", "v4");
-		//使用迭代器进行遍历取出
+		// 都是需要先把键转化为Set集合;
+		// 使用迭代器进行遍历取出
 		Set<String> set = map.keySet();
 		Iterator<String> iterator = set.iterator();
 		while(iterator.hasNext()){
 			System.out.println(map.get(iterator.next()));
 		}
-		//使用增强for进行循环遍历取出
+		// 使用增强for进行循环遍历取出
 		for(String key:map.keySet()){
 			System.out.println(map.get(key));
 		}

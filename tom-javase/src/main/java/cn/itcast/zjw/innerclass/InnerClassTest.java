@@ -33,7 +33,7 @@ class Test {
 
 	/**
 	 * @Title: test
-	 * @Description: 传参的时候直接传一个匿名内部类;
+	 * @Description: 传参的时候直接传一个匿名内部类;参数是接口类型的对象
 	 * @param in
 	 * @return void
 	 * @author Tom

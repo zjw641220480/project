@@ -12,7 +12,7 @@ public class PersonRAM {
 	private static String country = "CN";
 	//静态代码快
 	static{
-		System.out.println("static静态代码快执行");
+		System.out.println("static静态代码快执行\t"+country);
 	}
 	//构造代码快
 	{
@@ -56,8 +56,7 @@ public class PersonRAM {
 		personRAMa.setName("张三");
 		personRAMa.speak();
 		System.out.println("**************重新创建PersonRAM实例***************");
-		@SuppressWarnings("unused")
 		PersonRAM personRAMb = new PersonRAM("李四", 20);
-		
+		personRAMb.speak();
 	}
 }

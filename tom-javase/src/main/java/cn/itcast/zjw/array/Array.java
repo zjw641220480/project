@@ -1,10 +1,18 @@
 ﻿package cn.itcast.zjw.array;
 
 public class Array {
-	static int[] arr;
+	private static int[] arr;
+	/**
+	 * @Method: main
+	 * @Description:数组的三种定义方式,
+	 * @param: @param args 
+	 * @return: void
+	 * @date 2016年6月1日
+	 * @author TOM
+	 */
 	@SuppressWarnings("unused")
 	public static void main(String[] args) {
-		//三种定义数组的方式
+		//三种定义数组的方式,数组的定义是不需要小括号的,
 		int[][] intArrayA = new int[5][];
 		int[] intArrayB = new int[]{1,2,3,4};
 		int[] intArrayC = {1,23,4};
@@ -14,7 +22,7 @@ public class Array {
 		show(new String[0]);
 		testArray();
 	}
-	public static void show(String[] arr){
+	private static void show(String[] arr){
 		System.out.println("Array.show()");
 	}
 	public static void testArray(){
