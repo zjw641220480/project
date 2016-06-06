@@ -1,5 +1,7 @@
 package cn.itcast.zjw.object;
 
+import org.junit.Test;
+
 /** 
 * @ClassName: ExtendsExplain 
 * @Description:用来演示子父类出现后,类成员的特点
@@ -20,15 +22,28 @@ package cn.itcast.zjw.object;
 * @author Tom
 * @date 2016-2-28 
 */ 
-public class ExtendsExplain {
-	public static void main(String[] args) {
-		Zi zi = new Zi();
-		System.out.println(zi.num);
-	}
-}
+
 class Fu{
 	int num = 4;
+	public void show(){
+		System.out.println("父类方法运行");
+	}
 }
-class Zi{
+
+public class Zi extends Fu{
+	@Test
+	public void main() {
+		Zi zi = new Zi();
+		System.out.println(zi.num);
+		System.out.println(this.num);
+		System.out.println(super.num);
+		this.show();
+		super.show();
+	}
 	int num = 5;
+	@Override
+	public void show() {
+		System.out.println("子类方法运行");
+	}
+	
 }

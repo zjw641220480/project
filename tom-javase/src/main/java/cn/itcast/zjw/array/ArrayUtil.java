@@ -1,24 +1,40 @@
 package cn.itcast.zjw.array;
 
-import java.util.Arrays;
 
 
+/** 
+ * @ClassName: ArrayUtil
+ * @Description:自己定义的一个数组工具
+ * @Time 2016年6月1日 下午3:58:40
+ * @author: TOM
+ * @version 1.0.0
+ * @since  1.6
+ */
+/** 
+ * @ClassName: ArrayUtil
+ * @Description:
+ * @Time 2016年6月1日 下午4:06:37
+ * @author: TOM
+ * @version 1.0.0
+ * @since  1.6
+ */
 public class ArrayUtil {
-	public static void main(String[] args) {
-		int[] arrayInt = new int[]{16,3,5,4,8,7,9};
-		Arrays.sort(arrayInt);
-		System.out.println(arrayInt[3]);
-		System.out.println(ArrayUtil.halfSearch(arrayInt, 7));
-	}
+	/*
+	 * 步骤:
+	 * 1,定义变量,初始化为数组中任意一个元素即可,
+	 * 2,通过循环语句对数组进行遍历,
+	 * 3,在遍历过程中定义判断条件,如果遍历到的元素比变量中的元素大,就把这个值赋值给该变量;
+	 * */
 	/** 
 	* @Title: getMax 
-	* @Description: 获取数组中的最大值,
+	* @Description: 变量为数组中的某个值,获取数组中的最大值,
 	* @param arrayInt
 	* @return int
 	* @author Tom
 	* @date 2016-2-26
 	*/ 
 	public static int getMax_1(int[] arrayInt){
+		//初始化为数组中的任意一个元素
 		int max = arrayInt[0];
 		for(int i=1;i<arrayInt.length;i++){
 			if(arrayInt[i]>max){
@@ -36,8 +52,8 @@ public class ArrayUtil {
 	* @author Tom
 	* @date 2016-2-26
 	*/ 
-	@SuppressWarnings("unused")
-	private int getMax_2(int[] arrayInt){
+	public static int getMax_2(int[] arrayInt){
+		//初始化为数组中的任意一个角标;
 		int max = 0;
 		for(int i=1;i<arrayInt.length;i++){
 			if(arrayInt[i]>arrayInt[max]){
@@ -48,7 +64,7 @@ public class ArrayUtil {
 	}
 	/** 
 	* @Title: minToMax 
-	* @Description:数组中元素从小到大排列,内循环一次,最值出现在头角标位置;
+	* @Description:数组中元素从小到大排列,内循环一次,最值出现在头角标位置;效率最低的排序方式(选择排序)
 	* @param arrayInt 
 	* @return void
 	* @author Tom
@@ -56,19 +72,19 @@ public class ArrayUtil {
 	*/ 
 	public static void minToMax(int[] arrayInt){
 		int[] array = arrayInt;
-		for(int x=0;x<array.length-1;x++){
+		for(int x=0;x<array.length-1;x++){//最后一个直接就是最大的值,不用再进行比较,这里对于减一不用要求特别严格;
 			for(int y=x+1;y<array.length;y++){
-				if(array[x]>array[y]){
-					int temp = array[x];
-					array[x] = array[y];
-					array[y] = temp;
+				if(arrayInt[x]>arrayInt[y]){
+					int temp = arrayInt[x];
+					arrayInt[x] = arrayInt[y];
+					arrayInt[y] = temp;
 				}
 			}
 		}
 	}
 	/** 
 	* @Title: minToMaxBubble 
-	* @Description:冒泡排序;
+	* @Description:冒泡排序;小的值在向前移动,大的在往后移动
 	* @param arrayInt 
 	* @return void
 	* @author Tom
@@ -76,6 +92,7 @@ public class ArrayUtil {
 	*/ 
 	public static void minToMaxBubble(int[] arrayInt){
 		for(int x=0;x<arrayInt.length;x++){
+			//-x:让每一次比较的元素减少,-1:避免角标越界,这个-1必须存在
 			for(int y=0;y<arrayInt.length-x-1;y++){
 				if(arrayInt[y]>arrayInt[y+1]){
 					int temp = arrayInt[y];
@@ -137,5 +154,10 @@ public class ArrayUtil {
 			}
 		}
 		return -1;
+	}
+	private static void swap(int[] arr,int a,int b){
+		int temp = arr[a];
+		arr[a] = arr[b];
+		arr[b] = temp;
 	}
 }

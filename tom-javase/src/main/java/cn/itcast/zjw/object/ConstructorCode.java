@@ -13,14 +13,13 @@ public class ConstructorCode {
 	 * 作用:给对象进行初始化
 	 * */
 	{
-		System.out.println("MyObject.enclosing_method()");
+		System.out.println("构造代码块运行");
 	}
 	
 	public ConstructorCode(){
-		System.out.println("MyObject.MyObject()");
+		System.out.println("构造方法运行");
 	}
 	public static void main(String[] args) {
-		@SuppressWarnings("unused")
-		ConstructorCode object = new ConstructorCode();
+		new ConstructorCode();
 	}
 }

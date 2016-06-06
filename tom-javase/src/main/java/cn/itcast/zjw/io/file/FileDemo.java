@@ -4,23 +4,31 @@ import java.io.File;
 import java.io.IOException;
 
 import org.junit.Test;
+/*
+ * File类常见方法: 
+ * 	1:创建 
+ * 		createNewFile:在指定位置创建文件,如果该文件已经存在,则不创建,返回false;
+ *  和输出流不一样,输出流对象一建立就会创建文件,而且若文件已经存在,则会覆盖原文件; 
+ *  	createTempFile:创建临时文件;
+ *  2:删除 delete:删除失败返回false; deleteOnExit:在程序退出时,删除指定文件 ;
+ *  3:判断
+ *  	boolean exists():判断文件或者文件夹是否存在,boolean
+ *  	boolean isDirectory():判断是否为文件夹; 
+ *  	boolean isFile():判断是否为文件,
+ *  	boolean isHidden():判断是否为隐藏文件 
+ *  4:获取信息:
+ *  	getName():
+ *  	getPath():
+ *  	getParent();
+ * */
 
-/**
- * @Description <br/>
- *              <p>
- *              File类常见方法: 1:创建 createNewFile:在指定位置创建文件,如果该文件已经存在,则不创建,返回false;
- *              和输出流不一样,输出流对象一建立就会创建文件,而且若文件已经存在,则会覆盖原文件; createTempFile:创建临时文件;
- *              2:删除 delete:删除失败返回false; deleteOnExit:在程序退出时,删除指定文件 ; \r
- *              3:判断boolean exists():判断文件或者文件夹是否存在,boolean
- *              isDirectory():判断是否为文件夹; boolean isFile():判断是否为文件,boolean
- *              isHidden():判断是否为隐藏文件 
- *              4:获取信息:
- *              	getName():
- *              	getPath():
- *              	getParent();
- *              </p>
- * @author TOM
- * @date 2016年5月19日 下午6:03:40
+/** 
+ * @ClassName: FileDemo
+ * @Description:File对象的Demo
+ * @Time 2016年6月1日 下午8:53:49
+ * @author: TOM
+ * @version 1.0.0
+ * @since  1.6
  */
 public class FileDemo {
 

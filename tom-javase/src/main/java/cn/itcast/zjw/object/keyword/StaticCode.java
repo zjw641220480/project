@@ -10,6 +10,7 @@ package cn.itcast.zjw.object.keyword;
 public class StaticCode {
 	private int num = 9;
 	static{
+		//静态代码块随着类的加载而运行(类的字节码文件被java虚拟机加载到内存);
 		//在静态代码快中不能访问非静态的成员;
 		//System.out.println(num);
 		System.out.println("StaticCodeAAAAAAAAAAAAA");
@@ -18,6 +19,9 @@ public class StaticCode {
 		//在构造代码快中可以访问非静态的成员;
 		System.out.println(num);
 		System.out.println("StaticCode.构造代码快");
+	}
+	private StaticCode(){
+		System.out.println("构造方法运行");
 	}
 	public static void main(String[] args) {
 		//即使什么都不写,该类的static代码快一样会执行;

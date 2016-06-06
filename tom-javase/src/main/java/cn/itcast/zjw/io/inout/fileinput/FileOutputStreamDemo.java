@@ -1,62 +1,33 @@
 package cn.itcast.zjw.io.inout.fileinput;
 
-import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 import org.junit.Test;
 
+/** 
+ * @ClassName: FileInputStreamDemo
+ * @Description:
+ * @Time 2016年6月1日 下午8:58:44
+ * @author: TOM
+ * @version 1.0.0
+ * @since  1.6
+ */
 public class FileOutputStreamDemo {
+	
 	/** 
-	 * @Description <code>字节流读取数据,一次读取一个</code>
+	 * @Description <code>字节流写入数据,不需要刷新,即可写入到文本中</code>
 	 * @author TOM  
 	 */
 	@Test
-	public void testFileOutput(){
+	public void testFileInput(){
 		try {
-			FileInputStream fileInputStream = new FileInputStream("FileInputStream.txt");
-			int read = 0;
-			while((read = fileInputStream.read())!=-1){
-				System.out.print((char)read);
-			}
-			fileInputStream.close();
+			FileOutputStream fileOutputStream = new FileOutputStream("FileInputStream.txt");
+			fileOutputStream.write("abcde".getBytes());
+			//fileOutputStream.flush();
+			fileOutputStream.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
-	/** 
-	 * @Description <code>description</code>
-	 * @author TOM  
-	 */
-	@Test
-	public void testFileOutputArray(){
-		try {
-			FileInputStream fileInputStream = new FileInputStream("FileInputStream.txt");
-			int read = 0;
-			byte[] bytes = new byte[1024];
-			while((read = fileInputStream.read(bytes))!=-1){
-				System.out.println(new String(bytes,0,read));
-			}
-			fileInputStream.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-	/** 
-	 * @Description <code>字节流中特殊的方法available</code>
-	 * @author TOM  
-	 */
-	@Test
-	public void testFileOutputAvailable(){
-		try {
-			FileInputStream fileInputStream = new FileInputStream("FileInputStream.txt");
-			int read = fileInputStream.available();
-			//定义一个刚刚好的缓冲区,不用循环了,这种方式只能是读取较小的文件;
-			byte[] bytes = new byte[read];
-			fileInputStream.read(bytes);
-			System.out.println(new String(bytes));
-			fileInputStream.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-}	
+}

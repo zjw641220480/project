@@ -10,7 +10,6 @@ package cn.itcast.zjw.design.singleton;
  */
 public class SingletonHungry {
 	Singleton singleton = new Singleton();
-
 	/** 
 	 * @MethodName:getSingleton
 	 * @Desition:最基础的饿汉式产生单例

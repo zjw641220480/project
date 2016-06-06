@@ -6,6 +6,7 @@ import java.util.Locale;
 import javax.annotation.Resource;
 
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +23,8 @@ import cn.itcast.zjw.util.MyBatisUtil;
  */ 
 @Service("testSelectMapperServiceImpl")
 public class TestSelectMapperServiceImpl implements TestSelectMapperInter{
+	@Value(value="#{propertiesReader['tongdun.name']}")
+	private String tongdun_name;
 	@Resource(name="testSelectMapper")
 	private	TestSelectMapper testSelectMapper;
 	@Resource(name="messageSource")
@@ -48,6 +51,7 @@ public class TestSelectMapperServiceImpl implements TestSelectMapperInter{
 	public List<UserCustomer> testMybatisSpring(){
 		List<UserCustomer> lists = testSelectMapper.testSelect();
 		System.out.println("配置文件中的值为:\t"+messageSource.getMessage("tongdun.name", null, Locale.CHINA));
+		System.out.println("使用注解进行取值:\t"+tongdun_name);
 		return lists;
 	}
 }

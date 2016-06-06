@@ -23,7 +23,7 @@ import org.junit.Test;
  * */
 /** 
  * @ClassName: PropertiesDemo
- * @Description:
+ * @Description:Properties配置文件流的操作
  * @Time 2016年5月21日 下午4:27:39
  * @author: TOM
  * @version 1.0.0

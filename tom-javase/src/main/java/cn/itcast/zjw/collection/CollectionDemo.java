@@ -30,6 +30,7 @@ public class CollectionDemo {
 		collection.add("java02...");
 		collection.add("java03...");
 		collection.add("java04...");
+		//下面是集合的三种取出方式
 		//获取迭代器,用于取出集合中的元素
 		Iterator<String> iterator = collection.iterator();
 		while(iterator.hasNext()){

@@ -11,9 +11,10 @@ import java.io.FilenameFilter;
 
 import org.junit.Test;
 
-/**
- * Class <code>FileDemoTwo</code> 
- * @Time 2016年5月21日 上午10:11:21
+/** 
+ * @ClassName: FileDemoTwo
+ * @Description:
+ * @Time 2016年6月1日 下午8:56:29
  * @author: TOM
  * @version 1.0.0
  * @since  1.6
@@ -62,5 +63,4 @@ public class FileDemoTwo {
 			System.out.println(fileName);
 		}
 	}
-	
 }
