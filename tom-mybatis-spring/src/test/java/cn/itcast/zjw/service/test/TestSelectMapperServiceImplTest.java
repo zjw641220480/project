@@ -1,13 +1,14 @@
 package cn.itcast.zjw.service.test;
 
 import java.util.List;
-import java.util.Locale;
 
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.MessageSource;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.core.io.Resource;
 
 import cn.itcast.zjw.domain.UserCustomer;
 import cn.itcast.zjw.service.mappertest.TestSelectMapperServiceImpl;
@@ -59,6 +60,12 @@ public class TestSelectMapperServiceImplTest {
 		System.out.println(userCustomers);
 	}
 
+	/** 
+	 * @MethodName:testProperties
+	 * @Desription:  属性配置文件测试
+	 * @date:2016年6月6日
+	 * @author TOM
+	 */
 	@Test
 	public void testProperties() {
 		@SuppressWarnings("resource")
