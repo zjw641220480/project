@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			
+		</style>
+		<script type="text/javascript">
+			function test(){
+				var uname = document.getElementById("uname");
+				alert(uname.value);//SCRIPT5007: 无法获取属性“value”的值: 对象为 null 或未定义 
+			}
+			test();
+		</script>
+	</head>
+	<body>
+		<input type="text" name="username" id="uname" value="aa"/>
+	</body>
+</html>

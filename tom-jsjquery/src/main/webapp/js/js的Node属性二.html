@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			
+		</style>
+		
+	</head>
+	<body>
+		<ul id="ulId">
+			<li id="liId1" name="uname">11111</li>
+			<li id="liId2">22222</li>
+			<li id="liId3">33333</li>
+			<li id="liId4">44444</li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+			var li2Obj = document.getElementById("liId2");
+			/*var ulObj = li2Obj.parentNode;
+			document.write(ulObj.getAttribute("id"));
+			document.write("<br/>");*/
+			//获取liId1的下一个兄弟节点;
+			//var nextLi1Obj = li2Obj.nextSibling;
+			document.write(li2Obj.getAttribute("id"));
+			document.write("<br/>");
+			document.write(li2Obj.previousSibling.name);
+	</script>
+</html>

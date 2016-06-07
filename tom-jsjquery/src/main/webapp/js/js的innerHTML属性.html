@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			
+		</style>
+		
+	</head>
+	<body>
+		<span id="spanid">aaaaaaaaaaa</span><br />
+		<div id="divid"></div><br />
+		<input type="button" value="向div中填充内容" onclick="add();" />
+	</body>
+	<script type="text/javascript">
+			//获取span标签中的文本内容
+			//第一种方式:使用node节点方式进行获取
+			document.write("<hr />")
+			var spanObj = document.getElementById("spanid");
+			var idNode = spanObj.getAttributeNode("id");
+			document.write(spanObj.getAttribute("id"));//这种Attribute方式是取得属性的值,后面有node才是取得节点
+			document.write("<br />")
+			document.write(idNode.nodeValue);
+			document.write("<br />")
+			var textNode = spanObj.firstChild;
+			document.write(textNode.nodeValue);
+			document.write("<hr />")
+			//第二种方式:使用innerHTML来获取文本内容;
+			document.write(spanObj.innerHTML);
+			
+			//向div中填充值;
+			function add(){
+				var divObj = document.getElementById("divid");
+				divObj.innerHTML = "<h1>这是填充到div中的内容</h1>";
+			}
+	</script>
+</html>

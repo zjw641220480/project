@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			
+		</style>
+		<script type="text/javascript">
+			//eval函数
+			var str = "alert('1,2,3')";
+			//eval(str);
+			//encodeURI方法;编码
+			document.write("<hr/>");
+			var str1 = "测试中文1232";
+			var encode1 = encodeURI(str1);
+			document.write(encode1);
+			//decodeURI方法;解码
+			document.write("<hr/>");
+			document.write(decodeURI(encode1));
+			//isNaN方法,返回true或者false,跟正常的思维正好相反,是数字反而返回false
+			document.write("<hr/>");
+			var str2 = "123";
+			document.write(isNaN(str2));
+			//parseInt() 解析一个字符串并返回一个整数
+			document.write("<hr/>");。
+			var str3 = "123";
+			document.write(typeof(parseInt(str3)))
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>
