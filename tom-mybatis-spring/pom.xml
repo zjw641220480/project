@@ -152,23 +152,5 @@
 	</dependencies>
 	<build>
 		<finalName>tom-mybatis-spring</finalName>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-war-plugin</artifactId>
-					<version>2.6</version>
-					<configuration>
-						<webResources>
-							<resource>
-								<directory>src/main/webapp/WEB-INF</directory>
-								<filtering>true</filtering>
-								<targetPath>WEB-INF</targetPath>
-							</resource>
-						</webResources>
-					</configuration>
-				</plugin>
-			</plugins>
-		</pluginManagement>
 	</build>
 </project>

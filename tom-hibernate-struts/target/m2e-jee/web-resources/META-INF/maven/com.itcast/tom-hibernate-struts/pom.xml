@@ -80,6 +80,5 @@
 	</dependencies>
 	<build>
 		<finalName>tom-hibernate-struts</finalName>
-		
 	</build>
 </project>

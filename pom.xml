@@ -70,14 +70,12 @@
 		</pluginManagement>
 	</build>
 	<modules>
-		<module>shiro</module>
 		<module>tom-util</module>
     	<module>SimpleWeb</module>
 	    <module>tom-jersey</module>
 	    <module>tom-javase</module>
 	    <module>tom-mybatis</module>
 	    <module>tom-mybatis-spring</module>
-	    <module>tom-webservice</module>
 	    <module>tom-hibernate-struts</module>
     	<!-- <module>tom-jsjquery</module> -->
     <module>tom-shiro</module>
