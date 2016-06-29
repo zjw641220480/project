@@ -79,5 +79,6 @@
 	    <module>tom-hibernate-struts</module>
     	<!-- <module>tom-jsjquery</module> -->
     <module>tom-shiro</module>
+    <module>tom-test</module>
   </modules>
 </project>
