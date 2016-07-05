@@ -10,7 +10,7 @@
 <body>
 	<button id="b01">JqueryGET请求</button>
 </body>
-<script type="text/javascript" src="/tom-jsjquery/js/jquery.min.js"</script>
+<script type="text/javascript" src="/tom-jsjquery/js/jquery.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
 		$("#b01").click(function() {

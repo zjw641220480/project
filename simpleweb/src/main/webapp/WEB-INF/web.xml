@@ -5,7 +5,6 @@
 <web-app>
 	<display-name>Archetype Created Web Application</display-name>
 	<servlet>
-		<load-on-startup>1</load-on-startup>
 		<servlet-name>Log4jInit</servlet-name>
 		<servlet-class>cn.itcast.zjw.servlet.Log4jInit</servlet-class>
 		<init-param>
@@ -15,6 +14,7 @@
 			<!-- <param-value>D:\\GitHubWork\\project\\SimpleWeb\\src\\main\\resources\\config\\log4j.properties</param-value> -->
 			<!-- 这是容器初始化时候加载log4j配置文件的路径（这好像一个value）; -->
 		</init-param>
+		<load-on-startup>1</load-on-startup>
 	</servlet>
 	<servlet>
 		<servlet-name>Log4jServlet</servlet-name>

@@ -29,6 +29,14 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/javax.servlet.jsp/jsp-api -->
+		<dependency>
+		    <groupId>javax.servlet.jsp</groupId>
+		    <artifactId>jsp-api</artifactId>
+		    <version>2.2</version>
+		</dependency>
+
+		
 		<!-- log -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -77,8 +85,8 @@
 	    <module>tom-mybatis</module>
 	    <module>tom-mybatis-spring</module>
 	    <module>tom-hibernate-struts</module>
-    	<!-- <module>tom-jsjquery</module> -->
-    <module>tom-shiro</module>
-    <module>tom-test</module>
+    	<module>tom-jsjquery</module>
+    	<module>tom-test</module>
+    	<module>tom-shiro</module>
   </modules>
 </project>
