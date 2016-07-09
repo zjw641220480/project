@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul id="ulid">
+			<li>111</li>
+			<li>222</li>
+			<li>333</li>
+			<li>444</li>
+		</ul><br />
+		<!--input标签中type属性默认是text-->
+		<input type="button" id="inputId" name="张三" value="aaa" class="haha"/>
+		<input type="button" id="buttonId" value="removeAttribute" onclick="remove1();"/>
+	</body>
+	<script type="text/javascript">
+		var inputObj = document.getElementById("inputId");
+		document.write("<hr/>");
+		document.write(inputObj.type);//获取标签中各个属性的值;
+		//document.write(inputObj.class);//class是关键字,不能再使用这种方式进行获取;
+		document.write("<hr/>");
+		document.write(inputObj.getAttribute("id"));//获取标签中对应属性的值;
+		//document.write(inputObj.getAttribute("class"));
+		function remove1(){
+			//alert(inputObj.getAttribute("id"));
+			alert("没有remove前的name值"+inputObj.getAttribute("type"));
+			inputObj.removeAttribute("type");
+			alert(inputObj.getAttribute("type"));
+		}
+		
+		//获取ul下面的所有子标签;
+		var ulObj = document.getElementById("ulid");
+		//var liList = ulObj.childNodes;这种方式的兼容性很差;
+		var liList = ulObj.getElementsByTagName("li");
+		
+	</script>
+	
+</html>

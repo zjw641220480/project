@@ -1,0 +1,227 @@
+测试
+1同盾示例数据测试
+测试接口包括同盾的submit和query,测试的是输入和输出数据;
+
+1.1测试接口:submit
+1.1.1测试URL:http://120.27.127.190/credan_api/tongdun/submit
+1.1.2InputData
+其中name,id_number和phone必填;
+{
+    "user_id": "UR00000000000025", 
+    "loan_amount": "100000", 
+    "loan_term": "5", 
+    "loan_term_unit": "MONTH", 
+    "loan_date": "2015-01-01", 
+    "name": "张三", 
+    "id_number": "41282319911203481X", 
+    "mobile": "18392049382", 
+    "phone": "0571-1111111", 
+    "email": "example@qq.com", 
+    "qq": "74733929", 
+    "card_number": "6220039483930293830", 
+    "diploma": "UNDER_GRADUATE", 
+    "marriage": "MARRIED", 
+    "registered_address": "杭州市余杭区文一西路998号海创园18号楼209-211", 
+    "home_address": "杭州市余杭区文一西路998号海创园18号楼209-211", 
+    "company_name": "杭州同盾科技有限公司", 
+    "company_address": "杭州市余杭区文一西路998号海创园18号楼209-211", 
+    "contact_address": "杭州市余杭区文一西路998号海创园18号楼209-211", 
+    "industry": "FINANCE", 
+    "occupation": "ADVANCED", 
+    "is_cross_loan": "false", 
+    "cross_loan_count": "1", 
+    "is_liability_loan": "false", 
+    "liability_loan_count": "1", 
+    "is_id_checked": "true", 
+    "contact1_relation": "father", 
+    "contact1_name": "王二", 
+    "contact1_id_number": "48392029190002034032", 
+    "contact1_mobile": "18375849382", 
+    "contact1_addr": "杭州市余杭区文一西路998号海创园18号楼209-211", 
+    "contact1_com_name": "杭州同盾科技有限公司", 
+    "contact1_com_addr": "杭州市余杭区文一西路998号海创园18号楼209-211", 
+    "contact2_relation": "father", 
+    "contact2_name": "王三", 
+    "contact2_id_number": "48392029191002034038", 
+    "contact2_mobile": "18373728293", 
+    "contact2_addr": "杭州市余杭区文一西路998号海创园18号楼209-211", 
+    "contact2_com_name": "杭州同盾科技有限公司", 
+    "contact2_com_addr": "杭州市余杭区文一西路998号海创园18号楼209-211", 
+    "contact3_relation": "father", 
+    "contact3_name": "王小三", 
+    "contact3_id_number": "48392029191002034039", 
+    "contact3_mobile": "18375849382", 
+    "contact3_addr": "杭州市余杭区文一西路998号海创园18号楼209-211", 
+    "contact3_com_name": "杭州同盾科技有限公司", 
+    "contact3_com_addr": "杭州市余杭区文一西路998号海创园18号楼209-211", 
+    "ip_address": "192.168.1.32", 
+    "token_id": "432432", 
+"black_box": "%7%22id%22%22321%22mac%22%7D"
+}
+1.1.3OutpuData
+{"success":true,"report_id":"ER2016033115520814449705"}
+
+
+1.2测试接口:query
+1.2.1测试URL:http://120.27.127.190/credan_api/tongdun/query
+1.2.2InputData
+{
+    "user_id": "UR00000000000025", 
+"reportId": "ER2016033115520814449705"
+}
+1.2.3OutputData
+{
+    "success": true, 
+    "finalScore": 100, 
+    "finalDecision": "Reject", 
+    "reportId": "ER2016033115520814449705", 
+    "reasonCode": null, 
+    "deviceInfo": null, 
+    "riskItems": [
+        {
+            "group": "个人基本信息核查", 
+            "itemId": 308580, 
+            "itemName": "客户多头借贷申请承诺与同盾检测结果匹配不一致", 
+            "riskLevel": "medium", 
+            "itemDetail": {
+                "discreditTimes": 0, 
+                "overdueDetails": null, 
+                "platformDetail": [
+                    "无行业:1", 
+                    "CreditFinance:1", 
+                    "O2O:1", 
+                    "小额贷款公司:2", 
+                    "P2P网贷:2", 
+                    "大型消费金融公司:2"
+                ], 
+                "platformCount": 9, 
+                "frequencyDetail": null
+            }
+        }, 
+        {
+            "group": "客户行为检测", 
+            "itemId": 308620, 
+            "itemName": "3个月内身份证关联多个申请信息", 
+            "riskLevel": "low", 
+            "itemDetail": {
+                "discreditTimes": 0, 
+                "overdueDetails": null, 
+                "platformDetail": null, 
+                "platformCount": 0, 
+                "frequencyDetail": [
+                    "借款人身份证关联借款人邮箱数目:2", 
+                    "借款人身份证关联家庭地址数目:2", 
+                    "借款人身份证关联借款人手机数目:2"
+                ]
+            }
+        }, 
+        {
+            "group": "客户行为检测", 
+            "itemId": 308622, 
+            "itemName": "3个月内申请信息关联多个身份证", 
+            "riskLevel": "low", 
+            "itemDetail": {
+                "discreditTimes": 0, 
+                "overdueDetails": null, 
+                "platformDetail": null, 
+                "platformCount": 0, 
+                "frequencyDetail": [
+                    "借款人手机关联借款人身份证数目:5", 
+                    "借款人邮箱关联借款人身份证数目:4", 
+                    "家庭地址关联借款人身份证数目:0"
+                ]
+            }
+        }, 
+        {
+            "group": "客户行为检测", 
+            "itemId": 308624, 
+            "itemName": "3个月内银行卡_姓名关联多个身份证", 
+            "riskLevel": "high", 
+            "itemDetail": {
+                "discreditTimes": 0, 
+                "overdueDetails": null, 
+                "platformDetail": null, 
+                "platformCount": 0, 
+                "frequencyDetail": [
+                    "借款人卡号关联借款人身份证数目:4"
+                ]
+            }
+        }, 
+        {
+            "group": "客户行为检测", 
+            "itemId": 308636, 
+            "itemName": "7天内设备或身份证或手机号申请次数过多", 
+            "riskLevel": "low", 
+            "itemDetail": {
+                "discreditTimes": 0, 
+                "overdueDetails": null, 
+                "platformDetail": null, 
+                "platformCount": 0, 
+                "frequencyDetail": [
+                    "借款人手机出现次数:10", 
+                    "借款人身份证出现次数:17"
+                ]
+            }
+        }, 
+        {
+            "group": "多平台借贷申请检测", 
+            "itemId": 308650, 
+            "itemName": "7天内申请人在多个平台申请借款", 
+            "riskLevel": "high", 
+            "itemDetail": {
+                "discreditTimes": 0, 
+                "overdueDetails": null, 
+                "platformDetail": [
+                    "无行业:1", 
+                    "CreditFinance:1", 
+                    "O2O:1", 
+                    "小额贷款公司:2", 
+                    "P2P网贷:2", 
+                    "大型消费金融公司:2"
+                ], 
+                "platformCount": 9, 
+                "frequencyDetail": null
+            }
+        }, 
+        {
+            "group": "多平台借贷申请检测", 
+            "itemId": 308652, 
+            "itemName": "1个月内申请人在多个平台申请借款", 
+            "riskLevel": "medium", 
+            "itemDetail": {
+                "discreditTimes": 0, 
+                "overdueDetails": null, 
+                "platformDetail": [
+                    "无行业:1", 
+                    "CreditFinance:1", 
+                    "O2O:1", 
+                    "小额贷款公司:2", 
+                    "P2P网贷:2", 
+                    "大型消费金融公司:2"
+                ], 
+                "platformCount": 9, 
+                "frequencyDetail": null
+            }
+        }, 
+        {
+            "group": "多平台借贷申请检测", 
+            "itemId": 308654, 
+            "itemName": "3个月内申请人在多个平台申请借款", 
+            "riskLevel": "medium", 
+            "itemDetail": {
+                "discreditTimes": 0, 
+                "overdueDetails": null, 
+                "platformDetail": [
+                    "无行业:1", 
+                    "CreditFinance:1", 
+                    "O2O:1", 
+                    "小额贷款公司:2", 
+                    "P2P网贷:2", 
+                    "大型消费金融公司:2"
+                ], 
+                "platformCount": 9, 
+                "frequencyDetail": null
+            }
+        }
+    ]}
+}

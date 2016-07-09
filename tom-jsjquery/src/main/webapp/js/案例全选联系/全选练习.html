@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			
+		</style>
+		
+	</head>
+	<body>
+		<input type="checkbox" name="" id="boxid" onclick="selectAllNo();"/>全选/全不选<br />
+		<input type="checkbox" name="love"  />篮球 <br />
+		<input type="checkbox" name="love"  />足球<br />
+		<input type="checkbox" name="love"  />乒乓球<br />
+		<input type="checkbox" name="love"  />羽毛球<br />
+		<input type="button" value="全选" onclick="selectAll();"/>
+		<input type="button" value="全不选" onclick="selectNo();"/>
+		<input type="button" value="反选" onclick="selectOther();"/>
+	</body>
+	<script type="text/javascript">
+			//实现全选的操作
+			/*
+			 1.获取到要操作的复选框;使用getElementsByName("love");,返回的结果是一个数组;
+			 2,checked来规定复选框是否选中;
+			 		checked=true表示选中
+			 		checked=false表示不选中;
+			 * */
+			var loveObj = document.getElementsByName("love");
+			document.write(loveObj[0].type);
+			document.write(loveObj[0].getAttribute("type"));
+			function selectAll(){
+				var loveObj = document.getElementsByName("love");
+				for(var i=0;i<loveObj.length;i++){
+					loveObj[i].checked=true;
+				}
+			}
+			function selectNo(){
+				for(var i=0;i<loveObj.length;i++){
+					loveObj[i].checked=false;
+				}
+			}
+			function selectOther(){
+				for(var i=0;i<loveObj.length;i++){
+					if(loveObj[i].checked==true){
+					//if(loveObj[i].getAttribute("checked")==true){从源码的某个属性中获取其对应的值;
+					//上面一个是行不通的,在源代码中是并没有checked这个属性的;它的值也都是为null;
+						loveObj[i].checked=false;
+					}
+					else{
+						loveObj[i].checked=true;
+					}
+				}
+			}
+	</script>
+</html>

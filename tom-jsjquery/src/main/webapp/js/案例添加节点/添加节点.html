@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			
+		</style>
+		
+	</head>
+	<body>
+		<ul id="ulid">
+			<li>111</li>
+			<li>222</li>
+			<li>333</li>
+			<li>444</li>
+		</ul><br />
+		<input type="button" value="添加" onclick="add();" />
+	</body>
+	<script type="text/javascript">
+			function add(){
+				//获取到ul标签
+				 var ulObj = document.getElementById("ulid");
+				 //创建标签
+				 var newLi = document.createElement("li");
+				 //创建文本
+				 var newText = document.createTextNode("555");
+				 //把文本加入到li的里面
+				 newLi.appendChild(newText);
+				 //把li加入到ul下面
+				 ulObj.appendChild(newLi);
+			}
+			
+	</script>
+</html>

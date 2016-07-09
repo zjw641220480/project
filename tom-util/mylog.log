@@ -1,0 +1,568 @@
+0    [main] ERROR org.tom.util.log.LoggerDate  - error	2016-04-26 06:04:52
+0    [main] ERROR org.tom.util.log.LoggerDate  - error	2016-04-26 07:04:23
+0    [main] DEBUG org.apache.http.client.protocol.RequestAddCookies  - CookieSpec selected: default
+10   [main] DEBUG org.apache.http.client.protocol.RequestAuthCache  - Auth cache not set in the context
+10   [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager  - Connection request: [route: {s}->https://pws.payegis.com.cn:443][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+20   [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager  - Connection leased: [id: 0][route: {s}->https://pws.payegis.com.cn:443][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+20   [main] DEBUG org.apache.http.impl.execchain.MainClientExec  - Opening connection {s}->https://pws.payegis.com.cn:443
+30   [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator  - Connecting to pws.payegis.com.cn/180.76.158.94:443
+30   [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  - Connecting socket to pws.payegis.com.cn/180.76.158.94:443 with timeout 0
+180  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  - Enabled protocols: [TLSv1]
+190  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  - Enabled cipher suites:[TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_RC4_128_SHA, TLS_ECDHE_RSA_WITH_RC4_128_SHA, SSL_RSA_WITH_RC4_128_SHA, TLS_ECDH_ECDSA_WITH_RC4_128_SHA, TLS_ECDH_RSA_WITH_RC4_128_SHA, TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_RC4_128_MD5, TLS_EMPTY_RENEGOTIATION_INFO_SCSV]
+190  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  - Starting handshake
+350  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  - Secure session established
+350  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  -  negotiated protocol: TLSv1
+350  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  -  negotiated cipher suite: TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA
+350  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  -  peer principal: CN=pws.payegis.com.cn, OU=IT, O=江苏通付盾信息科技有限公司, L=苏州, ST=江苏, C=CN
+350  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  -  peer alternative names: [pws.payegis.com.cn]
+350  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  -  issuer principal: CN=Symantec Class 3 Secure Server CA - G4, OU=Symantec Trust Network, O=Symantec Corporation, C=US
+350  [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator  - Connection established 192.168.1.101:55965<->180.76.158.94:443
+350  [main] DEBUG org.apache.http.impl.execchain.MainClientExec  - Executing request POST /id_creditcardapi/idcard/simple_query HTTP/1.1
+350  [main] DEBUG org.apache.http.impl.execchain.MainClientExec  - Target auth state: UNCHALLENGED
+350  [main] DEBUG org.apache.http.impl.execchain.MainClientExec  - Proxy auth state: UNCHALLENGED
+350  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> POST /id_creditcardapi/idcard/simple_query HTTP/1.1
+350  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> Content-Length: 58
+350  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+350  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> Host: pws.payegis.com.cn
+350  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> Connection: Keep-Alive
+350  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.5.1 (Java/1.7.0_45)
+350  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> Accept-Encoding: gzip,deflate
+350  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "POST /id_creditcardapi/idcard/simple_query HTTP/1.1[\r][\n]"
+350  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "Content-Length: 58[\r][\n]"
+350  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "Content-Type: application/x-www-form-urlencoded; charset=UTF-8[\r][\n]"
+350  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "Host: pws.payegis.com.cn[\r][\n]"
+350  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+350  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.5.1 (Java/1.7.0_45)[\r][\n]"
+350  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+350  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "[\r][\n]"
+350  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "idCard=41282319911203481X&name=%E5%BC%A0%E4%BF%8A%E4%BC%9F"
+390  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "HTTP/1.1 200 OK[\r][\n]"
+390  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Server: Tengine[\r][\n]"
+390  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Date: Tue, 03 May 2016 05:58:38 GMT[\r][\n]"
+390  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Content-Type: application/json;charset=UTF-8[\r][\n]"
+390  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Transfer-Encoding: chunked[\r][\n]"
+390  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Connection: keep-alive[\r][\n]"
+390  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Pragma: no-cache[\r][\n]"
+390  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Cache-Control: no-cache[\r][\n]"
+390  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Expires: Thu, 01 Jan 1970 00:00:00 GMT[\r][\n]"
+390  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Strict-Transport-Security: max-age=63072000; includeSubdomains; preload[\r][\n]"
+390  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "[\r][\n]"
+390  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "44[\r][\n]"
+390  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "{"idCard":"41282319911203481X","name":"[0xe5][0xbc][0xa0][0xe4][0xbf][0x8a][0xe4][0xbc][0x9f]","statCode":"4002"}[\r][\n]"
+390  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "0[\r][\n]"
+390  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "[\r][\n]"
+400  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << HTTP/1.1 200 OK
+400  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Server: Tengine
+400  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Date: Tue, 03 May 2016 05:58:38 GMT
+400  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Content-Type: application/json;charset=UTF-8
+400  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Transfer-Encoding: chunked
+400  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Connection: keep-alive
+400  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Pragma: no-cache
+400  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Cache-Control: no-cache
+400  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Expires: Thu, 01 Jan 1970 00:00:00 GMT
+400  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Strict-Transport-Security: max-age=63072000; includeSubdomains; preload
+400  [main] DEBUG org.apache.http.impl.execchain.MainClientExec  - Connection can be kept alive indefinitely
+400  [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager  - Connection [id: 0][route: {s}->https://pws.payegis.com.cn:443] can be kept alive indefinitely
+400  [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager  - Connection released: [id: 0][route: {s}->https://pws.payegis.com.cn:443][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+0    [main] DEBUG org.apache.http.client.protocol.RequestAddCookies  - CookieSpec selected: default
+10   [main] DEBUG org.apache.http.client.protocol.RequestAuthCache  - Auth cache not set in the context
+10   [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager  - Connection request: [route: {s}->https://pws.payegis.com.cn:443][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+30   [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager  - Connection leased: [id: 0][route: {s}->https://pws.payegis.com.cn:443][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+30   [main] DEBUG org.apache.http.impl.execchain.MainClientExec  - Opening connection {s}->https://pws.payegis.com.cn:443
+70   [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator  - Connecting to pws.payegis.com.cn/180.76.158.94:443
+70   [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  - Connecting socket to pws.payegis.com.cn/180.76.158.94:443 with timeout 0
+220  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  - Enabled protocols: [TLSv1]
+220  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  - Enabled cipher suites:[TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_RC4_128_SHA, TLS_ECDHE_RSA_WITH_RC4_128_SHA, SSL_RSA_WITH_RC4_128_SHA, TLS_ECDH_ECDSA_WITH_RC4_128_SHA, TLS_ECDH_RSA_WITH_RC4_128_SHA, TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_RC4_128_MD5, TLS_EMPTY_RENEGOTIATION_INFO_SCSV]
+220  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  - Starting handshake
+460  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  - Secure session established
+460  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  -  negotiated protocol: TLSv1
+460  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  -  negotiated cipher suite: TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA
+460  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  -  peer principal: CN=pws.payegis.com.cn, OU=IT, O=江苏通付盾信息科技有限公司, L=苏州, ST=江苏, C=CN
+460  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  -  peer alternative names: [pws.payegis.com.cn]
+470  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  -  issuer principal: CN=Symantec Class 3 Secure Server CA - G4, OU=Symantec Trust Network, O=Symantec Corporation, C=US
+480  [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator  - Connection established 192.168.1.101:56118<->180.76.158.94:443
+480  [main] DEBUG org.apache.http.impl.execchain.MainClientExec  - Executing request POST /id_creditcardapi/idcard/simple_query HTTP/1.1
+480  [main] DEBUG org.apache.http.impl.execchain.MainClientExec  - Target auth state: UNCHALLENGED
+480  [main] DEBUG org.apache.http.impl.execchain.MainClientExec  - Proxy auth state: UNCHALLENGED
+480  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> POST /id_creditcardapi/idcard/simple_query HTTP/1.1
+480  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> x-hmac-auth-signature: 1obfc13：6bffd7a6-d174-4d8e-b641-81f25a3dfb0a
+480  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> x-hmac-auth-date : 1462256433729
+480  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> Content-Length: 58
+480  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+480  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> Host: pws.payegis.com.cn
+480  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> Connection: Keep-Alive
+480  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.5.1 (Java/1.7.0_45)
+480  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> Accept-Encoding: gzip,deflate
+480  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "POST /id_creditcardapi/idcard/simple_query HTTP/1.1[\r][\n]"
+480  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "x-hmac-auth-signature: 1obfc13[0x1a]6bffd7a6-d174-4d8e-b641-81f25a3dfb0a[\r][\n]"
+480  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "x-hmac-auth-date : 1462256433729[\r][\n]"
+480  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "Content-Length: 58[\r][\n]"
+480  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "Content-Type: application/x-www-form-urlencoded; charset=UTF-8[\r][\n]"
+480  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "Host: pws.payegis.com.cn[\r][\n]"
+480  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+480  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.5.1 (Java/1.7.0_45)[\r][\n]"
+480  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+480  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "[\r][\n]"
+480  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "idCard=41282319911203481X&name=%E5%BC%A0%E4%BF%8A%E4%BC%9F"
+520  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "HTTP/1.1 200 OK[\r][\n]"
+520  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Server: Tengine[\r][\n]"
+520  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Date: Tue, 03 May 2016 06:21:29 GMT[\r][\n]"
+520  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Content-Type: application/json;charset=UTF-8[\r][\n]"
+520  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Transfer-Encoding: chunked[\r][\n]"
+520  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Connection: keep-alive[\r][\n]"
+520  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Pragma: no-cache[\r][\n]"
+520  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Cache-Control: no-cache[\r][\n]"
+520  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Expires: Thu, 01 Jan 1970 00:00:00 GMT[\r][\n]"
+520  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Strict-Transport-Security: max-age=63072000; includeSubdomains; preload[\r][\n]"
+520  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "[\r][\n]"
+520  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "44[\r][\n]"
+520  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "{"idCard":"41282319911203481X","name":"[0xe5][0xbc][0xa0][0xe4][0xbf][0x8a][0xe4][0xbc][0x9f]","statCode":"4002"}[\r][\n]"
+520  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "0[\r][\n]"
+520  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "[\r][\n]"
+530  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << HTTP/1.1 200 OK
+530  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Server: Tengine
+530  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Date: Tue, 03 May 2016 06:21:29 GMT
+530  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Content-Type: application/json;charset=UTF-8
+530  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Transfer-Encoding: chunked
+530  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Connection: keep-alive
+530  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Pragma: no-cache
+530  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Cache-Control: no-cache
+530  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Expires: Thu, 01 Jan 1970 00:00:00 GMT
+530  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Strict-Transport-Security: max-age=63072000; includeSubdomains; preload
+540  [main] DEBUG org.apache.http.impl.execchain.MainClientExec  - Connection can be kept alive indefinitely
+540  [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager  - Connection [id: 0][route: {s}->https://pws.payegis.com.cn:443] can be kept alive indefinitely
+540  [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager  - Connection released: [id: 0][route: {s}->https://pws.payegis.com.cn:443][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+0    [main] DEBUG org.apache.http.client.protocol.RequestAddCookies  - CookieSpec selected: default
+10   [main] DEBUG org.apache.http.client.protocol.RequestAuthCache  - Auth cache not set in the context
+10   [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager  - Connection request: [route: {s}->https://pws.payegis.com.cn:443][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+20   [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager  - Connection leased: [id: 0][route: {s}->https://pws.payegis.com.cn:443][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+20   [main] DEBUG org.apache.http.impl.execchain.MainClientExec  - Opening connection {s}->https://pws.payegis.com.cn:443
+70   [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator  - Connecting to pws.payegis.com.cn/180.76.158.94:443
+70   [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  - Connecting socket to pws.payegis.com.cn/180.76.158.94:443 with timeout 0
+250  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  - Enabled protocols: [TLSv1]
+250  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  - Enabled cipher suites:[TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_RC4_128_SHA, TLS_ECDHE_RSA_WITH_RC4_128_SHA, SSL_RSA_WITH_RC4_128_SHA, TLS_ECDH_ECDSA_WITH_RC4_128_SHA, TLS_ECDH_RSA_WITH_RC4_128_SHA, TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_RC4_128_MD5, TLS_EMPTY_RENEGOTIATION_INFO_SCSV]
+250  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  - Starting handshake
+400  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  - Secure session established
+400  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  -  negotiated protocol: TLSv1
+400  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  -  negotiated cipher suite: TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA
+400  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  -  peer principal: CN=pws.payegis.com.cn, OU=IT, O=江苏通付盾信息科技有限公司, L=苏州, ST=江苏, C=CN
+400  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  -  peer alternative names: [pws.payegis.com.cn]
+400  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  -  issuer principal: CN=Symantec Class 3 Secure Server CA - G4, OU=Symantec Trust Network, O=Symantec Corporation, C=US
+410  [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator  - Connection established 192.168.1.101:56137<->180.76.158.94:443
+410  [main] DEBUG org.apache.http.impl.execchain.MainClientExec  - Executing request POST /id_creditcardapi/idcard/simple_query HTTP/1.1
+410  [main] DEBUG org.apache.http.impl.execchain.MainClientExec  - Target auth state: UNCHALLENGED
+410  [main] DEBUG org.apache.http.impl.execchain.MainClientExec  - Proxy auth state: UNCHALLENGED
+410  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> POST /id_creditcardapi/idcard/simple_query HTTP/1.1
+410  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> x-hmac-auth-date : 1462256606829
+410  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> x-hmac-auth-signature: 1obfc13：6bffd7a6-d174-4d8e-b641-81f25a3dfb0a
+410  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> Content-Length: 58
+410  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+410  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> Host: pws.payegis.com.cn
+410  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> Connection: Keep-Alive
+410  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.5.1 (Java/1.7.0_45)
+410  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> Accept-Encoding: gzip,deflate
+410  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "POST /id_creditcardapi/idcard/simple_query HTTP/1.1[\r][\n]"
+410  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "x-hmac-auth-date : 1462256606829[\r][\n]"
+410  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "x-hmac-auth-signature: 1obfc13[0x1a]6bffd7a6-d174-4d8e-b641-81f25a3dfb0a[\r][\n]"
+410  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "Content-Length: 58[\r][\n]"
+410  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "Content-Type: application/x-www-form-urlencoded; charset=UTF-8[\r][\n]"
+410  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "Host: pws.payegis.com.cn[\r][\n]"
+410  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+410  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.5.1 (Java/1.7.0_45)[\r][\n]"
+410  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+410  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "[\r][\n]"
+420  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "idCard=41282319911203481X&name=%E5%BC%A0%E4%BF%8A%E4%BC%9F"
+460  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "HTTP/1.1 200 OK[\r][\n]"
+460  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Server: Tengine[\r][\n]"
+460  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Date: Tue, 03 May 2016 06:24:22 GMT[\r][\n]"
+460  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Content-Type: application/json;charset=UTF-8[\r][\n]"
+460  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Transfer-Encoding: chunked[\r][\n]"
+460  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Connection: keep-alive[\r][\n]"
+460  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Pragma: no-cache[\r][\n]"
+460  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Cache-Control: no-cache[\r][\n]"
+460  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Expires: Thu, 01 Jan 1970 00:00:00 GMT[\r][\n]"
+460  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Strict-Transport-Security: max-age=63072000; includeSubdomains; preload[\r][\n]"
+460  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "[\r][\n]"
+460  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "44[\r][\n]"
+460  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "{"idCard":"41282319911203481X","name":"[0xe5][0xbc][0xa0][0xe4][0xbf][0x8a][0xe4][0xbc][0x9f]","statCode":"4002"}[\r][\n]"
+460  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "0[\r][\n]"
+460  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "[\r][\n]"
+460  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << HTTP/1.1 200 OK
+460  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Server: Tengine
+460  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Date: Tue, 03 May 2016 06:24:22 GMT
+460  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Content-Type: application/json;charset=UTF-8
+460  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Transfer-Encoding: chunked
+460  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Connection: keep-alive
+460  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Pragma: no-cache
+460  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Cache-Control: no-cache
+460  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Expires: Thu, 01 Jan 1970 00:00:00 GMT
+460  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Strict-Transport-Security: max-age=63072000; includeSubdomains; preload
+470  [main] DEBUG org.apache.http.impl.execchain.MainClientExec  - Connection can be kept alive indefinitely
+470  [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager  - Connection [id: 0][route: {s}->https://pws.payegis.com.cn:443] can be kept alive indefinitely
+470  [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager  - Connection released: [id: 0][route: {s}->https://pws.payegis.com.cn:443][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+0    [main] DEBUG org.apache.http.client.protocol.RequestAddCookies  - CookieSpec selected: default
+10   [main] DEBUG org.apache.http.client.protocol.RequestAuthCache  - Auth cache not set in the context
+10   [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager  - Connection request: [route: {s}->https://pws.payegis.com.cn:443][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+20   [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager  - Connection leased: [id: 0][route: {s}->https://pws.payegis.com.cn:443][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+20   [main] DEBUG org.apache.http.impl.execchain.MainClientExec  - Opening connection {s}->https://pws.payegis.com.cn:443
+80   [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator  - Connecting to pws.payegis.com.cn/180.76.158.94:443
+80   [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  - Connecting socket to pws.payegis.com.cn/180.76.158.94:443 with timeout 0
+220  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  - Enabled protocols: [TLSv1]
+220  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  - Enabled cipher suites:[TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_RC4_128_SHA, TLS_ECDHE_RSA_WITH_RC4_128_SHA, SSL_RSA_WITH_RC4_128_SHA, TLS_ECDH_ECDSA_WITH_RC4_128_SHA, TLS_ECDH_RSA_WITH_RC4_128_SHA, TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_RC4_128_MD5, TLS_EMPTY_RENEGOTIATION_INFO_SCSV]
+220  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  - Starting handshake
+370  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  - Secure session established
+370  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  -  negotiated protocol: TLSv1
+370  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  -  negotiated cipher suite: TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA
+370  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  -  peer principal: CN=pws.payegis.com.cn, OU=IT, O=江苏通付盾信息科技有限公司, L=苏州, ST=江苏, C=CN
+370  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  -  peer alternative names: [pws.payegis.com.cn]
+370  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  -  issuer principal: CN=Symantec Class 3 Secure Server CA - G4, OU=Symantec Trust Network, O=Symantec Corporation, C=US
+370  [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator  - Connection established 192.168.1.101:56420<->180.76.158.94:443
+370  [main] DEBUG org.apache.http.impl.execchain.MainClientExec  - Executing request GET /id_creditcardapi/idcard/simple_query%3FidCard%3D41282319911203481X%26name%3D%E5%BC%A0%E4%BF%8A%E4%BC%9F%26x-hmac-auth-date%3D1462257183764 HTTP/1.1
+370  [main] DEBUG org.apache.http.impl.execchain.MainClientExec  - Target auth state: UNCHALLENGED
+370  [main] DEBUG org.apache.http.impl.execchain.MainClientExec  - Proxy auth state: UNCHALLENGED
+370  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> GET /id_creditcardapi/idcard/simple_query%3FidCard%3D41282319911203481X%26name%3D%E5%BC%A0%E4%BF%8A%E4%BC%9F%26x-hmac-auth-date%3D1462257183764 HTTP/1.1
+370  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> x-hmac-auth-date : 1462257183774
+370  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> x-hmac-auth-signature: 1obfc13：6bffd7a6-d174-4d8e-b641-81f25a3dfb0a
+380  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> Host: pws.payegis.com.cn
+380  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> Connection: Keep-Alive
+380  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.5.1 (Java/1.7.0_45)
+380  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> Accept-Encoding: gzip,deflate
+380  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "GET /id_creditcardapi/idcard/simple_query%3FidCard%3D41282319911203481X%26name%3D%E5%BC%A0%E4%BF%8A%E4%BC%9F%26x-hmac-auth-date%3D1462257183764 HTTP/1.1[\r][\n]"
+380  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "x-hmac-auth-date : 1462257183774[\r][\n]"
+380  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "x-hmac-auth-signature: 1obfc13[0x1a]6bffd7a6-d174-4d8e-b641-81f25a3dfb0a[\r][\n]"
+380  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "Host: pws.payegis.com.cn[\r][\n]"
+380  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+380  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.5.1 (Java/1.7.0_45)[\r][\n]"
+380  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+380  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "[\r][\n]"
+430  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "HTTP/1.1 404 Not Found[\r][\n]"
+430  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Server: Tengine[\r][\n]"
+430  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Date: Tue, 03 May 2016 06:33:59 GMT[\r][\n]"
+430  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Content-Type: text/html;charset=UTF-8[\r][\n]"
+430  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Transfer-Encoding: chunked[\r][\n]"
+430  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Connection: keep-alive[\r][\n]"
+430  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Content-Encoding: gzip[\r][\n]"
+430  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "[\r][\n]"
+430  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "b1[\r][\n]"
+430  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "[0x1f][0x8b][0x8][0x0][0x0][0x0][0x0][0x0][0x0][0x3]][0x8f]1[0xe][0xc2]0[0xc]E[0xaf][0xe2]-[SP'[0xe4][0x86][0xad][0x3][0x3][0xe2][0x6](i[0xdc][0xa6][0x10][0x12][0x14][0x19][0xa2][0xde][0x9e][0x94][\n]"
+430  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "[0x84][0xd8][0xec][0xff][0xbf][0xfd]lt|[0xf3][\n]"
+430  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "[0x1d]i[0xab][0x90]'[0xf6][0xa4][0x9a][0xba][0x81]cd[0xe8][0xe2]#X[0x94][0xab][0x88]r[0x8d][0x98]hg0c[0x1f]}L[0xad][0xc8]nb[0x12][\n]"
+430  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "{[\n]"
+430  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "L[0xa9][0xac][0xd9][0xfc]O[0x17][0x5][0xe5][0xd7].[0x91]O[0xad][0xc1]%[0x1a]Z[0xe1][0x98][0xef];)s[0xce][0xd5]e[0x98][0x82][0xf6]U[0x1f]o[0xfb][0xa1][0xa5][0xa7][0x0][0xd6]i$n[0xc5][0xd9]x[0x1d][0xae][0x85]c[0xd4])fJd[0xc1][0xcc]p[0xe8][0x96]8l[0xab][0x1a][0xa5])[0x14][0xfd]C[0x92][0xcb][0x9d][0xa5][0xf7][0x2]S[0x83]\[0x98][0xe4][0x0][0x0][0x0][\r][\n]"
+430  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "0[\r][\n]"
+430  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "[\r][\n]"
+430  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << HTTP/1.1 404 Not Found
+430  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Server: Tengine
+430  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Date: Tue, 03 May 2016 06:33:59 GMT
+430  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Content-Type: text/html;charset=UTF-8
+430  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Transfer-Encoding: chunked
+430  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Connection: keep-alive
+430  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Content-Encoding: gzip
+440  [main] DEBUG org.apache.http.impl.execchain.MainClientExec  - Connection can be kept alive indefinitely
+440  [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager  - Connection [id: 0][route: {s}->https://pws.payegis.com.cn:443] can be kept alive indefinitely
+440  [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager  - Connection released: [id: 0][route: {s}->https://pws.payegis.com.cn:443][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+0    [main] DEBUG org.apache.http.client.protocol.RequestAddCookies  - CookieSpec selected: default
+10   [main] DEBUG org.apache.http.client.protocol.RequestAuthCache  - Auth cache not set in the context
+10   [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager  - Connection request: [route: {s}->https://pws.payegis.com.cn:443][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+20   [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager  - Connection leased: [id: 0][route: {s}->https://pws.payegis.com.cn:443][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+30   [main] DEBUG org.apache.http.impl.execchain.MainClientExec  - Opening connection {s}->https://pws.payegis.com.cn:443
+30   [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator  - Connecting to pws.payegis.com.cn/180.76.158.94:443
+30   [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  - Connecting socket to pws.payegis.com.cn/180.76.158.94:443 with timeout 0
+160  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  - Enabled protocols: [TLSv1]
+160  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  - Enabled cipher suites:[TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_RC4_128_SHA, TLS_ECDHE_RSA_WITH_RC4_128_SHA, SSL_RSA_WITH_RC4_128_SHA, TLS_ECDH_ECDSA_WITH_RC4_128_SHA, TLS_ECDH_RSA_WITH_RC4_128_SHA, TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_RC4_128_MD5, TLS_EMPTY_RENEGOTIATION_INFO_SCSV]
+160  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  - Starting handshake
+290  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  - Secure session established
+290  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  -  negotiated protocol: TLSv1
+290  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  -  negotiated cipher suite: TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA
+290  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  -  peer principal: CN=pws.payegis.com.cn, OU=IT, O=江苏通付盾信息科技有限公司, L=苏州, ST=江苏, C=CN
+290  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  -  peer alternative names: [pws.payegis.com.cn]
+290  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  -  issuer principal: CN=Symantec Class 3 Secure Server CA - G4, OU=Symantec Trust Network, O=Symantec Corporation, C=US
+290  [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator  - Connection established 192.168.1.101:54263<->180.76.158.94:443
+290  [main] DEBUG org.apache.http.impl.execchain.MainClientExec  - Executing request GET /id_creditcardapi/idcard/simple_query%3FidCard%3D41282319911203481X%26name%3D%E5%BC%A0%E4%BF%8A%E4%BC%9F%26x-hmac-auth-date%3D1462329001070 HTTP/1.1
+290  [main] DEBUG org.apache.http.impl.execchain.MainClientExec  - Target auth state: UNCHALLENGED
+290  [main] DEBUG org.apache.http.impl.execchain.MainClientExec  - Proxy auth state: UNCHALLENGED
+300  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> GET /id_creditcardapi/idcard/simple_query%3FidCard%3D41282319911203481X%26name%3D%E5%BC%A0%E4%BF%8A%E4%BC%9F%26x-hmac-auth-date%3D1462329001070 HTTP/1.1
+300  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> x-hmac-auth-date : 1462329001080
+300  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> x-hmac-auth-signature: 1obfc13：6bffd7a6-d174-4d8e-b641-81f25a3dfb0a
+300  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> Host: pws.payegis.com.cn
+300  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> Connection: Keep-Alive
+300  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.5.1 (Java/1.7.0_45)
+300  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> Accept-Encoding: gzip,deflate
+300  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "GET /id_creditcardapi/idcard/simple_query%3FidCard%3D41282319911203481X%26name%3D%E5%BC%A0%E4%BF%8A%E4%BC%9F%26x-hmac-auth-date%3D1462329001070 HTTP/1.1[\r][\n]"
+300  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "x-hmac-auth-date : 1462329001080[\r][\n]"
+300  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "x-hmac-auth-signature: 1obfc13[0x1a]6bffd7a6-d174-4d8e-b641-81f25a3dfb0a[\r][\n]"
+300  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "Host: pws.payegis.com.cn[\r][\n]"
+300  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+300  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.5.1 (Java/1.7.0_45)[\r][\n]"
+300  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+300  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "[\r][\n]"
+340  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "HTTP/1.1 403 Forbidden[\r][\n]"
+340  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Server: Tengine[\r][\n]"
+340  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Date: Wed, 04 May 2016 02:30:57 GMT[\r][\n]"
+340  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Content-Type: text/html[\r][\n]"
+340  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Transfer-Encoding: chunked[\r][\n]"
+340  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Connection: keep-alive[\r][\n]"
+340  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Content-Encoding: gzip[\r][\n]"
+340  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "[\r][\n]"
+340  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "4e1[\r][\n]"
+340  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "[0x1f][0x8b][0x8][0x0][0x0][0x0][0x0][0x0][0x0][0x3][0xd5]V[0xdf][0x8f][0xdb]D[0x10]~[0xa6]R[0xff][0x7][0x93][0x13][0xba]V[0xda][0x8d][0xed]8[0xe9][0xdd][0xd9]wE[0xf4]Z[0xa9][0x95]Z[0xa8][0xe0]*[0xda][0xc7][0x8d][0xbd][0x8e]W]{[0xcd]zs[0xc9]5BBH[0x5][0x9][0x15]A[0x85]@[0xaa][0x0][0xf1]RJ[0xc5][0xaf][0xf6][0x1][0x89][0xaa][0xa5][0xfd]cP/G[0x9f][0xf8][0x17][0x98]];W_[0xce]iyB"[0xb9]Kb[0xcf][0xcc][0xce]7[0xdf]|[0xb3][0xde][0xa3]G[0xd6]_=[0xfd][0xd6][0xe6][0xd6][0x95][0x8b]g[0xac]D[0xa5][0xdc][0xba]x[0xe9][0xd4][0xf9]s[0x9b]V[0xb][0xdb][0xf6][0xbb][0xde][0xa6]m[0x9f][0xde]:m]>[0xbb]u[0xe1][0xbc][0xe5][0xb6][0x1d]kK[0x92][0xac]`[0x8a][0x89][0x8c]p[0xdb]>[0xf3]f[0xcb]j%J[0xe5][0xbe]m[0x8f]F[0xa3][0xf6][0xc8]k[0xb]9[0xb0][0xb7][0xde][0xb6][0xc7]z-W[0x7]W?[0xb1][0xaa]E[0xb6]#[0x15][0xb5]N[0x1e]=[0xb2]n2[0x8e]S[0x9e][0x15][0x1b][\r][0xeb][0xb8]kkkex[0xe9]LI[0xa4][0x83]R[0xaa][0x8]`U9[0xa6][0xef][\r][0xd9][0xf6]FkSd[0x8a]f[\n]"
+340  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "o[0xed][0xe4][0xb4]e[0x85][0xe5][0xd5]FK[0xd1][0xb1][0xb2]u[0x86][0xc0][\n]"
+340  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "[0x13]"[0xb][0xaa]6[0x86]*[0xc6][0xab]-[0xcb]n\[0xe6]2[0xbe][0xf4][0x6][0xde][0x14]iN[0x14][0xeb][0xf3][0xfa]J[0xe7][0xce]l[0xd0]h@Q[0x98]H[0x91][0xd2][\r][0xd7][0xc0]QLqzr[0xf7][0xd3][0x8f][0xf7][0x1e][0xfe][0xb0][0xf7][0xe8][0xb7][0xe9]'[0xb7][0xd7][0xed][0xf2][0xde][0xd1]#`.[0xd4][0xe][0xa7][0x96][0x2]H[0x15][0x92][0xb0](t\_D;([0x14][0x11]EQ[0x84]"[0xb6][0x8d]"[0x8e]"[0x85]bFy[0x4][0x10]Q,d[0x8a][0x12][0x17]%[0x1d][0x94]x([0xe9][0xa2][0xa4][0x87][0x92][0x13][0x88]e[0xf9]P!N[0x7]4[0x8b][0x10]gHp[0x94][0xa3]\R[0xa4]"[0xa4][0xb]%[0x92][0x12][0xa4][0x12]4[0xe4][0x93][0x94][0xc8][0x1][0xcb]|'[0xc8]I[0x14][0xb1]l[0xe0];[0xef][0x97]i'1P[0xe3][0xbb][0xdd]|l[0xbb][0xed][0x9e][0xb5]|[0x81][0x85]R[0x14]"V[0xd6][0x15]r[0x96][0xb2]e[0xb4][0xbc][0xfb][0xe4][0xd7][0xbf][0x1e][0xdf]{[0xf6][0xf5][0xf5]g[0x8f]n.[0xa3][0xb3][0x94]oS[0xc5]B[0x82][0xde][0x81][0xae][0xe3][0x82]J[0x16][0x7])[0xcb][0xf0][0x88]E*[0xf1][0xdd][0x8e][0xe3][0xe4][0xe3][0xa0]O[0xc2][0xab][0x3])[0x86]Y[0xe4]/[0xc5]N[0xec][0xc6]^[0x0][0xf9][0xfc]X[0x84][0xc3]b"[0x86][0x8a][0xb3][0x8c][0x1a][0x8][0x87][0x8b]*[0x94][0x14][0xd9][0xc0][0xc0][0xc2]#[0xca][0x6][0x89][0xf2]W[0x1c][0xed]J&[0xa1][0xe0]B[0xfa]K[0xdd][0xce]j?$[0x81][0xae][0x10]G4[0x14][0x12]z#2?[0x13][0x19][0xd5]n~"[0xb6][0xa9][0x9c][0xcc][0x9b][0x1][0xb][0x95]:/[0xf8][0xb4][0xa9][0x94]B[0xe2][0x9c][0xc][0xe8][0xa4][0x1][0xea][0x8c][0xa3]U([0xc5]r,W[0x1f][0x8c][0xc2]ZP[0x4][0x16][0x93][0x93]\[0x94][0xda][0xf7]%[0xe5][0x0]d[0x9b][0x6][0xd7]0[0x83]\c[0xdf][0x9d][0x8b]I![0xa0][0xc1][0xfd][0x0][0x80][0xb5][0x18][0xde][0xc1][0xac][[0x16][0x19]*[0x11][0x94][0xcc][0x9e]pW[0x80]X[0x9c][0x16][0xb8]/[0xc6][0xb8]`[0xd7]t[0x17][0xfb]BBU[0xfa]N[0x0]d[0xf5][0xaf]2[0xb5][0xc8][0x9a][0x8a]k[0xb]L[0xcd][0xcb][0xcd]8[0xe8]i[0xe][0xcc][0xc7][0xca]a[0x16]tE~[0x9f][0x82]<)4[0xc7][0xc][0x9c][0xbf][0xbc][0x1c]D[0xac][0xc8]9[0xd9][0xf1][0xfb]\[0x84]W[0xeb]Z[0x18]J~[0x8c][0xa5][0x3][0xdb][0xd0][0x11][0xd8]?e[0xf0][0xb7][0xf3]l[0xf0][0xba][0xdb][0xed][0xac][0xac][0xac]z]g[0xed][0x84][0xb7]r<H[0xaa][0xd6]C[0xcd][0xfb][0xc][0x93]~![0xf8]P[0xd1]@[0x89][0xdc][0xc7][0x9a][0x8e]Jt[0x8e][0xf3]Z[0xc0]i[0xac][0x8c][0xa4]j[0xcd][0xc5][0x1a][0xa0][0x95]x[0xa5][0x9a][0x80]3[0xea]w@[0xe9]A]\][0xc7][0x9][0xf6]iTJ[0xa4][0xbe][0xb][0xc5]B"[0x16]YK[0x91][0xa3][0xdf][0xcd][0x8b]Zu[0xa5][0x9a][0xb5]{Mk[0x97][0xbd][0xc4][0xd2]([0xb9][0xd3][0xcc][0xa1][0x95]t[0xeb][0x10][0xf5][0x4][0xcd]C[0xac][0xb4][0xef]y[0xde][0x1c][0x1a][0x12]j[0xf5][0x17][0xb5]x[0xe7][0xb9][0x2][0xcd][0xe0][0xd4][0x9][0xa9][0xbc]-[0xd8]dj[0x11]z[0xfc][0xf7][0xbb][0xc6]2=%[0xb8]l[0xde]L[0x6]^9[\n]"
+340  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "0[0xc][0x1a]\I{[0xf]X[0xff][0xcf][0xf4]X[0xd5][0xbf][0xea][0xe9][0xf7][0x82][0xa2][0x4][0x9f]pV(l[0xb6]Y[0x1f][0xb6][0x6][0x96][0x12]>[0xdb][0xf1][0xb0][0x11]HC[0x3]f[0x94]p[0x6][0xd1]Px[0xa5][0xbc]N[0xbb]G[0xd3][0xe6]D/[0x95][0xfc]a[0xc5][0xce][0xf6][0x4][0xec][0x82][0xd8]J[0x95]i[0xfd][0x1a]Lz[0xba]*J[0xcb][0xdd][0xb3]B`[0xa8][0xc6][0xfb][0x83][0x9b][0x90]H[0x8c]|[0xe8][0x94][0xd5][0x83]O[0xab][0xd4][0xd5][0x1f]K[0xf0]D<8[0xfd]/[0xf4]4[0xe3][0xfe]B[0xf][0x93][0xd2]<[0x9a][0xf5]s[0xc7][0x97]B[0x11]E[0x8f][0xe1]nD[0x7][0xc7][0xf7][0x13]-[0xb4][0xc3][0x6][0xb5][0xd0]&[0x16][0x9a][0x16][0x84],[0xe0][0x9f][0xc4][\n]"
+340  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "v[0xde][0x85];[0xce][0xbf][0xa6][0xbf][0x1c][0xca][0xff][0x7][0xff]/[0xa1][0xbf]27[0xb1]_[0x99][0x1a][0xc8]/-[0x87][0xb8]7[0xb7][0x81][0xfa]u[0xdb]L[0x12][0x1c]P[0xf4][0xef][0xa4]:j[0xe9][0xc3]Jy[0xb]6[0x11]+[0xe4][0xa4][0x80][0x83][0xda][0xf3][0x7][0xaa]>[0xcf]X[0xf0]Zo[0xb4]>p[0xce][0xfc]^[0xe0][0xab]w[0xef][0xba][0x9b]qM[0xbc]*[0x81][0xbe][0x9a][0xbd][0xf6][0x1e][0xdf][0xdc][0xfb][0xe9][0xd6][0xf4][0xb3][0xcf][0xf7]n?,[0xd3][0xcf],[0x80]{>`[0x1][0xb2]j[0x1f][0x98]Oh[0x92]B-[\r]Y[0x8d])[0xe9][0x9e],[0xb3][0xd7]O}O[0x1f][0xfc][0xf2][0xe7][0x7]w[0xe0][0xf][0xd2]w![0xf2][0x15][0xfd][0xda][0xbd][0xff][0xd1][0xde][0xa3][[0xd3][0xf][0xef][0xee]>[0xb8]3[0xfd][0xf6][0xfb][0xdd][0xeb]w[0xa7]_[0xdd][0xfa][0xf8][0x8b]g?[0xde][0xf8][0xfb][0x8f][0x1b][0xd3]/[0xfe][0xeb][0xde][0xef][0xd3]o[0xbe][0xdb]}r[0xfd]`[0x9]&[0x8d]}[0x18][0xc2][0xfc][0xbd][0xfa][0xf5][0xec][0xf7][0xec][7[0xb0]j[0x1c]@[0x82][0xf3]/[0x80][0xfa][0x7]Cz[0x13]@[0xe7][0xb][0x0][0x0][\r][\n]"
+340  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "0[\r][\n]"
+340  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "[\r][\n]"
+350  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << HTTP/1.1 403 Forbidden
+350  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Server: Tengine
+350  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Date: Wed, 04 May 2016 02:30:57 GMT
+350  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Content-Type: text/html
+350  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Transfer-Encoding: chunked
+350  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Connection: keep-alive
+350  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Content-Encoding: gzip
+350  [main] DEBUG org.apache.http.impl.execchain.MainClientExec  - Connection can be kept alive indefinitely
+350  [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager  - Connection [id: 0][route: {s}->https://pws.payegis.com.cn:443] can be kept alive indefinitely
+360  [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager  - Connection released: [id: 0][route: {s}->https://pws.payegis.com.cn:443][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+0    [main] DEBUG org.apache.http.client.protocol.RequestAddCookies  - CookieSpec selected: default
+1    [main] DEBUG org.apache.http.client.protocol.RequestAuthCache  - Auth cache not set in the context
+1    [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager  - Connection request: [route: {s}->https://pws.payegis.com.cn:443][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+21   [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager  - Connection leased: [id: 0][route: {s}->https://pws.payegis.com.cn:443][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+21   [main] DEBUG org.apache.http.impl.execchain.MainClientExec  - Opening connection {s}->https://pws.payegis.com.cn:443
+21   [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator  - Connecting to pws.payegis.com.cn/180.76.158.94:443
+21   [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  - Connecting socket to pws.payegis.com.cn/180.76.158.94:443 with timeout 0
+261  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  - Enabled protocols: [TLSv1]
+261  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  - Enabled cipher suites:[TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_RC4_128_SHA, TLS_ECDHE_RSA_WITH_RC4_128_SHA, SSL_RSA_WITH_RC4_128_SHA, TLS_ECDH_ECDSA_WITH_RC4_128_SHA, TLS_ECDH_RSA_WITH_RC4_128_SHA, TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_RC4_128_MD5, TLS_EMPTY_RENEGOTIATION_INFO_SCSV]
+261  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  - Starting handshake
+2281 [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  - Secure session established
+2281 [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  -  negotiated protocol: TLSv1
+2281 [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  -  negotiated cipher suite: TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA
+2281 [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  -  peer principal: CN=pws.payegis.com.cn, OU=IT, O=江苏通付盾信息科技有限公司, L=苏州, ST=江苏, C=CN
+2281 [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  -  peer alternative names: [pws.payegis.com.cn]
+2281 [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  -  issuer principal: CN=Symantec Class 3 Secure Server CA - G4, OU=Symantec Trust Network, O=Symantec Corporation, C=US
+2281 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator  - Connection established 192.168.1.101:54296<->180.76.158.94:443
+2281 [main] DEBUG org.apache.http.impl.execchain.MainClientExec  - Executing request GET /id_creditcardapi/idcard/simple_query%3FidCard%3D41282319911203481X%26name%3D%E5%BC%A0%E4%BF%8A%E4%BC%9F%26x-hmac-auth-date%3D1462329334672 HTTP/1.1
+2281 [main] DEBUG org.apache.http.impl.execchain.MainClientExec  - Target auth state: UNCHALLENGED
+2281 [main] DEBUG org.apache.http.impl.execchain.MainClientExec  - Proxy auth state: UNCHALLENGED
+2281 [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> GET /id_creditcardapi/idcard/simple_query%3FidCard%3D41282319911203481X%26name%3D%E5%BC%A0%E4%BF%8A%E4%BC%9F%26x-hmac-auth-date%3D1462329334672 HTTP/1.1
+2281 [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> x-hmac-auth-date : 1462329334672
+2281 [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> x-hmac-auth-signature: myei5r1：5aea3663-6791-4905-b869-71a443613e2c
+2281 [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> Host: pws.payegis.com.cn
+2281 [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> Connection: Keep-Alive
+2281 [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.5.1 (Java/1.7.0_45)
+2281 [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> Accept-Encoding: gzip,deflate
+2281 [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "GET /id_creditcardapi/idcard/simple_query%3FidCard%3D41282319911203481X%26name%3D%E5%BC%A0%E4%BF%8A%E4%BC%9F%26x-hmac-auth-date%3D1462329334672 HTTP/1.1[\r][\n]"
+2281 [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "x-hmac-auth-date : 1462329334672[\r][\n]"
+2281 [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "x-hmac-auth-signature: myei5r1[0x1a]5aea3663-6791-4905-b869-71a443613e2c[\r][\n]"
+2281 [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "Host: pws.payegis.com.cn[\r][\n]"
+2281 [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+2281 [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.5.1 (Java/1.7.0_45)[\r][\n]"
+2281 [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+2281 [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "[\r][\n]"
+2322 [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "HTTP/1.1 403 Forbidden[\r][\n]"
+2322 [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Server: Tengine[\r][\n]"
+2322 [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Date: Wed, 04 May 2016 02:36:32 GMT[\r][\n]"
+2322 [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Content-Type: text/html[\r][\n]"
+2322 [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Transfer-Encoding: chunked[\r][\n]"
+2322 [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Connection: keep-alive[\r][\n]"
+2322 [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Content-Encoding: gzip[\r][\n]"
+2322 [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "[\r][\n]"
+2322 [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "4e1[\r][\n]"
+2322 [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "[0x1f][0x8b][0x8][0x0][0x0][0x0][0x0][0x0][0x0][0x3][0xd5]V[0xdf][0x8f][0xdb]D[0x10]~[0xa6]R[0xff][0x7][0x93][0x13][0xba]V[0xda][0x8d][0xed]8[0xe9][0xdd][0xd9]wE[0xf4]Z[0xa9][0x95]Z[0xa8][0xe0]*[0xda][0xc7][0x8d][0xbd][0x8e]W]{[0xcd]zs[0xc9]5BBH[0x5][0x9][0x15]A[0x85]@[0xaa][0x0][0xf1]RJ[0xc5][0xaf][0xf6][0x1][0x89][0xaa][0xa5][0xfd]cP/G[0x9f][0xf8][0x17][0x98]];W_[0xce]iyB"[0xb9]Kb[0xcf][0xcc][0xce]7[0xdf]|[0xb3][0xde][0xa3]G[0xd6]_=[0xfd][0xd6][0xe6][0xd6][0x95][0x8b]g[0xac]D[0xa5][0xdc][0xba]x[0xe9][0xd4][0xf9]s[0x9b]V[0xb][0xdb][0xf6][0xbb][0xde][0xa6]m[0x9f][0xde]:m]>[0xbb]u[0xe1][0xbc][0xe5][0xb6][0x1d]kK[0x92][0xac]`[0x8a][0x89][0x8c]p[0xdb]>[0xf3]f[0xcb]j%J[0xe5][0xbe]m[0x8f]F[0xa3][0xf6][0xc8]k[0xb]9[0xb0][0xb7][0xde][0xb6][0xc7]z-W[0x7]W?[0xb1][0xaa]E[0xb6]#[0x15][0xb5]N[0x1e]=[0xb2]n2[0x8e]S[0x9e][0x15][0x1b][\r][0xeb][0xb8]kkkex[0xe9]LI[0xa4][0x83]R[0xaa][0x8]`U9[0xa6][0xef][\r][0xd9][0xf6]FkSd[0x8a]f[\n]"
+2322 [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "o[0xed][0xe4][0xb4]e[0x85][0xe5][0xd5]FK[0xd1][0xb1][0xb2]u[0x86][0xc0][\n]"
+2322 [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "[0x13]"[0xb][0xaa]6[0x86]*[0xc6][0xab]-[0xcb]n\[0xe6]2[0xbe][0xf4][0x6][0xde][0x14]iN[0x14][0xeb][0xf3][0xfa]J[0xe7][0xce]l[0xd0]h@Q[0x98]H[0x91][0xd2][\r][0xd7][0xc0]QLqzr[0xf7][0xd3][0x8f][0xf7][0x1e][0xfe][0xb0][0xf7][0xe8][0xb7][0xe9]'[0xb7][0xd7][0xed][0xf2][0xde][0xd1]#`.[0xd4][0xe][0xa7][0x96][0x2]H[0x15][0x92][0xb0](t\_D;([0x14][0x11]EQ[0x84]"[0xb6][0x8d]"[0x8e]"[0x85]bFy[0x4][0x10]Q,d[0x8a][0x12][0x17]%[0x1d][0x94]x([0xe9][0xa2][0xa4][0x87][0x92][0x13][0x88]e[0xf9]P!N[0x7]4[0x8b][0x10]gHp[0x94][0xa3]\R[0xa4]"[0xa4][0xb]%[0x92][0x12][0xa4][0x12]4[0xe4][0x93][0x94][0xc8][0x1][0xcb]|'[0xc8]I[0x14][0xb1]l[0xe0];[0xef][0x97]i'1P[0xe3][0xbb][0xdd]|l[0xbb][0xed][0x9e][0xb5]|[0x81][0x85]R[0x14]"V[0xd6][0x15]r[0x96][0xb2]e[0xb4][0xbc][0xfb][0xe4][0xd7][0xbf][0x1e][0xdf]{[0xf6][0xf5][0xf5]g[0x8f]n.[0xa3][0xb3][0x94]oS[0xc5]B[0x82][0xde][0x81][0xae][0xe3][0x82]J[0x16][0x7])[0xcb][0xf0][0x88]E*[0xf1][0xdd][0x8e][0xe3][0xe4][0xe3][0xa0]O[0xc2][0xab][0x3])[0x86]Y[0xe4]/[0xc5]N[0xec][0xc6]^[0x0][0xf9][0xfc]X[0x84][0xc3]b"[0x86][0x8a][0xb3][0x8c][0x1a][0x8][0x87][0x8b]*[0x94][0x14][0xd9][0xc0][0xc0][0xc2]#[0xca][0x6][0x89][0xf2]W[0x1c][0xed]J&[0xa1][0xe0]B[0xfa]K[0xdd][0xce]j?$[0x81][0xae][0x10]G4[0x14][0x12]z#2?[0x13][0x19][0xd5]n~"[0xb6][0xa9][0x9c][0xcc][0x9b][0x1][0xb][0x95]:/[0xf8][0xb4][0xa9][0x94]B[0xe2][0x9c][0xc][0xe8][0xa4][0x1][0xea][0x8c][0xa3]U([0xc5]r,W[0x1f][0x8c][0xc2]ZP[0x4][0x16][0x93][0x93]\[0x94][0xda][0xf7]%[0xe5][0x0]d[0x9b][0x6][0xd7]0[0x83]\c[0xdf][0x9d][0x8b]I![0xa0][0xc1][0xfd][0x0][0x80][0xb5][0x18][0xde][0xc1][0xac][[0x16][0x19]*[0x11][0x94][0xcc][0x9e]pW[0x80]X[0x9c][0x16][0xb8]/[0xc6][0xb8]`[0xd7]t[0x17][0xfb]BBU[0xfa]N[0x0]d[0xf5][0xaf]2[0xb5][0xc8][0x9a][0x8a]k[0xb]L[0xcd][0xcb][0xcd]8[0xe8]i[0xe][0xcc][0xc7][0xca]a[0x16]tE~[0x9f][0x82]<)4[0xc7][0xc][0x9c][0xbf][0xbc][0x1c]D[0xac][0xc8]9[0xd9][0xf1][0xfb]\[0x84]W[0xeb]Z[0x18]J~[0x8c][0xa5][0x3][0xdb][0xd0][0x11][0xd8]?e[0xf0][0xb7][0xf3]l[0xf0][0xba][0xdb][0xed][0xac][0xac][0xac]z]g[0xed][0x84][0xb7]r<H[0xaa][0xd6]C[0xcd][0xfb][0xc][0x93]~![0xf8]P[0xd1]@[0x89][0xdc][0xc7][0x9a][0x8e]Jt[0x8e][0xf3]Z[0xc0]i[0xac][0x8c][0xa4]j[0xcd][0xc5][0x1a][0xa0][0x95]x[0xa5][0x9a][0x80]3[0xea]w@[0xe9]A]\][0xc7][0x9][0xf6]iTJ[0xa4][0xbe][0xb][0xc5]B"[0x16]YK[0x91][0xa3][0xdf][0xcd][0x8b]Zu[0xa5][0x9a][0xb5]{Mk[0x97][0xbd][0xc4][0xd2]([0xb9][0xd3][0xcc][0xa1][0x95]t[0xeb][0x10][0xf5][0x4][0xcd]C[0xac][0xb4][0xef]y[0xde][0x1c][0x1a][0x12]j[0xf5][0x17][0xb5]x[0xe7][0xb9][0x2][0xcd][0xe0][0xd4][0x9][0xa9][0xbc]-[0xd8]dj[0x11]z[0xfc][0xf7][0xbb][0xc6]2=%[0xb8]l[0xde]L[0x6]^9[\n]"
+2322 [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "0[0xc][0x1a]\I{[0xf]X[0xff][0xcf][0xf4]X[0xd5][0xbf][0xea][0xe9][0xf7][0x82][0xa2][0x4][0x9f]pV(l[0xb6]Y[0x1f][0xb6][0x6][0x96][0x12]>[0xdb][0xf1][0xb0][0x11]HC[0x3]f[0x94]p[0x6][0xd1]Px[0xa5][0xbc]N[0xbb]G[0xd3][0xe6]D/[0x95][0xfc]a[0xc5][0xce][0xf6][0x4][0xec][0x82][0xd8]J[0x95]i[0xfd][0x1a]Lz[0xba]*J[0xcb][0xdd][0xb3]B`[0xa8][0xc6][0xfb][0x83][0x9b][0x90]H[0x8c]|[0xe8][0x94][0xd5][0x83]O[0xab][0xd4][0xd5][0x1f]K[0xf0]D<8[0xfd]/[0xf4]4[0xe3][0xfe]B[0xf][0x93][0xd2]<[0x9a][0xf5]s[0xc7][0x97]B[0x11]E[0x8f][0xe1]nD[0x7][0xc7][0xf7][0x13]-[0xb4][0xc3][0x6][0xb5][0xd0]&[0x16][0x9a][0x16][0x84],[0xe0][0x9f][0xc4][\n]"
+2322 [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "v[0xde][0x85];[0xce][0xbf][0xa6][0xbf][0x1c][0xca][0xff][0x7][0xff]/[0xa1][0xbf]27[0xb1]_[0x99][0x1a][0xc8]/-[0x87][0xb8]7[0xb7][0x81][0xfa]u[0xdb]L[0x12][0x1c]P[0xf4][0xef][0xa4]:j[0xe9][0xc3]Jy[0xb]6[0x11]+[0xe4][0xa4][0x80][0x83][0xda][0xf3][0x7][0xaa]>[0xcf]X[0xf0]Zo[0xb4]>p[0xce][0xfc]^[0xe0][0xab]w[0xef][0xba][0x9b]qM[0xbc]*[0x81][0xbe][0x9a][0xbd][0xf6][0x1e][0xdf][0xdc][0xfb][0xe9][0xd6][0xf4][0xb3][0xcf][0xf7]n?,[0xd3][0xcf],[0x80]{>`[0x1][0xb2]j[0x1f][0x98]Oh[0x92]B-[\r]Y[0x8d])[0xe9][0x9e],[0xb3][0xd7]O}O[0x1f][0xfc][0xf2][0xe7][0x7]w[0xe0][0xf][0xd2]w![0xf2][0x15][0xfd][0xda][0xbd][0xff][0xd1][0xde][0xa3][[0xd3][0xf][0xef][0xee]>[0xb8]3[0xfd][0xf6][0xfb][0xdd][0xeb]w[0xa7]_[0xdd][0xfa][0xf8][0x8b]g?[0xde][0xf8][0xfb][0x8f][0x1b][0xd3]/[0xfe][0xeb][0xde][0xef][0xd3]o[0xbe][0xdb]}r[0xfd]`[0x9]&[0x8d]}[0x18][0xc2][0xfc][0xbd][0xfa][0xf5][0xec][0xf7][0xec][7[0xb0]j[0x1c]@[0x82][0xf3]/[0x80][0xfa][0x7]Cz[0x13]@[0xe7][0xb][0x0][0x0][\r][\n]"
+2322 [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "0[\r][\n]"
+2322 [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "[\r][\n]"
+2322 [main] DEBUG org.apache.http.headers  - http-outgoing-0 << HTTP/1.1 403 Forbidden
+2322 [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Server: Tengine
+2322 [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Date: Wed, 04 May 2016 02:36:32 GMT
+2322 [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Content-Type: text/html
+2322 [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Transfer-Encoding: chunked
+2322 [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Connection: keep-alive
+2322 [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Content-Encoding: gzip
+2322 [main] DEBUG org.apache.http.impl.execchain.MainClientExec  - Connection can be kept alive indefinitely
+2332 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager  - Connection [id: 0][route: {s}->https://pws.payegis.com.cn:443] can be kept alive indefinitely
+2332 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager  - Connection released: [id: 0][route: {s}->https://pws.payegis.com.cn:443][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+0    [main] DEBUG org.apache.http.client.protocol.RequestAddCookies  - CookieSpec selected: default
+1    [main] DEBUG org.apache.http.client.protocol.RequestAuthCache  - Auth cache not set in the context
+1    [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager  - Connection request: [route: {s}->https://pws.payegis.com.cn:443][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+21   [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager  - Connection leased: [id: 0][route: {s}->https://pws.payegis.com.cn:443][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+21   [main] DEBUG org.apache.http.impl.execchain.MainClientExec  - Opening connection {s}->https://pws.payegis.com.cn:443
+21   [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator  - Connecting to pws.payegis.com.cn/180.76.158.94:443
+21   [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  - Connecting socket to pws.payegis.com.cn/180.76.158.94:443 with timeout 0
+161  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  - Enabled protocols: [TLSv1]
+161  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  - Enabled cipher suites:[TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_RC4_128_SHA, TLS_ECDHE_RSA_WITH_RC4_128_SHA, SSL_RSA_WITH_RC4_128_SHA, TLS_ECDH_ECDSA_WITH_RC4_128_SHA, TLS_ECDH_RSA_WITH_RC4_128_SHA, TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_RC4_128_MD5, TLS_EMPTY_RENEGOTIATION_INFO_SCSV]
+161  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  - Starting handshake
+291  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  - Secure session established
+291  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  -  negotiated protocol: TLSv1
+291  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  -  negotiated cipher suite: TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA
+291  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  -  peer principal: CN=pws.payegis.com.cn, OU=IT, O=江苏通付盾信息科技有限公司, L=苏州, ST=江苏, C=CN
+291  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  -  peer alternative names: [pws.payegis.com.cn]
+291  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  -  issuer principal: CN=Symantec Class 3 Secure Server CA - G4, OU=Symantec Trust Network, O=Symantec Corporation, C=US
+291  [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator  - Connection established 192.168.1.101:54458<->180.76.158.94:443
+291  [main] DEBUG org.apache.http.impl.execchain.MainClientExec  - Executing request GET /id_creditcardapi/idcard/simple_query%3FidCard%3D41282319911203481X%26name%3D%E5%BC%A0%E4%BF%8A%E4%BC%9F%26x-hmac-auth-date%3D1462330497358 HTTP/1.1
+291  [main] DEBUG org.apache.http.impl.execchain.MainClientExec  - Target auth state: UNCHALLENGED
+291  [main] DEBUG org.apache.http.impl.execchain.MainClientExec  - Proxy auth state: UNCHALLENGED
+301  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> GET /id_creditcardapi/idcard/simple_query%3FidCard%3D41282319911203481X%26name%3D%E5%BC%A0%E4%BF%8A%E4%BC%9F%26x-hmac-auth-date%3D1462330497358 HTTP/1.1
+301  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> x-hmac-auth-date : 1462330497368
+301  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> x-hmac-auth-signature: myei5r1：5aea3663-6791-4905-b869-71a443613e2c
+301  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> Host: pws.payegis.com.cn
+301  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> Connection: Keep-Alive
+301  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.5.1 (Java/1.7.0_45)
+301  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> Accept-Encoding: gzip,deflate
+301  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "GET /id_creditcardapi/idcard/simple_query%3FidCard%3D41282319911203481X%26name%3D%E5%BC%A0%E4%BF%8A%E4%BC%9F%26x-hmac-auth-date%3D1462330497358 HTTP/1.1[\r][\n]"
+301  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "x-hmac-auth-date : 1462330497368[\r][\n]"
+301  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "x-hmac-auth-signature: myei5r1[0x1a]5aea3663-6791-4905-b869-71a443613e2c[\r][\n]"
+301  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "Host: pws.payegis.com.cn[\r][\n]"
+301  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+301  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.5.1 (Java/1.7.0_45)[\r][\n]"
+301  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+301  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "[\r][\n]"
+331  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "HTTP/1.1 403 Forbidden[\r][\n]"
+331  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Server: Tengine[\r][\n]"
+331  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Date: Wed, 04 May 2016 02:55:53 GMT[\r][\n]"
+331  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Content-Type: text/html[\r][\n]"
+331  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Transfer-Encoding: chunked[\r][\n]"
+331  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Connection: keep-alive[\r][\n]"
+331  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Content-Encoding: gzip[\r][\n]"
+331  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "[\r][\n]"
+331  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "4e1[\r][\n]"
+331  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "[0x1f][0x8b][0x8][0x0][0x0][0x0][0x0][0x0][0x0][0x3][0xd5]V[0xdf][0x8f][0xdb]D[0x10]~[0xa6]R[0xff][0x7][0x93][0x13][0xba]V[0xda][0x8d][0xed]8[0xe9][0xdd][0xd9]wE[0xf4]Z[0xa9][0x95]Z[0xa8][0xe0]*[0xda][0xc7][0x8d][0xbd][0x8e]W]{[0xcd]zs[0xc9]5BBH[0x5][0x9][0x15]A[0x85]@[0xaa][0x0][0xf1]RJ[0xc5][0xaf][0xf6][0x1][0x89][0xaa][0xa5][0xfd]cP/G[0x9f][0xf8][0x17][0x98]];W_[0xce]iyB"[0xb9]Kb[0xcf][0xcc][0xce]7[0xdf]|[0xb3][0xde][0xa3]G[0xd6]_=[0xfd][0xd6][0xe6][0xd6][0x95][0x8b]g[0xac]D[0xa5][0xdc][0xba]x[0xe9][0xd4][0xf9]s[0x9b]V[0xb][0xdb][0xf6][0xbb][0xde][0xa6]m[0x9f][0xde]:m]>[0xbb]u[0xe1][0xbc][0xe5][0xb6][0x1d]kK[0x92][0xac]`[0x8a][0x89][0x8c]p[0xdb]>[0xf3]f[0xcb]j%J[0xe5][0xbe]m[0x8f]F[0xa3][0xf6][0xc8]k[0xb]9[0xb0][0xb7][0xde][0xb6][0xc7]z-W[0x7]W?[0xb1][0xaa]E[0xb6]#[0x15][0xb5]N[0x1e]=[0xb2]n2[0x8e]S[0x9e][0x15][0x1b][\r][0xeb][0xb8]kkkex[0xe9]LI[0xa4][0x83]R[0xaa][0x8]`U9[0xa6][0xef][\r][0xd9][0xf6]FkSd[0x8a]f[\n]"
+331  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "o[0xed][0xe4][0xb4]e[0x85][0xe5][0xd5]FK[0xd1][0xb1][0xb2]u[0x86][0xc0][\n]"
+331  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "[0x13]"[0xb][0xaa]6[0x86]*[0xc6][0xab]-[0xcb]n\[0xe6]2[0xbe][0xf4][0x6][0xde][0x14]iN[0x14][0xeb][0xf3][0xfa]J[0xe7][0xce]l[0xd0]h@Q[0x98]H[0x91][0xd2][\r][0xd7][0xc0]QLqzr[0xf7][0xd3][0x8f][0xf7][0x1e][0xfe][0xb0][0xf7][0xe8][0xb7][0xe9]'[0xb7][0xd7][0xed][0xf2][0xde][0xd1]#`.[0xd4][0xe][0xa7][0x96][0x2]H[0x15][0x92][0xb0](t\_D;([0x14][0x11]EQ[0x84]"[0xb6][0x8d]"[0x8e]"[0x85]bFy[0x4][0x10]Q,d[0x8a][0x12][0x17]%[0x1d][0x94]x([0xe9][0xa2][0xa4][0x87][0x92][0x13][0x88]e[0xf9]P!N[0x7]4[0x8b][0x10]gHp[0x94][0xa3]\R[0xa4]"[0xa4][0xb]%[0x92][0x12][0xa4][0x12]4[0xe4][0x93][0x94][0xc8][0x1][0xcb]|'[0xc8]I[0x14][0xb1]l[0xe0];[0xef][0x97]i'1P[0xe3][0xbb][0xdd]|l[0xbb][0xed][0x9e][0xb5]|[0x81][0x85]R[0x14]"V[0xd6][0x15]r[0x96][0xb2]e[0xb4][0xbc][0xfb][0xe4][0xd7][0xbf][0x1e][0xdf]{[0xf6][0xf5][0xf5]g[0x8f]n.[0xa3][0xb3][0x94]oS[0xc5]B[0x82][0xde][0x81][0xae][0xe3][0x82]J[0x16][0x7])[0xcb][0xf0][0x88]E*[0xf1][0xdd][0x8e][0xe3][0xe4][0xe3][0xa0]O[0xc2][0xab][0x3])[0x86]Y[0xe4]/[0xc5]N[0xec][0xc6]^[0x0][0xf9][0xfc]X[0x84][0xc3]b"[0x86][0x8a][0xb3][0x8c][0x1a][0x8][0x87][0x8b]*[0x94][0x14][0xd9][0xc0][0xc0][0xc2]#[0xca][0x6][0x89][0xf2]W[0x1c][0xed]J&[0xa1][0xe0]B[0xfa]K[0xdd][0xce]j?$[0x81][0xae][0x10]G4[0x14][0x12]z#2?[0x13][0x19][0xd5]n~"[0xb6][0xa9][0x9c][0xcc][0x9b][0x1][0xb][0x95]:/[0xf8][0xb4][0xa9][0x94]B[0xe2][0x9c][0xc][0xe8][0xa4][0x1][0xea][0x8c][0xa3]U([0xc5]r,W[0x1f][0x8c][0xc2]ZP[0x4][0x16][0x93][0x93]\[0x94][0xda][0xf7]%[0xe5][0x0]d[0x9b][0x6][0xd7]0[0x83]\c[0xdf][0x9d][0x8b]I![0xa0][0xc1][0xfd][0x0][0x80][0xb5][0x18][0xde][0xc1][0xac][[0x16][0x19]*[0x11][0x94][0xcc][0x9e]pW[0x80]X[0x9c][0x16][0xb8]/[0xc6][0xb8]`[0xd7]t[0x17][0xfb]BBU[0xfa]N[0x0]d[0xf5][0xaf]2[0xb5][0xc8][0x9a][0x8a]k[0xb]L[0xcd][0xcb][0xcd]8[0xe8]i[0xe][0xcc][0xc7][0xca]a[0x16]tE~[0x9f][0x82]<)4[0xc7][0xc][0x9c][0xbf][0xbc][0x1c]D[0xac][0xc8]9[0xd9][0xf1][0xfb]\[0x84]W[0xeb]Z[0x18]J~[0x8c][0xa5][0x3][0xdb][0xd0][0x11][0xd8]?e[0xf0][0xb7][0xf3]l[0xf0][0xba][0xdb][0xed][0xac][0xac][0xac]z]g[0xed][0x84][0xb7]r<H[0xaa][0xd6]C[0xcd][0xfb][0xc][0x93]~![0xf8]P[0xd1]@[0x89][0xdc][0xc7][0x9a][0x8e]Jt[0x8e][0xf3]Z[0xc0]i[0xac][0x8c][0xa4]j[0xcd][0xc5][0x1a][0xa0][0x95]x[0xa5][0x9a][0x80]3[0xea]w@[0xe9]A]\][0xc7][0x9][0xf6]iTJ[0xa4][0xbe][0xb][0xc5]B"[0x16]YK[0x91][0xa3][0xdf][0xcd][0x8b]Zu[0xa5][0x9a][0xb5]{Mk[0x97][0xbd][0xc4][0xd2]([0xb9][0xd3][0xcc][0xa1][0x95]t[0xeb][0x10][0xf5][0x4][0xcd]C[0xac][0xb4][0xef]y[0xde][0x1c][0x1a][0x12]j[0xf5][0x17][0xb5]x[0xe7][0xb9][0x2][0xcd][0xe0][0xd4][0x9][0xa9][0xbc]-[0xd8]dj[0x11]z[0xfc][0xf7][0xbb][0xc6]2=%[0xb8]l[0xde]L[0x6]^9[\n]"
+331  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "0[0xc][0x1a]\I{[0xf]X[0xff][0xcf][0xf4]X[0xd5][0xbf][0xea][0xe9][0xf7][0x82][0xa2][0x4][0x9f]pV(l[0xb6]Y[0x1f][0xb6][0x6][0x96][0x12]>[0xdb][0xf1][0xb0][0x11]HC[0x3]f[0x94]p[0x6][0xd1]Px[0xa5][0xbc]N[0xbb]G[0xd3][0xe6]D/[0x95][0xfc]a[0xc5][0xce][0xf6][0x4][0xec][0x82][0xd8]J[0x95]i[0xfd][0x1a]Lz[0xba]*J[0xcb][0xdd][0xb3]B`[0xa8][0xc6][0xfb][0x83][0x9b][0x90]H[0x8c]|[0xe8][0x94][0xd5][0x83]O[0xab][0xd4][0xd5][0x1f]K[0xf0]D<8[0xfd]/[0xf4]4[0xe3][0xfe]B[0xf][0x93][0xd2]<[0x9a][0xf5]s[0xc7][0x97]B[0x11]E[0x8f][0xe1]nD[0x7][0xc7][0xf7][0x13]-[0xb4][0xc3][0x6][0xb5][0xd0]&[0x16][0x9a][0x16][0x84],[0xe0][0x9f][0xc4][\n]"
+331  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "v[0xde][0x85];[0xce][0xbf][0xa6][0xbf][0x1c][0xca][0xff][0x7][0xff]/[0xa1][0xbf]27[0xb1]_[0x99][0x1a][0xc8]/-[0x87][0xb8]7[0xb7][0x81][0xfa]u[0xdb]L[0x12][0x1c]P[0xf4][0xef][0xa4]:j[0xe9][0xc3]Jy[0xb]6[0x11]+[0xe4][0xa4][0x80][0x83][0xda][0xf3][0x7][0xaa]>[0xcf]X[0xf0]Zo[0xb4]>p[0xce][0xfc]^[0xe0][0xab]w[0xef][0xba][0x9b]qM[0xbc]*[0x81][0xbe][0x9a][0xbd][0xf6][0x1e][0xdf][0xdc][0xfb][0xe9][0xd6][0xf4][0xb3][0xcf][0xf7]n?,[0xd3][0xcf],[0x80]{>`[0x1][0xb2]j[0x1f][0x98]Oh[0x92]B-[\r]Y[0x8d])[0xe9][0x9e],[0xb3][0xd7]O}O[0x1f][0xfc][0xf2][0xe7][0x7]w[0xe0][0xf][0xd2]w![0xf2][0x15][0xfd][0xda][0xbd][0xff][0xd1][0xde][0xa3][[0xd3][0xf][0xef][0xee]>[0xb8]3[0xfd][0xf6][0xfb][0xdd][0xeb]w[0xa7]_[0xdd][0xfa][0xf8][0x8b]g?[0xde][0xf8][0xfb][0x8f][0x1b][0xd3]/[0xfe][0xeb][0xde][0xef][0xd3]o[0xbe][0xdb]}r[0xfd]`[0x9]&[0x8d]}[0x18][0xc2][0xfc][0xbd][0xfa][0xf5][0xec][0xf7][0xec][7[0xb0]j[0x1c]@[0x82][0xf3]/[0x80][0xfa][0x7]Cz[0x13]@[0xe7][0xb][0x0][0x0][\r][\n]"
+331  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "0[\r][\n]"
+331  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "[\r][\n]"
+331  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << HTTP/1.1 403 Forbidden
+331  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Server: Tengine
+331  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Date: Wed, 04 May 2016 02:55:53 GMT
+331  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Content-Type: text/html
+331  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Transfer-Encoding: chunked
+331  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Connection: keep-alive
+331  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Content-Encoding: gzip
+341  [main] DEBUG org.apache.http.impl.execchain.MainClientExec  - Connection can be kept alive indefinitely
+341  [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager  - Connection [id: 0][route: {s}->https://pws.payegis.com.cn:443] can be kept alive indefinitely
+341  [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager  - Connection released: [id: 0][route: {s}->https://pws.payegis.com.cn:443][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+0    [main] DEBUG org.apache.http.client.protocol.RequestAddCookies  - CookieSpec selected: default
+10   [main] DEBUG org.apache.http.client.protocol.RequestAuthCache  - Auth cache not set in the context
+10   [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager  - Connection request: [route: {s}->https://pws.payegis.com.cn:443][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+20   [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager  - Connection leased: [id: 0][route: {s}->https://pws.payegis.com.cn:443][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+20   [main] DEBUG org.apache.http.impl.execchain.MainClientExec  - Opening connection {s}->https://pws.payegis.com.cn:443
+30   [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator  - Connecting to pws.payegis.com.cn/180.76.158.94:443
+30   [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  - Connecting socket to pws.payegis.com.cn/180.76.158.94:443 with timeout 0
+162  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  - Enabled protocols: [TLSv1]
+162  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  - Enabled cipher suites:[TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_RC4_128_SHA, TLS_ECDHE_RSA_WITH_RC4_128_SHA, SSL_RSA_WITH_RC4_128_SHA, TLS_ECDH_ECDSA_WITH_RC4_128_SHA, TLS_ECDH_RSA_WITH_RC4_128_SHA, TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_RC4_128_MD5, TLS_EMPTY_RENEGOTIATION_INFO_SCSV]
+162  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  - Starting handshake
+702  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  - Secure session established
+702  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  -  negotiated protocol: TLSv1
+702  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  -  negotiated cipher suite: TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA
+712  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  -  peer principal: CN=pws.payegis.com.cn, OU=IT, O=江苏通付盾信息科技有限公司, L=苏州, ST=江苏, C=CN
+712  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  -  peer alternative names: [pws.payegis.com.cn]
+712  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  -  issuer principal: CN=Symantec Class 3 Secure Server CA - G4, OU=Symantec Trust Network, O=Symantec Corporation, C=US
+712  [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator  - Connection established 192.168.1.101:54608<->180.76.158.94:443
+712  [main] DEBUG org.apache.http.impl.execchain.MainClientExec  - Executing request GET /id_creditcardapi/idcard/simple_query%3FidCard%3D41282319911203481X%26name%3D%E5%BC%A0%E4%BF%8A%E4%BC%9F%26x-hmac-auth-date%3D1462330805311 HTTP/1.1
+712  [main] DEBUG org.apache.http.impl.execchain.MainClientExec  - Target auth state: UNCHALLENGED
+712  [main] DEBUG org.apache.http.impl.execchain.MainClientExec  - Proxy auth state: UNCHALLENGED
+712  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> GET /id_creditcardapi/idcard/simple_query%3FidCard%3D41282319911203481X%26name%3D%E5%BC%A0%E4%BF%8A%E4%BC%9F%26x-hmac-auth-date%3D1462330805311 HTTP/1.1
+712  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> x-hmac-auth-date : 1462330805321
+712  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> x-hmac-auth-signature: myei5r1：5aea3663-6791-4905-b869-71a443613e2c
+712  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> Host: pws.payegis.com.cn
+712  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> Connection: Keep-Alive
+712  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.5.1 (Java/1.7.0_45)
+712  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> Accept-Encoding: gzip,deflate
+712  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "GET /id_creditcardapi/idcard/simple_query%3FidCard%3D41282319911203481X%26name%3D%E5%BC%A0%E4%BF%8A%E4%BC%9F%26x-hmac-auth-date%3D1462330805311 HTTP/1.1[\r][\n]"
+712  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "x-hmac-auth-date : 1462330805321[\r][\n]"
+712  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "x-hmac-auth-signature: myei5r1[0x1a]5aea3663-6791-4905-b869-71a443613e2c[\r][\n]"
+712  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "Host: pws.payegis.com.cn[\r][\n]"
+712  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+712  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.5.1 (Java/1.7.0_45)[\r][\n]"
+712  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+712  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "[\r][\n]"
+743  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "HTTP/1.1 403 Forbidden[\r][\n]"
+743  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Server: Tengine[\r][\n]"
+743  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Date: Wed, 04 May 2016 03:01:01 GMT[\r][\n]"
+743  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Content-Type: text/html[\r][\n]"
+743  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Transfer-Encoding: chunked[\r][\n]"
+743  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Connection: keep-alive[\r][\n]"
+743  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Content-Encoding: gzip[\r][\n]"
+743  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "[\r][\n]"
+743  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "4e1[\r][\n]"
+743  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "[0x1f][0x8b][0x8][0x0][0x0][0x0][0x0][0x0][0x0][0x3][0xd5]V[0xdf][0x8f][0xdb]D[0x10]~[0xa6]R[0xff][0x7][0x93][0x13][0xba]V[0xda][0x8d][0xed]8[0xe9][0xdd][0xd9]wE[0xf4]Z[0xa9][0x95]Z[0xa8][0xe0]*[0xda][0xc7][0x8d][0xbd][0x8e]W]{[0xcd]zs[0xc9]5BBH[0x5][0x9][0x15]A[0x85]@[0xaa][0x0][0xf1]RJ[0xc5][0xaf][0xf6][0x1][0x89][0xaa][0xa5][0xfd]cP/G[0x9f][0xf8][0x17][0x98]];W_[0xce]iyB"[0xb9]Kb[0xcf][0xcc][0xce]7[0xdf]|[0xb3][0xde][0xa3]G[0xd6]_=[0xfd][0xd6][0xe6][0xd6][0x95][0x8b]g[0xac]D[0xa5][0xdc][0xba]x[0xe9][0xd4][0xf9]s[0x9b]V[0xb][0xdb][0xf6][0xbb][0xde][0xa6]m[0x9f][0xde]:m]>[0xbb]u[0xe1][0xbc][0xe5][0xb6][0x1d]kK[0x92][0xac]`[0x8a][0x89][0x8c]p[0xdb]>[0xf3]f[0xcb]j%J[0xe5][0xbe]m[0x8f]F[0xa3][0xf6][0xc8]k[0xb]9[0xb0][0xb7][0xde][0xb6][0xc7]z-W[0x7]W?[0xb1][0xaa]E[0xb6]#[0x15][0xb5]N[0x1e]=[0xb2]n2[0x8e]S[0x9e][0x15][0x1b][\r][0xeb][0xb8]kkkex[0xe9]LI[0xa4][0x83]R[0xaa][0x8]`U9[0xa6][0xef][\r][0xd9][0xf6]FkSd[0x8a]f[\n]"
+743  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "o[0xed][0xe4][0xb4]e[0x85][0xe5][0xd5]FK[0xd1][0xb1][0xb2]u[0x86][0xc0][\n]"
+743  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "[0x13]"[0xb][0xaa]6[0x86]*[0xc6][0xab]-[0xcb]n\[0xe6]2[0xbe][0xf4][0x6][0xde][0x14]iN[0x14][0xeb][0xf3][0xfa]J[0xe7][0xce]l[0xd0]h@Q[0x98]H[0x91][0xd2][\r][0xd7][0xc0]QLqzr[0xf7][0xd3][0x8f][0xf7][0x1e][0xfe][0xb0][0xf7][0xe8][0xb7][0xe9]'[0xb7][0xd7][0xed][0xf2][0xde][0xd1]#`.[0xd4][0xe][0xa7][0x96][0x2]H[0x15][0x92][0xb0](t\_D;([0x14][0x11]EQ[0x84]"[0xb6][0x8d]"[0x8e]"[0x85]bFy[0x4][0x10]Q,d[0x8a][0x12][0x17]%[0x1d][0x94]x([0xe9][0xa2][0xa4][0x87][0x92][0x13][0x88]e[0xf9]P!N[0x7]4[0x8b][0x10]gHp[0x94][0xa3]\R[0xa4]"[0xa4][0xb]%[0x92][0x12][0xa4][0x12]4[0xe4][0x93][0x94][0xc8][0x1][0xcb]|'[0xc8]I[0x14][0xb1]l[0xe0];[0xef][0x97]i'1P[0xe3][0xbb][0xdd]|l[0xbb][0xed][0x9e][0xb5]|[0x81][0x85]R[0x14]"V[0xd6][0x15]r[0x96][0xb2]e[0xb4][0xbc][0xfb][0xe4][0xd7][0xbf][0x1e][0xdf]{[0xf6][0xf5][0xf5]g[0x8f]n.[0xa3][0xb3][0x94]oS[0xc5]B[0x82][0xde][0x81][0xae][0xe3][0x82]J[0x16][0x7])[0xcb][0xf0][0x88]E*[0xf1][0xdd][0x8e][0xe3][0xe4][0xe3][0xa0]O[0xc2][0xab][0x3])[0x86]Y[0xe4]/[0xc5]N[0xec][0xc6]^[0x0][0xf9][0xfc]X[0x84][0xc3]b"[0x86][0x8a][0xb3][0x8c][0x1a][0x8][0x87][0x8b]*[0x94][0x14][0xd9][0xc0][0xc0][0xc2]#[0xca][0x6][0x89][0xf2]W[0x1c][0xed]J&[0xa1][0xe0]B[0xfa]K[0xdd][0xce]j?$[0x81][0xae][0x10]G4[0x14][0x12]z#2?[0x13][0x19][0xd5]n~"[0xb6][0xa9][0x9c][0xcc][0x9b][0x1][0xb][0x95]:/[0xf8][0xb4][0xa9][0x94]B[0xe2][0x9c][0xc][0xe8][0xa4][0x1][0xea][0x8c][0xa3]U([0xc5]r,W[0x1f][0x8c][0xc2]ZP[0x4][0x16][0x93][0x93]\[0x94][0xda][0xf7]%[0xe5][0x0]d[0x9b][0x6][0xd7]0[0x83]\c[0xdf][0x9d][0x8b]I![0xa0][0xc1][0xfd][0x0][0x80][0xb5][0x18][0xde][0xc1][0xac][[0x16][0x19]*[0x11][0x94][0xcc][0x9e]pW[0x80]X[0x9c][0x16][0xb8]/[0xc6][0xb8]`[0xd7]t[0x17][0xfb]BBU[0xfa]N[0x0]d[0xf5][0xaf]2[0xb5][0xc8][0x9a][0x8a]k[0xb]L[0xcd][0xcb][0xcd]8[0xe8]i[0xe][0xcc][0xc7][0xca]a[0x16]tE~[0x9f][0x82]<)4[0xc7][0xc][0x9c][0xbf][0xbc][0x1c]D[0xac][0xc8]9[0xd9][0xf1][0xfb]\[0x84]W[0xeb]Z[0x18]J~[0x8c][0xa5][0x3][0xdb][0xd0][0x11][0xd8]?e[0xf0][0xb7][0xf3]l[0xf0][0xba][0xdb][0xed][0xac][0xac][0xac]z]g[0xed][0x84][0xb7]r<H[0xaa][0xd6]C[0xcd][0xfb][0xc][0x93]~![0xf8]P[0xd1]@[0x89][0xdc][0xc7][0x9a][0x8e]Jt[0x8e][0xf3]Z[0xc0]i[0xac][0x8c][0xa4]j[0xcd][0xc5][0x1a][0xa0][0x95]x[0xa5][0x9a][0x80]3[0xea]w@[0xe9]A]\][0xc7][0x9][0xf6]iTJ[0xa4][0xbe][0xb][0xc5]B"[0x16]YK[0x91][0xa3][0xdf][0xcd][0x8b]Zu[0xa5][0x9a][0xb5]{Mk[0x97][0xbd][0xc4][0xd2]([0xb9][0xd3][0xcc][0xa1][0x95]t[0xeb][0x10][0xf5][0x4][0xcd]C[0xac][0xb4][0xef]y[0xde][0x1c][0x1a][0x12]j[0xf5][0x17][0xb5]x[0xe7][0xb9][0x2][0xcd][0xe0][0xd4][0x9][0xa9][0xbc]-[0xd8]dj[0x11]z[0xfc][0xf7][0xbb][0xc6]2=%[0xb8]l[0xde]L[0x6]^9[\n]"
+743  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "0[0xc][0x1a]\I{[0xf]X[0xff][0xcf][0xf4]X[0xd5][0xbf][0xea][0xe9][0xf7][0x82][0xa2][0x4][0x9f]pV(l[0xb6]Y[0x1f][0xb6][0x6][0x96][0x12]>[0xdb][0xf1][0xb0][0x11]HC[0x3]f[0x94]p[0x6][0xd1]Px[0xa5][0xbc]N[0xbb]G[0xd3][0xe6]D/[0x95][0xfc]a[0xc5][0xce][0xf6][0x4][0xec][0x82][0xd8]J[0x95]i[0xfd][0x1a]Lz[0xba]*J[0xcb][0xdd][0xb3]B`[0xa8][0xc6][0xfb][0x83][0x9b][0x90]H[0x8c]|[0xe8][0x94][0xd5][0x83]O[0xab][0xd4][0xd5][0x1f]K[0xf0]D<8[0xfd]/[0xf4]4[0xe3][0xfe]B[0xf][0x93][0xd2]<[0x9a][0xf5]s[0xc7][0x97]B[0x11]E[0x8f][0xe1]nD[0x7][0xc7][0xf7][0x13]-[0xb4][0xc3][0x6][0xb5][0xd0]&[0x16][0x9a][0x16][0x84],[0xe0][0x9f][0xc4][\n]"
+743  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "v[0xde][0x85];[0xce][0xbf][0xa6][0xbf][0x1c][0xca][0xff][0x7][0xff]/[0xa1][0xbf]27[0xb1]_[0x99][0x1a][0xc8]/-[0x87][0xb8]7[0xb7][0x81][0xfa]u[0xdb]L[0x12][0x1c]P[0xf4][0xef][0xa4]:j[0xe9][0xc3]Jy[0xb]6[0x11]+[0xe4][0xa4][0x80][0x83][0xda][0xf3][0x7][0xaa]>[0xcf]X[0xf0]Zo[0xb4]>p[0xce][0xfc]^[0xe0][0xab]w[0xef][0xba][0x9b]qM[0xbc]*[0x81][0xbe][0x9a][0xbd][0xf6][0x1e][0xdf][0xdc][0xfb][0xe9][0xd6][0xf4][0xb3][0xcf][0xf7]n?,[0xd3][0xcf],[0x80]{>`[0x1][0xb2]j[0x1f][0x98]Oh[0x92]B-[\r]Y[0x8d])[0xe9][0x9e],[0xb3][0xd7]O}O[0x1f][0xfc][0xf2][0xe7][0x7]w[0xe0][0xf][0xd2]w![0xf2][0x15][0xfd][0xda][0xbd][0xff][0xd1][0xde][0xa3][[0xd3][0xf][0xef][0xee]>[0xb8]3[0xfd][0xf6][0xfb][0xdd][0xeb]w[0xa7]_[0xdd][0xfa][0xf8][0x8b]g?[0xde][0xf8][0xfb][0x8f][0x1b][0xd3]/[0xfe][0xeb][0xde][0xef][0xd3]o[0xbe][0xdb]}r[0xfd]`[0x9]&[0x8d]}[0x18][0xc2][0xfc][0xbd][0xfa][0xf5][0xec][0xf7][0xec][7[0xb0]j[0x1c]@[0x82][0xf3]/[0x80][0xfa][0x7]Cz[0x13]@[0xe7][0xb][0x0][0x0][\r][\n]"
+743  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "0[\r][\n]"
+743  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "[\r][\n]"
+753  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << HTTP/1.1 403 Forbidden
+753  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Server: Tengine
+753  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Date: Wed, 04 May 2016 03:01:01 GMT
+753  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Content-Type: text/html
+753  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Transfer-Encoding: chunked
+753  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Connection: keep-alive
+753  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Content-Encoding: gzip
+753  [main] DEBUG org.apache.http.impl.execchain.MainClientExec  - Connection can be kept alive indefinitely
+763  [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager  - Connection [id: 0][route: {s}->https://pws.payegis.com.cn:443] can be kept alive indefinitely
+763  [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager  - Connection released: [id: 0][route: {s}->https://pws.payegis.com.cn:443][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+0    [main] DEBUG org.apache.http.client.protocol.RequestAddCookies  - CookieSpec selected: default
+10   [main] DEBUG org.apache.http.client.protocol.RequestAuthCache  - Auth cache not set in the context
+10   [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager  - Connection request: [route: {s}->https://pws.payegis.com.cn:443][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+20   [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager  - Connection leased: [id: 0][route: {s}->https://pws.payegis.com.cn:443][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+30   [main] DEBUG org.apache.http.impl.execchain.MainClientExec  - Opening connection {s}->https://pws.payegis.com.cn:443
+40   [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator  - Connecting to pws.payegis.com.cn/180.76.158.94:443
+40   [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  - Connecting socket to pws.payegis.com.cn/180.76.158.94:443 with timeout 0
+232  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  - Enabled protocols: [TLSv1]
+232  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  - Enabled cipher suites:[TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_RC4_128_SHA, TLS_ECDHE_RSA_WITH_RC4_128_SHA, SSL_RSA_WITH_RC4_128_SHA, TLS_ECDH_ECDSA_WITH_RC4_128_SHA, TLS_ECDH_RSA_WITH_RC4_128_SHA, TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_RC4_128_MD5, TLS_EMPTY_RENEGOTIATION_INFO_SCSV]
+232  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  - Starting handshake
+772  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  - Secure session established
+772  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  -  negotiated protocol: TLSv1
+772  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  -  negotiated cipher suite: TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA
+772  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  -  peer principal: CN=pws.payegis.com.cn, OU=IT, O=江苏通付盾信息科技有限公司, L=苏州, ST=江苏, C=CN
+772  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  -  peer alternative names: [pws.payegis.com.cn]
+772  [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory  -  issuer principal: CN=Symantec Class 3 Secure Server CA - G4, OU=Symantec Trust Network, O=Symantec Corporation, C=US
+772  [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator  - Connection established 192.168.1.101:55022<->180.76.158.94:443
+772  [main] DEBUG org.apache.http.impl.execchain.MainClientExec  - Executing request GET /id_creditcardapi/idcard/simple_query%3FidCard%3D41282319911203481X%26name%3D%E5%BC%A0%E4%BF%8A%E4%BC%9F%26x-hmac-auth-date%3D1462332516272 HTTP/1.1
+772  [main] DEBUG org.apache.http.impl.execchain.MainClientExec  - Target auth state: UNCHALLENGED
+772  [main] DEBUG org.apache.http.impl.execchain.MainClientExec  - Proxy auth state: UNCHALLENGED
+772  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> GET /id_creditcardapi/idcard/simple_query%3FidCard%3D41282319911203481X%26name%3D%E5%BC%A0%E4%BF%8A%E4%BC%9F%26x-hmac-auth-date%3D1462332516272 HTTP/1.1
+772  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> x-hmac-auth-date : 1462332516285
+772  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> x-hmac-auth-signature: myei5r1：5aea3663-6791-4905-b869-71a443613e2c
+772  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> Host: pws.payegis.com.cn
+772  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> Connection: Keep-Alive
+772  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.5.1 (Java/1.7.0_45)
+772  [main] DEBUG org.apache.http.headers  - http-outgoing-0 >> Accept-Encoding: gzip,deflate
+772  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "GET /id_creditcardapi/idcard/simple_query%3FidCard%3D41282319911203481X%26name%3D%E5%BC%A0%E4%BF%8A%E4%BC%9F%26x-hmac-auth-date%3D1462332516272 HTTP/1.1[\r][\n]"
+772  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "x-hmac-auth-date : 1462332516285[\r][\n]"
+772  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "x-hmac-auth-signature: myei5r1[0x1a]5aea3663-6791-4905-b869-71a443613e2c[\r][\n]"
+772  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "Host: pws.payegis.com.cn[\r][\n]"
+772  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+772  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.5.1 (Java/1.7.0_45)[\r][\n]"
+772  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+772  [main] DEBUG org.apache.http.wire  - http-outgoing-0 >> "[\r][\n]"
+893  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "HTTP/1.1 404 Not Found[\r][\n]"
+893  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Server: Tengine[\r][\n]"
+893  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Date: Wed, 04 May 2016 03:29:32 GMT[\r][\n]"
+893  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Content-Type: text/html;charset=UTF-8[\r][\n]"
+893  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Transfer-Encoding: chunked[\r][\n]"
+893  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Connection: keep-alive[\r][\n]"
+893  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "Content-Encoding: gzip[\r][\n]"
+893  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "[\r][\n]"
+893  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "b1[\r][\n]"
+893  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "[0x1f][0x8b][0x8][0x0][0x0][0x0][0x0][0x0][0x0][0x3]][0x8f]1[0xe][0xc2]0[0xc]E[0xaf][0xe2]-[SP'[0xe4][0x86][0xad][0x3][0x3][0xe2][0x6](i[0xdc][0xa6][0x10][0x12][0x14][0x19][0xa2][0xde][0x9e][0x94][\n]"
+893  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "[0x84][0xd8][0xec][0xff][0xbf][0xfd]lt|[0xf3][\n]"
+893  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "[0x1d]i[0xab][0x90]'[0xf6][0xa4][0x9a][0xba][0x81]cd[0xe8][0xe2]#X[0x94][0xab][0x88]r[0x8d][0x98]hg0c[0x1f]}L[0xad][0xc8]nb[0x12][\n]"
+893  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "{[\n]"
+893  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "L[0xa9][0xac][0xd9][0xfc]O[0x17][0x5][0xe5][0xd7].[0x91]O[0xad][0xc1]%[0x1a]Z[0xe1][0x98][0xef];)s[0xce][0xd5]e[0x98][0x82][0xf6]U[0x1f]o[0xfb][0xa1][0xa5][0xa7][0x0][0xd6]i$n[0xc5][0xd9]x[0x1d][0xae][0x85]c[0xd4])fJd[0xc1][0xcc]p[0xe8][0x96]8l[0xab][0x1a][0xa5])[0x14][0xfd]C[0x92][0xcb][0x9d][0xa5][0xf7][0x2]S[0x83]\[0x98][0xe4][0x0][0x0][0x0][\r][\n]"
+893  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "0[\r][\n]"
+893  [main] DEBUG org.apache.http.wire  - http-outgoing-0 << "[\r][\n]"
+893  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << HTTP/1.1 404 Not Found
+893  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Server: Tengine
+893  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Date: Wed, 04 May 2016 03:29:32 GMT
+893  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Content-Type: text/html;charset=UTF-8
+893  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Transfer-Encoding: chunked
+893  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Connection: keep-alive
+893  [main] DEBUG org.apache.http.headers  - http-outgoing-0 << Content-Encoding: gzip
+893  [main] DEBUG org.apache.http.impl.execchain.MainClientExec  - Connection can be kept alive indefinitely
+903  [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager  - Connection [id: 0][route: {s}->https://pws.payegis.com.cn:443] can be kept alive indefinitely
+903  [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager  - Connection released: [id: 0][route: {s}->https://pws.payegis.com.cn:443][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]

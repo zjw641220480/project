@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			
+		</style>
+		<script type="text/javascript">
+			//--concat方法
+			var arr1 = [1,2,3];
+			var arr2 = [4,5,6];
+			document.write(arr1.concat(arr2));
+			document.write("<hr/>");
+			//--join方法
+			var arr3 = new Array(3)
+			arr3[0] = "George"
+			arr3[1] = "John"
+			arr3[2] = "Thomas"
+			document.write(arr3.join(" "));
+			document.write("<br/>")
+			document.write(typeof(arr3.join()));
+			document.write("<hr/>");
+			//--push方法;
+			//如果说添加的是一个数组,那么这个数组会被作为一个元素而被添加进来,本数组长度只增加1;
+			document.write(arr3 + "<br />")
+			document.write(arr3.push("James") + "<br />")
+			document.write(arr3)
+			document.write("<hr/>");
+			//--pop方法
+			var arr4 = new Array(3)
+			arr4[0] = "George"
+			arr4[1] = "John"
+			arr4[2] = "Thomas"
+			document.write("old array:"+arr4)
+			document.write("<br />")
+			document.write("return:"+arr4.pop())
+			document.write("<br />")
+			document.write("new array:"+arr4)
+			document.write("<hr/>");
+			//--reverse方法
+			var arr5 = new Array(3)
+			arr5[0] = "George"
+			arr5[1] = "John"
+			arr5[2] = "Thomas"
+			
+			document.write("old array:"+arr5 + "<br />")
+			document.write("new array:"+arr5.reverse())
+
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>
