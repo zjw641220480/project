@@ -19,7 +19,11 @@ public class Log4jInit extends HttpServlet {
 	public void init() throws ServletException {
 		String file = this.getInitParameter("log4j");// 从web.xml配置读取，名字一定要和web.xml配置一致
 		if (file != null) {
-			PropertyConfigurator.configure(file);
+			try{
+				PropertyConfigurator.configure(file);
+			}catch(Exception e){
+				System.out.println("日志文件加载不成功,日志文件路径为:\t"+file);
+			}
 		}
 	}
 }
