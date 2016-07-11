@@ -1,5 +1,6 @@
 package cn.itcast.zjw.servlet.base;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -31,18 +32,15 @@ public class BaseServletContext extends HttpServlet{
 		ServletContext servletContext = req.getServletContext();
 		String path = servletContext.getRealPath("/index.jsp");
 		System.out.println(path);
-		//三种方式获取log4j日志的绝对路径;
-		String log4jPath = servletContext.getRealPath("classpath:log4j.properties");
-		log4jPath = servletContext.getRealPath("/log4j.properties");
-		log4jPath = servletContext.getRealPath("log4j.properties");
+		//获取文件绝对路径
+		String log4jPath = servletContext.getRealPath("/WEB-INF/classes/log4j.properties");
 		System.out.println("log4j日志文件绝对路径\t"+log4jPath);
-		System.out.println(servletContext.getRealPath("log4j.properties"));
+		File file = new File(log4jPath);
+		System.out.println(file.exists());
 		//使用ServletContext获取资源流对象;
-		InputStream input = servletContext.getResourceAsStream("/index.jsp");
-//		input = servletContext.getResourceAsStream("log4j.properties");
-		System.out.println(input.toString());
+		FileInputStream input = (FileInputStream) servletContext.getResourceAsStream("/WEB-INF/classes/log4j.properties");
+		System.out.println(input.read());
 	}
-
 	public void init(ServletConfig config) throws ServletException {
 		System.out.println("在BaseServletConfig中设置的ServletContext域变量的值为\t"+config.getServletContext().getAttribute("servletContextParam"));
 	}
