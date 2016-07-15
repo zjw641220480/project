@@ -12,10 +12,17 @@ import org.junit.Test;
  * @author Administrator
  *
  */
+/**
+ * 
+ * @ClassName:LinkedListDemo
+ * @Description:使用LinkedList模拟一个堆栈或者队列数据结构;
+ * @author TOM
+ * @Time: 2016年7月15日下午2:16:03
+ */
 public class LinkedListDemo {
 	@Test
 	public void testLinkedList() {
-		//LinkList默认也是队列性质的
+		//LinkedList默认也是队列性质的
 		LinkedList<String> linkedList = new LinkedList<String>();
 		linkedList.add("linkedListjava1");
 		linkedList.add("linkedListjava2");

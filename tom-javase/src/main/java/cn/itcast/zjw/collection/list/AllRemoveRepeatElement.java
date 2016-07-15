@@ -13,8 +13,15 @@ import cn.itcast.zjw.domain.Person;
  * 	1:对人进行描述,将数据封装进一个对象
  * 	2:定义容器,将人存入
  * 	3:取出
- * @author Administrator
+ * @author TOM
  *
+ */
+/**
+ * 
+ * @ClassName:AllRemoveRepeatElement
+ * @Description:对ArrayList类型集合中重复元素进行去重;
+ * @author TOM
+ * @Time: 2016年7月15日下午2:13:44
  */
 public class AllRemoveRepeatElement {
 	public static void main(String[] args) {
@@ -30,11 +37,16 @@ public class AllRemoveRepeatElement {
 		arrayList.add(new Person("zhangsan",33));
 		arrayList.add(new Person("zhangsan",33));
 		syso(arrayList);
+		System.out.println("手动去除集合中的重复元素后的集合");
 		List<Object> newList = AllRemoveRepeatElement.singleElement(arrayList);
 		syso(newList);
 	}
 	/**
-	 * 手动去除List集合中的重复对象
+	 * 
+	 * @Method:singleElement
+	 * @Description:手动去除List集合中的重复对象
+	 * @author TOM
+	 * @date 2016年7月15日
 	 * @param list
 	 * @return
 	 */
@@ -50,6 +62,14 @@ public class AllRemoveRepeatElement {
 		}
 		return newList;
 	}
+	/**
+	 * 
+	 * @Method:syso
+	 * @Description:单纯的输出集合中的内容;
+	 * @author TOM
+	 * @date 2016年7月15日
+	 * @param list
+	 */
 	private static void syso(List<Object> list){
 		Iterator<Object> iterator = list.iterator();
 		while(iterator.hasNext()){

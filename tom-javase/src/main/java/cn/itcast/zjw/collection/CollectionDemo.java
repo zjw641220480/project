@@ -24,7 +24,8 @@ public class CollectionDemo {
 	* @date 2016-3-6
 	*/ 
 	public static void method_get(){
-		List list = new ArrayList<String>();
+		@SuppressWarnings("unused")
+		List<String> list = new ArrayList<String>();
 		Collection<String> collection = new ArrayList<String>();
 		collection.add("java01...");
 		collection.add("java02...");
@@ -36,8 +37,8 @@ public class CollectionDemo {
 		while(iterator.hasNext()){
 			System.out.println(iterator.next());
 		}
-		for(int i=0;i<10;i++){
-			System.out.println(i);
+		for(int i=0;i<collection.size();i++){
+			//集合Collection没有直接取出元素的方法
 		}
 		//利用for循环类实现迭代
 		for(Iterator<String> it = collection.iterator();it.hasNext();){

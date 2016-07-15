@@ -42,6 +42,7 @@ public class ArrayUtilTest {
 	@Test
 	public void testGetMax_1() {
 		int max = ArrayUtil.getMax_1(arr);
+		System.out.println(max);
 	}
 
 	@Test

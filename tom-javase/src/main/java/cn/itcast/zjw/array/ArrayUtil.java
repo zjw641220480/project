@@ -145,6 +145,7 @@ public class ArrayUtil {
 		}
 		return -1;
 	}
+	@SuppressWarnings("unused")
 	private static void swap(int[] arr,int a,int b){
 		int temp = arr[a];
 		arr[a] = arr[b];
