@@ -4,11 +4,16 @@ public class Person {
 	private String name;
 	private String id;
 	public Person(){
+		System.out.println(this.toString());
+		System.out.println("Person.Person()");
 		System.out.println("无参构造方法运行");
 	}
 	public Person(String name,String id){
 		this.name = name;
 		this.id = id;
+		System.out.println(this.toString());
+		System.out.println("Person.Person()");
+		System.out.println("有两个参数的构造方法运行");
 	}
 	public String getName() {
 		return name;

@@ -1,7 +1,13 @@
 package cn.itcast.zjw.reflect;
 
 import java.lang.reflect.Method;
-
+/**
+ * 
+ * @ClassName:ReflectMethod
+ * @Description:使用反射操作类中的方法;
+ * @author TOM
+ * @Time: 2016年7月14日下午2:05:45
+ */
 public class ReflectMethod {
 	public static void main(String[] args) throws Exception {
 		ReflectMethod reflectPerson = new ReflectMethod();
@@ -19,7 +25,7 @@ public class ReflectMethod {
 		Class<?> personClass = Class.forName("cn.itcast.zjw.reflect.Person");
 		// 得到所有方法
 		personClass.getDeclaredConstructors();
-		// 得到指定方法,传递两个参数,第一个参数,方法的名称,第二个参数,方法的输入参数
+		// 得到类中的指定方法,传递两个参数,第一个参数,方法的名称,第二个参数,方法的输入参数
 		Method methodName = personClass.getDeclaredMethod("setName", String.class);
 		// 得到Person实例
 		Person person = (Person) personClass.newInstance();

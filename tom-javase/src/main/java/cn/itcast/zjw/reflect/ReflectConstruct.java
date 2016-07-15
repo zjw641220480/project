@@ -3,10 +3,12 @@ package cn.itcast.zjw.reflect;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
+import org.junit.Test;
+
 
 /** 
  * @ClassName: ReflectConstruct
- * @Description:反射操作构造方法
+ * @Description:反射操作构造方法,Class这个类主要也就是在反射的时候使用的;
  * @Time 2016年6月1日 下午9:58:14
  * @author: TOM
  * @version 1.0.0
@@ -15,7 +17,7 @@ import java.lang.reflect.InvocationTargetException;
 public class ReflectConstruct {
 	public static void main(String[] args) throws Exception{
 		ReflectConstruct reflectConstruct = new ReflectConstruct();
-		reflectConstruct.newPerson1();
+		//reflectConstruct.newPerson1();
 		reflectConstruct.newPerson2();
 	}
 	/**
@@ -25,10 +27,13 @@ public class ReflectConstruct {
 	 * @date 2016年6月1日
 	 * @author TOM
 	 */
+	@Test
+	@SuppressWarnings("unused")
 	public void getReflectClass() throws Exception{
 		//类名.class获取Class类;
 		Class<Person> personClass = Person.class;
 		//Class.forName生成Class类;
+		@SuppressWarnings("rawtypes")
 		Class personClass2 = Class.forName("cn.itcast.zjw.reflect.Person");
 		//对象.getClass生成Class类;
 		Person person = new Person();

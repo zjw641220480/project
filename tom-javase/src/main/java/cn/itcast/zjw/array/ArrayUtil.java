@@ -1,18 +1,8 @@
 package cn.itcast.zjw.array;
 
-
-
 /** 
  * @ClassName: ArrayUtil
- * @Description:自己定义的一个数组工具
- * @Time 2016年6月1日 下午3:58:40
- * @author: TOM
- * @version 1.0.0
- * @since  1.6
- */
-/** 
- * @ClassName: ArrayUtil
- * @Description:
+ * @Description:自定义的数组工具类,
  * @Time 2016年6月1日 下午4:06:37
  * @author: TOM
  * @version 1.0.0

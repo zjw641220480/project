@@ -1,5 +1,11 @@
 package cn.itcast.zjw.thread.callable;
 
+/**
+ * @ClassName:CallableResourceOne
+ * @Description:资源一,主要是name和sex
+ * @author TOM
+ * @Time: 2016年7月14日上午11:19:22
+ */
 public class CallableResourceOne {
 	String name;
 	String sex;
