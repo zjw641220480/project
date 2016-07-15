@@ -102,6 +102,54 @@
 		<servlet-name>RequestIncludeTwo</servlet-name>
 		<servlet-class>cn.itcast.zjw.servlet.request.requestinclude.RequestIncludeTwo</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>ResponseEncode</servlet-name>
+		<servlet-class>cn.itcast.zjw.servlet.response.encode.ResponseEncode</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>RequestEncode</servlet-name>
+		<servlet-class>cn.itcast.zjw.servlet.request.encode.RequestEncode</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CookieServletOne</servlet-name>
+		<servlet-class>cn.itcast.zjw.servlet.cookie.CookieServletOne</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CookieServletTwo</servlet-name>
+		<servlet-class>cn.itcast.zjw.servlet.cookie.CookieServletTwo</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>SessionSetAttribute</servlet-name>
+		<servlet-class>cn.itcast.zjw.servlet.session.SessionSetAttribute</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>SessionGetAttribute</servlet-name>
+		<servlet-class>cn.itcast.zjw.servlet.session.SessionGetAttribute</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SessionGetAttribute</servlet-name>
+		<url-pattern>/SessionGetAttribute</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>SessionSetAttribute</servlet-name>
+		<url-pattern>/SessionSetAttribute</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CookieServletTwo</servlet-name>
+		<url-pattern>/CookieServletTwo</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CookieServletOne</servlet-name>
+		<url-pattern>/CookieServletOne</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>RequestEncode</servlet-name>
+		<url-pattern>/RequestEncode</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ResponseEncode</servlet-name>
+		<url-pattern>/ResponseEncode</url-pattern>
+	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>RequestIncludeTwo</servlet-name>
 		<url-pattern>/RequestIncludeTwo</url-pattern>

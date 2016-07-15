@@ -25,7 +25,10 @@ public class RequestForwardOne extends HttpServlet {
 		response.setHeader("aaa", "AAA");
 		//下面这一句才是设置相应体
 		response.getWriter().print("这个是第一个请求中response相应体中的内容");
+		//向request域中添加一个属性
+		request.setAttribute("username", "zhangsna");
 		//请求转发,相当于调用RequestForwardTwo的service方法;
+		//请求转发和请求包含的路径是相对当前项目路径,http://127.0.0.1:8080/项目名/,所以它的路径前面是没有项目名的;
 		request.getRequestDispatcher("/RequestForwardTwo").forward(request, response);
 	}
 

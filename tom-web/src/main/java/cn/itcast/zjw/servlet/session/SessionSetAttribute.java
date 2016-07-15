@@ -1,23 +1,28 @@
-package cn.itcast.zjw.servlet.request.requestforward;
+package cn.itcast.zjw.servlet.session;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-public class RequestForwardTwo extends HttpServlet {
+import javax.servlet.http.HttpSession;
+/**
+ * 
+ * @ClassName:SessionSetAttribute
+ * @Description:向session中存数据
+ * @author TOM
+ * @Time: 2016年7月14日下午5:20:35
+ */
+public class SessionSetAttribute extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public RequestForwardTwo() {
+    public SessionSetAttribute() {
+        super();
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println(this.toString());
-		System.out.println("RequestForwardTwo.doGet()");
-		//获取request域中的内容
-		System.out.println("request域中的username的值为:\t"+request.getAttribute("username"));
-		response.getWriter().println("RequestForwardTwo.doGet()");
+		HttpSession httpSession = request.getSession();
+		httpSession.setAttribute("name", "zhangsan");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

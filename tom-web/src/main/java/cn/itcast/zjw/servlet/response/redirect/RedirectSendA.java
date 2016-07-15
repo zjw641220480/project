@@ -25,6 +25,7 @@ public class RedirectSendA extends HttpServlet {
 		 * 3,项目名加请求路径即为请求URI;
 		 */
 		System.out.println("第一种方式实现重定向运行\t"+this.toString());
+		//重定向相对于当前主机:http://127.0.0.1:8080/所以,重定向的路径必须要加项目名
 		response.setHeader("Location", "/tom-web/RedirectSendC");
 		response.setStatus(302);
 	}
