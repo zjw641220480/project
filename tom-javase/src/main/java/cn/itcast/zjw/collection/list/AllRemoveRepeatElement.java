@@ -44,7 +44,7 @@ public class AllRemoveRepeatElement {
 	/**
 	 * 
 	 * @Method:singleElement
-	 * @Description:手动去除List集合中的重复对象
+	 * @Description:所编写的手动去除List集合中的重复对象的方法,
 	 * @author TOM
 	 * @date 2016年7月15日
 	 * @param list

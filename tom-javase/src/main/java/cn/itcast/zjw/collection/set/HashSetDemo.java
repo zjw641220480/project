@@ -44,12 +44,15 @@ public class HashSetDemo {
 	}
 	@Test
 	public void testHash(){
-		// 只有当把对象的HashCode方法和equals方法都同时重写之后,HashSet容器才会认为两个对象是一个对象
+		//对象本身即是重写了hashCode和equals方法,在两个对象进行比较的时候,还是该怎么样就怎么样,
+		//只是hashSet集合会把这两个对象当做一个对象来处理,(第二个对象不加入到hashSet)
 		Hash hashA = new Hash();
 		Hash hashB = new Hash();
 		System.out.println(hashA);
 		System.out.println(hashB);
+		System.out.println(hashA.equals(hashB));//结果为true
 		System.out.println(hashA==hashB);//结果竟然还是false
+		// 只有当把对象的HashCode方法和equals方法都同时重写之后,HashSet容器才会认为两个对象是一个对象
 		Set<Object> hashSet = new HashSet<Object>();
 		hashSet.add(hashB);
 		hashSet.add(hashA);

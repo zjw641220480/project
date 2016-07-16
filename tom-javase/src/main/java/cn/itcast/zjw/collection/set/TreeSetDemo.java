@@ -54,13 +54,12 @@ public class TreeSetDemo {
 		treeSet.add("ajava2");
 		treeSet.add("vjava3");	
 		treeSet.add("bjava4");
-		System.out.println();
+		System.out.println(treeSet);
 	}
 	/** 
-	 * 实用TreeSet对Student对象进行排序;
 	 * 对象javaBean自身实现Comapreable接口,具备比较性;
 	 * @MethodName:testTreeSetStudentCompareTo
-	 * @Desription:
+	 * @Desription:实用TreeSet对Student对象进行排序;
 	 * @date:2016年5月27日
 	 * @author TOM  
 	 */
@@ -70,8 +69,7 @@ public class TreeSetDemo {
 		treeSet.add(new Student("zhansan",25));
 		treeSet.add(new Student("zhansan",26));
 		treeSet.add(new Student("zhansan",27));
-		//这一个元素在比较的时候需要注意
-		
+		//这一个元素在比较的时候需要注意,第二个元素会被容器认为是同一个元素而不会被添加到TreeSet容器
 		treeSet.add(new Student("test",27,"男"));
 		treeSet.add(new Student("test",27,"女"));
 		TreeSetDemo.syso(treeSet);
@@ -107,7 +105,8 @@ public class TreeSetDemo {
 		treeSet.add(new Student("zhansan002",26));
 		treeSet.add(new Student("zhansan004",27));
 		//一样是先判断主要条件,然后判断次要条件;
-		treeSet.add(new Student("zhansan004",39));
+		treeSet.add(new Student("zhansan004",39,"女"));
+		treeSet.add(new Student("zhansan004",39,"男"));
 		TreeSetDemo.syso(treeSet);
 	}
 	
@@ -122,7 +121,7 @@ public class TreeSetDemo {
 		Iterator<Object> iterator = treeSet.iterator();
 		while(iterator.hasNext()){
 			Student stu = (Student) iterator.next();
-			System.out.println(stu.getName()+"\t"+stu.getAge());
+			System.out.println(stu.getName()+"\t"+stu.getAge()+"\t"+stu.getSex());
 		}
 	}
 }
