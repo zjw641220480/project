@@ -1,5 +1,6 @@
 package cn.itcast.zjw.innerclass;
 
+import org.junit.Test;
 /** 
 * @ClassName: InnerClass 
 * @Description:内部类基本知识
@@ -11,7 +12,7 @@ package cn.itcast.zjw.innerclass;
 * 当内部类定义在外部类的成员位置上,而且非私有,同时没有被static锁修饰可以在外部的其他类中可以直接建立内部类的对象格式是:
 * 	外部类名.内部类名	 变量名 = 外部类对象.内部类对象;
 * 	Outer.Inner inner = new Outer().new Inner();
-* 当内部类在成员变量的位置上,就可以被成员修饰符锁修饰,
+* 当内部类在成员变量的位置上,就可以被成员修饰符所修饰,
 * 	比如private:将内部类在外部类中进行封装,
 * 		static:内部类被这个关键字修饰后,内部类就具备了static的特性,此时只能访问外部类中的static成员,出现了访问局限;
 * 	在外部其他类中,如何直接访问static内部类的非静态成员;
@@ -27,56 +28,109 @@ package cn.itcast.zjw.innerclass;
 * @author Tom
 * @date 2016-3-6 
 */ 
-public class InnerClass {
-	public static void main(String[] args) {
-//		Outer outer = new Outer();
-//		outer.method();
-		//直接访问内部类中的成员,此内部类不能是private级别的,而且不能是被static所修饰了的内部类
-		Outer.Inner inner = new Outer().new Inner();
-		inner.function();
-		/*
-		Outer.StaticInner staticInner = new Outer.StaticInner();//静态所修饰的内部类的创建方式;
+
+public class InnerClassDemo {
+	/**
+	 * 
+	 * @Method:testCommonInnerClass
+	 * @Description:关于最简单内部类的测试
+	 * @author TOM
+	 * @date 2016年7月16日
+	 */
+	@Test
+	public void testCommonInnerClass(){
+		//最简单最正常内部类实例对象的创建方式
+		Outer.Inner commonInner = new Outer().new Inner();
+		commonInner.function();
+	}
+	/**
+	 * 
+	 * @Method:testStaticInnerClass
+	 * @Description:被static所修饰了的内部类的测试
+	 * @author TOM
+	 * @date 2016年7月16日
+	 */
+	@Test
+	public void testStaticInnerClass(){
+		//static所修饰的内部类的创建方式
+		Outer.StaticInner staticInner = new Outer.StaticInner();
 		staticInner.function();
-		*/
-		/*
+	}
+	/**
+	 * 
+	 * @Method:testLocalInnerClass
+	 * @Description:外部类方法中的内部类(也即内部类是作为局部变量性质而存在)
+	 * @author TOM
+	 * @date 2016年7月16日
+	 */
+	@Test
+	public void testLocalInnerClass(){
 		Outer outer = new Outer();
-		//参数在方法中定义成了常量,然后,由于方法的进栈和出栈的问题,可以进行这样的调用;
-		outer.show(7);
-		outer.show(10);
-		*/
+		outer.show(4);
 	}
 }
 class Outer{
-	private int x = 3;
-	private static int y = 5;
+	private int x = 1;
+	private static int y = 2;
 	public void method() {
 		System.out.println("外部类中的方法\t"+x);
 	}
-
+	/**
+	 * 
+	 * @Method:show
+	 * @Description:在外部类的方法中存在有内部类,
+	 * @author TOM
+	 * @date 2016年7月16日
+	 * @param a
+	 */
+	//参数在方法中定义成了常量,然后,由于方法的进栈和出栈的问题,可以进行这样的调用;
 	public void show(final int a){
-		System.out.println("匿名内部类");
-		final int y = 4;
+		final int y = 3;
 		//局部内部类中是不可以有private和static这两个关键词的
 		@SuppressWarnings("hiding")
 		class Inner{
 			void function(){
+				System.out.println(this.toString());
+				System.out.println("Outer.show(...).Inner.function()");
 				System.out.println("匿名内部类中的函数");
-				System.out.println("访问局部变量y,这个y必须是final"+y);
+				System.out.println("访问成员变量x:\t"+x);
+				System.out.println("访问静态成员变量y:\t"+Outer.y);
+				//下面两种变量都是需要被final所修饰的
+				System.out.println("访问局部变量y,这个y必须是final:\t"+y);
 				System.out.println("内部类中带有参数的方法,传递的参数的值是:\t"+a);
 			}
 		}
 		new Inner().function();
 	}
-	static class StaticInner {//static内部类
+	/**
+	 * 
+	 * @ClassName:StaticInner
+	 * @Description:被static所修饰了的内部类,这种内部类只能是访问外部类中也被static所修饰的变量
+	 * @author TOM
+	 * @Time: 2016年7月16日下午10:28:08
+	 */
+	//只能是访问外部类中的static修饰了的变量
+	public static class StaticInner {//static内部类
 		//private int x = 4;
 		public void function() {
 			//int x =5;
+			System.out.println(StaticInner.class);
+			System.out.println("Outer.StaticInner.function()");
 			System.out.println("static类型的内部类中的function方法\t"+y);
 		}
 	}
-	class Inner{
+	/**
+	 * 
+	 * @ClassName:Inner
+	 * @Description:最简单最正常的一个public级别的内部类
+	 * @author TOM
+	 * @Time: 2016年7月16日下午10:27:47
+	 */
+	public class Inner{
 		public void function() {
 			int y = 10;
+			System.out.println(this.toString());
+			System.out.println("Outer.Inner.function()");
 			System.out.println("普通的内部类中的function方法\t"+y);
 		}
 	}

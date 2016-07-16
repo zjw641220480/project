@@ -1,12 +1,24 @@
 package cn.itcast.zjw.innerclass;
-
+/**
+ * 
+ * @ClassName:AnonymityInnerClass
+ * @Description:以匿名内部类方式重写抽象类
+ * @author TOM
+ * @Time: 2016年7月16日下午11:41:26
+ */
 public class AnonymityInnerClass {
 	public static void main(String[] args) {
 		OuterClass outerClass = new OuterClass();
 		outerClass.function();
 	}
 }
-
+/**
+ * 
+ * @ClassName:AbsDemo
+ * @Description:抽象类
+ * @author TOM
+ * @Time: 2016年7月16日下午11:38:37
+ */
 abstract class AbsDemo {
 	public abstract void show();
 
@@ -14,17 +26,17 @@ abstract class AbsDemo {
 		System.out.println("父类方法");
 	}
 }
-
+/**
+ * 
+ * @ClassName:OuterClass
+ * @Description:
+ * @author TOM
+ * @Time: 2016年7月16日下午11:41:02
+ */
 class OuterClass {
-	int x = 3;
-
-	/*
-	 * class Inner extends AbsDemo { public void show() {
-	 * System.out.println("内部类打印外部类中的变量:\t" + x); } }
-	 */
 
 	public void function() {
-		// new Inner().show();
+		//相当于AbsDemo的子类,(子类以匿名内部类的方式重写了父类的方法)
 		AbsDemo absDemo = new AbsDemo() {
 
 			@Override
