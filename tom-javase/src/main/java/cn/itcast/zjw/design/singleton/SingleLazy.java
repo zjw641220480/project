@@ -1,14 +1,14 @@
 package cn.itcast.zjw.design.singleton;
 
 /**
- * @Description <p>
- *              饿汉式
- *              </p>
+ * 
+ * @ClassName:SingleLazy
+ * @Description:最基础的懒汉式单利模式
  * @author TOM
- * @date 2016年5月20日 下午4:06:25
- * @version V1.3.1
+ * @Time: 2016年7月15日下午11:08:01
  */
 public class SingleLazy {
+	//需要保证的单利对象
 	private Singleton singleton = null;
 	/** 
 	 * @MethodName:getSingleton
@@ -18,6 +18,7 @@ public class SingleLazy {
 	 */
 	public Singleton getSingleton() {
 		if (singleton == null) {
+			//使用资源进行加锁
 			synchronized (singleton) {
 				if (singleton == null) {
 					singleton = new Singleton();

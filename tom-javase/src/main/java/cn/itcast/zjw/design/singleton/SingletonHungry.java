@@ -1,18 +1,17 @@
 package cn.itcast.zjw.design.singleton;
 
 /**
- * @Description <p>
- *              饿汉式加载
- *              </p>
+ * 
+ * @ClassName:SingletonHungry
+ * @Description:标准的饿汉式单例模式
  * @author TOM
- * @date 2016年5月20日 下午4:03:00
- * @version V1.3.1
+ * @Time: 2016年7月15日下午11:11:47
  */
 public class SingletonHungry {
 	Singleton singleton = new Singleton();
 	/** 
 	 * @MethodName:getSingleton
-	 * @Desition:最基础的饿汉式产生单例
+	 * @Desition:最基础的饿汉式产生单例,直接返回此单例模式
 	 * @author TOM
 	 * @return  
 	 */

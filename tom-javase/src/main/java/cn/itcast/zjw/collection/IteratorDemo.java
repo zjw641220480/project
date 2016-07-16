@@ -14,7 +14,7 @@ import java.util.ListIterator;
  * 所以在迭代的时候,只能用迭代器的方法操作元素,但是iterator方法是有限的,只能对元素进行判断取出,删除的操作,如果要进行
  * 其他的操作,如添加,修改,就需要使用其子接口ListIterator,该接口只能通过List集合
  * ClassName: IteratorDemo 
- * @Description: TODO
+ * @Description: 用于演示集合的迭代器
  * @author Tom
  * @date 2016年4月6日
  */
@@ -34,12 +34,12 @@ public class IteratorDemo {
 		IteratorDemo.listIterator(list);
 	}
 	/**
-	 * 演示列表迭代器
-	 * @Description: TODO   
-	 * @return void  
-	 * @throws
-	 * @author Tom
-	 * @date 2016年4月6日
+	 * 
+	 * @Method:listIterator
+	 * @Description:演示列表迭代器
+	 * @author TOM
+	 * @date 2016年7月15日
+	 * @param list
 	 */
 	public static void listIterator(List<String> list){
 		ListIterator<String> listIterator = list.listIterator();

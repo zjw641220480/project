@@ -1,5 +1,7 @@
 package cn.itcast.zjw.data.variable;
 
+import org.junit.Test;
+
 /** 
 * @ClassName: Variable 
 * @Description:for和while的一点小区别,
@@ -10,15 +12,19 @@ package cn.itcast.zjw.data.variable;
 * @date 2016-3-6 
 */ 
 public class Variable {
-	public static void main(String[] args) {
-		testFor();
-		
-	}
-	public static void testFor(){
+	@Test
+	public void testFor(){
 		int x = 1;
+		/*
+		 * for循环的结构,
+		 * 1:起始条件,此条件只会运行一次,
+		 * 2:循环结束的条件,这个的值必须为false或者是true
+		 * 3:步调,这个条件也是可以省略的(当在循环体内部进行步调设置的时候)
+		 */
 		for(System.out.println("a");x<3;System.out.println("c")){
 			System.out.println("Variable.testFor()");
-			x++;
+			System.out.println("此时变量x的值为:\t"+x);
+			++x;//++x和x++是没有什么区别的;
 		}
 	}
 	/** 
@@ -28,16 +34,17 @@ public class Variable {
 	* @author Tom
 	* @date 2016-3-6
 	*/ 
-	public static void forCompareWhile(){
+	@Test
+	public void forCompareWhile(){
 		for(int x=0;x<3;x++){
-			System.out.println(x);
+			System.out.println("循环中输出的x的值为:\t"+x);
 		}
 		//System.out.println(x);编译不通过,因为x的作用域只是在for循环中
 		int y = 0;
 		while(y<3){
-			System.out.println(y);
+			System.out.println("循环中输出的y的值为:\t"+y);
 			y++;
 		}
-		System.out.println(y);
+		System.out.println("变量x最终的值为:\t"+y);
 	}
 }
