@@ -10,6 +10,8 @@ import java.util.TreeMap;
 
 import org.junit.Test;
 
+import cn.itcast.zjw.domain.Student;
+
 /**
  * ClassName: MapTest 
  * @Description: 
@@ -33,10 +35,11 @@ public class MapTest {
 	@Test
 	public void testMapStudent(){
 		Map<Student,String> students = new HashMap<Student, String>();
-		//students.put(new Student("zhangsan",20), "北京");
+		students.put(new Student("zhangsan",30,"男"), "北京");
 		//这里为什么在put的时候会认为这个键是已经存在的,对象复写了HashCode()和equals()方法
 		//每一次存入的时候都会调用一次HashCode方法,当再次存入发现hashCode的值是一样的时候,再进行equals方法的判断
-		students.put(new Student("zhangsan",30), "河南");
+		//下面这个键值对并不会被存入到Map中,而且也不会把之前存入进map的上一个键值对替换掉;
+		students.put(new Student("zhangsan",30,"女"), "河南");
 		students.put(new Student("lisi",23), "上海");
 		students.put(new Student("wangwu",40), "天津");
 		students.put(new Student("zhaoliu",32), "深圳");
@@ -63,7 +66,7 @@ public class MapTest {
 		//Student本身实现了Comparable接口,本身具备比较性
 		Map<Student,String> students = new TreeMap<Student, String>(new Comparator<Student>(){
 			public int compare(Student s1, Student s2) {
-				int num = s1.getSname().compareTo(s2.getSname());
+				int num = s1.getName().compareTo(s2.getName());
 				if(num==0){
 					//自然排序是从小到大,想要不是自然排序,只需要在每一个判断条件上添加一个负号即可,
 					//return -new Integer(s1.getAge()).compareTo(s2.getAge());
@@ -74,11 +77,11 @@ public class MapTest {
 			}
 		});
 		//下面一个学生不会被存入容器中
-		students.put(new Student("lisi",23), "上海");
+		students.put(new Student("lisi",23,"男"), "上海");
 		//姓名一致选择次比较器,年龄
-		students.put(new Student("lisi",34), "上海");
+		students.put(new Student("lisi",34,"女"), "上海");
+		students.put(new Student("lisi",23,"女"), "上海");
 		students.put(new Student("zhangsan",30), "河南");
-		students.put(new Student("lisi",23), "上海");
 		students.put(new Student("wangwu",40), "天津");
 		students.put(new Student("zhaoliu",32), "深圳");
 		Set<Student> set = students.keySet();
