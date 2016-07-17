@@ -2,23 +2,52 @@ package cn.itcast.zjw.genericity;
 
 import org.junit.Test;
 
-public class GenericityDemo {
+public class GenericityClassTestDemo {
 	/**
-	 * 先对泛型类进行测试,随后对泛型方法的测试,泛型方法并不要求一定是定义在泛型类中;可以在普通类中独立存在
-	 * @Description: TODO   
-	 * @return void  
-	 * @throws
-	 * @author Tom
-	 * @date 2016年4月9日
+	 * 
+	 * @Method:testGenericityMethodSet
+	 * @Description:测试泛型类中的setT()方法
+	 * @author TOM
+	 * @date 2016年7月16日
 	 */
 	@Test
-	public void testGenericityMethod(){
+	public void testGenericityMethodSet(){
 		GenericityClass<Worker> genericityClass = new GenericityClass<Worker>();
 		genericityClass.setT(new Worker());
+	}
+	/**
+	 * 
+	 * @Method:testGenericityMethodGet
+	 * @Description:测试泛型类中的get方法
+	 * @author TOM
+	 * @date 2016年7月16日
+	 */
+	@Test
+	public void testGenericityMethodGet(){
+		GenericityClass<Worker> genericityClass = new GenericityClass<Worker>();
 		genericityClass.getT();
-		//--------------------调用泛型方法进行比较测试
-		genericityClass.show("泛型方法测试");
-		//-------------------静态(static)泛型方法的调用
-		GenericityClass.staticMethos("静态泛型方法");
+	}
+	/**
+	 * 
+	 * @Method:testGenericityMethodShow
+	 * @Description:测试泛型类中的show方法
+	 * @author TOM
+	 * @date 2016年7月16日
+	 */
+	@Test
+	public void testGenericityMethodShow(){
+		GenericityClass<Worker> genericityClass = new GenericityClass<Worker>();
+		genericityClass.show(new Worker());
+	}
+	/**
+	 * 
+	 * @Method:testGenericityMethodStaticShow
+	 * @Description:静态方法中泛型类的使用
+	 * @author TOM
+	 * @date 2016年7月16日
+	 */
+	@Test
+	public void testGenericityMethodStaticShow(){
+		GenericityClass.staticMethos(new Worker());
 	}
 }

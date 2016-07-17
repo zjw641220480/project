@@ -16,5 +16,4 @@ class GenrricityInterfaceDemo implements GenericityInterface<String>{
 		System.out.println("GenrricityInterfaceDemo.show()\t"+t);
 	}
 
-	
 }

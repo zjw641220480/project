@@ -17,16 +17,21 @@ public class GenericityClass<T> {
 	private T t;
 	
 	public T getT() {
-		System.out.println("使用的是泛型类上面定义的泛型---->T");
+		System.out.println(this.toString());
+		System.out.println("GenericityClass.getT()");
+		System.out.println("泛型类中的getT()方法运行");
 		return t;
 	}
 
 	public void setT(T t) {
-		System.out.println("使用的是泛型类上面定义的泛型---->T");
+		System.out.println(this.toString());
+		System.out.println("GenericityClass.setT()");
+		System.out.println("泛型类中的setT()方法运行");
 		this.t = t;
 	}
 	/**
-	 * 泛型方法并不要求一定定义在泛型类中,泛型可以看成是一个自己定义的变量类型;方法中的泛型变量,和方法中的变量作用范围一致
+	 * 泛型方法并不要求一定定义在泛型类中,泛型可以看成是一个自己定义的变量类型;
+	 * 方法中的泛型变量,和方法中的变量作用范围一致
 	 * @Description: TODO
 	 * @param e   
 	 * @return void  
@@ -35,19 +40,22 @@ public class GenericityClass<T> {
 	 * @date 2016年4月9日
 	 */
 	public <E> void show(E e){
-		System.out.println("使用的是泛型方法中定义的泛型---->E");
-		System.out.println("传递的泛型方法中的参数E:\t"+e);
+		System.out.println(this.toString());
+		System.out.println("GenericityClass.show()");
+		System.out.println("泛型类中的show方法运行");
+		System.out.println("传递的泛型方法中的参数E的hash值为:\t"+e);
 	}
 	/**
-	 * @Description: TODO
-	 * @param e   
+	 * @Description: 静态泛型方法中的泛型
+	 * @param s   
 	 * @return void  
 	 * @throws
 	 * @author Tom
 	 * @date 2016年4月9日
 	 */
 	public static <S> void staticMethos(S s){
-		System.out.println("使用的是  静态  泛型方法中定义的泛型---->S");
-		System.out.println("传递的静态泛型方法中的参数S:\t"+s);
+		System.out.println(GenericityClass.class);
+		System.out.println("GenericityClass.staticMethos()");
+		System.out.println("传递的 静态泛型 方法中的参数S:\t"+s);
 	}
 }
