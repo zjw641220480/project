@@ -1,5 +1,7 @@
 package cn.itcast.zjw.object.ploymorphic;
 
+import org.junit.Test;
+
 /** 
 * @ClassName: DuoTaiExplain 
 * @Description: 多态的解析
@@ -26,31 +28,49 @@ package cn.itcast.zjw.object.ploymorphic;
 * @date 2016-2-28 
 */ 
 public class DuoTaiExplain{
-	public static void main(String[] args) {
-		/*Cat cat = new Cat();
-		//cat.eat();
-		function(cat);
-		Dog dog = new Dog();
-		//dog.eat();
-		function(dog);*/
-		Animal animal = new Cat();//向上转型;
-		//只能是调用Animal中已经定义的方法,而对于Cat子类中特有的方法是不能进行调用的
-		animal.eat();
-		function(animal);
-		//animal.catchMouse();方法的运行看左边
+	@Test
+	public void testCat(){
+		Cat cat = new Cat();
+		cat.eat();
 	}
+	@Test
+	public void testUp(){
+		Animal animal = new Cat();//向上转型
+		//只能调用Animal中已经有的方法,对于Cat中特有的方法不能进行调用
+		animal.eat();
+	}
+	@Test
+	public void testDuoTai(){
+		Animal animal = new Cat();
+		DuoTaiExplain.function(animal);
+	}
+	/**
+	 * 
+	 * @Method:function
+	 * @Description:这一个方法具备重用性,一个顶三个;
+	 * @author TOM
+	 * @date 2016年7月17日
+	 * @param animal
+	 */
 	public static void function(Animal animal){
-		//一方出现类型转换错误,加入逻辑判断
+		//一方出现类型转换错误,加入逻辑判断;
 		//Dog dog = (Dog) animal;
-		if(animal instanceof Cat){
-			Cat cat = (Cat) animal;
-			cat.catchMouse();
-		} else if(animal instanceof Dog){
-			Dog dog = (Dog)animal;
-			dog.kanJia();
-		} else {
-			Pig pig = (Pig)animal;
-			pig.gongDi();
+		try{
+			if(animal instanceof Cat){
+				Cat cat = (Cat) animal;
+				cat.eat();
+				cat.catchMouse();
+			} else if(animal instanceof Dog){
+				Dog dog = (Dog)animal;
+				dog.eat();
+				dog.kanJia();
+			} else {
+				Pig pig = (Pig)animal;
+				pig.eat();
+				pig.gongDi();
+			}
+		}catch(Exception e){
+			System.out.println("类型转换异常");
 		}
 	}
 	public static void function(Cat cat){
@@ -64,11 +84,23 @@ public class DuoTaiExplain{
 	}
 
 }
-
+/**
+ * 
+ * @ClassName:Animal
+ * @Description:总的抽象出来的抽象类,后面其它的类都是继承该类的;
+ * @author TOM
+ * @Time: 2016年7月17日上午9:13:31
+ */
 abstract class Animal {
 	public abstract void eat();
 }
-
+/**
+ * 
+ * @ClassName:Cat
+ * @Description:实例对象Cat
+ * @author TOM
+ * @Time: 2016年7月17日上午9:14:05
+ */
 class Cat extends Animal{
 
 	@Override
@@ -79,7 +111,13 @@ class Cat extends Animal{
 		System.out.println("Cat.catchMouse()抓老鼠");
 	}
 }
-
+/**
+ * 
+ * @ClassName:Dog
+ * @Description:实例对象Dog
+ * @author TOM
+ * @Time: 2016年7月17日上午9:14:19
+ */
 class Dog extends Animal{
 	@Override
 	public void eat() {
@@ -89,7 +127,13 @@ class Dog extends Animal{
 		System.out.println("Dog.kenBone()看家");
 	}
 }
-
+/**
+ * 
+ * @ClassName:Pig
+ * @Description:实例对象Pig
+ * @author TOM
+ * @Time: 2016年7月17日上午9:14:31
+ */
 class Pig extends Animal{
 	@Override
 	public void eat() {

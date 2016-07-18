@@ -17,28 +17,43 @@ public class AbstractExplain {
 		
 	}
 }
-
+/**
+ * 
+ * @ClassName:Student
+ * @Description:抽象类Student
+ * @author TOM
+ * @Time: 2016年7月17日上午8:38:10
+ */
 abstract class Student{
-	/*
-	public void show(){
-		System.out.println("Student.show()");
-	}
-	*/
 	//把这个方法定义成一个抽象方法;
-	public abstract void show();
+	public abstract void study();
 }
-
+/**
+ * 
+ * @ClassName:BaseStudent
+ * @Description:抽象类Student的实例化一,
+ * @author TOM
+ * @Time: 2016年7月17日上午8:37:47
+ */
 class BaseStudent extends Student{
 	@Override
-	public void show() {
-		System.out.println("BaseStudent.show()");
+	public void study() {
+		System.out.println(this.toString());
+		System.out.println("BaseStudent.study()");
 	}
 }
-
+/**
+ * 
+ * @ClassName:AdvStudent
+ * @Description:抽象类Student的实例化二,
+ * @author TOM
+ * @Time: 2016年7月17日上午8:36:16
+ */
 class AdvStudent extends Student{
 	@Override
-	public void show() {
-		System.out.println("AdvStudent.show()");
+	public void study() {
+		System.out.println(this.toString());
+		System.out.println("AdvStudent.study()");
 	}
 }
 

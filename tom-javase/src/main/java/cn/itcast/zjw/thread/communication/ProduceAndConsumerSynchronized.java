@@ -16,13 +16,13 @@ public class ProduceAndConsumerSynchronized {
 		//new Thread(new Producer(resource)).start();
 		//new Thread(new Consumer(resource)).start();
 		Thread threadA = new Thread(new Producer(resource));
-		Thread threadB = new Thread(new Producer(resource));
+		//Thread threadB = new Thread(new Producer(resource));
 		Thread threadC = new Thread(new Consumer(resource));
 		Thread threadD = new Thread(new Consumer(resource));
 		threadA.start();
-		threadB.start();
+		//threadB.start();
 		threadC.start();
-		//threadD.start();
+		threadD.start();
 	}
 }
 

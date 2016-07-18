@@ -70,7 +70,7 @@ public class Student implements Comparable<Object> {// 改接口强制让学生�
 		}
 		return -1;
 	}
-	/*认为只要是年龄一致就是同一个元素,就不会把第二个元素放入进来;
+	/*另一种比较的远足:认为只要是年龄一致就是同一个元素,就不会把第二个元素放入进来;
 	public int compareTo(Object obj) {
 		if (!(obj instanceof Student)) {
 			throw new RuntimeException("不是学生对象");
@@ -117,5 +117,10 @@ public class Student implements Comparable<Object> {// 改接口强制让学生�
 		} else if (!name.equals(other.name))
 			return false;
 		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Student [sex=" + sex + ", name=" + name + ", age=" + age + "]";
 	}
 }

@@ -26,23 +26,30 @@ public class Person_this {
 		this(name);
 		this.age = age;
 	}
-	/** 
-	* @Title: compare 
-	* @Description:用来演示this关键字的用法:
-	* 该函数内部要用到    调用该函数的对象    的时候,用this来表示该对象;
-	* @param p
-	* @return 
-	* @return boolean
-	* @author Tom
-	* @date 2016-2-27
-	*/ 
+	
+	@Override
+	public String toString() {
+		return "Person_this [age=" + age + ", name=" + name + "]";
+	}
+	/**
+	 * 
+	 * @Method:compare
+	 * @Description:用来演示this关键字的用法:该函数内部要用到    调用该函数的对象    的时候,用this来表示该对象;
+	 * @author TOM
+	 * @date 2016年7月17日
+	 * @param p
+	 * @return
+	 */
 	public boolean compare(Person_this p){
+		System.out.println(this.toString());
+		System.out.println(p.toString());
 		return this.age==p.age;
 	}
 	
 	public static void main(String[] args) {
 		Person_this p1 = new Person_this(20);
 		Person_this p2 = new Person_this(23);
+		// pi.compare(),那么就是p1在调用compare方法,this指代的就是p1
 		boolean b = p1.compare(p2);
 		if(b){
 			System.out.println("两个人年龄相同");

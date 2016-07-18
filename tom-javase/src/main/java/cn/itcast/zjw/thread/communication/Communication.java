@@ -10,6 +10,7 @@ package cn.itcast.zjw.thread.communication;
  * @author Tom
  * @date 2016-3-4
  */
+//对资源的读写,相当于是一进一出的情况;
 public class Communication {
 	//线程间通讯
 	public static void main(String[] args) {
@@ -32,9 +33,9 @@ public class Communication {
  * @date 2016-3-4
  */
 class Input implements Runnable {
-	Resource resource;
+	private Resource resource;
 	//要操作的是同一个资源,所以把资源作为锁,同时在多个线程中,直接把资源传递进来以便使得多个线程操作的是同一份资源
-	Input(Resource resource) {
+	public Input(Resource resource) {
 		this.resource = resource;
 	}
 	public void run() {
@@ -70,7 +71,7 @@ class Input implements Runnable {
  * @date 2016-3-4
  */
 class Output implements Runnable {
-	Resource resource;
+	private Resource resource;
 
 	public Output(Resource resource) {
 		this.resource = resource;

@@ -19,13 +19,13 @@ public class PersonRAM {
 		System.out.println("构造代码快执行");
 		/*
 		 * 构造代码快执行,而构造函数还没有执行的时候,默认初始化成员变量;
-		 * 还没有进行显示初始化成员变量;
+		 * 还没有进行显示初始化成员变量;打印的是他们的默认初始化值
 		 * name=null	age=0;
 		 * */
-		System.out.println(name+",,,,"+age);
+		System.out.println(name+":\t"+age);
 		
 	}
-	
+	//构造函数
 	public PersonRAM(String name,int age){
 		this.age=age;
 		this.name=name;

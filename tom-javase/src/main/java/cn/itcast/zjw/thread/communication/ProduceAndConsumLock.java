@@ -3,17 +3,20 @@ package cn.itcast.zjw.thread.communication;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
-
+/**
+ * 加锁,解锁,中间过程中判断被哪个锁所管理的线程等待,被哪个锁所管理的线程起来;
+ */
 /** 
 * @ClassName: ProduceAndConsumLock 
 * @Description:jdk1.5版本后出现的新特性,Lock,Condition
 * 将同步synchronized替换成了显示的Lock
-* 将Object中的wait,notify,notify()替换为了Condition
+* 将Object中的wait,notify,notifyAll替换为了Condition
 * 该对象可以通过锁Lock来创建,
 * 在该事例中实现了本方只唤醒对方的操作,
 * @author Tom
 * @date 2016-3-5 
 */ 
+// 这一个类需要着重去看,并且好好理解;
 public class ProduceAndConsumLock {
 	public static void main(String[] args) {
 		System.out.println("ProduceAndConsumLock.main()");

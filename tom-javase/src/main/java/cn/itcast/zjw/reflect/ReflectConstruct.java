@@ -8,7 +8,7 @@ import org.junit.Test;
 
 /** 
  * @ClassName: ReflectConstruct
- * @Description:反射操作构造方法,Class这个类主要也就是在反射的时候使用的;
+ * @Description:反射操作构造方法,Class这个类主要也就是在反射的时候使用的;构造方法的作用就是创建对象,获得的class对象都是调用newInstance()方法来创建相应对象
  * @Time 2016年6月1日 下午9:58:14
  * @author: TOM
  * @version 1.0.0
@@ -30,14 +30,28 @@ public class ReflectConstruct {
 	@Test
 	@SuppressWarnings("unused")
 	public void getReflectClass() throws Exception{
-		//类名.class获取Class类;
+		//1:类名.class获取Class类;
 		Class<Person> personClass = Person.class;
-		//Class.forName生成Class类;
+		//2:Class.forName()生成Class类;
 		@SuppressWarnings("rawtypes")
 		Class personClass2 = Class.forName("cn.itcast.zjw.reflect.Person");
-		//对象.getClass生成Class类;
+		//3:对象.getClass()生成Class类;
 		Person person = new Person();
 		Class<? extends Person> personClass3 = person.getClass();
+	}
+	/**
+	 * 
+	 * @Method:testNoParamsConstruct
+	 * @Description:无参构造方法的测试
+	 * @author TOM
+	 * @date 2016年7月17日
+	 * @throws ClassNotFoundException
+	 * @throws InstantiationException
+	 * @throws IllegalAccessException
+	 */
+	@Test
+	public void testNoParamsConstruct() throws ClassNotFoundException, InstantiationException, IllegalAccessException{
+		this.newPerson1();
 	}
 	/**
 	 * @Method: newPerson1
@@ -54,6 +68,24 @@ public class ReflectConstruct {
 		Person person = (Person) personClass.newInstance();
 		person.setId("123"); 
 		System.out.println(person.getId());
+	}
+	/**
+	 * 
+	 * @Method:testSomeParamsConstruct
+	 * @Description:有参数构造方法的测试
+	 * @author TOM
+	 * @date 2016年7月17日
+	 * @throws ClassNotFoundException
+	 * @throws NoSuchMethodException
+	 * @throws SecurityException
+	 * @throws InstantiationException
+	 * @throws IllegalAccessException
+	 * @throws IllegalArgumentException
+	 * @throws InvocationTargetException
+	 */
+	@Test
+	public void testSomeParamsConstruct() throws ClassNotFoundException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
+		this.newPerson2();
 	}
 	/**
 	 * @Method: newPerson2

@@ -2,7 +2,7 @@ package cn.itcast.zjw.thread.communication;
 
 /** 
 * @ClassName: OptimizeCommunication 
-* @Description: 等待唤醒机制,需要多多理解
+* @Description: 等待唤醒机制,需要多多理解,什么时候等待,什么时候唤醒其它线程
 * @author Tom
 * @date 2016-3-4 
 */ 
