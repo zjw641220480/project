@@ -37,6 +37,7 @@ class LockResource {
 	private String name;
 	private int count = 1;
 	private boolean flag = false;
+	//同一个锁中的线程,才能被唤醒
 	private Lock lock = new ReentrantLock();
 	private Condition condition_Pro  = lock.newCondition();
 	private Condition condition_Con  = lock.newCondition();
@@ -45,6 +46,7 @@ class LockResource {
 		try {
 			while (flag) {
 				// 锁对象的wait方法的替代
+				System.out.println("LockResource.set()");
 				condition_Pro.await();//生产者等待
 			}
 			this.name = name + "---" + count++;
@@ -66,6 +68,7 @@ class LockResource {
 		lock.lock();
 		try {
 			while (!flag) {
+				System.out.println("LockResource.out()");
 				condition_Con.await();
 			}
 			System.out.println(Thread.currentThread().getName() + "...消费者..."
