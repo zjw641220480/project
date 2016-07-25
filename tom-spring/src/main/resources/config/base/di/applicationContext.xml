@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.0.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+	<bean id="person" class="cn.itcast.zjw.base.domain.Person" init-method="init">
+	<!-- property描述的就是类中的属性; 
+		name属性就是描述属性的名称,
+		如果是基本数据类型(包含String),就用value赋值
+		如果是引用数据类型,就用ref赋值
+	-->
+		<property name="pid" value="1"></property>
+		<property name="name" value="wanger"></property>
+		<property name="student" ref="student"></property>
+		<property name="stringList">
+			<list>
+				<value>list1</value>
+				<value>list2</value>
+				<value>list3</value>
+				<ref bean="student"/>
+			</list>
+		</property>
+		<property name="objects">
+			<list>
+				<value>obj1</value>
+				<ref bean="student"/>
+			</list>
+		</property>
+		<property name="studentsSet">
+			<set>
+				<value>set1</value>
+				<value>set2</value>
+				<value>set3</value>
+				<ref bean="student"/>
+			</set>
+		</property>
+		<property name="studentsMap">
+			<map>
+				<entry key="mp1" value="mv1"></entry>
+				<entry key="mp2" value-ref="student"></entry>
+			</map>
+		</property>
+		<property name="properties">
+			<props>
+				<prop key="p1">pv1</prop>
+				<prop key="p2">pv2</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="student" class="cn.itcast.zjw.base.domain.Student"></bean>
+</beans>

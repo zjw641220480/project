@@ -8,7 +8,7 @@ public class TestScope {
 	/**
 	 * 
 	 * @Method:testScope_Default
-	 * @Description:在默认情况下,Spring容器产生的对象是单例的,
+	 * @Description:在默认情况下,Spring容器产生的对象是单例的, 没有Scope的值
 	 * @author TOM
 	 * @date 2016年7月19日
 	 */
@@ -17,13 +17,13 @@ public class TestScope {
 		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("config/base/scope/applicationContext.xml");
 		HelloWorld helloWorldA = (HelloWorld) applicationContext.getBean("helloWorld");
 		HelloWorld helloWorldB = (HelloWorld) applicationContext.getBean("helloWorld");
-		System.out.println(helloWorldA);
-		System.out.println(helloWorldB);
+		System.out.println(helloWorldA.toString());
+		System.out.println(helloWorldB.toString());
 	}
 	/**
 	 * 
 	 * @Method:testScope_Prototype
-	 * @Description:将scope改为"prototype",则为多例的
+	 * @Description:将scope改为"prototype",则为多例的,而且是每次使用的时候会创建一个Bean;
 	 * @author TOM
 	 * @date 2016年7月19日
 	 */
@@ -32,7 +32,7 @@ public class TestScope {
 		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("config/base/scope/applicationContext.xml");
 		HelloWorld helloWorldA = (HelloWorld) applicationContext.getBean("helloWorld");
 		HelloWorld helloWorldB = (HelloWorld) applicationContext.getBean("helloWorld");
-		System.out.println(helloWorldA);
-		System.out.println(helloWorldB);
+		System.out.println(helloWorldA.toString());
+		System.out.println(helloWorldB.toString());
 	}
 }

@@ -102,9 +102,8 @@
 		<module>tom-mybatis-spring</module>
 		<module>tom-hibernate-struts</module>
 		<module>tom-jsjquery</module>
-		<module>tom-test</module>
 		<module>tom-shiro</module>
     	<module>tom-web</module>
-    <module>tom-spring</module>
+    	<module>tom-spring</module>
   </modules>
 </project>
