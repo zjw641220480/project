@@ -2,9 +2,7 @@ package cn.itcast.zjw.io.superstream.objectstream;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
@@ -58,5 +56,6 @@ public class ObjectStream {
 		Person personB = (Person) objectInputStream.readObject();
 		System.out.println(personB.getName());
 		objectInputStream.close();
+		
 	}
 }
