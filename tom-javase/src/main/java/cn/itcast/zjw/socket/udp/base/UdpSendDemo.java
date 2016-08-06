@@ -1,4 +1,4 @@
-package cn.itcast.zjw.socket.udp;
+package cn.itcast.zjw.socket.udp.base;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
@@ -30,7 +30,7 @@ public class UdpSendDemo {
 		while(flag<100){
 			//2:提供数据,并将数据封装
 			//DatagramPacket(byte[] buf, int length, InetAddress address, int port) 
-			//数据,ip地址,端口号
+							//数据,目的ip地址,目的端口号
 			byte[] bytes = ("这个是数据\t"+flag).getBytes();
 			InetAddress inetAddress = InetAddress.getByName("127.0.0.1");
 			DatagramPacket datagramPacket = new DatagramPacket(bytes,bytes.length,inetAddress,8888);

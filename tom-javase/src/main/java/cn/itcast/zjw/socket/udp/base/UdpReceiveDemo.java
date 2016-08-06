@@ -1,4 +1,4 @@
-package cn.itcast.zjw.socket.udp;
+package cn.itcast.zjw.socket.udp.base;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
