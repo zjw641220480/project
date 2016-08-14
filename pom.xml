@@ -100,7 +100,6 @@
 		<module>tom-javase</module>
 		<module>tom-mybatis</module>
 		<module>tom-mybatis-spring</module>
-		<module>tom-hibernate-struts</module>
 		<module>tom-jsjquery</module>
 		<module>tom-shiro</module>
     	<module>tom-web</module>
