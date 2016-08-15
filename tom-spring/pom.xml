@@ -40,6 +40,14 @@
 			<artifactId>spring-tx</artifactId>
 			<version>4.2.6.RELEASE</version>
 		</dependency>
+		<!-- Spring中最好把这个也引入进来,方便使用里面的相关注解 -->
+		<!-- https://mvnrepository.com/artifact/javax.annotation/javax.annotation-api -->
+		<dependency>
+			<groupId>javax.annotation</groupId>
+			<artifactId>javax.annotation-api</artifactId>
+			<version>1.2</version>
+		</dependency>
+
 	</dependencies>
 	<build>
 		<finalName>tom-spring</finalName>

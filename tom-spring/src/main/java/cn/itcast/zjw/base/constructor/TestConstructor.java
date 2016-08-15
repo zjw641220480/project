@@ -5,7 +5,13 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import cn.itcast.zjw.base.domain.Person;
-
+/**
+ * 
+ * @ClassName:TestConstructor
+ * @Description:使用构造函数给属性赋值
+ * @author TOM
+ * @Time:2016年8月14日
+ */
 public class TestConstructor {
 	/**
 	 * 

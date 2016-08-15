@@ -5,9 +5,23 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+import javax.annotation.Resource;
+import javax.annotation.processing.*;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.ImportResource;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+@Component
 public class Person {
 	private Long pid;
 	private String name;
+	@Autowired
+	@Qualifier("student")
 	private Student student;
 	private List stringList;
 	private Set studentsSet;
@@ -22,9 +36,15 @@ public class Person {
 	public Person(){
 		System.out.println("Person.Person()\t默认构造函数");
 	}
+	@PostConstruct //在构造器之后运行
 	public void init(){
 		System.out.println(this.toString());
 		System.out.println("Person.init()");
+	}
+	@PreDestroy // 在对象被销毁之前运行(Spring容器关闭);
+	public void destory(){
+		System.out.println(this.toString());
+		System.out.println("Person.destory()");
 	}
 	public Long getPid() {
 		return pid;
@@ -36,6 +56,8 @@ public class Person {
 		return name;
 	}
 	public void setName(String name) {
+		System.out.println("Person.setName()");
+		System.out.println("Person的SetName方法运行");
 		this.name = name;
 	}
 	public Student getStudent() {
@@ -73,5 +95,9 @@ public class Person {
 	}
 	public void setProperties(Properties properties) {
 		this.properties = properties;
+	}
+	public void testExtends(){
+		System.out.println("Person.testExtends()");
+		System.out.println("这个方法是用来测试继承的");
 	}
 }
