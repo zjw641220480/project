@@ -150,4 +150,9 @@ public class FileDemo {
 		System.out.println(file2.getAbsolutePath());
 		System.out.println(file2.lastModified());
 	}
+	@Test
+	public void testRenameTo(){
+		File file = new File("newFile.txt");
+		System.out.println(file.renameTo(file));
+	}
 }
