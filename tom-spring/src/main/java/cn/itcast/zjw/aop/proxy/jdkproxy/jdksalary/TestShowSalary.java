@@ -6,6 +6,7 @@ import org.junit.Test;
 
 public class TestShowSalary {
 	
+	
 	@Test
 	public void testShowSalary(){
 		//目标对象
