@@ -5,6 +5,7 @@ import java.lang.reflect.Proxy;
 import org.junit.Test;
 
 public class TestShowSalary {
+	
 	@Test
 	public void testShowSalary(){
 		//目标对象
