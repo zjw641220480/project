@@ -3,7 +3,13 @@ package cn.itcast.zjw.aop.proxy.jdkproxy.jdksalary;
 import java.lang.reflect.Proxy;
 
 import org.junit.Test;
-
+/**
+ * 
+ * @ClassName:TestShowSalary
+ * @Description:
+ * @Time:2016年8月23日
+ * @author:Tom
+ */
 public class TestShowSalary {
 	
 	@Test
