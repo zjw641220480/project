@@ -24,7 +24,7 @@ public class MyInterceptor implements MethodInterceptor{
 	/**
 	 * 
 	 * @MethodName:createProxy
-	 * @Description:用来产生代理对象,(Cglib方式采用的是继承的方式)
+	 * @Description:用来产生代理对象,(Cglib方式采用的是继承的方式),使用目标类及目标类的父类;
 	 * @return
 	 * @Time:2016年8月23日上午11:00:21
 	 * @author:Tom
@@ -33,8 +33,7 @@ public class MyInterceptor implements MethodInterceptor{
 		Enhancer enhancer = new Enhancer();
 		enhancer.setCallback(this);//this代表拦截器对象本身
 		enhancer.setSuperclass(this.target.getClass());//设置代理类的父类为目标类
-		enhancer.create();
-		return target;
+		return enhancer.create();
 	}
 	/**
 	 * 该方法的内容,和jdkproxy中的invoke方法的内容是一样的;
@@ -46,5 +45,4 @@ public class MyInterceptor implements MethodInterceptor{
 		this.transaction.closeSession();
 		return null;
 	}
-	
 }

@@ -20,7 +20,7 @@ public class MyInterceptor implements InvocationHandler{
 		this.transaction = transaction;
 	}
 	//使用反射的原理来执行对应方法
-	public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+	public Object invoke(Object object, Method method, Object[] args) throws Throwable {
 		this.transaction.openSession();
 		method.invoke(this.targetObject, args);
 		this.transaction.closeSession();
