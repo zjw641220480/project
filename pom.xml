@@ -104,5 +104,6 @@
 		<module>tom-shiro</module>
     	<module>tom-web</module>
     	<module>tom-spring</module>
+    <module>tom-thread_and_erupt_simultaneously</module>
   </modules>
 </project>

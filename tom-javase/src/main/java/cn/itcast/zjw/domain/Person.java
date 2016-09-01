@@ -31,7 +31,7 @@ public class Person implements Serializable {
 	public void setAge(int age) {
 		this.age = age;
 	}
-
+	public Person(){}
 	public Person(String name, int age) {
 		super();
 		this.name = name;
@@ -86,4 +86,7 @@ public class Person implements Serializable {
 	 * (other.name != null) return false; } else if (!name.equals(other.name))
 	 * return false; return true; }
 	 */
+	public Person createPerson(){
+		return new Person();
+	}
 }
