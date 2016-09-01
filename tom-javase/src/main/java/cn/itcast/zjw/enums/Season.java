@@ -1,8 +1,14 @@
 package cn.itcast.zjw.enums;
-
+/**
+ * @ClassName:Season
+ * @Description:一个标准的枚举类
+ * @Time:2016年9月1日
+ * @author:Tom
+ */
 public enum Season {
-	//下面是这个枚举类中可以直接使用的实例化了的枚举对象;
-	SPRING(1), SUMMER(2), FALL(3), WINTER(4);
+	//下面是这个枚举类中可以直接使用的实例化了的枚举对象,也即Season对象;
+	//创建了四个Season对象
+	SPRING(1), SUMMER(2), AUTUMN(3), WINTER(4);
 	//枚举自身的私有的构造器,每一个类型实际就是一个实例化了的枚举对象
 	private Season(int x){
 		this.x=x;

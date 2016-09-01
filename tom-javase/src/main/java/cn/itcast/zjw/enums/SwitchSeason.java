@@ -1,12 +1,24 @@
 package cn.itcast.zjw.enums;
-
+/**
+ * 
+ * @ClassName:SwitchSeason
+ * @Description:用于演示Season枚举类;
+ * @Time:2016年9月1日
+ * @author:Tom
+ */
 public class SwitchSeason {
 	private Season season;
 
 	public SwitchSeason(Season season) {
 		this.season = season;
 	}
-
+	/**
+	 * 
+	 * @MethodName:displaySeason
+	 * @Description:switch选择的是枚举类中的全局变量;
+	 * @Time:2016年9月1日上午10:05:44
+	 * @author:Tom
+	 */
 	public void displaySeason() {
 		//switch中选择的就是枚举类中每一个枚举实例的编号
 		switch (season.getX()) {
