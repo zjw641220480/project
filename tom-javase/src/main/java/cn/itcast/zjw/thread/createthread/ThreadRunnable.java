@@ -1,27 +1,23 @@
 package cn.itcast.zjw.thread.createthread;
 
-import org.junit.Test;
-
 public class ThreadRunnable implements Runnable{
 
 	public void run() {
 		System.out.println(this.toString());
-		System.out.println("ThreadRunnable.run()");
+		System.out.println("实现Runnable接口方式的线程运行:---ThreadRunnable.run()");
 		System.out.println(Thread.currentThread().getName());
 	}
 	/**
 	 * 
-	 * @Method:testThreadRunnable
+	 * @MethodName:main
 	 * @Description:测试实现Runnable接口方式的
-	 * @author TOM
-	 * @date 2016年7月18日
+	 * @param args
+	 * @Time:2016年9月5日下午11:50:35
+	 * @author:Tom
 	 */
-	@Test
-	public void testThreadRunnable(){
+	public static void main(String[] args) {
 		Thread threadA = new Thread(new ThreadRunnable());
-		Thread threadB = new Thread(new ThreadRunnable());
 		threadA.start();
-		threadB.start();
-		System.out.println(Thread.currentThread().getName()+"\t测试主线程");
+		System.out.println(Thread.currentThread().getName());
 	}
 }

@@ -14,6 +14,7 @@ public class ThreadExtend extends Thread{
 
 	@Override
 	public void run() {
+		System.out.println("继承方式的线程运行---ThreadExtend.run()");
 		System.out.println(Thread.currentThread().getName());
 	}
 	public static void main(String[] args) {
