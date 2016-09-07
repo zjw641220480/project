@@ -4,7 +4,6 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-import org.apache.log4j.chainsaw.Main;
 import org.junit.Test;
 import org.tom.util.logger.LoggerTypeEnum;
 import org.tom.util.logger.LoggerUtil;
