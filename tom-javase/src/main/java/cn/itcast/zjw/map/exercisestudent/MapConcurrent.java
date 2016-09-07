@@ -58,7 +58,6 @@ public class MapConcurrent {
 			System.out.println("线程运行结束");
 			System.out.println("总共循环的次数为:\t"+count);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
