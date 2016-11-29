@@ -13,7 +13,6 @@ import org.junit.Test;
 import cn.itcast.zjw.mybatis.domain.User;
 
 
-
 public class TestUserDaoImpl {
 	private SqlSessionFactory sqlSessionFactory = null;
 	private UserDaoImpl daoImpl = null;
