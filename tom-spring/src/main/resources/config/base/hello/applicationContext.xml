@@ -10,8 +10,7 @@
         http://www.springframework.org/schema/context/spring-context-4.0.xsd
         http://www.springframework.org/schema/tx
         http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
-        http://www.springframework.org/schema/aop
-        http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+        ">
         <!-- beans:把一个类放到spring容器中,该类就是一个bean,一个bean就是描述一个类的 -->
         <!-- id:就是标识符(命名规范:类的第一个字母小写,其他字母保持不变),class为类的全名 -->
         <bean class="cn.itcast.zjw.base.hello.Hello" id="hello" />
