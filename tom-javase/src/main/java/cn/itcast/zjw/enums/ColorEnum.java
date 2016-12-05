@@ -9,7 +9,7 @@ package cn.itcast.zjw.enums;
  * @author:Tom
  */
 public enum ColorEnum {
-
+	//4个实例
 	RED("red",1) {
 		@Override
 		public void method() {

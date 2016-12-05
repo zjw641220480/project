@@ -49,7 +49,7 @@ public class EnumTest {
 		 * 	A:使用枚举类中实例对象本身
 		 *  B:使用枚举类中被构造函数初始化了的全局变量;
 		 */
-		// switch中应用枚举的时候,其选择的对象应该是枚举类本身对象,switch的是枚举对象本身
+		// switch中应用枚举的时候,其选择的对象应该是枚举类本身对象,switch的是枚举对象本身.switch中使用String的时候,注意版本;
 		colorEunm = ColorEnum.BLACK;
 		switch (colorEunm) {
 		case GREEN:
