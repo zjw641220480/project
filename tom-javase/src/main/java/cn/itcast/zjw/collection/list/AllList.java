@@ -11,8 +11,9 @@ package cn.itcast.zjw.collection.list;
  * 			A:对于简单类型也是需要手动进行去重
  * 			B:对于复杂对象类型,更是需要手动专门编写方法依据一定的方法来去重
  * 		使用LinkedList来实现队列和堆栈;
+ * 		List集合的排序
  * 	Set
- * 			元素存放无语,元素不可以重复
+ * 			元素存放无序,元素不可以重复
  * 		HashSet:底层数据结构是哈希表;java.lang.Object@72ebbf5c这就是hash表
  * 			这种集合判断其内元素是否重复的依据是对象的hash值和equals两个方法;
  * 		TreeSet:底层数据结构是二叉树;
