@@ -1,1 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 加载属性文件,这里是加载数据库连接各个参数的properties文件 -->
+	<properties resource="OracleDb.properties">
+		<!-- 在这个标签中还可以继续配置属性名和属性值; -->
+	</properties>
+	<!-- 全局配置 -->
+	<settings>
+		<!-- 开启二级缓存 -->
+		<setting name="cacheEnabled" value="true"></setting>
+		<!-- 打开延迟加载的开关 -->
+		<setting name="lazyLoadingEnabled" value="true"></setting>
+		<!-- 将积极加载改为消极加载,即按需要进行加载 -->
+		<setting name="aggressiveLazyLoading" value="false"></setting>
+	</settings>
+	<!-- domain中javaBean别名的定义 -->
+	<typeAliases>
+		<!-- 针对单个别名的定义 
+			type:POJO类型的路径;
+			alias:别名;
+		-->
+		<!-- <typeAlias type="cn.itcast.zjw.mybatis.domain.User" alias="user"/> -->
+		<!-- 批量别名的定义
+			指定一个包名,mybatis自动扫描包中的po类,自动定义别名,别名就是这个类名(首字母大小写都可以)
+		 -->
+		<package name="cn.itcast.zjw.mybatis.domain"/>
+	</typeAliases>
+	<!-- 数据源的配置,当再和spring整合后整个environments配置将会被移除; -->
+	<environments default="development">
+		<environment id="development">
+		<!-- 使用jdbc事务管理,事务控制由mybatis的SqlSession进行管理 -->
+			<transactionManager type="JDBC"></transactionManager>
+		<!-- 数据库连接池参数,由mybatis来控制 -->
+			<dataSource type="POOLED">
+				<property name="driver" value="${jdbc.driver}"/>
+  				<property name="url" value="${jdbc.url}"/>
+  				<property name="username" value="${jdbc.username}"/>
+  				<property name="password" value="${jdbc.password}"/>
+			</dataSource>
+		</environment>
+	</environments>
+	<!-- 加载映射文件,有三种加载Mapper.xml的方式-->
+	<mappers>
+		<!-- 通过resource一次加载一个映射文件 -->
+		<mapper resource="oracle/sqlmap/User.xml"></mapper>
+	</mappers>
+</configuration>
