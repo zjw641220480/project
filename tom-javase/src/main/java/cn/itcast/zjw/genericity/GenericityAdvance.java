@@ -9,6 +9,7 @@ import org.junit.Test;
 /**
  * 泛型并不是只指List中的泛型,其的用处很广
  * ?通配符,也可以理解为占位符,
+ * 三种限定方式
  * 泛型的限定,<? extends Object>可以接受Object的本类型以及其子类型,上限限定;
  * <? super Person>可以接收Person的本类型以及其父类型,下限限定
  * <?>任何类型都可以进行接受
@@ -32,6 +33,7 @@ public class GenericityAdvance {
 		arrayList1.add("b");
 		arrayList1.add("c");
 		arrayList1.add("d");
+		System.out.println("GenericityAdvance.testGenericityMethod()");
 		printList(arrayList1);
 		ArrayList<Integer> arrayList2 = new ArrayList<Integer>();
 		arrayList2.add(1);
