@@ -33,7 +33,7 @@ public class GenericityAdvance {
 		arrayList1.add("b");
 		arrayList1.add("c");
 		arrayList1.add("d");
-		System.out.println("GenericityAdvance.testGenericityMethod()");
+		System.out.println("GenericityAdvance.testGenericityMethod()============branch1");
 		printList(arrayList1);
 		ArrayList<Integer> arrayList2 = new ArrayList<Integer>();
 		arrayList2.add(1);
