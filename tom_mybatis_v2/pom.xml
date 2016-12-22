@@ -40,7 +40,7 @@
 		<dependency>
 			<groupId>com.oracle</groupId>
 			<artifactId>ojdbc6</artifactId>
-			<version>12.1.0.1-atlassian-hosted</version>
+			<version>11.1.0.7.0</version>
 		</dependency>
 		<!-- mysql驱动的包 -->
 		<!-- 

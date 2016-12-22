@@ -5,7 +5,7 @@
 <!-- namespace命名空间,作用就是对sql进行分类化管理,理解sql隔离
 	注意:如果后期使用mapper代理进行开发,namespace就有了特殊重要的意义
  -->
-<mapper namespace="test">
+<mapper namespace="cn.itcast.zjw.mybatis.mapper.UserMapper">
 	<!-- 通过select来执行数据库查询
 		#{}表示一个占位符,程序会自动在占位符两边加上单引号,故在模糊查询中不能直接在xml中写'%#{id}%',必须只能是在程序中写入;
 		parameterType:指定输入参数的类型,这里指定为int型
