@@ -13,4 +13,5 @@
         http://www.springframework.org/schema/aop
         http://www.springframework.org/schema/aop/spring-aop.xsd">
 	<bean id="helloWorld" class="cn.itcast.zjw.base.scope.HelloWorld" scope="prototype"/>
+	
 </beans>
