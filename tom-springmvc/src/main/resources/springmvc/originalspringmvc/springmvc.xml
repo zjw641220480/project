@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+	<!-- 配置Handler -->
+	<bean id="itemController1" name="/itemList.action" class="cn.itcast.zjw.controller.original.ItemController">
+	</bean>
+	<bean name="/itemListHttpRequestHandler.action" class="cn.itcast.zjw.controller.original.ItemControllerHttpRequestHandler">
+	</bean>
+	
+	<!-- 配置处理器映射器 -->
+	<!-- 所有的处理器映射器都实现了HandlerMapping接口,SpringMvc框架根据是否实现了HandlerMapping接口来判断是否是映射器 -->
+	<!-- 这种方式的映射器根据URL匹配spring容器bean的name找到对应的bean(程序员编写的Handler),bean的name就是url中的最后一部分
+		-->
+	<!-- 以Bean的Name为主的处理器映射器 -->
+	<bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping">
+	</bean>
+	<!-- 以Bean的id为主的处理器映射器 -->
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<props>
+				<prop key="/items1.action">itemController1</prop>
+			</props>
+		</property>
+	</bean>
+	
+	
+	
+	<!-- 配置处理器适配器 -->
+	<!-- 所有的处理器适配器都实现了HandlerAdapter接口,SpringMvc框架根据是否实现了HandlerAdapter接口来判断是否是适配器 -->
+	<!-- 这种方式的适配器需要Handler实现Controller接口 -->
+	<bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter">
+	</bean>
+	<!-- 这种方式的适配器要求Handler实现HttpRequestHandler接口 -->
+	<bean class="org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter"/>
+	
+	<!-- 注解的处理器映射器和适配器 -->
+	<!-- 注解的映射器 -->
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">
+	</bean>
+	<!-- 注解的适配器 -->
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+	</bean>
+	<!-- 注解时候暂时用这种方式加载Handler(并未进行注解的解析) -->
+	<!-- <bean class="cn.itcast.zjw.controller.original.ItemControllerAnnotation"></bean> -->
+	<context:component-scan base-package="cn.itcast.zjw.controller"></context:component-scan>
+	
+	<!-- 配置视图解析器 -->
+	<!-- 要求将jstl的包加入进来,只对ModelAndView有效 -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/jsp"></property>
+		<property name="suffix" value=".jsp"></property>
+	</bean>
+</beans>

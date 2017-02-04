@@ -36,16 +36,11 @@
 			<version>2.2</version>
 		</dependency>
 
-		<!-- log -->
+		<!-- log,其中已经包括有log4j的jar包 -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>${stlf.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.17</version>
 		</dependency>
 		<!-- druid连接 -->
 		<dependency>

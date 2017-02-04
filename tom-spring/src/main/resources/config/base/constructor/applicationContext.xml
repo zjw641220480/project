@@ -1,3 +1,4 @@
+<<<<<<< Upstream, based on origin/mybatis_v2
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
@@ -22,4 +23,31 @@
        		<constructor-arg index="1" ref="student"></constructor-arg>
         </bean>
         <bean id="student" class="cn.itcast.zjw.base.domain.Student"></bean>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+	<!-- 引入spring约束空间的时候上面是标签名,下面是地址,两个缺一不可-->
+        <bean id="person" class="cn.itcast.zjw.base.domain.Person">
+        <!-- constructor-arg:代表某一个构造器参数
+        	index构造器参数下标;
+        	value:
+        	type:类型
+         -->
+        	<constructor-arg index="0" value="王二" type="java.lang.String"></constructor-arg>
+       		<constructor-arg index="1" ref="student"></constructor-arg>
+        </bean>
+        <bean id="student" class="cn.itcast.zjw.base.domain.Student"></bean>
+>>>>>>> c5dc3a0 tom-springmvc初步完成
 </beans>
