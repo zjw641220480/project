@@ -12,7 +12,6 @@
         http://www.springframework.org/schema/tx/spring-tx.xsd
         http://www.springframework.org/schema/aop
         http://www.springframework.org/schema/aop/spring-aop.xsd">
-	<!-- 引入spring约束空间的时候上面是标签名,下面是地址,两个缺一不可-->
         <bean id="person" class="cn.itcast.zjw.base.domain.Person">
         <!-- constructor-arg:代表某一个构造器参数
         	index构造器参数下标;
