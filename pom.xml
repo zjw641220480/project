@@ -100,12 +100,7 @@
     	<module>tom-web</module>
     	<module>tom-spring</module>
     	<module>tom-thread_and_erupt_simultaneously</module>
-<<<<<<< Upstream, based on origin/mybatis_v2
     	<module>tom-springMvc</module>
     	<module>tom_mybatis_v2</module>
-=======
-    	<module>tom_mybatis_v2</module>
-    <module>tom-springmvc</module>
->>>>>>> 31fdb7c 新建SpringMvc
   </modules>
 </project>
