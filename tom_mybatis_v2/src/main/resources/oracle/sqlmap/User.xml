@@ -18,7 +18,7 @@
 		这里面包括了两个很重要的:一个是输入的参数类型,一个是输出的参数类型;
 	 -->
 	 <select id="findUserById" parameterType="int" resultType="cn.itcast.zjw.mybatis.pojo.User">
-	 	SELECT * FROM USER_S WHERE id=#{id};
+	 	SELECT * FROM USER_S WHERE id=#{id}
 	 </select> 
 	 <!-- 根据用户名称模糊查询用户信息,可能返回多条;
 	 resultType:指定的就是单挑记录所映射的java对象类型,不论查询出来的是单条还是多条;
@@ -29,8 +29,11 @@
 	 <select id="findUserByName" parameterType="java.lang.String" resultType="cn.itcast.zjw.mybatis.pojo.User">
 	 	<!-- 
 	 	这个是使用占位符进行模糊查询时候的sql写法; -->
-	 	SELECT * FROM USER_S WHERE username LIKE #{value};
+	 	SELECT * FROM USER_S WHERE username LIKE #{value}
 	 	<!-- SELECT * FROM USER WHERE username LIKE '%${value}%'; -->
+	 </select>
+	 <select id="findUserByNameUse$" parameterType="java.lang.String" resultType="cn.itcast.zjw.mybatis.pojo.User">
+	 	SELECT * FROM USER WHERE username LIKE '%${value}%'
 	 </select>
 	 <!-- 添加用户
 	 	parameterType:指定输入的参数类型是pojo(包括用户信息);
@@ -45,13 +48,13 @@
 	  	resultType:指定SELECT LAST_INSERT_ID()的返回结果类型;int和java.lang.Integer都是可以的
 	  	-->
 	  	<selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
-	  		SELECT LAST_INSERT_ID();
+	  		SELECT LAST_INSERT_ID()
 	  	</selectKey> 
 	  	<!-- 这里可以不用写id,因为id是自增的,是有MySql自己进行维护的,这里写了也是没用的-->
-	  	INSERT INTO USER_S (id,username,birthday,sex,address) VALUE(#{id},#{username},#{birthday},#{sex},#{address});
+	  	INSERT INTO USER_S (id,username,birthday,sex,address) VALUE(#{id},#{username},#{birthday},#{sex},#{address})
 	 	<!-- INSERT INTO USER (username,birthday,sex,address) VALUE(#{username},#{birthday},#{sex},#{address}); -->
 	 </insert>
-	 <insert id="insertPerson" parameterType="cn.itcast.zjw.mybatis.domain.Person">
+	 <insert id="insertPerson" parameterType="cn.itcast.zjw.mybatis.pojo.Person">
 	 	<!-- 
 	  		使用mysql的uuid生成主键,
 	  		执行的过程:
@@ -67,7 +70,7 @@
 	 	根据id进行删除用户,需要输入id的值
 	  -->
 	  <delete id="deleteUser" parameterType="java.lang.Integer">
-	  	DELETE FROM USER_S WHERE id=#{id};
+	  	DELETE FROM USER_S WHERE id=#{id}
 	  </delete>
 	 <!-- 更新用户
 	 	分析:
@@ -77,6 +80,6 @@
 	 	#{id}:从输入对象user中获取id属性值;
 	  -->
 	  <update id="updateUser" parameterType="cn.itcast.zjw.mybatis.pojo.User">
-	  	UPDATE USER_S SET username=#{username},birthday=#{birthday},sex=#{sex},address=#{address} WHERE id=#{id};
+	  	UPDATE USER_S SET username=#{username},birthday=#{birthday},sex=#{sex},address=#{address} WHERE id=#{id}
 	  </update>
 </mapper>

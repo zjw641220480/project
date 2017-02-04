@@ -71,6 +71,20 @@ public class FirstTestSqlSession {
 	}
 	/**
 	 * 
+	 * @MethodName:testSelectListUse$
+	 * @Description:使用拼接符来进行模糊查询
+	 * @Time:2017年2月4日下午3:32:40
+	 * @author:Tom
+	 */
+	@Test
+	public void testSelectListUse$(){
+		SqlSession session = sqlSessionFactory.openSession();
+		List<User> users = session.selectList("test.findUserByNameUse$","zhang");
+		System.out.println(users);
+		session.close();
+	}
+	/**
+	 * 
 	 * @Method:testInsert
 	 * @Description:插入一个,两种方式解决如何当对象中属性为空的时候正确的插入数据;
 	 * @auther:TOM
