@@ -34,7 +34,8 @@ public class FirstTestSqlSession {
 	 */
 	@Before
 	public void init() throws IOException{
-		String resource = "SqlMapConfig.xml";
+		String resource = "D:\\mywork\\mywork\\project\\project\\tom_mybatis_v2\\src\\main\\resources\\OracleDb.properties";
+		//String resource = "SqlMapConfig.xml";
 		File file = Resources.getResourceAsFile(resource);
 		//只有这么一种流方式来进行手动加载SqlMapConfig.xml配置文件;
 		sqlSessionFactory = new SqlSessionFactoryBuilder().build(new FileInputStream(file));
