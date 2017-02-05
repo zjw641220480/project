@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.itcast</groupId>
 	<artifactId>project</artifactId>
@@ -50,9 +51,16 @@
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
 		<dependency>
-		    <groupId>commons-io</groupId>
-		    <artifactId>commons-io</artifactId>
-		    <version>2.5</version>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.5</version>
+		</dependency>
+		<!-- 解决不能智能导入Spring注解中的Resource问题 -->
+		<!-- https://mvnrepository.com/artifact/javax.annotation/jsr250-api -->
+		<dependency>
+			<groupId>javax.annotation</groupId>
+			<artifactId>jsr250-api</artifactId>
+			<version>1.0</version>
 		</dependency>
 
 
@@ -75,16 +83,9 @@
 						</webResources>
 					</configuration>
 				</plugin>
-				<!-- <plugin>
-					<groupId>org.apache.tomcat.maven</groupId>
-					<artifactId>tomcat7-maven-plugin</artifactId>
-					<version>2.1</version>
-					<configuration>
-						<url>http://localhost:8080/manager/text</url>
-						<username>admin</username>
-						<password>admin</password>
-					</configuration>
-				</plugin> -->
+				<!-- <plugin> <groupId>org.apache.tomcat.maven</groupId> <artifactId>tomcat7-maven-plugin</artifactId> 
+					<version>2.1</version> <configuration> <url>http://localhost:8080/manager/text</url> 
+					<username>admin</username> <password>admin</password> </configuration> </plugin> -->
 			</plugins>
 		</pluginManagement>
 	</build>
@@ -97,10 +98,10 @@
 		<module>tom-mybatis-spring</module>
 		<module>tom-jsjquery</module>
 		<module>tom-shiro</module>
-    	<module>tom-web</module>
-    	<module>tom-spring</module>
-    	<module>tom-thread_and_erupt_simultaneously</module>
-    	<module>tom_mybatis_v2</module>
-    <module>tom-springmvc</module>
-  </modules>
+		<module>tom-web</module>
+		<module>tom-spring</module>
+		<module>tom-thread_and_erupt_simultaneously</module>
+		<module>tom_mybatis_v2</module>
+		<module>tom-springmvc</module>
+	</modules>
 </project>

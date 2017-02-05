@@ -12,14 +12,6 @@
         http://www.springframework.org/schema/tx/spring-tx.xsd
         http://www.springframework.org/schema/aop
         http://www.springframework.org/schema/aop/spring-aop.xsd">
-        <bean id="person" class="cn.itcast.zjw.base.domain.Person">
-        <!-- constructor-arg:代表某一个构造器参数
-        	index构造器参数下标;
-        	value:
-        	type:类型
-         -->
-        	<constructor-arg index="0" value="王二" type="java.lang.String"></constructor-arg>
-       		<constructor-arg index="1" ref="student"></constructor-arg>
-        </bean>
-        <bean id="student" class="cn.itcast.zjw.base.domain.Student"></bean>
+        <context:component-scan base-package="cn.itcast.zjw.service"></context:component-scan>
+		<bean id="itemsServiceImpl" class="cn.itcast.zjw.service.impl.ItemsServiceImpl"></bean>
 </beans>

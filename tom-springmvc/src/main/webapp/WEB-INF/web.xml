@@ -3,6 +3,19 @@
 	xmlns="http://java.sun.com/xml/ns/javaee"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	
+	<!-- 加载Spring的容器 -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<!-- <param-value>/WEB-INF/classes/spring/applicationContext.xml</param-value> -->
+		<param-value>classpath:spring/applicationContext-dao.xml</param-value>
+		<!-- 下面一种方式配置的时候容易出现问题 -->
+		<!-- 	<param-value>classpath*:spring/applicationContext*.xml</param-value> -->
+	</context-param>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	
 	<!-- 前端控制器 -->
 	<servlet>
 		<servlet-name>springMvc</servlet-name>
@@ -11,7 +24,8 @@
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
 			<!--配置文件的地址,如果不配置,则默认查找的是classpath下的:servlet名称+"-servler.xml",也就是springmvc-servlet.xml-->
-			<!-- <param-value>classpath:springmvc/originalspringmvc/springmvc.xml</param-value> -->
+			<!-- <param-value>classpath:springmvc/originalspringmvc/springmvc.xml</param-value>
+				-->
 			<param-value>classpath:springmvc/nowspringmvc/springmvc.xml</param-value>
 		</init-param>
 	</servlet>

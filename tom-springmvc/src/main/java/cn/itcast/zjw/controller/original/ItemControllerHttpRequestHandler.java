@@ -26,13 +26,13 @@ public class ItemControllerHttpRequestHandler implements HttpRequestHandler{
 		List<Items> itemList = new ArrayList<Items>();
 		Items itemsA = new Items();
 		itemsA.setName("联想笔记本handleRequest");
-		itemsA.setPrice(6000f);
+		itemsA.setPrice(6000);
 		Items itemsB = new Items();
 		itemsB.setName("华硕笔记本handleRequest");
-		itemsB.setPrice(5000f);
+		itemsB.setPrice(5000);
 		Items itemsC = new Items();
 		itemsC.setName("戴尔笔记本handleRequest");
-		itemsC.setPrice(4000f);
+		itemsC.setPrice(4000);
 		itemList.add(itemsA);
 		itemList.add(itemsB);
 		itemList.add(itemsC);

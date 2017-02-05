@@ -34,7 +34,6 @@ public class FirstTestSqlSession {
 	 */
 	@Before
 	public void init() throws IOException{
-		//String resource = "D:\\mywork\\mywork\\project\\project\\tom_mybatis_v2\\src\\main\\resources\\OracleDb.properties";
 		String resource = "SqlMapConfig.xml";
 		File file = Resources.getResourceAsFile(resource);
 		//只有这么一种流方式来进行手动加载SqlMapConfig.xml配置文件;
@@ -63,21 +62,21 @@ public class FirstTestSqlSession {
 	 * @date:2016年12月17日 下午3:27:16
 	 */
 	@Test
-	public void testSelectList(){
+	public void testSelectListUseJingHao(){
 		SqlSession session = sqlSessionFactory.openSession();
-		List<User> users = session.selectList("test.findUserByName","zhang");
+		List<User> users = session.selectList("test.findUserByNameUseJingHao","%zang%");
 		System.out.println(users);
 		session.close();
 	}
 	/**
 	 * 
 	 * @MethodName:testSelectListUse$
-	 * @Description:使用拼接符来进行模糊查询
-	 * @Time:2017年2月4日下午3:32:40
+	 * @Description:使用$方式进行模糊查询
+	 * @Time:2017年2月4日下午3:39:38
 	 * @author:Tom
 	 */
 	@Test
-	public void testSelectListUse$(){
+	public void testSelectListUse$() {
 		SqlSession session = sqlSessionFactory.openSession();
 		List<User> users = session.selectList("test.findUserByNameUse$","zhang");
 		System.out.println(users);
