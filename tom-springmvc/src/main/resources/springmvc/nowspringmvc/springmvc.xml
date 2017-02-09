@@ -14,7 +14,16 @@
         http://www.springframework.org/schema/aop
         http://www.springframework.org/schema/aop/spring-aop.xsd">
     <!-- 通过mvc:annotation-driven可以替代注解的映射器和注解的适配器-->
-	<mvc:annotation-driven></mvc:annotation-driven>
+	<mvc:annotation-driven conversion-service="conversionService"></mvc:annotation-driven>
+	<!-- 自定义参数绑定,Converter -->
+	<bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+		<property name="converters">
+			<list>
+				<bean class="cn.itcast.zjw.util.converter.CustomDateConverter"></bean>
+				<bean class="cn.itcast.zjw.util.converter.CustomStringTrim"></bean>
+			</list>
+		</property>
+	</bean>
 	<context:component-scan base-package="cn.itcast.zjw.controller"></context:component-scan>
 	
 	<!-- 配置视图解析器 -->

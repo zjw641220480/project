@@ -39,13 +39,19 @@
 	<!-- 这种方式的适配器要求Handler实现HttpRequestHandler接口 -->
 	<bean class="org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter"/>
 	
-	<!-- 注解的处理器映射器和适配器 -->
+	<!-- 注解的处理器映射器和适配器,这两个必须配对使用 -->
 	<!-- 注解的映射器 -->
 	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">
 	</bean>
 	<!-- 注解的适配器 -->
 	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+		<!-- 老版本的自定义属性编辑器 -->
+		<!-- <property name="webBindingInitializer" ref="customBinderEditor"></property> -->
+		<!-- 老版本中的自定义属性转换器 -->
+		<property name="webBindingInitializer" ref="customBinderConverter"></property>
 	</bean>
+	
+	
 	<!-- 注解时候暂时用这种方式加载Handler(并未进行注解的解析) -->
 	<!-- <bean class="cn.itcast.zjw.controller.original.ItemControllerAnnotation"></bean> -->
 	<context:component-scan base-package="cn.itcast.zjw.controller"></context:component-scan>
@@ -53,7 +59,7 @@
 	<!-- 配置视图解析器 -->
 	<!-- 要求将jstl的包加入进来,只对ModelAndView有效 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/WEB-INF/jsp"></property>
+		<property name="prefix" value="/WEB-INF/jsp/"></property>
 		<property name="suffix" value=".jsp"></property>
 	</bean>
 </beans>

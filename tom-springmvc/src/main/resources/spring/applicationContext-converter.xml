@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- 老版本的自定义参数转换器Converter -->
+	<!-- 字符串类型的日期转化为java.util.Date类型日期 -->
+	
+	<!-- 自定义webBinder,注入到注解的适配器中 -->
+	<bean id="customBinderConverter" class="org.springframework.web.bind.support.ConfigurableWebBindingInitializer">
+		<property name="conversionService" ref="conversionService"></property>
+	</bean>
+	<bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+		<property name="converters">
+			<set>
+				<bean class="cn.itcast.zjw.util.converter.CustomDateConverter"></bean>
+				<bean class="cn.itcast.zjw.util.converter.CustomStringTrim"></bean>
+			</set>
+		</property>
+	</bean>
+</beans>

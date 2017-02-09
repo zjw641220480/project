@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- 字符串类型的日期转化为java.util.Date类型日期 -->
+	<!-- 注册属性编辑器 -->
+	<bean id="customPropertyEditor" class="cn.itcast.zjw.util.propertyeditor.CustomPropertyEditor"></bean>
+	
+	<!-- 自定义webBinder,注入到注解的适配器中 -->
+	<bean id="customBinderEditor" class="org.springframework.web.bind.support.ConfigurableWebBindingInitializer">
+		<property name="propertyEditorRegistrars">
+			<list>
+				<ref bean="customPropertyEditor"/>
+			</list>
+		</property>
+	</bean>
+</beans>
