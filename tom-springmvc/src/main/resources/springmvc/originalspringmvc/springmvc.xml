@@ -49,6 +49,7 @@
 		<!-- <property name="webBindingInitializer" ref="customBinderEditor"></property> -->
 		<!-- 老版本中的自定义属性转换器 -->
 		<property name="webBindingInitializer" ref="customBinderConverter"></property>
+		<!-- json转换的 -->
 		<property name="messageConverters">
 			<list>
 				<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"></bean>

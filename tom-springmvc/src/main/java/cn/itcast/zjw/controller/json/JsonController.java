@@ -3,6 +3,7 @@ package cn.itcast.zjw.controller.json;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -30,7 +31,7 @@ public class JsonController {
 	 * @Time:2017年2月10日上午9:51:47
 	 * @author:Tom
 	 */
-	@RequestMapping("/requestJson")
+	@RequestMapping(value="/requestJson",method={RequestMethod.POST})
 	@JsonInclude(Include.NON_NULL)
 	public @ResponseBody ItemsCustom requestJson(@RequestBody ItemsCustom itemsCustom){
 		System.out.println(itemsCustom.toString());

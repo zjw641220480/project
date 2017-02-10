@@ -4,17 +4,39 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	<!-- 老版本的自定义参数转换器Converter -->
 	<!-- 字符串类型的日期转化为java.util.Date类型日期 -->
-	
+
 	<!-- 自定义webBinder,注入到注解的适配器中 -->
-	<bean id="customBinderConverter" class="org.springframework.web.bind.support.ConfigurableWebBindingInitializer">
+	<bean id="customBinderConverter"
+		class="org.springframework.web.bind.support.ConfigurableWebBindingInitializer">
+		<!-- 自定义参数转换器 -->
 		<property name="conversionService" ref="conversionService"></property>
+		<!-- 校验器 -->
+		<property name="validator" ref="validator">
+		</property>
 	</bean>
-	<bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+	<bean id="conversionService"
+		class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
 		<property name="converters">
 			<set>
 				<bean class="cn.itcast.zjw.util.converter.CustomDateConverter"></bean>
 				<bean class="cn.itcast.zjw.util.converter.CustomStringTrim"></bean>
 			</set>
 		</property>
+	</bean>
+	<!-- spring校验器 -->
+	<bean id="validator"
+		class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+		<property name="providerClass" value="org.hibernate.validator.HibernateValidator"></property>
+		<property name="validationMessageSource" ref="messageSource"></property>
+	</bean>
+	<bean id="messageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>classpath:CustomValidationMessages</value>
+			</list>
+		</property>
+		<property name="fileEncodings" value="UTF-8"></property>
+		<property name="cacheSeconds" value="120"></property>
 	</bean>
 </beans>

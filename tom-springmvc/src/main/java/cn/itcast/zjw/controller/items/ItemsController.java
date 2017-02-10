@@ -12,6 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -86,8 +89,18 @@ public class ItemsController {
 	 */
 	@RequestMapping("/editItemsSubmit")
 	//@ModelAttribute(value="itemsCustom")这个注解用来数据的回显;
-	public void editItemsSubmit(@ModelAttribute(value="itemsCustom") ItemsCustom itemsCustom,HttpServletRequest request,HttpServletResponse response) throws Exception{
+	//在要校验的pojo前面加上@Validated进行校验;并且在这个pojo后面加上BindingResult对象
+	public void editItemsSubmit(@Validated @ModelAttribute(value="itemsCustom") ItemsCustom itemsCustom,BindingResult bindingResult,HttpServletRequest request,HttpServletResponse response) throws Exception{
 		itemsService.updateItems(itemsCustom.getId(), itemsCustom);
+		if(bindingResult.hasErrors()){
+			System.out.println(bindingResult.getErrorCount());
+			List<ObjectError> errors = bindingResult.getAllErrors();
+			for(ObjectError error:errors){
+				System.out.println(error.getDefaultMessage());
+				System.out.println(error.getCode());
+				System.out.println(error.getObjectName());
+			}
+		}
 		request.getRequestDispatcher("queryItems.action").forward(request, response);
 	}
 	/**
