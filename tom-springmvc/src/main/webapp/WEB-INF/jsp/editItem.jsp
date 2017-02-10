@@ -7,10 +7,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>修改商品信息</title>
-
+<script type="text/javascript">
+	function uploadFile() {
+		document.getElementById("itemForm").action="${pageContext.request.contextPath }/upload/uploadFile.action"
+		document.getElementById("itemForm").enctype="multipart/form-data";
+		document.getElementById("itemForm").submit();
+	}
+</script>
 </head>
 <body> 
-<form id="itemForm" action="${pageContext.request.contextPath }/items/editItemsSubmit.action" method="post" >
+<form id="itemForm" action="${pageContext.request.contextPath }/items/editItemsSubmit.action" method="post">
 <input type="hidden" name="id" value="${itemsCustom.id }"/>
 修改商品信息：
 <table width="100%" border=1>
@@ -27,12 +33,22 @@
 	<td><input type="text" name="createtime" value="<fmt:formatDate value="${itemsCustom.createtime}" pattern="yyyy-MM-dd HH:mm:ss"/>"/></td>
 </tr>
 <tr>
+	<td>商品图片</td>
+	<td>
+		<c:if test="${itemsCustom.pic !=null }">
+			<img alt="" src="/pic/page/${itemsCustom.pic }" width="100" height="100">
+		</c:if>
+		<input type="file" name="pictureFile"/>
+	</td>
+</tr>
+<tr>
 	<td>商品简介</td>
 	<td>
 	<textarea rows="3" cols="30" name="detail">${itemsCustom.detail }</textarea>
 	</td>
 </tr>
 <tr>
+<td><input type="button" value="上传图片" onclick="uploadFile()" /> </td>
 <td colspan="2" align="center"><input type="submit" value="提交"/>
 </td>
 </tr>

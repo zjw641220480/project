@@ -18,6 +18,7 @@ public class CustomDateConverter implements Converter<String, Date>{
 		try {
 			return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(source);
 		} catch (Exception e) {
+			System.out.println("日期绑定出错");
 			e.printStackTrace();
 			return null;
 		}

@@ -13,10 +13,11 @@
         http://www.springframework.org/schema/tx/spring-tx.xsd
         http://www.springframework.org/schema/aop
         http://www.springframework.org/schema/aop/spring-aop.xsd">
-    <!-- 通过mvc:annotation-driven可以替代注解的映射器和注解的适配器-->
-	<mvc:annotation-driven conversion-service="conversionService"></mvc:annotation-driven>
+	<!-- 通过mvc:annotation-driven可以替代注解的映射器和注解的适配器 -->
+	<mvc:annotation-driven conversion-service="conversionService" ></mvc:annotation-driven>
 	<!-- 自定义参数绑定,Converter -->
-	<bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+	<bean id="conversionService"
+		class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
 		<property name="converters">
 			<list>
 				<bean class="cn.itcast.zjw.util.converter.CustomDateConverter"></bean>
@@ -24,11 +25,22 @@
 			</list>
 		</property>
 	</bean>
-	<context:component-scan base-package="cn.itcast.zjw.controller"></context:component-scan>
 	
+	<!-- 文件上传的解析器,bean的Id不能改变 -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize">
+			<value>524288</value>
+		</property>
+	</bean>
+
+
+	<context:component-scan base-package="cn.itcast.zjw.controller"></context:component-scan>
+
 	<!-- 配置视图解析器 -->
 	<!-- 要求将jstl的包加入进来 -->
-	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/jsp/"></property>
 		<property name="suffix" value=".jsp"></property>
 	</bean>

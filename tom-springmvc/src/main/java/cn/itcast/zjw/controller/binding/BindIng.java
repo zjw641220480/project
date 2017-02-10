@@ -1,22 +1,12 @@
 package cn.itcast.zjw.controller.binding;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
-
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.beans.propertyeditors.CustomDateEditor;
-import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 
 import cn.itcast.zjw.po.ItemsCustom;
-import cn.itcast.zjw.po.ItemsQueryVo;
 import cn.itcast.zjw.service.ItemsService;
 
 /**
@@ -46,16 +36,5 @@ public class BindIng {
 		itemsService.updateItems(itemsCustom.getId(), itemsCustom);
 		request.getRequestDispatcher("queryItems.action").forward(request, response);
 	}
-	/**
-	 * 
-	 * @MethodName:initBinder
-	 * @Description:使用WebDateBinder自定义属性编辑器,使用这种方式不方便在多个controller中进行使用.
-	 * @param binder
-	 * @Time:2017年2月8日下午10:39:42
-	 * @author:Tom
-	 */
-	@InitBinder
-	public void initBinder(WebDataBinder binder){
-		binder.registerCustomEditor(Date.class, new CustomDateEditor(new SimpleDateFormat("yyyy-MM-dd HH-mm-ss"), true));
-	}
+	
 }

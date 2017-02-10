@@ -5,6 +5,8 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import cn.itcast.zjw.controller.TestController;
+
 public class CreateSpringPersonTest {
 	ApplicationContext applicationContext = null;
 	@Before
@@ -24,5 +26,9 @@ public class CreateSpringPersonTest {
 		System.out.println(springPerson1);
 		SpringPerson springPerson2 = (SpringPerson) applicationContext.getBean("springPersonFactory");
 		System.out.println(springPerson1==springPerson2);
+	}
+	@Test
+	public void testTestController(){
+		TestController testController = (TestController) applicationContext.getBean("testController");
 	}
 }
