@@ -57,7 +57,7 @@ public class FirstTestSqlSession {
 	/**
 	 * 
 	 * @Method:testSelectList
-	 * @Description:查询多个
+	 * @Description:使用#方式进行模糊查询
 	 * @auther:TOM
 	 * @date:2016年12月17日 下午3:27:16
 	 */
@@ -94,7 +94,6 @@ public class FirstTestSqlSession {
 		SqlSession session = sqlSessionFactory.openSession();
 		User user = new User();
 		user.setUsername("lisi");
-		user.setAddress("驻马店");
 		user.setBirthday(new Date());
 		user.setSex("1");
 		session.insert("test.insetUser",user);
