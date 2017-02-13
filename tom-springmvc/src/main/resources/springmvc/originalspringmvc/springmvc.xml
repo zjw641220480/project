@@ -3,6 +3,7 @@
 	xmlns:aop="http://www.springframework.org/schema/aop"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
@@ -57,10 +58,24 @@
 		</property>
 	</bean>
 	
+	<!-- 定义统一异常处理器 -->
+	<bean class="cn.itcast.zjw.exception.CustomExceptionResolver"></bean>
 	
 	<!-- 注解时候暂时用这种方式加载Handler(并未进行注解的解析) -->
 	<!-- <bean class="cn.itcast.zjw.controller.original.ItemControllerAnnotation"></bean> -->
 	<context:component-scan base-package="cn.itcast.zjw.controller"></context:component-scan>
+	
+	<!-- 统一拦截器配置 -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**"/>
+			<bean class="cn.itcast.zjw.controller.interceptor.HandlerInterceptorA"></bean>
+		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/**"/>
+			<bean class="cn.itcast.zjw.controller.interceptor.HandlerInterceptorA2"></bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
 	
 	<!-- 配置视图解析器 -->
 	<!-- 要求将jstl的包加入进来,只对ModelAndView有效 -->
@@ -68,4 +83,6 @@
 		<property name="prefix" value="/WEB-INF/jsp/"></property>
 		<property name="suffix" value=".jsp"></property>
 	</bean>
+	<import resource="classpath:spring/applicationContext-converter.xml"/>
+	<import resource="classpath:spring/applicationContext-editor.xml"/>
 </beans>

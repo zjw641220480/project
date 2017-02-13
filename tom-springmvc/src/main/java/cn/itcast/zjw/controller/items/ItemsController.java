@@ -72,11 +72,12 @@ public class ItemsController {
 	 * @author:Tom
 	 */
 	@RequestMapping(value = "editItems", method = { RequestMethod.GET, RequestMethod.POST })
-	public ModelAndView editItems() throws Exception {
+	public ModelAndView editItems(int id) throws Exception {
 		ModelAndView modelAndView = new ModelAndView();
-		ItemsCustom itemsCustom = itemsService.findItemsById(1);
+		ItemsCustom itemsCustom = itemsService.findItemsById(id);
 		modelAndView.addObject("itemsCustom", itemsCustom);
 		modelAndView.setViewName("editItem");
+		//用于验证运行时异常int a = 1/0;
 		return modelAndView;
 	}
 	/**

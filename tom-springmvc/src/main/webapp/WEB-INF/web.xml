@@ -35,7 +35,7 @@
 			<param-name>contextConfigLocation</param-name>
 			<!--配置文件的地址,如果不配置,则默认查找的是classpath下的:servlet名称+"-servler.xml",也就是springmvc-servlet.xml -->
 			<!-- <param-value>classpath:springmvc/originalspringmvc/springmvc.xml</param-value> -->
-			<param-value>classpath:springmvc/nowspringmvc/springmvc.xml</param-value>
+			<param-value>classpath:springmvc/originalspringmvc/springmvc.xml</param-value>
 		</init-param>
 	</servlet>
 	<servlet-mapping>

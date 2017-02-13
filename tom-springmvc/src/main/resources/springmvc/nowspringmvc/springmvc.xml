@@ -14,8 +14,9 @@
         http://www.springframework.org/schema/aop
         http://www.springframework.org/schema/aop/spring-aop.xsd">
 	<!-- 通过mvc:annotation-driven可以替代注解的映射器和注解的适配器 -->
-	<mvc:annotation-driven conversion-service="conversionService" validator="validator"></mvc:annotation-driven>
-	
+	<mvc:annotation-driven conversion-service="conversionService"
+		validator="validator"></mvc:annotation-driven>
+
 	<!-- 自定义参数绑定,Converter -->
 	<bean id="conversionService"
 		class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
@@ -26,7 +27,7 @@
 			</list>
 		</property>
 	</bean>
-	
+
 	<!-- 文件上传的解析器,bean的Id不能改变 -->
 	<bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
@@ -34,7 +35,9 @@
 			<value>524288</value>
 		</property>
 	</bean>
-
+	
+	<!-- 定义统一异常处理器 -->
+	<bean class="cn.itcast.zjw.exception.CustomExceptionResolver"></bean>
 
 	<context:component-scan base-package="cn.itcast.zjw.controller"></context:component-scan>
 
@@ -45,6 +48,6 @@
 		<property name="prefix" value="/WEB-INF/jsp/"></property>
 		<property name="suffix" value=".jsp"></property>
 	</bean>
-	<import resource="classpath:spring/applicationContext-converter.xml"/>
-	<import resource="classpath:spring/applicationContext-editor.xml"/>
+	<import resource="classpath:spring/applicationContext-converter.xml" />
+	<import resource="classpath:spring/applicationContext-editor.xml" />
 </beans>

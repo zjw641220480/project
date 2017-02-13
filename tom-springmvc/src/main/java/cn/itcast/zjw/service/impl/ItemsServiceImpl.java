@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import cn.itcast.zjw.dao.ItemsCustomerMapper;
 import cn.itcast.zjw.dao.ItemsMapper;
+import cn.itcast.zjw.exception.CustomException;
 import cn.itcast.zjw.po.Items;
 import cn.itcast.zjw.po.ItemsCustom;
 import cn.itcast.zjw.po.ItemsQueryVo;
@@ -44,6 +45,9 @@ public class ItemsServiceImpl implements ItemsService {
 	public ItemsCustom findItemsById(int id) throws Exception {
 		Items items = itemsMapper.selectByPrimaryKey(id);
 		//随着后期需求的变更,需要查询商品信息的同时,还需要查询其他信息,故这里创建Items的扩展类ItemsCustomer
+		if(items == null){
+			throw new CustomException("根据上传ID未能查到对应数据");
+		}
 		ItemsCustom itemsCustom = new ItemsCustom();
 		//将Items拷贝到ItemsCustomer
 		BeanUtils.copyProperties(items, itemsCustom);
