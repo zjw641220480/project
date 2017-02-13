@@ -18,7 +18,7 @@
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<!-- <param-value>/WEB-INF/classes/spring/applicationContext.xml</param-value> -->
-		<param-value>classpath:spring/applicationContext*.xml</param-value>
+		<param-value>classpath:spring/applicationContext-dao.xml</param-value>
 		<!-- 下面一种方式配置的时候容易出现问题 -->
 		<!-- <param-value>classpath*:spring/applicationContext*.xml</param-value> -->
 	</context-param>

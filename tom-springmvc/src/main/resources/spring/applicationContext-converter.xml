@@ -23,20 +23,5 @@
 			</set>
 		</property>
 	</bean>
-	<!-- spring校验器 -->
-	<bean id="validator"
-		class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
-		<property name="providerClass" value="org.hibernate.validator.HibernateValidator"></property>
-		<property name="validationMessageSource" ref="messageSource"></property>
-	</bean>
-	<bean id="messageSource"
-		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-		<property name="basenames">
-			<list>
-				<value>classpath:CustomValidationMessages</value>
-			</list>
-		</property>
-		<property name="fileEncodings" value="UTF-8"></property>
-		<property name="cacheSeconds" value="120"></property>
-	</bean>
+	<import resource="applicationContext-validator.xml"/>
 </beans>

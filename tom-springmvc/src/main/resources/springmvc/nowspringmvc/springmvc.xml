@@ -45,4 +45,6 @@
 		<property name="prefix" value="/WEB-INF/jsp/"></property>
 		<property name="suffix" value=".jsp"></property>
 	</bean>
+	<import resource="classpath:spring/applicationContext-converter.xml"/>
+	<import resource="classpath:spring/applicationContext-editor.xml"/>
 </beans>

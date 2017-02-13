@@ -82,7 +82,7 @@ public class ItemsController {
 	/**
 	 * 
 	 * @MethodName:editItemsSubmit
-	 * @Description:真正进行商品修改
+	 * @Description:真正进行商品修改,回显以及校验
 	 * @Time:2017年2月7日下午5:53:17
 	 * @author:Tom
 	 * @throws Exception 
@@ -100,6 +100,7 @@ public class ItemsController {
 				System.out.println(error.getCode());
 				System.out.println(error.getObjectName());
 			}
+			request.getRequestDispatcher("editItems.action").forward(request, response);
 		}
 		request.getRequestDispatcher("queryItems.action").forward(request, response);
 	}
