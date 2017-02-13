@@ -5,7 +5,7 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import cn.itcast.zjw.controller.TestController;
+import cn.itcast.zjw.controller.test.MyTest;
 
 public class CreateSpringPersonTest {
 	ApplicationContext applicationContext = null;
@@ -29,6 +29,7 @@ public class CreateSpringPersonTest {
 	}
 	@Test
 	public void testTestController(){
-		TestController testController = (TestController) applicationContext.getBean("testController");
+		MyTest myTest = (MyTest) applicationContext.getBean("myTest");
+		myTest.show();
 	}
 }
