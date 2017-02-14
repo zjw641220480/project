@@ -24,11 +24,11 @@
 			type:POJO类型的路径;
 			alias:别名;
 		-->
-		<!-- <typeAlias type="cn.itcast.zjw.mybatis.domain.User" alias="user"/> -->
+		<!--  <typeAlias type="cn.itcast.zjw.mybatis.pojo.User" alias="user"/>  -->
 		<!-- 批量别名的定义
 			指定一个包名,mybatis自动扫描包中的po类,自动定义别名,别名就是这个类名(首字母大小写都可以)
 		 -->
-		<package name="cn.itcast.zjw.mybatis.domain"/>
+		<package name="cn.itcast.zjw.mybatis.pojo"/>
 	</typeAliases>
 	<!-- 数据源的配置,当再和spring整合后整个environments配置将会被移除; -->
 	<environments default="development">
@@ -45,9 +45,19 @@
 		</environment>
 	</environments>
 	<!-- 加载映射文件,有三种加载Mapper.xml的方式-->
+	<!-- 如果和spring整合后,可以使用整合包中的mapper扫描器,此处的mappers不用再进行配置; -->
 	<mappers>
 		<!-- 通过resource一次加载一个映射文件 -->
 		<mapper resource="oracle/sqlmap/User.xml"></mapper>
 		<mapper resource="oracle/mapper/User.xml"></mapper>
+		<!-- 通过class引用mapper接口,class配置mapper接口的全限命名,
+			此种方式有要求:要求mapper.xml和mapper.java同名,并且在一个目录下;
+		 -->
+		<!-- <mapper class="cn.itcast.zjw.mybatis.mapper.UserMapper"/> -->
+		<!-- 批量mapper的配置
+			通过package进行自动扫描包下边的mapper接口,
+			此种方式和class有一样的要求:要求mapper.xml和mapper.java同名,并且在一个目录下
+		 -->
+		<!-- <package name="oracle"/> -->
 	</mappers>
 </configuration>

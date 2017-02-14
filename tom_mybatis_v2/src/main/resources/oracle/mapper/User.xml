@@ -2,63 +2,73 @@
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<!-- namespace命名空间,作用就是对sql进行分类化管理,理解sql隔离
-	注意:如果后期使用mapper代理进行开发,namespace就有了特殊重要的意义
- -->
+
 <mapper namespace="cn.itcast.zjw.mybatis.mapper.UserMapper">
-	<!-- 通过select来执行数据库查询
-		#{}表示一个占位符,程序会自动在占位符两边加上单引号,故在模糊查询中不能直接在xml中写'%#{id}%',必须只能是在程序中写入;
-		parameterType:指定输入参数的类型,这里指定为int型
-		id=#{id}:大括号中的id就表示接收输入的参数.参数的名称就是id,如果输入参数是简单类型,#{}中的参数名可以任意,可以是value或者其他名称
-		resultType:指定sql的输出结果,所映射的java对象select指定resultType表示将单条记录映射成的java对象,
-		这里面包括了两个很重要的:一个是输入的参数类型,一个是输出的参数类型
-	 -->
-	 <select id="findUserById" parameterType="int" resultType="cn.itcast.zjw.mybatis.pojo.User">
-	 	SELECT * FROM USER_S WHERE id=#{id}
-	 </select> 
-	 <!-- 根据用户名称模糊查询用户信息,可能返回多条
-	 resultType:指定的就是单挑记录所映射的java对象类型,不论查询出来的是单条还是多条
-	 ${}:表示拼接sql串,将接收到参数的内容,不加任何的修饰,拼接到sql中
-	 注意:有什么隐患,使用${}拼接sql,可 能会引起sql注入
-	 ${value}:接收输入参数的内容,如果传入内容是简单类型,${}中只能使用value
-	  -->
-	 <select id="findUserByName" parameterType="java.lang.String" resultType="cn.itcast.zjw.mybatis.pojo.User">
-	 	<!-- 
-	 	这个是使用占位符进行模糊查询时候的sql写法,只是占位，故需要在代码中添加百分号 -->
-	 	<!-- SELECT * FROM USER_S WHERE username LIKE #{value} -->
-	 	SELECT * FROM USER_S WHERE username LIKE '%${value}%'
-	 </select>
-	 <!-- 添加用户
-	 	parameterType:指定输入的参数类型是pojo(包括用户信息)
-	 	#{}中指定pojo的属性名,接收到pojo对象的属性值,mybatis也是通过OGNL获取对象的属性值
-	  -->
-	 <insert id="insetUser" parameterType="cn.itcast.zjw.mybatis.pojo.User">
-	  	<!-- 获取刚刚插入的主键值
-	  		keyProperty: 将主键值赋值给parameterType对象中的哪个属性
-	  	 -->
-	  	<selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
-	  		select sequence_user.currval from dual
-	  	</selectKey>
-	  	<!-- 这里可以不用写id,因为id是自增的,是有MySql自己进行维护的,这里写了也是没用的,这里需要添加jdbcType的类型,不然容易出类型错误(方法一)-->
-	  	<!-- INSERT INTO USER_S (id,username,birthday,sex,address) VALUES(#{id },#{username,jdbcType=VARCHAR },
-	  	#{birthday,jdbcType=TIMESTAMP },#{sex,jdbcType=VARCHAR },#{address,jdbcType=VARCHAR }) -->
-	  	INSERT INTO USER_S (id,username,birthday,sex,address) VALUES(#{id },#{username },#{birthday },#{sex },#{address})
-	 </insert>
-	 
-	 <!-- 删除用户
-	 	根据id进行删除用户,需要输入id的值
-	  -->
-	  <delete id="deleteUser" parameterType="java.lang.Integer">
-	  	DELETE FROM USER_S WHERE id=#{id}
-	  </delete>
-	 <!-- 更新用户
-	 	分析:
-	 	需要传入用户的id
-	 	需要穿入用户的更新信息
-	 	parameterType:指定user对象,包括id和跟新信息,注意:id必须存在.
-	 	#{id}:从输入对象user中获取id属性值
-	  -->
-	  <update id="updateUser" parameterType="cn.itcast.zjw.mybatis.pojo.User">
-	  	UPDATE USER_S SET username=#{username},birthday=#{birthday},sex=#{sex},address=#{address} WHERE id=#{id}
-	  </update>
+	<!-- 定义resultMap,列名和属性名映射配置; id:mapper.xml中的唯一标示 type:最终要映射的pojo类型; -->
+	<resultMap type="cn.itcast.zjw.mybatis.pojo.UserCustomer" id="userCustomerResultMap">
+		<!-- id:要映射结果的唯一标识 column:结果集的列名; property:type指定的对象的哪个属性中; -->
+		<id column="id_" property="id"></id>
+		<result column="username_" property="username"></result>
+		<result column="birthday_" property="birthday"></result>
+	</resultMap>
+
+	<sql id="query_where_user_sql">
+		<!-- 不要将where也抽取到sql片段中,不利于sql片段的共用; -->
+		<if test="userCustomer!=null">
+			<!-- test中userCustomer.username标识从 UserQueryVo中读取属性值 -->
+			<if test="userCustomer.username!=null and userCustomer.username!=''">
+				and username like '%${userCustomer.username }%'
+			</if>
+			<if test="userCustomer.sex !=null and userCustomer.sex != ''">
+				and sex = ${userCustomer.sex }
+			</if>
+		</if>
+		<!--
+			collection:集合属性名称
+			open:开始循环要拼接的串;
+			close:结束循环要拼接的串;
+			item:每次循环所取到的对象;list中放置的对象;
+			separator:每两次循环中间拼接的串;
+			and id in (1,2,3)
+			and (id =1 or id =2 or id =3)
+		 -->
+		<!-- 先open,然后内容(内容中有item的值),然后separator然后继续item,最后close -->
+		<foreach collection="ids" open="and id in(" item="id" separator="," close=")">
+			#{id}
+		</foreach>
+		<!-- 这种方式有可能是会出问题的;只有这一个查询的时候,其第一个and被添加上去了,导致sql异常,缺失表达式 -->
+		<!-- <foreach collection="ids" open="and(" item="id" separator="or" close=")">
+			id = #{id}
+		</foreach> -->
+	</sql>
+	<select id="findUserById" parameterType="int"
+		resultType="cn.itcast.zjw.mybatis.pojo.User">
+		SELECT * FROM USER_S WHERE id=#{id}
+	</select>
+
+	<!-- 自定义查询条件查询用户信息 parameterType:指定包装类型; ${userCustomer.username}:userCustomer是UserQueryVo中的属性,通过OGNL获取属性的值; -->
+	<select id="findUserList" parameterType="cn.itcast.zjw.mybatis.pojo.UserQueryVo"
+		resultType="cn.itcast.zjw.mybatis.pojo.UserCustomer">
+		select * from user_s
+		<where>
+			<!-- 一个sql语句中一个where,所以在sql片段中不要出现where -->
+			<!-- 引用sql片段,如果sql片段和引用处在不同的mapper中,那么必须要加上namespace -->
+			<include refid="query_where_user_sql"></include>
+			<!-- <include refid="其他的sql片段,比如商品查询"></include> -->
+		</where>
+	</select>
+
+	<!-- 使用resultMap做结果集的映射,如果引用的resultMap的位置和定义resultMap的位置不同,要在引用的地方前面加上namespace -->
+	<select id="findUserListResultMap" parameterType="cn.itcast.zjw.mybatis.pojo.UserQueryVo"
+		resultMap="userCustomerResultMap">
+		select id id_,username username_,birthday birthday_ from
+		user_s where
+		username like '%${userCustomer.username }%'
+	</select>
+	<select id="findUserListByIds" parameterType="cn.itcast.zjw.mybatis.pojo.UserQueryVo" resultType="cn.itcast.zjw.mybatis.pojo.UserCustomer">
+		select * from user_s 
+		<where>
+			<include refid="query_where_user_sql"></include>
+		</where>
+	</select>
 </mapper>

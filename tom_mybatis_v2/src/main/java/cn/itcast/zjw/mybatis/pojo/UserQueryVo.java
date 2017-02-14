@@ -10,8 +10,8 @@ import java.util.List;
  * @date 2015-12-21
  */
 public class UserQueryVo {
-	private List<Integer> ids;
 	// 在这里包装所需要的查询条件
+	private List<Integer> ids;
 	// 用户查询条件;
 	private UserCustomer userCustomer;
 	// 可以包装其他查询条件,订单,商品;
@@ -31,5 +31,4 @@ public class UserQueryVo {
 	public void setIds(List<Integer> ids) {
 		this.ids = ids;
 	}
-
 }
