@@ -62,6 +62,7 @@ public class ItemsController {
 		modelAndView.addObject("itemsList", list);
 		return modelAndView;
 	}
+
 	/**
 	 * 
 	 * @MethodName:editItems
@@ -80,6 +81,7 @@ public class ItemsController {
 		//用于验证运行时异常int a = 1/0;
 		return modelAndView;
 	}
+
 	/**
 	 * 
 	 * @MethodName:editItemsSubmit
@@ -91,20 +93,26 @@ public class ItemsController {
 	@RequestMapping("/editItemsSubmit")
 	//@ModelAttribute(value="itemsCustom")这个注解用来数据的回显;
 	//在要校验的pojo前面加上@Validated进行校验;并且在这个pojo后面加上BindingResult对象
-	public void editItemsSubmit(@Validated @ModelAttribute(value="itemsCustom") ItemsCustom itemsCustom,BindingResult bindingResult,HttpServletRequest request,HttpServletResponse response) throws Exception{
+	public void editItemsSubmit(@Validated @ModelAttribute(value = "itemsCustom") ItemsCustom itemsCustom,
+			BindingResult bindingResult, HttpServletRequest request, HttpServletResponse response) throws Exception {
 		itemsService.updateItems(itemsCustom.getId(), itemsCustom);
-		if(bindingResult.hasErrors()){
+		//这里是校验出来数据不和要求,不是异常
+		if (bindingResult.hasErrors()) {
 			System.out.println(bindingResult.getErrorCount());
 			List<ObjectError> errors = bindingResult.getAllErrors();
-			for(ObjectError error:errors){
+			for (ObjectError error : errors) {
 				System.out.println(error.getDefaultMessage());
 				System.out.println(error.getCode());
 				System.out.println(error.getObjectName());
 			}
 			request.getRequestDispatcher("editItems.action").forward(request, response);
+		} else {
+			request.getRequestDispatcher("queryItems.action").forward(request, response);
 		}
-		request.getRequestDispatcher("queryItems.action").forward(request, response);
+		//不要放置在最外层,容易出现问题,两次转发之后,由于这里还有一层永远都会转发的请求出现,导致请求已经到达页面(committed),但又再次提交;
+		//request.getRequestDispatcher("queryItems.action").forward(request, response);
 	}
+
 	/**
 	 * 
 	 * @MethodName:deleteItems
@@ -114,16 +122,17 @@ public class ItemsController {
 	 * @author:Tom
 	 */
 	@RequestMapping("/deleteItems")
-	public String deleteItems(Integer[] delete_id){
-		if(delete_id!=null){
-			for(Integer id:delete_id){
-				System.out.println("要删除的ID为:"+id);
+	public String deleteItems(Integer[] delete_id) {
+		if (delete_id != null) {
+			for (Integer id : delete_id) {
+				System.out.println("要删除的ID为:" + id);
 			}
-		}else{
+		} else {
 			System.out.println("传递的数组为空");
 		}
 		return "success";
 	}
+
 	/**
 	 * 
 	 * @MethodName:initBinder
@@ -133,9 +142,11 @@ public class ItemsController {
 	 * @author:Tom
 	 */
 	@InitBinder
-	public void initBinder(WebDataBinder binder){
-		binder.registerCustomEditor(Date.class, new CustomDateEditor(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"), true));
+	public void initBinder(WebDataBinder binder) {
+		binder.registerCustomEditor(Date.class,
+				new CustomDateEditor(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"), true));
 	}
+
 	/**
 	 * 
 	 * @MethodName:getItemsType
@@ -145,8 +156,8 @@ public class ItemsController {
 	 * @author:Tom
 	 */
 	@ModelAttribute("itemsType")
-	public Map<String,String> getItemsType(){
-		Map<String,String> map = new HashMap<String, String>();
+	public Map<String, String> getItemsType() {
+		Map<String, String> map = new HashMap<String, String>();
 		map.put("001", "游戏");
 		map.put("002", "科技");
 		map.put("003", "娱乐");

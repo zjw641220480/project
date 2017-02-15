@@ -21,7 +21,7 @@ public class HandlerInterceptorA2 implements HandlerInterceptor {
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
 		System.out.println("HandlerInterceptorA22222222222222222.preHandle()");
-		return false;
+		return true;
 	}
 
 	/**
