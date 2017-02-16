@@ -20,4 +20,8 @@ public interface OrdersMapper {
 	public List<OrdersCustomer> findOrderUserOrdersDetailListResultMap();
 	//一对一查询使用延迟加载
 	public List<OrdersCustomer> findOrdersUserListLazyLoading();
+	//mybatis一级缓存测试,注意:和spring整合后,是不支持一级缓存的;默认永远开启一级缓存
+	public List<OrdersCustomer> firstLevelCache();
+	//mybatis二级缓存测试,
+	public OrdersCustomer secondLevelCache();
 }

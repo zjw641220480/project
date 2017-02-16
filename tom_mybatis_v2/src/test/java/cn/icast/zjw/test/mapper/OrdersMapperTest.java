@@ -102,4 +102,45 @@ public class OrdersMapperTest {
 		System.out.println(customers);
 		sqlSession.close();
 	}
+	/**
+	 * 
+	 * @MethodName:testFirstLevelCache
+	 * @Description:缓存的原理是map集合,每次查询都是先从缓存中进行取数,当取不到的时候再去数据库中查找
+	 * @Time:2017年2月16日下午4:02:18
+	 * @author:Tom
+	 */
+	@Test
+	public void testFirstLevelCache(){
+		SqlSession sqlSession = this.sqlSessionFactory.openSession();
+		OrdersMapper ordersMapper = sqlSession.getMapper(OrdersMapper.class);
+		List<OrdersCustomer> customersA = ordersMapper.firstLevelCache();
+		System.out.println(customersA);
+		//这次就是从缓存中取数,默认永远开启一级缓存
+		List<OrdersCustomer> customersB = ordersMapper.firstLevelCache();
+		System.out.println(customersB);
+		sqlSession.close();
+	}
+	/**
+	 * 
+	 * @MethodName:testSecondLevelCache
+	 * @Description:
+	 * @Time:2017年2月16日下午4:24:13
+	 * @author:Tom
+	 */
+	@Test
+	public void testSecondLevelCache(){
+		SqlSession sqlSessionA = this.sqlSessionFactory.openSession();
+		SqlSession sqlSessionB= this.sqlSessionFactory.openSession();
+
+		OrdersMapper ordersMapperA = sqlSessionA.getMapper(OrdersMapper.class);
+		OrdersCustomer ordersCustomerA = ordersMapperA.secondLevelCache();
+		System.out.println(ordersCustomerA);
+		sqlSessionA.close();
+		
+		
+		OrdersMapper ordersMapperB = sqlSessionB.getMapper(OrdersMapper.class);
+		OrdersCustomer ordersCustomerB = ordersMapperB.secondLevelCache();
+		System.out.println(ordersCustomerB);
+		System.out.println(ordersCustomerB);
+	}
 }

@@ -96,4 +96,19 @@
 		resultType="cn.itcast.zjw.mybatis.pojo.User">
 		SELECT * FROM USER_S WHERE id=#{id}
 	</select>
+	<!-- =========================== 一对一查询的延迟加载end ================================================ -->
+
+	<!-- =========================== 一级缓存的测试start ================================================ -->
+	<select id="firstLevelCache" resultType="cn.itcast.zjw.mybatis.pojo.OrdersCustomer">
+		select * from orders
+	</select>
+	<!-- =========================== 一级缓存的测试end ================================================ -->
+	
+	<!-- =========================== 二级缓存的测试start ================================================ -->
+	<!-- useCache:控制二级缓存时候开启,默认不开启 ,这里配置缓存配置,只对mybatis自身管理的二级缓存有效,和ehcache整合有,无效-->
+	<cache flushInterval="120"></cache>
+	<select id="secondLevelCache" useCache="true" resultType="cn.itcast.zjw.mybatis.pojo.OrdersCustomer">
+		select * from orders where id = 1
+	</select>
+	<!-- =========================== 二级缓存的测试end ================================================ -->
 </mapper>

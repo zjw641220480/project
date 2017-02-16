@@ -9,7 +9,7 @@
 	</properties>
 	<!-- 全局配置 -->
 	<settings>
-		<!-- 开启二级缓存 -->
+		<!-- 开启二级缓存,针对mapper还需要继续配置; -->
 		<setting name="cacheEnabled" value="true"></setting>
 		
 		<!-- 打开延迟加载的开关 -->
