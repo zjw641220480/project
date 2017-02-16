@@ -1,5 +1,7 @@
 ﻿package cn.itcast.zjw.mybatis.pojo;
 
+import java.util.List;
+
 /**
  * ClassName: OrdersCustomer
  * 
@@ -13,6 +15,17 @@ public class OrdersCustomer extends Orders {
 	private String username;
 	private String sex;
 	private String address;
+	//一对一的查询
+	private User user;
+	//一对多的resultMap
+	private List<OrderDetail> orderDetails;
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
 
 	public String getUsername() {
 		return username;
@@ -38,8 +51,18 @@ public class OrdersCustomer extends Orders {
 		this.address = address;
 	}
 
+	public List<OrderDetail> getOrderDetails() {
+		return orderDetails;
+	}
+
+	public void setOrderDetails(List<OrderDetail> orderDetails) {
+		this.orderDetails = orderDetails;
+	}
+
 	@Override
 	public String toString() {
-		return "OrdersCustomer [username=" + username + ", sex=" + sex + ", address=" + address + "]";
+		return "OrdersCustomer [username=" + username + ", sex=" + sex + ", address=" + address + ", user=" + user
+				+ ", orderDetails=" + orderDetails + "]";
 	}
+
 }

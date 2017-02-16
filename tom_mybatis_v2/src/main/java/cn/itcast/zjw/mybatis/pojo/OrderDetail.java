@@ -1,6 +1,6 @@
 ﻿package cn.itcast.zjw.mybatis.pojo;
 
-public class Orderdetail {
+public class OrderDetail {
 	private Integer id;
 	private Integer ordersId;
 	private Integer itemsId;

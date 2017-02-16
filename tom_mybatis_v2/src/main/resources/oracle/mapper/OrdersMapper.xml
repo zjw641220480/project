@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.itcast.zjw.mybatis.mapper.OrdersMapper">
+	<!-- =========================== 一对一start ============================================== -->
+	<!-- 一对一的查询使用resultType完成查询订单关联查询用户信息 -->
+	<select id="findOrderUserListResultType" resultType="cn.itcast.zjw.mybatis.pojo.OrdersCustomer">
+		select
+		orders.*,user_s.username,user_s.sex from
+		orders,user_s where
+		orders.userid
+		=
+		user_s.id
+	</select>
+	<!-- 一对一查询resultMap -->
+	<resultMap type="cn.itcast.zjw.mybatis.pojo.OrdersCustomer"
+		id="Orders_User_Result_Map">
+		<!-- id:订单关联用户查询的唯一标示 -->
+		<id column="id" property="id" />
+		<result column="USERID" property="userid" />
+		<result column="ORDERSNUMBER" property="ordersnumber" />
+		<result column="CREATETIME" property="createtime" />
+		<result column="NOTE" property="note" />
+		<!-- association:用于对关联信息映射到单个pojo中 property:要将关联信息映射到orders中的哪个属性中; javaType:关联信息映射到orders中属性的类型,也就是user的类型 -->
+		<association property="user" javaType="cn.itcast.zjw.mybatis.pojo.User">
+			<!-- id:关联信息的唯一标识,property:要映射到user中的哪个属性 -->
+			<id column="USERID" property="id" />
+			<result column="USERNAME" property="username" />
+			<result column="SEX" property="sex" />
+		</association>
+	</resultMap>
+	<select id="findOrderUserListResultMap" resultMap="Orders_User_Result_Map">
+		SELECT ORDERS.*, USER_S.USERNAME, USER_S.SEX
+			FROM ORDERS, USER_S
+			WHERE ORDERS.USERID = USER_S.ID
+	</select>
+	<!-- =========================== 一对一end ============================================== -->
+
+
+	<!-- =========================== 一对多start ================================================ -->
+	<resultMap type="cn.itcast.zjw.mybatis.pojo.OrdersCustomer"
+		id="Orders_User_OrderDetail_Result_Map" extends="Orders_User_Result_Map">
+		<!-- 订单明细信息,和User信息是在同一个级别上 -->
+		<collection property="orderDetails" 
+			ofType="cn.itcast.zjw.mybatis.pojo.OrderDetail">
+			<id column="orderdetail_id" property="id" />
+			<result column="ORDERSID" property="ordersId" />
+			<result column="ITEMSID" property="itemsId" />
+			<result column="ITEMSNUM" property="itemsNum" />
+		</collection>
+	</resultMap>
+	<select id="findOrderUserOrdersDetailListResultMap" resultMap="Orders_User_OrderDetail_Result_Map">
+		SELECT ORDERS.*,
+			USER_S.USERNAME,
+			USER_S.SEX,
+			ORDERDETAIL.ID ORDERDETAIL_ID,
+			ORDERSID,
+			ITEMSID,
+			ITEMSNUM
+			FROM ORDERS, USER_S, ORDERDETAIL
+			WHERE ORDERS.USERID = USER_S.ID
+			AND ORDERS.ID = ORDERDETAIL.ORDERSID
+	</select>
+	<!-- =========================== 一对多end ================================================ -->
+	
+	<!-- =========================== 一对一查询的延迟加载start ================================================ -->
+	<!-- 一对一延迟加载的resultMap配置 -->
+	<resultMap type="cn.itcast.zjw.mybatis.pojo.OrdersCustomer" id="Orders_User_Result_Map_Lazy_Loading">
+		<!-- id:订单关联用户查询的唯一标示 -->
+		<id column="id" property="id" />
+		<result column="USERID" property="userid" />
+		<result column="ORDERSNUMBER" property="ordersnumber" />
+		<result column="CREATETIME" property="createtime" />
+		<result column="NOTE" property="note" />
+		<!-- 配置用户信息的延迟加载 
+			select:延迟加载的sql所在的statement的id,如果不在同一个namespace,需要加namespace;
+			column:关联查询的列,根据数据库中表字段名字而确定;
+			property:将关联查询的用户信息设置到Orders的哪个属性;
+			这里并不需要再配置javaType,
+			sql:根据用户id查询用户信息 
+		-->
+		<association property="user" javaType="cn.itcast.zjw.mybatis.pojo.User" select="findUserById"  column="USERID">
+			<!-- id:关联信息的唯一标识,property:要映射到user中的哪个属性 -->
+			<id column="USERID" property="id" />
+			<result column="USERNAME" property="username" />
+			<result column="SEX" property="sex" />
+		</association>
+	</resultMap>
+	<!-- 一对一查询的延迟加载,开始只查询订单,对用户信息进行延迟加载 -->	
+	<select id="findOrdersUserListLazyLoading" resultMap="Orders_User_Result_Map_Lazy_Loading">
+		select * from orders 
+	</select>
+	<!-- 延迟加载使用的select语句 -->
+	<select id="findUserById" parameterType="int"
+		resultType="cn.itcast.zjw.mybatis.pojo.User">
+		SELECT * FROM USER_S WHERE id=#{id}
+	</select>
+</mapper>
