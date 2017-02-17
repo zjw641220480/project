@@ -10,7 +10,7 @@
 	<url>http://maven.apache.org</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<stlf.version>1.5.10</stlf.version>
+		<stlf.version>1.7.23</stlf.version>
 	</properties>
 	<dependencies>
 		<!-- Test -->
