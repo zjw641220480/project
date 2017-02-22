@@ -45,6 +45,6 @@ public class Variable {
 			System.out.println("循环中输出的y的值为:\t"+y);
 			y++;
 		}
-		System.out.println("变量x最终的值为:\t"+y);
+		System.out.println("变量y最终的值为:\t"+y);
 	}
 }
