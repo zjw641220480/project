@@ -14,7 +14,7 @@ public class Person {
 		System.out.println("Person.Person()");
 		System.out.println("无参构造方法运行");
 	}
-	public Person(String name,String id){
+	private Person(String name,String id){
 		this.name = name;
 		this.id = id;
 		System.out.println(this.toString());

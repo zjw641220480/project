@@ -10,6 +10,7 @@ import org.junit.Test;
 * 	子类要访问父类中的变量,用super
 * 	this代表的是本类对象的引用,
 * 	super代表的是父类对象的引用,
+* 	变量也同样存在覆盖现象;
 * 2,函数
 * 	当子类出现和父类一模一样的函数的时候,当子类对象调用该函数,会运行子类函数的内容,如同父类的函数被覆盖似得;
 * 	这种情况是函数的另一个特性:重写(覆盖);
@@ -34,17 +35,32 @@ class Fu{
 		System.out.println("父类方法运行");
 	}
 }
-
+/**
+ * 
+ * @ClassName:Zi
+ * @Description:子类继承父类,并在此类中进行测试
+ * @Time:2017年2月23日
+ * @author:Tom
+ */
 public class Zi extends Fu{
+	//子类num变量会覆盖父类的num标量
+	int num = 5;
 	public Zi(){
 		System.out.println("子类构造方法运行");
 	}
+	/**
+	 * 
+	 * @MethodName:main
+	 * @Description:
+	 * @Time:2017年2月23日下午5:15:31
+	 * @author:Tom
+	 */
 	@Test
 	public void main() {
 		Zi zi = new Zi();
-		System.out.println(zi.num);
-		System.out.println(this.num);
-		System.out.println(super.num);
+		System.out.println("子类的num变量的值\t"+zi.num);
+		System.out.println("本(子)类的num变量的值\t"+this.num);
+		System.out.println("父类的num变量的值\t"+super.num);
 		this.show();
 		super.show();
 	}
@@ -56,10 +72,10 @@ public class Zi extends Fu{
 	 * @Time:2016年9月1日下午4:09:12
 	 * @author:Tom
 	 */
-	public static void main(String[] args) {
+	@Test
+	public void testDemoCreateObject() {
 		new Zi();
 	}
-	int num = 5;
 	@Override
 	public void show() {
 		System.out.println("子类方法运行");

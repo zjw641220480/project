@@ -5,8 +5,8 @@ import org.junit.Test;
  * 
  * @ClassName:InnerClassTest
  * @Description:匿名内部类的两种使用方式:
- * 1,方法中使用接口对象,接口使用匿名内部类来实例化
- * 2,参数为接口对象,在传参的时候直接使用匿名内部类来实例化该接口对象;
+ * 1,方法中使用接口对象,接口使用匿名内部类来实例化;				代码69行
+ * 2,参数为接口对象,在传参的时候直接使用匿名内部类来实例化该接口对象;	代码38行
  * @author TOM
  * @Time: 2016年7月16日下午10:58:07
  */
@@ -48,7 +48,13 @@ public class InnerClassTest {
 interface InnerInterface {
 	void method();
 }
-
+/**
+ * 
+ * @ClassName:StandardInnerClass
+ * @Description:两种使用内部类的方式
+ * @Time:2017年2月23日
+ * @author:Tom
+ */
 class StandardInnerClass {
 	// 补足代码,使用匿名内部类
 	/**

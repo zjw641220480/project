@@ -35,7 +35,7 @@ public class MapConcurrent {
 		for(int i=0;i<20;i++){
 			Callable<String> callable = new Callable<String>() {
 				public String call() throws Exception {
-					//lock.lock();
+					lock.lock();
 					Set<String> keySet = map.keySet();
 					Iterator<String> iterator = keySet.iterator();
 					String threadName = null;
@@ -46,7 +46,7 @@ public class MapConcurrent {
 						System.out.println("线程"+threadName+"取得map中的值\t"+map.get(key));
 						count++;
 					}
-					//lock.unlock();
+					lock.unlock();
 					return null;
 				}
 			};

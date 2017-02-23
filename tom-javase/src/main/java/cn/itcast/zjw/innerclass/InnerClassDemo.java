@@ -33,7 +33,7 @@ public class InnerClassDemo {
 	/**
 	 * 
 	 * @Method:testCommonInnerClass
-	 * @Description:关于最简单内部类的测试
+	 * @Description:关于最简单,最标准内部类的测试
 	 * @author TOM
 	 * @date 2016年7月16日
 	 */
@@ -69,6 +69,13 @@ public class InnerClassDemo {
 		outer.show(4);
 	}
 }
+/**
+ * 
+ * @ClassName:Outer
+ * @Description:这个外部类中包含有三个内部类,一个静态内部类,一个正常的内部类,和一个局部类型的内部类(相当于Thread)
+ * @Time:2017年2月23日
+ * @author:Tom
+ */
 class Outer{
 	private int x = 1;
 	private static int y = 2;
@@ -122,11 +129,11 @@ class Outer{
 	/**
 	 * 
 	 * @ClassName:Inner
-	 * @Description:最简单最正常的一个public级别的内部类
+	 * @Description:最简单最正常的一个public级别的内部类,当为private级别时候,不能被其它外部类所引用
 	 * @author TOM
 	 * @Time: 2016年7月16日下午10:27:47
 	 */
-	public class Inner{
+	protected  class Inner{
 		public void function() {
 			int y = 10;
 			System.out.println(this.toString());

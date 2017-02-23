@@ -50,7 +50,7 @@ public class GenericityClass<T> {
 	}
 
 	/**
-	 * @Description: 静态泛型方法中的泛型
+	 * @Description: 静态泛型方法中的泛型,泛型类上定义的泛型,不能在static类型方法中进行使用
 	 * @param s
 	 * @return void
 	 * @throws @author

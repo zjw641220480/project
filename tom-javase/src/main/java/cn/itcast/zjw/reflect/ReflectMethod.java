@@ -11,35 +11,6 @@ import org.junit.Test;
  * @Time: 2016年7月14日下午2:05:45
  */
 public class ReflectMethod {
-	public static void main(String[] args) throws Exception {
-		ReflectMethod reflectPerson = new ReflectMethod();
-		reflectPerson.operatorMethod();
-		reflectPerson.operatorStaticMethod();
-	}
-	/**
-	 * 
-	 * @Method:testReflectCommonMethod
-	 * @Description:使用反射操作普通方法的测试
-	 * @author TOM
-	 * @date 2016年7月18日
-	 * @throws Exception
-	 */
-	@Test
-	public void testReflectCommonMethod() throws Exception{
-		this.operatorMethod();
-	}
-	/**
-	 * 
-	 * @Method:testStaticMethod
-	 * @Description:使用反射操作静态方法的测试
-	 * @author TOM
-	 * @date 2016年7月18日
-	 * @throws Exception
-	 */
-	@Test
-	public void testStaticMethod() throws Exception{
-		this.operatorStaticMethod();
-	}
 	/**
 	 * @Method: operatorMethod
 	 * @Description:使用反射操作普通方法
@@ -47,6 +18,7 @@ public class ReflectMethod {
 	 * @date 2016年6月1日
 	 * @author TOM
 	 */
+	@Test
 	public void operatorMethod() throws Exception{
 		Class<?> personClass = Class.forName("cn.itcast.zjw.reflect.Person");
 		// 得到所有方法
@@ -67,6 +39,7 @@ public class ReflectMethod {
 	 * @date 2016年6月1日
 	 * @author TOM
 	 */
+	@Test
 	public void operatorStaticMethod() throws Exception{
 		Class<?> personClass = Class.forName("cn.itcast.zjw.reflect.Person");
 		//获取类中指定方法,需要两个类型的参数,一个为方法的名字,一个为方法的所有参数类型

@@ -15,11 +15,6 @@ import org.junit.Test;
  * @since  1.6
  */
 public class ReflectConstruct {
-	public static void main(String[] args) throws Exception{
-		ReflectConstruct reflectConstruct = new ReflectConstruct();
-		//reflectConstruct.newPerson1();
-		reflectConstruct.newPerson2();
-	}
 	/**
 	 * @Method: getReflectClass
 	 * @Description:获取Class类的三种方式,其中第二种方式是最常用的;
@@ -40,20 +35,6 @@ public class ReflectConstruct {
 		Class<? extends Person> personClass3 = person.getClass();
 	}
 	/**
-	 * 
-	 * @Method:testNoParamsConstruct
-	 * @Description:无参构造方法的测试
-	 * @author TOM
-	 * @date 2016年7月17日
-	 * @throws ClassNotFoundException
-	 * @throws InstantiationException
-	 * @throws IllegalAccessException
-	 */
-	@Test
-	public void testNoParamsConstruct() throws ClassNotFoundException, InstantiationException, IllegalAccessException{
-		this.newPerson1();
-	}
-	/**
 	 * @Method: newPerson1
 	 * @Description:使用Class类的newInstance()方法直接调用该类的无参构造方法,生成对象;
 	 * @throws ClassNotFoundException
@@ -62,30 +43,13 @@ public class ReflectConstruct {
 	 * @date 2016年6月1日
 	 * @author TOM
 	 */
-	public void newPerson1() throws ClassNotFoundException, InstantiationException, IllegalAccessException  {
+	@Test
+	public void newPersonNoParameter() throws ClassNotFoundException, InstantiationException, IllegalAccessException  {
 		Class personClass = Class.forName("cn.itcast.zjw.reflect.Person");
 		//直接通过Class类中newInstance方法来得到Person类的实例,这个方法相当于直接调用了Person类的无参构造方法
 		Person person = (Person) personClass.newInstance();
 		person.setId("123"); 
 		System.out.println(person.getId());
-	}
-	/**
-	 * 
-	 * @Method:testSomeParamsConstruct
-	 * @Description:有参数构造方法的测试
-	 * @author TOM
-	 * @date 2016年7月17日
-	 * @throws ClassNotFoundException
-	 * @throws NoSuchMethodException
-	 * @throws SecurityException
-	 * @throws InstantiationException
-	 * @throws IllegalAccessException
-	 * @throws IllegalArgumentException
-	 * @throws InvocationTargetException
-	 */
-	@Test
-	public void testSomeParamsConstruct() throws ClassNotFoundException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
-		this.newPerson2();
 	}
 	/**
 	 * @Method: newPerson2
@@ -100,13 +64,18 @@ public class ReflectConstruct {
 	 * @date 2016年6月1日
 	 * @author TOM
 	 */
-	public void newPerson2() throws ClassNotFoundException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
-		Class personClass = Class.forName("cn.itcast.zjw.reflect.Person");
-		//获取所有的构造方法
-		Constructor[] constructors = personClass.getConstructors();
-		//获取某一个指定的构造方法
+	@Test
+	public void newPersonParameters() throws ClassNotFoundException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
+		Class<?> personClass = Class.forName("cn.itcast.zjw.reflect.Person");
+		//获取所有的public级别的构造方法
+		Constructor<?>[] constructors = personClass.getConstructors();
+		System.out.println(constructors.length);
+		//获取所有的包括private,protected级别的构造方法
+		Constructor<?>[] constructorss = personClass.getDeclaredConstructors();
+		System.out.println(constructorss.length);
+		//获取某一个指定的构造方法,注意这个构造方法是私有的,注意如何来获取这个构造方法,getDeclaredConstructor此方法允许获取私有构造方法;
 		//传递的是有参数的构造方法里面参数类型,类型使用的是class形式来进行传递;
-		Constructor constructor = personClass.getConstructor(String.class,String.class);
+		Constructor<?> constructor = personClass.getDeclaredConstructor(String.class,String.class);
 		//得到操作私有构造方法的权限;
 		constructor.setAccessible(true);
 		//通过又参数的构造方法来向对象中进行传值

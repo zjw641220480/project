@@ -7,9 +7,12 @@ import java.util.List;
 import org.junit.Test;
 
 /**
- * 泛型并不是只指List中的泛型,其的用处很广 ?通配符,也可以理解为占位符, 三种限定方式 <? extends
- * Object>可以接受Object的本类型以及其子类型,上限限定; <? super Person>可以接收Person的本类型以及其父类型,下限限定
- * <?>任何类型都可以进行接受 ClassName: GenericityAdvance
+ * 泛型并不是只指List中的泛型,其的用处很广
+ *  ?通配符,也可以理解为占位符, E指明一个类型(ArrayList中的add方法),可以直接使用
+ *  三种限定方式:
+ *   	<? extends Object>可以接受Object的本类型以及其子类型,上限限定; 
+ *   	<? super Person>可以接收Person的本类型以及其父类型,下限限定;
+ *   	<?>任何类型都可以进行接受 ClassName: GenericityAdvance;
  * 
  * @Description:
  * @author Tom
@@ -62,7 +65,7 @@ public class GenericityAdvance {
 	/**
 	 * 
 	 * @Method:printList
-	 * @Description:泛型在方法中的使用
+	 * @Description:泛型在方法中的使用,
 	 * @author TOM
 	 * @date 2016年7月16日
 	 * @param list
