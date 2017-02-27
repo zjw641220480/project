@@ -36,11 +36,19 @@ public class TicketInterface {
 		threadD.start();
 	}
 }
+/**
+ * 
+ * @ClassName:TicketInter
+ * @Description:专门负责卖票的类
+ * @Time:2017年2月24日
+ * @author:Tom
+ */
 class TicketInter implements Runnable{
 		//实现的方式并不需要吧变量放入到static中
 		private int tick = 100;
 		public void run() {
-			while(true){
+			//当判断条件单纯的为true时,线程无法结束,一直会循环下去
+			while(tick>0){
 				synchronized(TicketInter.class){
 					if(tick>0){
 						try {

@@ -27,7 +27,7 @@ public class TicketThread {
  */
 class Ticket extends Thread {
 	// 让4个窗口同时共享这100张票,共享这一个数据,把这个变量直接变为static
-	// 如果不加static,那么会造成各个对象都拥有各自的100张票
+	// 如果不加static,那么会造成各个对象都拥有各自的100张票,最主要是因为创建了4个Ticker对象,
 	private static int tick = 100;
 
 	public Ticket(String name) {
@@ -38,7 +38,7 @@ class Ticket extends Thread {
 	public void run() {
 		while (true) {
 			//跟使用到的锁还是有一定关系的!!!!
-			//静态资源用的锁不是对象,
+			//静态资源用的锁不是对象,可以使用资源所在的类;
 			synchronized (Ticket.class) {
 				if (tick > 0) {
 					// 线程休息来模拟卖票出错的情况

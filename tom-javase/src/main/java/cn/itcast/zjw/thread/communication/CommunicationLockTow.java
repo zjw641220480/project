@@ -50,6 +50,13 @@ class OutputLockTwo implements Runnable{
 	}
 	
 }
+/**
+ * 
+ * @ClassName:ResourceLockTwo
+ * @Description:在资源本身内部直接实现对资源的读写操作;
+ * @Time:2017年2月24日
+ * @author:Tom
+ */
 class ResourceLockTwo {
 	private String name;
 	private String sex;
