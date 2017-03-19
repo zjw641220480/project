@@ -7,6 +7,7 @@
 package cn.itcast.zjw.shiro.service;
 
 import cn.itcast.zjw.shiro.po.ActiveUser;
+import cn.itcast.zjw.shiro.po.SysUser;
 
 /** 
  * @ClassName: SysService
@@ -19,5 +20,6 @@ import cn.itcast.zjw.shiro.po.ActiveUser;
 public interface SysService {
 	// 根据用户的身份和密码进行认证,如果认证通过,返回用户身份信息;
 	public ActiveUser authenticat(String userCode,String password) throws Exception;
-	
+	//根据用户账号查询用户信息
+	public SysUser findSysUserByUserCode(String userCode) throws Exception;
 }

@@ -43,6 +43,7 @@ public class FileDemo {
 	 */
 	@Test
 	public void testSimple() {
+		//下面这句话会以本项目为根,在根下创建一个abc\kk的目录;
 		File file = new File("abc\\kk");
 		// file.mkdir();// 这种方式只能创建一级目录;
 		file.mkdirs();// 这种方式既可以创建一级目录,同时也可以创建多级目录;
@@ -61,6 +62,7 @@ public class FileDemo {
 	 */
 	@Test
 	public void createFile() {
+		//以本项目为根目录,在根下创建一个newFile.txt文件
 		File file = new File("newFile.txt");
 		try {
 			System.out.println(file.createNewFile());
@@ -81,6 +83,7 @@ public class FileDemo {
 	public void deleteFile() {
 		File file = new File("newFile.txt");
 		System.out.println(file.exists());
+		// 下面这句当程序出现错误的时候,不一定会绝对把文件删除掉,
 		// System.out.println(file.delete());
 		// 当程序运行完成之后将此文件删除,不论是否报异常都会将这个文件删除掉
 		// file.deleteOnExit();
@@ -124,7 +127,7 @@ public class FileDemo {
 		System.out.println(file.isFile());
 		System.out.println(file.canExecute());
 		// 通过java虚拟机启动程序;
-		Runtime.getRuntime().exec("D:\\Dict\\YodaoDict.exe");
+		//Runtime.getRuntime().exec("D:\\Dict\\YodaoDict.exe");
 	}
 	/**
 	 * Method <code>testGet</code>
@@ -142,6 +145,7 @@ public class FileDemo {
 		System.out.println(file.getPath());
 		System.out.println(file.getParent());//该方法返回的是绝对路径中的父目录
 		System.out.println(file.getAbsolutePath());//这个方法不论是对于相对路径还是绝对路径,输出的都是绝对路径
+		System.out.println("******************************************");
 		//当文件名为绝对路径名的时候
 		File file2 = new File("E:\\mavenproject\\project\\tom-javase\\charset.txt");
 		System.out.println(file2.getName());

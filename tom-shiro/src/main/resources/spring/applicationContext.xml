@@ -44,6 +44,8 @@
 		<property name="configLocation" value="classpath:mybatis/SqlMapConfig.xml" />
 		<!-- 数据源 -->
 		<property name="dataSource" ref="dataSource" />
+		<!-- mapper位置 -->
+		<property name="mapperLocations" value="classpath:mapper/*.xml"></property>
 	</bean>
 	<!-- mapper的扫描器,在这里面配置完成之后,在Mybatis的SqlMapConfig中就不必再进行配置了 同时mapper接口,和mapper.xml也需要名称一样并且在一个目录下; 
 		所生成bean的名字就是mapper接口的首字母小写即可; -->

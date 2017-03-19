@@ -2,50 +2,38 @@ package cn.itcast.zjw.shiro.po;
 
 import java.io.Serializable;
 
-
-/** 
- * @ClassName: ActiveUser
- * @Description:用户身份信息，存入session 由于tomcat将session会序列化在本地硬盘上，所以使用Serializable接口
- * @Time 2016年6月29日 下午9:13:48
- * @author: TOM
- * @version 1.0.0
- * @since  1.6
+/**
+ *
+ * <p>Title:ActiveUser.java</p>
+ * <p>Description:用于记录用户身份信息</p>
+ * @author TOM
+ * @date 2017年3月19日下午8:03:08
  */
-public class ActiveUser implements Serializable {
+public class ActiveUser implements Serializable{
 	/**
-	 * serialVersionUID
-	 * @since 1.0.0
+	 * 
 	 */
-	private static final long serialVersionUID = 1L;
-	
-	private String userid;		//用户id（主键）
-	private String usercode;	//用户账号
-	private String username;	//用户名称
-
-	public String getUsername() {
-		return username;
+	private static final long serialVersionUID = 5824247818276688079L;
+	private String userId;//用户id
+	private String userCode;//用户账号
+	private String userName;//用户名称
+	public String getUserId() {
+		return userId;
 	}
-
-	public void setUsername(String username) {
-		this.username = username;
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
-
-
-	public String getUsercode() {
-		return usercode;
+	public String getUserCode() {
+		return userCode;
 	}
-
-	public void setUsercode(String usercode) {
-		this.usercode = usercode;
+	public void setUserCode(String userCode) {
+		this.userCode = userCode;
 	}
-
-	public String getUserid() {
-		return userid;
+	public String getUserName() {
+		return userName;
 	}
-
-	public void setUserid(String userid) {
-		this.userid = userid;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
-
 	
 }
