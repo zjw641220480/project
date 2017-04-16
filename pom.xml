@@ -112,6 +112,6 @@
 		<module>tom-thread_and_erupt_simultaneously</module>
 		<module>tom_mybatis_v2</module>
 		<module>tom-springmvc</module>
-    <module>tom-html5</module>
+	    <module>tom-ssm</module>
   </modules>
 </project>
