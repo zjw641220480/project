@@ -25,12 +25,12 @@ public class ReflectMethod {
 		personClass.getDeclaredConstructors();
 		// 得到类中的指定方法,传递两个参数,第一个参数,方法的名称,第二个参数,方法的输入参数
 		Method methodName = personClass.getDeclaredMethod("testReflectMethod", String.class);
-		// 得到Person实例
-		Person person = (Person) personClass.newInstance();
+		// 得到Person(前提是能够new,现在不能new,故使用Object)实例
+		Object obj = (Person) personClass.newInstance();
 		// 当操作的是一个私有的方法的时候,需要设置值未true
 		methodName.setAccessible(true);
 		// 让指定的方法运行,传递两个参数,第一个参数Person实例,第二个参数,就是方法参数的值,执行了invoke方法之后,相当于执行了指定的方法,
-		methodName.invoke(person, "lisi");
+		methodName.invoke(obj, "lisi");
 	}
 	/**
 	 * @Method: operatorStaticMethod

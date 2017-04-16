@@ -23,23 +23,28 @@ public class TcpTransServer {
 	
 	public static void main(String[] args) throws Exception{
 		ServerSocket serverSocket = new ServerSocket(10000);
-		Socket socket = serverSocket.accept();
-		String ip = socket.getInetAddress().getHostAddress();
-		System.out.println("连接过来的客户端Ip:\t"+ip);
-		//读取Socket流中的数据
-		BufferedReader bufferedReader = 
-				new BufferedReader(new InputStreamReader(socket.getInputStream()));
-		//目的:socket输出流,将大写数据写入到socket输出流,并发送给客户端,
-		BufferedWriter bufferedWriter = 
-				new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
-		String line = null;
-		while((line = bufferedReader.readLine())!=null){
-			System.out.println("服务端获取的数据"+line);
-			bufferedWriter.write(line.toUpperCase());
-			bufferedWriter.newLine();
-			bufferedWriter.flush();
+		//while循环包括监听,使得一直处于监听状态,
+		while(true){
+			//服务端处于监听状态,
+			Socket socket = serverSocket.accept();
+			String ip = socket.getInetAddress().getHostAddress();
+			System.out.println("连接过来的客户端Ip:\t"+ip);
+			//读取Socket流中的数据
+			BufferedReader bufferedReader = 
+					new BufferedReader(new InputStreamReader(socket.getInputStream()));
+			//目的:socket输出流,将大写数据写入到socket输出流,并发送给客户端,
+			BufferedWriter bufferedWriter = 
+					new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+			String line = null;
+			while((line = bufferedReader.readLine())!=null){
+				System.out.println("服务端获取的数据"+line);
+				bufferedWriter.write(line.toUpperCase());
+				bufferedWriter.newLine();
+				bufferedWriter.flush();
+			}
+			bufferedReader.close();
+			bufferedWriter.close();
+			socket.close();
 		}
-		socket.close();
-		serverSocket.close();
 	}
 }

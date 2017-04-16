@@ -21,9 +21,11 @@ public class CopyServer {
 			}
 			printWriter.println(line);
 		}
+		printWriter.flush();
+		printWriter.close();
 		PrintWriter printWriterSocket = new PrintWriter(socket.getOutputStream(),true);
 		printWriterSocket.println("上传成功");
-		printWriter.close();
+		printWriterSocket.close();
 		socket.close();
 		serverSocket.close();
 	}

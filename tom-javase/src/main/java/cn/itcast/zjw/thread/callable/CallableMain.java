@@ -68,5 +68,6 @@ public class CallableMain {
 		callableConsums.add(consumName);
 		ExecutorService executorConsums = Executors.newFixedThreadPool(4);
 		executorConsums.invokeAll(callableConsums);
+		executorConsums.shutdown();
 	}
 }

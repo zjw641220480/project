@@ -45,7 +45,8 @@ public class TcpTransClient {
 		while((line = bufferedReader.readLine())!=null){
 			System.out.println("获取键盘录入"+line);
 			if(line.equals("over")){
-				return;
+				//这里注意,必须先把write流关闭才能正常关闭客户端,不然服务端由于不能读取到数据而报错;
+				break;
 			}
 			bufferedWriter.write(line);
 			bufferedWriter.newLine();
@@ -55,7 +56,7 @@ public class TcpTransClient {
 			String strServer = bufferedReaderSocket.readLine();
 			System.out.println("服务端返回的数据:\t"+strServer);
 		}
-		bufferedReader.close();
+		bufferedWriter.close();
 		socket.close();
 	}
 }

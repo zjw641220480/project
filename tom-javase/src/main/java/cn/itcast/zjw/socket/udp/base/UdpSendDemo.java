@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
-import java.net.SocketException;
-import java.net.UnknownHostException;
 
 /**
  * 通过udp传输方式,将一段文字数据发送出去;
@@ -17,7 +15,7 @@ import java.net.UnknownHostException;
 /**
  * 
  * @ClassName:UdpSendDemo
- * @Description:
+ * @Description:发送端
  * @author Tom
  * @Time:2016年7月26日
  *
@@ -32,6 +30,7 @@ public class UdpSendDemo {
 			//DatagramPacket(byte[] buf, int length, InetAddress address, int port) 
 							//数据,目的ip地址,目的端口号
 			byte[] bytes = ("这个是数据\t"+flag).getBytes();
+			//服务端的IP地址
 			InetAddress inetAddress = InetAddress.getByName("127.0.0.1");
 			DatagramPacket datagramPacket = new DatagramPacket(bytes,bytes.length,inetAddress,8888);
 			//3:通过Socket服务,将已有的数据包发送出去,通过send方法;

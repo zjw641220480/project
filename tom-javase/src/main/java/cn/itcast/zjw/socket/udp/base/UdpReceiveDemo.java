@@ -16,7 +16,7 @@ import java.net.DatagramSocket;
 /**
  * 
  * @ClassName:UdpReceiveDemo
- * @Description:
+ * @Description:接收端
  * @author Tom
  * @Time:2016年7月27日
  *

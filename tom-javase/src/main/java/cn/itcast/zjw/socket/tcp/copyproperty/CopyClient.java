@@ -11,7 +11,7 @@ public class CopyClient {
 	public static void main(String[] args) throws Exception {
 		Socket socket = new Socket("127.0.0.1", 10000);
 		BufferedReader bufferedReader = 
-				new BufferedReader((new FileReader(new File("client.txt"))));
+				new BufferedReader((new FileReader(new File("javase.txt"))));
 		PrintWriter printWriter = new PrintWriter(socket.getOutputStream(),true);
 		long time = System.currentTimeMillis();
 		printWriter.println(time);

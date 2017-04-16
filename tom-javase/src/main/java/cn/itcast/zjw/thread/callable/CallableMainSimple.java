@@ -39,5 +39,6 @@ public class CallableMainSimple {
 		// 消费者线程池
 		ExecutorService executorConsums = Executors.newFixedThreadPool(4);
 		executorConsums.invokeAll(callableConsums);
+		executorConsums.shutdown();
 	}
 }
