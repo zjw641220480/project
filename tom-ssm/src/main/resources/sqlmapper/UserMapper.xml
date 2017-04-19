@@ -9,4 +9,5 @@
   <select id="getUser" parameterType="java.lang.String" resultMap="BaseResultMap">
   	select User_id,username from sys_user where user_id = #{value}
   </select>
+  
 </mapper>
