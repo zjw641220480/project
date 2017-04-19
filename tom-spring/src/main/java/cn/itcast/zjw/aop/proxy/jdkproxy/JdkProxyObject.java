@@ -11,7 +11,7 @@ import java.lang.reflect.Proxy;
  * @author:Tom
  */
 public class JdkProxyObject implements InvocationHandler{
-	//JDK动态代理所代理的目标对象,在初始化代理类的时候,就会把目标类对象同样初始化;
+	//JDK动态代理所代理的目标对象,在初始化代理类的时候,就会把目标类对象同样初始化;但是目标对象并不直接具体指定;
 	private Object targetObject = null;
 	public JdkProxyObject(Object targetObject){
 		this.targetObject = targetObject;

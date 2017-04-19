@@ -8,6 +8,8 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import cn.itcast.zjw.base.annotation.dao.UserDao;
+import cn.itcast.zjw.base.annotation.dao.impl.UserDaoImpl;
+
 import org.springframework.stereotype.Component;
 
 /**
@@ -21,9 +23,11 @@ import org.springframework.stereotype.Component;
 public class TestAnnotationOne implements ApplicationContextAware{
 	@SuppressWarnings("resource")
 	public static void main(String[] args) {
-		new ClassPathXmlApplicationContext("config/base/annotation/applicationContext-Annotation.xml");
+		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("config/base/annotation/applicationContext-Annotation.xml");
+		System.out.println(applicationContext.getBean(UserDaoImpl.class));
+		System.out.println("TestAnnotationOne.main()");
 	}
-	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+	/*public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
 		Map<String,Object> myBatisBeans = applicationContext.getBeansWithAnnotation(MyBatis.class);
 		for(Object obj:myBatisBeans.keySet()){
 			String str = obj.getClass().getAnnotation(MyBatis.class).name();
@@ -31,5 +35,10 @@ public class TestAnnotationOne implements ApplicationContextAware{
 		}
 		UserDao userDao = (UserDao) applicationContext.getBean("userDaoImpl");
 		System.out.println(userDao.getUser());
+	}*/
+
+	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+		// TODO Auto-generated method stub
+		
 	}
 }
