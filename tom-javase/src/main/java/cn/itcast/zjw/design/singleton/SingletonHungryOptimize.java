@@ -21,6 +21,7 @@ public class SingletonHungryOptimize {
 	 * 这个类需要有三个成员: 
 	 * 1:一个类变量(被static修饰了的成员变量)了的单例对象;
 	 * 2:一个给类变量赋值的静态方法;
+	 * 备注(第三个要求是并不需要的)
 	 * 3:一个公共的方法提供给外部类,让外部类可以获取到此对象,外部类不需要生命该单例对象变量
 	 */
 	private static class InitializeSingleton {
@@ -34,13 +35,14 @@ public class SingletonHungryOptimize {
 			return new Singleton();
 		}
 
-		// 对外提供一个公共的方法来让外部类获取到这个实例化了的单例对象;
+		// 对外提供一个公共的方法来让外部类获取到这个实例化了的单例对象;这个实际是不需要的
+		@Deprecated
 		public static Singleton instance() {
 			return singleton;
 		}
 	}
 
 	public static Singleton getInstance() {
-		return InitializeSingleton.instance();
+		return InitializeSingleton.singleton;
 	}
 }
