@@ -13,11 +13,12 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
  * 上面两句话的解释:
  * 		两个线程共用一个BlockingQueue,当第一个线程放入数据后,此线程并没有直接就开始打印出当前队列中数据的个数
  * 	当第二个线程放入数据完成后,两个线程依次打印出来当前队列中的数据,那么必然就会是同一个值了;(两句话的原子性可以通过部分代码加写锁来保证)
+ *   想要重现的话,可以把锁和等待全部去掉即可;
  */
 /**
  * 
  * @ClassName:BlockingQueueTest
- * @Description:
+ * @Description:BlockingQueue读写实现原子性操作,写试用写锁,读不加锁
  * @Time:2016年9月7日
  * @author:Tom
  */
@@ -25,6 +26,7 @@ public class BlockingQueueTest {
 	public static void main(String[] args) {
 		final ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
 		ExecutorService executorService = Executors.newCachedThreadPool();
+		//两个线程共用一个队列,
 		final BlockingQueue<Integer> blockingQueue = new ArrayBlockingQueue<Integer>(3);
 		Runnable commandSet = null;
 		for (int i = 0; i < 3; i++) {

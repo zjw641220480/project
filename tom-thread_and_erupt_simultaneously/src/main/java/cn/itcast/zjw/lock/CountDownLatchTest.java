@@ -18,6 +18,7 @@ public class CountDownLatchTest {
 					try {
 						System.out.println("线程"+Thread.currentThread().getName()+"正在准备接受命令");
 						//等待裁判发布命令,
+						System.out.println(countDownLatchAnser.getCount());
 						countDownLatchOrder.await();
 						System.out.println("线程"+Thread.currentThread().getName()+"已经接受命令");
 						Thread.sleep((long) (Math.random()*1000));

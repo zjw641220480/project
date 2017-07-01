@@ -29,7 +29,7 @@ public class ThreadPoolTest {
 					for(int j=0;j<3;j++){
 						System.out.println("此时运行线程名称:"+Thread.currentThread().getName()+"\t\texecute\t"+j+"\t"+task);
 						try {
-							Thread.sleep(1500);
+							Thread.sleep(100);
 						} catch (InterruptedException e) {
 							e.printStackTrace();
 						}
@@ -37,10 +37,10 @@ public class ThreadPoolTest {
 				}
 			});
 		}
-		//这个方法会把池子中的所有线程全部销毁;
-		//executorService.shutdown();
+		//这个方法运行后,线程池不会再接收新的任务,所以后面的3此循环任务不会再被提交给线程池来运行
+		executorService.shutdown();
 		try {
-			Thread.sleep(10000);
+			Thread.sleep(1000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

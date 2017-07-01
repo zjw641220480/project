@@ -11,4 +11,4 @@ java中的thread-->communcation;
 	Lock用来加锁和解锁,
 	Condition用来将特定线程唤醒或休眠,  试着把Condition理解为子锁,多种类型的锁,多种锁之间用boolean等类型值进行区分;
 	Lock 替代了 synchronized 方法和语句的使用，Condition 替代了 Object 监视器方法的使用。 
-	
+	在ReentrantLock类中有两个类,ReadLock和WriteLock

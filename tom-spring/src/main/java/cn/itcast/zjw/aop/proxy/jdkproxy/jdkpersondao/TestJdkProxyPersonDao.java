@@ -1,5 +1,6 @@
 package cn.itcast.zjw.aop.proxy.jdkproxy.jdkpersondao;
 
+import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
 import org.junit.Test;
@@ -39,8 +40,11 @@ public class TestJdkProxyPersonDao {
 		//3:产生代理类的拦截器
 		MyInterceptor myInterceptor = new MyInterceptor(personDao, transaction);
 		//4:使用Proxy动态生成代理对象;此代理对象包含了目标对象中的所有属性和方法;
+		//主要是是使用最后一个参数(拦截器)进行代理对象的生成;
 		personDao = (PersonDao) Proxy.newProxyInstance(personDao.getClass().getClassLoader(), personDao.getClass().getInterfaces(), myInterceptor);
 		Person person = new Person();
+		//由于personDao是代理对象,故实际调用的是:
+		//public Object invoke(Object object, Method method, Object[] args)
 		personDao.savePerson(person);
 	}
 }

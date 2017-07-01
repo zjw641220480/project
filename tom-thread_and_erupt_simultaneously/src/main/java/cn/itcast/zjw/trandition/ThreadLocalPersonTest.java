@@ -4,6 +4,13 @@ import java.util.Random;
 
 import cn.itcast.zjw.domain.Person;
 
+/**
+ * 
+ * <p>Titile:ThreadLocalPersonTest</p>
+ * <p>Description:以当前线程为锁,获取自己线程中保存的相关数据  </p>
+ * @author TOM
+ * @date 2017年7月1日 下午12:09:27
+ */
 public class ThreadLocalPersonTest {
 	public static void main(String[] args) {
 		for(int i = 0;i<3;i++){
