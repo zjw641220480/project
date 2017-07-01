@@ -1,8 +1,8 @@
 package cn.itcast.zjw.design.factory.simplefactory;
 
-import cn.itcast.zjw.design.factory.simplefactory.product.BenzCar;
-import cn.itcast.zjw.design.factory.simplefactory.product.BmwCar;
-import cn.itcast.zjw.design.factory.simplefactory.product.Car;
+import cn.itcast.zjw.design.factory.product.BenzCar;
+import cn.itcast.zjw.design.factory.product.BmwCar;
+import cn.itcast.zjw.design.factory.product.Car;
 
 /**
  * 

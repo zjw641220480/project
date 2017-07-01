@@ -1,4 +1,4 @@
-package cn.itcast.zjw.design.factory.simplefactory.product;
+package cn.itcast.zjw.design.factory.product;
 
 public interface Car {
 	public void drive();
