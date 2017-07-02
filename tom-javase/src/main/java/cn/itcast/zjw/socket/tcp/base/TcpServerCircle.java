@@ -13,7 +13,7 @@ import java.net.Socket;
 public class TcpServerCircle {
 	public static void main(String[] args) throws Exception {
 		//1:使用ServerSocket来创建服务器接收端
-		ServerSocket serverSocket = new ServerSocket(10000);
+		ServerSocket serverSocket = new ServerSocket(10001);
 		//2:获得侦听到的Socket客户端服务
 		Socket socket = serverSocket.accept();
 		System.out.println("客户端IP:\t" + socket.getInetAddress().getHostAddress());
@@ -21,7 +21,9 @@ public class TcpServerCircle {
 			try {
 				//3:从Socket中获得读取流,从而获取数据
 				InputStream inputStream = socket.getInputStream();
-				byte[] bytes = new byte[1024];
+				//一样会出现当客户端数据量过大时候,数据被切分的情况;
+				int lengthStream = inputStream.read();
+				byte[] bytes = new byte[lengthStream];
 				int length = inputStream.read(bytes);
 				System.out.println(new String(bytes, 0, length));
 			} catch (Exception e) {

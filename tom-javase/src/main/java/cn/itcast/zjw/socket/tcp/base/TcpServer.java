@@ -19,14 +19,15 @@ import java.net.Socket;
 public class TcpServer {
 	public static void main(String[] args) throws Exception{
 		//1:建立服务端的socket服务,并监听一个端口,
-		ServerSocket serverSocket = new ServerSocket(10000);
+		ServerSocket serverSocket = new ServerSocket(10001);
 		//2:侦听客户端Socket连接;
 		Socket socket = serverSocket.accept();
 		String ip = socket.getInetAddress().getHostAddress();
 		System.out.println("连接过来的客户端IP为\t"+ip);
 		//3:获取客户端发送过来的数据,服务端使用客户端对象的读取流来读取数据;
 		InputStream inputStream = socket.getInputStream();
-		byte bytes[] = new byte[1024];
+		//此种方式当数据量过大时候会出现读取不完整的情况
+		byte bytes[] = new byte[50];
 		inputStream.read(bytes);
 		System.out.println(new String(bytes,0,bytes.length));
 		socket.close();

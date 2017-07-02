@@ -20,10 +20,10 @@ import java.net.Socket;
 public class TcpClient {
 	public static void main(String[] args) throws Exception{
 		//1:创建客户端的Socket服务,指定目的主机和端口;
-		Socket socket = new Socket("127.0.0.1", 10000);
+		Socket socket = new Socket("127.0.0.1", 10001);
 		//2:为了发送数据应该获取socket流中的输出流
 		OutputStream outputStream = socket.getOutputStream();
-		outputStream.write("Tcp哥们来了".getBytes());
+		outputStream.write("Netty是基于Java NIO的网络应用框架.Netty是一个NIO client-server(客户端服务器)框架，使用Netty可以快速开发网络应用，例如服务器和客户端协议。Netty提供了一种新的方式来使开发网络应用程序，这种新的方式使得它很容易使用和有很强的扩展性。Netty的内部实现时很复杂的，但是Netty提供了简单易用的api从网络处理代码中解耦业务逻辑。Netty是完全基于NIO实现的，所以整个Netty都是异步的 网络应用程序通常需要有较高的可扩展性，无论是Netty还是其他的基于Java NIO的框架，都会提供可扩展性的解决方案。Netty中一个关键组成部分是它的异步特性.".getBytes());
 		//3:关闭socket资源
 		socket.close();
 	}
