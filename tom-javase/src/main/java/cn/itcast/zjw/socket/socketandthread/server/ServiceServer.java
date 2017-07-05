@@ -17,8 +17,8 @@ import java.util.concurrent.Executors;
  * @date 2017年4月11日下午7:50:26
  */
 public class ServiceServer {
-	public static void main(String[] args) throws IOException {
-		ServerSocket serverSocket = new ServerSocket(10000);
+	public static void main(String[] args) throws IOException, InterruptedException {
+		ServerSocket serverSocket = new ServerSocket(10001);
 		ArrayBlockingQueue<String> arrayBlockingQueue = new ArrayBlockingQueue<String>(3);
 		ExecutorService queueService = Executors.newFixedThreadPool(4);
 		ExecutorService Service = Executors.newFixedThreadPool(4);
@@ -29,6 +29,7 @@ public class ServiceServer {
 			while((line = bufferedReader.readLine())!=null){
 				Input input = new ServiceServer().new Input(arrayBlockingQueue, line);
 				queueService.submit(input);
+				Thread.currentThread().sleep(1000l);
 				System.out.println(arrayBlockingQueue);
 			}
 			socket.close();

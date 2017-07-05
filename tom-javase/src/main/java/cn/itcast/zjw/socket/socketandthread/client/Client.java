@@ -15,7 +15,7 @@ import java.net.UnknownHostException;
  */
 public class Client {
 	public static void main(String[] args) throws UnknownHostException, IOException {
-		Socket socket = new Socket("127.0.0.1", 10000);
+		Socket socket = new Socket("127.0.0.1", 10001);
 		BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
 		bufferedWriter.write("sssss");
 		bufferedWriter.flush();
