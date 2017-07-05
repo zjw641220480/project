@@ -47,7 +47,8 @@ public class FileDemo {
 		File file = new File("abc\\kk");
 		// file.mkdir();// 这种方式只能创建一级目录;
 		file.mkdirs();// 这种方式既可以创建一级目录,同时也可以创建多级目录;
-		File file2 = new File("file.txt");
+		//这个是从项目的根目录开始加载
+		File file2 = new File("newfile.txt");
 		// 若文件本身不存在,那么它在判断是否为文件或者文件夹的时候都会是false
 		System.out.println(file2.isFile());
 		System.out.println(file2.isDirectory());
@@ -66,6 +67,21 @@ public class FileDemo {
 		File file = new File("newFile.txt");
 		try {
 			System.out.println(file.createNewFile());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		//在项目所在磁盘的根目录下创建文件,也就是说,IO流中
+		File fileRoot = new File("\\newFile.txt");
+		try {
+			System.out.println(fileRoot.createNewFile());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		//使用File方式不能在classPath下创建文件,创建的文件是不正确的;
+		File fileclassPath = new File("classPath:myClassFile.txt");
+		try {
+			System.out.println(fileclassPath.createNewFile());
+			System.out.println(fileclassPath.getAbsolutePath());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
