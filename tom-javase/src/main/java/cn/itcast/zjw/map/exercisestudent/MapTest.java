@@ -38,7 +38,7 @@ public class MapTest {
 		students.put(new Student("zhangsan",30,"男"), "北京");
 		//这里为什么在put的时候会认为这个键是已经存在的,对象复写了HashCode()和equals()方法
 		//每一次存入的时候都会调用一次HashCode方法,当再次存入发现hashCode的值是一样的时候,再进行equals方法的判断
-		//下面这个键值对并不会被存入到Map中,而且也不会把之前存入进map的上一个键值对替换掉;
+		//下面这个键值因为键的值被判定为已经存在,故会顶替掉之前这个键存入的值;
 		students.put(new Student("zhangsan",30,"女"), "河南");
 		students.put(new Student("lisi",23), "上海");
 		students.put(new Student("wangwu",40), "天津");
