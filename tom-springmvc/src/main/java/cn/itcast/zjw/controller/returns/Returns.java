@@ -76,6 +76,7 @@ public class Returns {
 		itemsQueryVo.setItemsCustom(itemsCustom);
 		List<ItemsCustom> list = itemsService.findItemsList(itemsQueryVo);
 		System.out.println(list);
+		itemsService.findListString();
 		request.setAttribute("itemsList", list);
 		//这里需要注意:当使用request来转向页面的时候,这里需要指定页面的完整路径;
 		request.getRequestDispatcher("/WEB-INF/jsp/itemsList.jsp").forward(request, response);

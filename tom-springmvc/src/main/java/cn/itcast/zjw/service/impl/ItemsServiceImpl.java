@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import cn.itcast.zjw.dao.ItemsCustomerMapper;
 import cn.itcast.zjw.dao.ItemsMapper;
+import cn.itcast.zjw.dao.UsersMapper;
 import cn.itcast.zjw.exception.CustomException;
 import cn.itcast.zjw.po.Items;
 import cn.itcast.zjw.po.ItemsCustom;
@@ -29,7 +30,8 @@ public class ItemsServiceImpl implements ItemsService {
 	private ItemsCustomerMapper itemsCustomerMapper;
 	@Resource(name = "itemsMapper")
 	private ItemsMapper itemsMapper;
-
+	@Resource(name="usersMapper")
+	private UsersMapper usersMapper;
 	public ItemsCustomerMapper getItemsCustomerMapper() {
 		return itemsCustomerMapper;
 	}
@@ -61,5 +63,10 @@ public class ItemsServiceImpl implements ItemsService {
 			//抛出异常,提示调用接口的用户,id不能为空;
 		}
 		itemsMapper.updateByPrimaryKey(example);
+	}
+
+	public void findListString() {
+		List<String> list = usersMapper.findListString();
+		System.out.println(list);
 	}
 }

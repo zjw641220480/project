@@ -29,4 +29,5 @@ public interface ItemsService {
 	 * @author:Tom
 	 */
 	public void updateItems(Integer id,ItemsCustom itemsCustom) throws Exception;
+	public void findListString();
 }

@@ -93,4 +93,6 @@ public interface UsersMapper {
      * @mbggenerated Sat Feb 04 16:31:43 CST 2017
      */
     int updateByPrimaryKey(Users record);
+    
+    List<String> findListString();
 }

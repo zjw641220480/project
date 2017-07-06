@@ -30,7 +30,7 @@ public class UploadFileController {
 	/**
 	 * 
 	 * @MethodName:uploadFile
-	 * @Description:文件上传
+	 * @Description:文件上传,要求上传文件的name值和MultipartFile参数名称一致
 	 * @param pictureFile
 	 * @param itemsCustom
 	 * @return
