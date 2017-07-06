@@ -93,7 +93,7 @@ public class ItemsController {
 	@RequestMapping("/editItemsSubmit")
 	//@ModelAttribute(value="itemsCustom")这个注解用来数据的回显;
 	//在要校验的pojo前面加上@Validated进行校验;并且在这个pojo后面加上BindingResult对象
-	public void editItemsSubmit(@Validated @ModelAttribute(value = "itemsCustom") ItemsCustom itemsCustom,
+	public void editItemsSubmit(@Validated/*(value=ValidGroup1.class)//对校验进行分组,空接口*/ @ModelAttribute(value = "itemsCustom") ItemsCustom itemsCustom,
 			BindingResult bindingResult, HttpServletRequest request, HttpServletResponse response) throws Exception {
 		itemsService.updateItems(itemsCustom.getId(), itemsCustom);
 		//这里是校验出来数据不和要求,不是异常
@@ -105,6 +105,8 @@ public class ItemsController {
 				System.out.println(error.getCode());
 				System.out.println(error.getObjectName());
 			}
+			//将错误传回前端
+			//model.addAttribute("errors",errors);
 			request.getRequestDispatcher("editItems.action").forward(request, response);
 		} else {
 			request.getRequestDispatcher("queryItems.action").forward(request, response);
