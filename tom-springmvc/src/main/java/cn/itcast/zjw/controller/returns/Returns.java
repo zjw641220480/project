@@ -8,9 +8,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.View;
+import org.springframework.web.servlet.view.RedirectView;
 
 import cn.itcast.zjw.po.ItemsCustom;
 import cn.itcast.zjw.po.ItemsQueryVo;
@@ -23,6 +26,7 @@ import cn.itcast.zjw.service.ItemsService;
  * @author TOM
  * @date 2017年2月9日下午4:45:23
  */
+@Controller
 @RequestMapping("/return")
 public class Returns {
 	@Resource(name="itemsServiceImpl")
@@ -46,6 +50,11 @@ public class Returns {
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.setViewName("itemsList");
 		modelAndView.addObject("itemsList", list);
+		//使用下面一句话也可以实现重定向
+		//modelAndView.setView(new RedirectView("return/returnVoid.action"));
+		//下面两句是使用ModelAndView来实现请求转发和重定向;
+		//modelAndView.setViewName("forward:/return/returnVoid.action");
+		modelAndView.setViewName("redirect:/return/returnVoid.action");
 		return modelAndView;
 	}
 	/**
@@ -91,6 +100,7 @@ public class Returns {
 		model.addAttribute("itemsList", list);
 		//使用这种方式进行不同Controller之间请求转发时候的书写;
 		//"forward:/items/queryItems.action";
+		//"redirect:/items/queryItems.action"
 		return "itemsList";
 	}
 }
