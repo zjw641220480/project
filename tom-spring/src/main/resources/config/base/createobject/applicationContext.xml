@@ -14,9 +14,13 @@
         http://www.springframework.org/schema/aop/spring-aop.xsd">
        	<!-- 默认构造函数创建对象 -->
         <bean id="helloWorldDefaultConstruct" class="cn.itcast.zjw.base.createobject.HelloWorld" />
-		<!-- 静态工厂方法创建对象 -->
-		<bean id="helloWorldFromFactory" class="cn.itcast.zjw.base.createobject.HelloWorldFactory" factory-method="getInstanceStatic"/>
-		<!-- 实例工厂创建对象 -->
+        
+		<!-- 静态工厂方法创建对象,和下面的没有什么关系 ,factory-method这个方法说明了此对象可以通过这个指定的静态方法来创建-->
+		<bean id="helloWorldFromFactory" class="cn.itcast.zjw.base.createobject.HelloWorldFactory"
+			 factory-method="getInstanceStatic"/>
+		
+		
+		<!-- 实例工厂创建对象,先实例化工厂,factory-bean指定生产的Bean使用哪个工厂,factory-method指定生产Bean使用的是工厂中的哪个方法 -->
 		<bean id="helloWorldFactory" class="cn.itcast.zjw.base.createobject.HelloWorldFactory"/>
 		<bean id="helloWorldFacotryObject" factory-bean="helloWorldFactory" factory-method="getInstance"/>
 </beans>
