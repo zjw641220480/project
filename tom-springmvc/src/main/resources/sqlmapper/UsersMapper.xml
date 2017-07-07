@@ -283,4 +283,7 @@
       ADDRESS = #{address,jdbcType=VARCHAR}
     where ID = #{id,jdbcType=DECIMAL}
   </update>
+  <select id="findListString" resultType="string">
+  	select username from users
+  </select>
 </mapper>

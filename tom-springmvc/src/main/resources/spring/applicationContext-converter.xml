@@ -14,6 +14,8 @@
 		<property name="validator" ref="validator">
 		</property>
 	</bean>
+	
+	<!-- 最新的只需要下面一部分 -->
 	<bean id="conversionService"
 		class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
 		<property name="converters">
