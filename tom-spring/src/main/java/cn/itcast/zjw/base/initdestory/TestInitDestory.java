@@ -48,8 +48,8 @@ public class TestInitDestory {
 	@Test
 	public void testInitDestoryMethodScopeDefault(){
 		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("config/base/initdestory/applicationContext.xml");
-		HelloWorld helloWorldA = (HelloWorld) applicationContext.getBean("helloWorld");
-		HelloWorld helloWorldB = (HelloWorld) applicationContext.getBean("helloWorld");
+		HelloWorld helloWorldA = (HelloWorld) applicationContext.getBean("helloWorldScopeSingle");
+		HelloWorld helloWorldB = (HelloWorld) applicationContext.getBean("helloWorldScopeSingle");
 		System.out.println(helloWorldA);
 		System.out.println(helloWorldB);
 		ClassPathXmlApplicationContext classPathXmlApplicationContext = (ClassPathXmlApplicationContext) applicationContext;
