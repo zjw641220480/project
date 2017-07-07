@@ -15,8 +15,8 @@ public class TestScope {
 	@Test
 	public void testScope_Default(){
 		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("config/base/scope/applicationContext.xml");
-		HelloWorld helloWorldA = (HelloWorld) applicationContext.getBean("helloWorld");
-		HelloWorld helloWorldB = (HelloWorld) applicationContext.getBean("helloWorld");
+		HelloWorld helloWorldA = (HelloWorld) applicationContext.getBean("helloWorldDefault");
+		HelloWorld helloWorldB = (HelloWorld) applicationContext.getBean("helloWorldDefault");
 		System.out.println(helloWorldA.toString());
 		System.out.println(helloWorldB.toString());
 	}
@@ -30,8 +30,8 @@ public class TestScope {
 	@Test
 	public void testScope_Prototype(){
 		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("config/base/scope/applicationContext.xml");
-		HelloWorld helloWorldA = (HelloWorld) applicationContext.getBean("helloWorld");
-		HelloWorld helloWorldB = (HelloWorld) applicationContext.getBean("helloWorld");
+		HelloWorld helloWorldA = (HelloWorld) applicationContext.getBean("helloWorldScope");
+		HelloWorld helloWorldB = (HelloWorld) applicationContext.getBean("helloWorldScope");
 		System.out.println(helloWorldA.toString());
 		System.out.println(helloWorldB.toString());
 	}
