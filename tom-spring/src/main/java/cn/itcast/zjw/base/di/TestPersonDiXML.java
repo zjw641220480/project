@@ -28,9 +28,23 @@ public class TestPersonDiXML {
 	 */
 	//当需要使用到init方法的时候,init是在所有的set方法运行完毕之后才会执行init方法的;
 	@Test
-	public void testPersonDiXML(){
-		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("config/base/di/applicationContext.xml");
-		Person person = (Person) applicationContext.getBean("person");
+	public void testPersonDiXMLBySet(){
+		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("config/base/di/applicationContextDiXml.xml");
+		Person person = (Person) applicationContext.getBean("personBySet");
+		System.out.println(person.getName());
+		System.out.println(person.getStringList());
+	}
+	/**
+	 * 
+	 * @MethodName:testPersonDiXmlByContructor
+	 * @Description:测试通过构造方法注入,使用构造方法注入可以有三种书写方式
+	 * @Time: 2017年7月7日 下午2:49:19
+	 * @author: TOM
+	 */
+	@Test
+	public void testPersonDiXmlByConstructor(){
+		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("config/base/di/applicationContextDiXml.xml");
+		Person person = (Person) applicationContext.getBean("personByConstructor");
 		System.out.println(person.getName());
 		System.out.println(person.getStringList());
 	}

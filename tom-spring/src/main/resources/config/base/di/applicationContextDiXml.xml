@@ -12,7 +12,9 @@
         http://www.springframework.org/schema/tx/spring-tx.xsd
         http://www.springframework.org/schema/aop
         http://www.springframework.org/schema/aop/spring-aop.xsd">
-	<bean id="person" class="cn.itcast.zjw.base.domain.Person" init-method="init">
+        
+    <!-- 下面这个Bean是通过类中的各种set方法进行注入的 -->
+	<bean id="personBySet" class="cn.itcast.zjw.base.domain.Person" init-method="init">
 	<!-- property描述的就是类中的属性; 
 		name属性就是描述属性的名称,
 		如果是基本数据类型(包含String),就用value赋值
@@ -55,6 +57,18 @@
 				<prop key="p2">pv2</prop>
 			</props>
 		</property>
+	</bean>
+	<!-- 下面这个Bean是通过类中的构造方法进行注入的 -->
+	<bean id="personByConstructor" class="cn.itcast.zjw.base.domain.Person">
+		<!-- 这个是最简单的方式 -->
+		<constructor-arg index="0" value="zhangsan"/>
+		<constructor-arg index="1" ref="student"/>
+		<!-- 下面这种根据构造方法中参数名称注入也是可以的 -->
+		<!-- <constructor-arg name="name" value="zhangsan"></constructor-arg>
+		<constructor-arg name="student"><null></null></constructor-arg> -->
+		<!-- 下面这种根据构造方法中的参数类型进行注入也是可以的 -->
+		<!-- <constructor-arg type="java.lang.String" value="zhangsan"/>
+		<constructor-arg type="cn.itcast.zjw.base.domain.Student" ref="student"/> -->
 	</bean>
 	<bean id="student" class="cn.itcast.zjw.base.domain.Student"></bean>
 </beans>
