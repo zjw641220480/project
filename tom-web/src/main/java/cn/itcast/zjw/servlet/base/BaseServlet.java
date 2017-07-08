@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServlet;
  * 注:Servlet是由服务器来启动,一个Servlet在tomcat容器中只有一个实例对象,Servlet是单例模式的;
  * Servlet默认是在第一次被请求的时候创建实例对象;
  */
+
 /**
  * 
  * @ClassName:BaseServlet
