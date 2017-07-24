@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <!-- 全局参数 -->
   <context-param>
     <param-name>cp1</param-name>
     <param-value>cv1</param-value>
   </context-param>
+  <!-- servletContext的监听 -->
+  <listener>  
+	<listener-class>cn.itcast.zjw.servlet.listener.MyServletContextListener</listener-class>  
+  </listener> 
   <filter>
   	<filter-name>sss</filter-name>
   	<filter-class>cn.itcast.zjw.servlet.filter.MyFilter</filter-class>
@@ -12,10 +17,12 @@
   	<filter-name>sss</filter-name>
   	<url-pattern>/*</url-pattern>
   </filter-mapping>
+  
   <servlet>
     <servlet-name>BaseServlet</servlet-name>
     <servlet-class>cn.itcast.zjw.servlet.base.BaseServlet</servlet-class>
   </servlet>
+  <!-- 只是针对某个servlet的参数配置,在servlet的init方法中进行获取 -->
   <servlet>
     <servlet-name>BaseServletConfig</servlet-name>
     <servlet-class>cn.itcast.zjw.servlet.base.BaseServletConfig</servlet-class>
