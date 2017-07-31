@@ -1,5 +1,12 @@
 package cn.itcast.zjw.collection.list;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.junit.Before;
+import org.junit.Test;
+
 /**
  * Collection
  * 	List	元素是有序的,元素可以重复,因为该集合体系有索引,
@@ -22,5 +29,28 @@ package cn.itcast.zjw.collection.list;
  *
  */
 public class AllList {
-
+	/**
+	 * List中toArray的调用方式
+	 */
+	private List<String> list = new ArrayList<String>();
+	@Before
+	public void beforeMethoe(){
+		list.add("a");
+		list.add("b");
+		list.add("c");
+	}
+	// toArray(T[] contents)调用方式一
+	@Test
+	public void vectorToArray1(){
+		String[] newText = new String[list.size()];
+	    list.toArray(newText);
+		System.out.println(Arrays.toString(newText));
+	}
+	// toArray(T[] contents)调用方式二。最常用！
+	@Test
+	public void vectorToArray2(){
+	    String[] newText = list.toArray(new String[0]);
+		System.out.println(Arrays.toString(newText));
+	}
+	
 }
