@@ -3,7 +3,7 @@ package cn.itcast.zjw.design.decorator;
 import cn.itcast.zjw.design.decorator.derector.Derector;
 import cn.itcast.zjw.design.decorator.derector.Hacker;
 import cn.itcast.zjw.design.decorator.derector.SoftwareArchitect;
-import cn.itcast.zjw.design.decorator.target.TangGao;
+import cn.itcast.zjw.design.decorator.pojo.TangGao;
 
 public class Client {
 	public static void main(String[] args) {
