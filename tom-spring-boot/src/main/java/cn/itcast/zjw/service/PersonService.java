@@ -1,6 +1,6 @@
-package cn.itcast.tom.service;
+package cn.itcast.zjw.service;
 
-import cn.itcast.tom.pojo.Person;
+import cn.itcast.zjw.pojo.Person;
 
 public interface PersonService {
 	public Person getPerson();

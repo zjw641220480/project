@@ -1,4 +1,4 @@
-package cn.itcast.tom.swagger;
+package cn.itcast.zjw.swagger;
 
 import javax.annotation.Resource;
 
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import cn.itcast.tom.pojo.Person;
-import cn.itcast.tom.service.PersonService;
+import cn.itcast.zjw.pojo.Person;
+import cn.itcast.zjw.service.PersonService;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
@@ -24,9 +24,9 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 // @Configuration+@EnableAutoConfiguration+@ComponentScan
 @EnableSwagger2
 public class SwaggerApplication {
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		SpringApplication.run(SwaggerApplication.class, args);
-	}
+	}*/
 
 	@Resource(name = "personServiceImple")
 	private PersonService personServiceImpl;

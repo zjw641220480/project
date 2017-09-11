@@ -1,14 +1,13 @@
-package cn.itcast.tom.first;
+package cn.itcast.zjw.first;
 
 import javax.annotation.Resource;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import cn.itcast.tom.pojo.Person;
+import cn.itcast.zjw.pojo.Person;
 
 /**
  * @RestController:spring mvc的注解，
@@ -16,12 +15,14 @@ import cn.itcast.tom.pojo.Person;
  */
 @RestController
 @RequestMapping("/demo")
-@SpringBootApplication(scanBasePackages={"cn.itcast.tom.*"})
+@SpringBootApplication(scanBasePackages={"cn.itcast.zjw.*"})
 public class AppReturnJson {
+	
 	
 	@Resource(name="person")
 	//@Autowired
 	private Person person ;
+	
 	
 	 /**
 

@@ -1,8 +1,5 @@
-package cn.itcast.tom.first;
+package cn.itcast.zjw.first;
 
-import java.util.regex.Pattern;
-
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,12 +13,4 @@ class App {
 		return "hello";
 	}
 
-	public static void main(String[] args) {
-		String s = "0|2|1";
-		String ss[] = s.split("\\|");
-		for(String str : ss){
-			System.out.println(str);
-		}
-	//	SpringApplication.run(App.class, args);
-	}
 }

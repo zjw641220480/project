@@ -1,4 +1,4 @@
-package cn.itcast.tom.pojo;
+package cn.itcast.zjw.pojo;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
   * 该类就是一个普通的model，在ssm框架中我们并没有将这样的model归给spring容器去管理，在这里
   * 使用@Component注解将其交由spring容器去处理，这样在之后的使用中，就可以直接将该model注入到其使用类中。
   */
-@Component(value="person")
+@Component("person")
 @ConfigurationProperties(prefix="user")
 public class Person {
 	private String pid;

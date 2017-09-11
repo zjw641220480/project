@@ -1,12 +1,12 @@
-package cn.itcast.tom.service.impl;
+package cn.itcast.zjw.service.impl;
 
 
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import cn.itcast.tom.pojo.Person;
-import cn.itcast.tom.service.PersonService;
+import cn.itcast.zjw.pojo.Person;
+import cn.itcast.zjw.service.PersonService;
 
 @Service(value="personServiceImple")
 public class PersonServiceImpl implements PersonService{
