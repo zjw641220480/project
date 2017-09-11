@@ -24,4 +24,15 @@
 		<!-- 批量别名的定义 指定一个包名,mybatis自动扫描包中的po类,自动定义别名,别名就是这个类名(首字母大小写都可以) -->
 		<package name="cn.itcast.zjw.mybatis.pojo" />
 	</typeAliases>
+	<plugins>
+        <plugin interceptor="com.github.pagehelper.PageHelper">
+            <property name="dialect" value="mysql"/>
+            <property name="offsetAsPageNum" value="false"/>
+            <property name="rowBoundsWithCount" value="false"/>
+            <property name="pageSizeZero" value="true"/>
+            <property name="reasonable" value="false"/>
+            <property name="supportMethodsArguments" value="false"/>
+            <property name="returnPageInfo" value="none"/>
+        </plugin>
+    </plugins>
 </configuration>

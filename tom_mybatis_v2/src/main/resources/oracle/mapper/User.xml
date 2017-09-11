@@ -33,9 +33,9 @@
 			and (id =1 or id =2 or id =3)
 		 -->
 		<!-- 先open,然后内容(内容中有item的值),然后separator,然后继续item,然再separator,最后close -->
-		<foreach collection="ids" open="and id in(" item="id" separator="," close=")">
+		<!-- <foreach collection="ids" open="and id in(" item="id" separator="," close=")">
 			#{id}
-		</foreach>
+		</foreach> -->
 		<!-- 这种方式有可能是会出问题的;只有这一个查询的时候,其第一个and被添加上去了,导致sql异常,缺失表达式 -->
 		<!-- <foreach collection="ids" open="and(" item="id" separator="or" close=")">
 			id = #{id}

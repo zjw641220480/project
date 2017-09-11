@@ -13,7 +13,7 @@
         http://www.springframework.org/schema/tx
         http://www.springframework.org/schema/tx/spring-tx.xsd">
 	
-	<context:property-placeholder location="classpath:OracleDb.properties" />
+	<context:property-placeholder location="classpath:MysqlDb.properties" />
 	<!-- 配置数据源,使用的是C3P0连接池 -->
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
 		<!-- 连接池四个基本配置 -->

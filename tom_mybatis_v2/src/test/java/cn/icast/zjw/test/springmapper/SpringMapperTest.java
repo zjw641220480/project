@@ -1,12 +1,16 @@
 package cn.icast.zjw.test.springmapper;
 
+import java.util.List;
+
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.core.annotation.AnnotationUtils;
+
+import com.github.pagehelper.PageHelper;
 
 import cn.itcast.zjw.mybatis.mapper.UserMapper;
-import cn.itcast.zjw.mybatis.pojo.User;
+import cn.itcast.zjw.mybatis.pojo.UserCustomer;
+import cn.itcast.zjw.mybatis.pojo.UserQueryVo;
 
 /**
  *
@@ -27,7 +31,28 @@ public class SpringMapperTest {
 	public void testSpringMapperDevelop(){
 		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:spring/applicationContext.xml");
 		UserMapper userMapper = applicationContext.getBean(UserMapper.class);
-		User user = userMapper.findUserById(1);
-		System.out.println(user);
+		UserQueryVo userQueryVo = new UserQueryVo();
+		UserCustomer user = new UserCustomer();
+		user.setUsername("zhang");
+		userQueryVo.setUserCustomer(user);
+		userMapper.findUserList(userQueryVo);
+	}
+	/**
+	 * 
+	 * @Method:main
+	 * @Description:mybatis分页插件pagehelper的使用，只需要在mybatis配置文件中引入即可
+	 * @Time 2017年9月11日 上午11:27:34
+	 * @author: Tom
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:spring/applicationContext.xml");
+		UserMapper userMapper = applicationContext.getBean(UserMapper.class);
+		UserQueryVo userQueryVo = new UserQueryVo();
+		UserCustomer user = new UserCustomer();
+		PageHelper.startPage(1,4);
+		userQueryVo.setUserCustomer(user);
+		List<UserCustomer> list = userMapper.findUserList(userQueryVo);
+		System.out.println(list.size());
 	}
 }
