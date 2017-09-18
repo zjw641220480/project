@@ -1,0 +1,9 @@
+datasource:  
+      driver-class-name: oracle.jdbc.OracleDriver  
+      url: jdbc:oracle:thin:@127.17.0.2:1521:xe  
+      username: orasms  
+      password: orasms 
+jpa:  
+  hibernate:  
+     ddl-auto: update  
+     show-sql: true

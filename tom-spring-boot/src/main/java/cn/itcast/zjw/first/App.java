@@ -4,6 +4,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,8 +18,16 @@ import cn.itcast.zjw.pojo.City;
  * @Time 2017年9月18日
  * @author: Tom
  */
+/**
+ * 不连接数据库启动springboot会出现：
+ * Cannot determine embedded database driver class for database type NONE  
+ * 原因是：springboot启动时会自动注入数据源和配置jpa
+ * 解决：在@SpringBootApplication中排除其注入
+ * @SpringBootApplication(exclude={DataSourceAutoConfiguration.class,HibernateJpaAutoConfiguration.class})
+ * 
+ */
 @RestController
-@SpringBootApplication(scanBasePackages= {"cn.itcast.zjw.first","cn.itcast.zjw.exception"})//等价于@Configuration，@EnableAutoConfiguration和@ComponentScan
+@SpringBootApplication(exclude={DataSourceAutoConfiguration.class,HibernateJpaAutoConfiguration.class},scanBasePackages= {"cn.itcast.zjw.first","cn.itcast.zjw.exception"})//等价于@Configuration，@EnableAutoConfiguration和@ComponentScan
 public class App extends BaseController{
 	Logger logger = LoggerFactory.getLogger(App.class);
 	/**
