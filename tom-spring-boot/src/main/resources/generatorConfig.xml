@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+  <context id="DB2Tables" targetRuntime="MyBatis3">
+  	<!-- 数据库连接的信息:驱动类,连接地址,用户名,密码 -->
+    <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
+        connectionURL="jdbc:oracle:thin:@127.0.0.1:1521:orcl"
+        userId="orasms"
+        password="orasms">
+    </jdbcConnection>
+	<!-- 默认false,把JDBC DECIMAL 和NUMERIC类型解析为Integer,为true时把JDBC DECIMAL和NUMERIC类型
+		解析为java.math.BigDecimal
+	 -->
+    <javaTypeResolver >
+      <property name="forceBigDecimals" value="false" />
+    </javaTypeResolver>
+    
+	<!-- targetProject:生成po的位置, -->
+    <javaModelGenerator targetPackage="cn.itcast.zjw.pojo" 
+    targetProject=".\src\main\java">
+      <!-- enableSubPackages:是否让schema作为包的后缀 -->
+      <property name="enableSubPackages" value="false" />
+      <!-- 从数据库返回的值被清理前后的空格 -->
+      <property name="trimStrings" value="true" />
+    </javaModelGenerator>
+    
+	<!-- targetProject:mapper映射文件生成的位置 -->
+    <sqlMapGenerator targetPackage="mappers"  
+    	targetProject=".\src\main\resources">
+      <!--enableSubPackages:是否让schema作为包的后缀  -->
+      <property name="enableSubPackages" value="false" />
+    </sqlMapGenerator>
+
+	<!--targetProject:mapper接口生成的位置  -->
+    <javaClientGenerator type="XMLMAPPER" targetPackage="cn.itcast.zjw.mappers"  
+    	targetProject=".\src\main\java">
+      <!--enableSubPackages:是否让schema作为包的后缀  -->
+      <property name="enableSubPackages" value="false" />
+    </javaClientGenerator>
+	<!-- 指定数据库表 -->
+	<table tableName="HOTEL" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+		<!-- <columnOverride column="cert_type" javaType="java.lang.Integer"/>
+		<columnOverride column="gendar" javaType="java.lang.Integer"/>
+		<columnOverride column="token_expire_times" javaType="java.lang.Integer"/>
+		<columnOverride column="status" javaType="java.lang.Integer"/> -->
+	</table>
+	<!-- <table tableName="user_manager_info" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+		<columnOverride column="status" javaType="java.lang.Integer"/>
+		<columnOverride column="gender" javaType="java.lang.Integer"/>
+		<columnOverride column="cert_type" javaType="java.lang.Integer"/>
+	</table>
+	<table tableName="account_cash_log" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+		<columnOverride column="oper_type" javaType="java.lang.Integer">
+		</columnOverride>
+		<columnOverride column="charge_type" javaType="java.lang.Integer">
+		</columnOverride>
+	</table>
+	<table tableName="account_credit" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+	</table>
+	<table tableName="account_credit_log" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+		<columnOverride column="change_type" javaType="java.lang.Integer">
+		</columnOverride>
+	</table>
+	<table tableName="book_entity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+		<columnOverride column="status" javaType="java.lang.Integer">
+		</columnOverride>
+		<columnOverride column="borrowed_status" javaType="java.lang.Integer">
+		</columnOverride>
+	</table>
+	<table tableName="book_grid_charge_log" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+	</table>
+	<table tableName="book_grid_trans" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+		<columnOverride column="user_type" javaType="java.lang.Integer">
+		</columnOverride>
+		<columnOverride column="lock_status" javaType="java.lang.Integer">
+		</columnOverride>
+	</table>
+	<table tableName="book_info" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+	<table tableName="book_maintain_log" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+	<table tableName="bookgrid_info" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+		<columnOverride column="serial_number" javaType="java.lang.Integer">
+		</columnOverride>
+		<columnOverride column="damage_report" javaType="java.lang.Integer">
+		</columnOverride>
+		<columnOverride column="lock_status" javaType="java.lang.Integer">
+		</columnOverride>
+		<columnOverride column="available" javaType="java.lang.Integer">
+		</columnOverride>
+	</table>
+	<table tableName="bookshelf_info" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+		<columnOverride column="row_count" javaType="java.lang.Integer">
+		</columnOverride>
+		<columnOverride column="col_count" javaType="java.lang.Integer">
+		</columnOverride>
+		<columnOverride column="damage_report" javaType="java.lang.Integer">
+		</columnOverride>
+		<columnOverride column="available" javaType="java.lang.Integer">
+		</columnOverride>
+	</table>-->
+	<table tableName="dict_account_cash_log" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+		<columnOverride column="key" javaType="java.lang.Integer">
+		</columnOverride>
+	</table><!-- 
+	<table tableName="dict_book_info" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+		<columnOverride column="key" javaType="java.lang.Integer">
+		</columnOverride>
+	</table>
+	<table tableName="grid_maintain_log" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+	</table>
+	<table tableName="img_verification_log" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+		<columnOverride column="status" javaType="java.lang.Integer">
+		</columnOverride>
+		<columnOverride column="verification_count" javaType="java.lang.Integer">
+		</columnOverride>
+	</table>
+	<table tableName="order_info" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+		<columnOverride column="order_type" javaType="java.lang.Integer">
+		</columnOverride>
+		<columnOverride column="status" javaType="java.lang.Integer">
+		</columnOverride>
+	</table>
+	<table tableName="order_trans" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+		<columnOverride column="trans_status" javaType="java.lang.Integer">
+		</columnOverride>
+		<columnOverride column="wrong_back" javaType="java.lang.Integer">
+		</columnOverride>
+	</table>
+	<table tableName="sms_verification_log" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+		<columnOverride column="type" javaType="java.lang.Integer">
+		</columnOverride>
+		<columnOverride column="verification_count" javaType="java.lang.Integer">
+		</columnOverride>
+		<columnOverride column="status" javaType="java.lang.Integer">
+		</columnOverride>
+	</table>
+	<table tableName="staff_area_info" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+	<table tableName="staff_book_change_relation_log" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+		<columnOverride column="type" javaType="java.lang.Integer">
+		</columnOverride>
+	</table>
+	<table tableName="staff_book_transposing_log" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+		<columnOverride column="puton_count" javaType="java.lang.Integer">
+		</columnOverride>
+		<columnOverride column="putoff_count" javaType="java.lang.Integer">
+		</columnOverride>
+	</table>
+	<table tableName="staff_bookshelf_register" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+	<table tableName="staff_district_info" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+	<table tableName="staff_info" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+		<columnOverride column="staff_status" javaType="java.lang.Integer">
+		</columnOverride>
+	</table>
+	<table tableName="user_access_log" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+		<columnOverride column="log_type" javaType="java.lang.Integer">
+		</columnOverride>
+	</table>
+	<table tableName="user_activetrace" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+		<columnOverride column="pushstatus" javaType="java.lang.Integer">
+		</columnOverride>
+		<columnOverride column="device_type" javaType="java.lang.Integer">
+		</columnOverride>
+	</table>
+	<table tableName="user_borrow_date_log" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+	<table tableName="user_charge_log" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+		<columnOverride column="charge_type" javaType="java.lang.Integer">
+		</columnOverride>
+		<columnOverride column="channel" javaType="java.lang.Integer">
+		</columnOverride>
+		<columnOverride column="trade_status" javaType="java.lang.Integer">
+		</columnOverride>
+	</table>
+	<table tableName="user_equipment" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+		<columnOverride column="pushstatus" javaType="java.lang.Integer">
+		</columnOverride>
+	</table>
+	<table tableName="user_feedback" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+		<columnOverride column="type" javaType="java.lang.Integer">
+		</columnOverride>
+	</table>
+	<table tableName="user_info" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+		<columnOverride column="cert_type" javaType="java.lang.Integer">
+		</columnOverride>
+		<columnOverride column="gendar" javaType="java.lang.Integer">
+		</columnOverride>
+		<columnOverride column="token_expire_times" javaType="java.lang.Integer">
+		</columnOverride>
+		<columnOverride column="status" javaType="java.lang.Integer">
+		</columnOverride>
+	</table> -->
+  </context>
+</generatorConfiguration>
