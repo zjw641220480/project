@@ -12,6 +12,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import cn.itcast.zjw.response.BaseResponse;
 
+/**
+ * 
+ * @ClassName: GlobalDefaultExceptionHandler.java
+ * @Description:全局异常处理
+ * @Time 2017年9月19日
+ * @author: Tom
+ */
 @ControllerAdvice
 @ResponseBody
 public class GlobalDefaultExceptionHandler {
@@ -25,6 +32,7 @@ public class GlobalDefaultExceptionHandler {
 	public BaseResponse<Object>  runTimeError(RuntimeException exception) {
 		BaseResponse<Object> baseResponse = new BaseResponse<Object>();
 		baseResponse.setDetail("运行时异常");
+		System.out.println(exception.toString());
 		return baseResponse;
 	}
 	// Total control - setup a model and return the view name yourself. Or consider
