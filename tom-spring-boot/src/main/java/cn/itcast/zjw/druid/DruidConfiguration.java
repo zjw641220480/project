@@ -16,7 +16,7 @@ import com.alibaba.druid.support.http.WebStatFilter;
 
 /**
  * druid 配置.
- *
+ * druid数据库连接池的监控相关配置，可以有效的监控SQL语句等；这种方式比较简单，不用单独配置filter和servlet
  * 这样的方式不需要添加注解：@ServletComponentScan
  * @author Administrator
  *
@@ -68,7 +68,7 @@ public class DruidConfiguration {
 	/**
 	 * 
 	 * 注册dataSouce，这里只是一个简单的例子，只注入了部分参数，其它自行注入。
-	 * 编程方式注入dataSource，如果同时进行了编程式的注入和配置的注入，配置的就无效了。
+	 * 编程方式注入dataSource，如果同时进行了编程式的注入和配置的注入，配置的就无效了。跟这个类本身的作用不大
 	 * @param driver
 	 * @param url
 	 * @param username

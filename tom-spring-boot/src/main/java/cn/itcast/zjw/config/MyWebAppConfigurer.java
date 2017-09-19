@@ -10,7 +10,7 @@ import cn.itcast.zjw.interceptor.MyInterceptor2;
 /**
  * 
  * @ClassName: MyWebAppConfigurer.java
- * @Description:拦截器相关配置类，在这里注入拦截器的相关类
+ * @Description:拦截器相关配置类，在这里注入拦截器的相关类，拦截器在interceptor包中
  * @Time 2017年9月19日
  * @author: Tom
  */

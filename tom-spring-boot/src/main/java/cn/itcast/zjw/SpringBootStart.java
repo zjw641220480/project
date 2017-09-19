@@ -1,7 +1,7 @@
 package cn.itcast.zjw;
 
 import javax.annotation.Resource;
-import javax.swing.Spring;
+import javax.servlet.MultipartConfigElement;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.boot.web.servlet.MultipartConfigFactory;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
@@ -17,7 +18,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import cn.itcast.zjw.config.MyEnvironmentAware;
-import cn.itcast.zjw.config.MyWebAppConfigurer;
 import cn.itcast.zjw.controller.BaseController;
 import cn.itcast.zjw.pojo.City;
 import cn.itcast.zjw.pojo.WiselySettings;
@@ -36,6 +36,12 @@ import cn.itcast.zjw.pojo.WiselySettingsOther;
  * 解决：在@SpringBootApplication中排除其注入
  * @SpringBootApplication(exclude={DataSourceAutoConfiguration.class,HibernateJpaAutoConfiguration.class})
  * 在引入了SpringDataJpa规范的时候才需要引入上面两个包
+ * ImportResouce有两种常用的引入方式：classpath和file，具体查看如下的例子：
+ *	classpath路径：locations={"classpath:application-bean1.xml",
+ * 		"classpath:application-bean2.xml"
+ * 	}
+ * file路径：
+ * locations = {"file:d:/test/application-bean1.xml"};
  */
 import cn.itcast.zjw.service.CityService;
 import cn.itcast.zjw.servlet.MyServlet;
@@ -114,6 +120,33 @@ public class SpringBootStart extends BaseController{
 		System.out.println(wiselySettingsOther.getGender());
 		return aware.getMyUrl();
 	}
+	/**
+	 * 
+	 * @Title:multipartConfigElement
+	 * @Description:对文件上传的一些限制
+	 * @return
+	 * @author: TOM
+	 * @date 2017年9月19日 下午9:49:34
+	 */
+	@Bean 
+    public MultipartConfigElement multipartConfigElement() { 
+        MultipartConfigFactory factory = new MultipartConfigFactory();
+        //// 设置单个文件大小限制 ,超了，页面会抛出异常信息，这时候就需要进行异常信息的处理了;
+        factory.setMaxFileSize("128KB"); //KB,MB
+        /// 设置总上传数据总大小
+        factory.setMaxRequestSize("256KB"); 
+        //Sets the directory location where files will be stored.
+        //factory.setLocation("路径地址");
+        return factory.createMultipartConfig(); 
+    } 
+	/**
+	 * 
+	 * @Title:MyServlet1
+	 * @Description:自己编写的servlet使用此种方式注入到容器中，servlet并不推荐使用
+	 * @return
+	 * @author: TOM
+	 * @date 2017年9月19日 下午9:50:08
+	 */
 	@Bean
     public ServletRegistrationBean MyServlet1(){
            return new ServletRegistrationBean(new MyServlet(),"/myServlet/*");

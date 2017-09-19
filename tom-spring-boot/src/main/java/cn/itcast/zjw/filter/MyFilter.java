@@ -11,6 +11,14 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.boot.web.servlet.ServletComponentScan;
+/**
+ * 
+ * @ClassName: MyFilter
+ * @Description: SpringBoot中过滤器的配置，直接使用@WebFilter配置即可，启动类中加上@ServletComponentScan注解即可
+ * @author: TOM
+ * @Time: 2017年9月19日
+ */
 //@WebFilter(filterName="myFilter",urlPatterns="/*")
 public class MyFilter implements Filter{
 

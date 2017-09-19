@@ -6,6 +6,13 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
+/**
+ * 
+ * @ClassName: MyInterceptor1
+ * @Description: Spring拦截器的相关配置，还需要一个配置类的存在来组装这些拦截器类；
+ * @author: TOM
+ * @Time: 2017年9月19日
+ */
 public class MyInterceptor1 implements HandlerInterceptor {
 
 	@Override

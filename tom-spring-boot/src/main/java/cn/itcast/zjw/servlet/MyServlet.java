@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * 
  * @ClassName: MyServlet.java
- * @Description:自己编写的servlet的注入
+ * @Description:自己编写的servlet的注入，当不使用注解方式的时候，还需要在启动类中进行相关代码的编写
  * @Time 2017年9月19日
  * @author: Tom
  */

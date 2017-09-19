@@ -15,7 +15,7 @@ import cn.itcast.zjw.response.BaseResponse;
 /**
  * 
  * @ClassName: GlobalDefaultExceptionHandler.java
- * @Description:全局异常处理
+ * @Description:全局异常处理,对运行时异常进行相应处理，可以进行多种针对性的配置
  * @Time 2017年9月19日
  * @author: Tom
  */
