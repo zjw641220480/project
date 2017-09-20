@@ -19,8 +19,8 @@ import cn.itcast.zjw.response.BaseResponse;
  * @Time 2017年9月19日
  * @author: Tom
  */
-@ControllerAdvice
-@ResponseBody
+/*@ControllerAdvice
+@ResponseBody*/
 public class GlobalDefaultExceptionHandler {
 	Logger logger = LoggerFactory.getLogger(GlobalDefaultExceptionHandler.class);
 

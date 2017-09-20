@@ -1,9 +1,15 @@
 package cn.itcast.zjw.pojo;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class City {
-    private BigDecimal id;
+public class City implements Serializable{
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	private BigDecimal id;
 
     private String name;
 

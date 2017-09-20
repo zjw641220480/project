@@ -1,5 +1,7 @@
 package cn.itcast.zjw;
 
+import java.math.BigDecimal;
+
 import javax.annotation.Resource;
 import javax.servlet.MultipartConfigElement;
 
@@ -14,6 +16,7 @@ import org.springframework.boot.web.servlet.MultipartConfigFactory;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
+import org.springframework.data.redis.cache.RedisCacheManager;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -44,6 +47,7 @@ import cn.itcast.zjw.pojo.WiselySettingsOther;
  * locations = {"file:d:/test/application-bean1.xml"};
  */
 import cn.itcast.zjw.service.CityService;
+import cn.itcast.zjw.service.RedisService;
 import cn.itcast.zjw.servlet.MyServlet;
 import cn.itcast.zjw.util.SpringUtil;
 @ServletComponentScan //druid使用自己编写servlet和filter,listener的时候才需要这个注解；也可以作为相应servlet的注入注解
@@ -54,12 +58,18 @@ import cn.itcast.zjw.util.SpringUtil;
 @EnableConfigurationProperties({WiselySettings.class,WiselySettingsOther.class})  
 public class SpringBootStart extends BaseController{
 	Logger logger = LoggerFactory.getLogger(SpringBootStart.class);
+	
 	@Autowired
 	private WiselySettings wiselySettings;
+	
 	@Autowired
 	private WiselySettingsOther wiselySettingsOther;
+	
 	@Resource(name = "cityServiceImpl")
 	private CityService  cityService;
+	
+	@Resource(name = "redisServiceImpl")
+	private RedisService redisService;
 	/**
 	 * 
 	 * @Method:hello
@@ -151,6 +161,14 @@ public class SpringBootStart extends BaseController{
     public ServletRegistrationBean MyServlet1(){
            return new ServletRegistrationBean(new MyServlet(),"/myServlet/*");
     }
+	@RequestMapping("/redisSet")
+	public City getCityByRedis() {
+		return redisService.getById(new BigDecimal("1"));
+	}
+	@RequestMapping("/redisDel")
+	public void delCityByRedis() {
+		redisService.deleteById(new BigDecimal("1"));
+	}
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootStart.class, args);
 	}

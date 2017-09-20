@@ -1,9 +1,15 @@
 package cn.itcast.zjw.pojo;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class Hotel {
-    private BigDecimal cityCode;
+public class Hotel implements Serializable{
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	private BigDecimal cityCode;
 
     private String name;
 
