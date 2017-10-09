@@ -347,4 +347,40 @@
       available = #{available,jdbcType=CHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
+  <select id="selectPermissionByUserId" parameterType="string" resultType="cn.itcast.zjw.shiro.po.SysPermission">
+  	select 
+  	<include refid="Base_Column_List"/>
+  	from sys_permission 
+  	WHERE TYPE = 'permission' 
+	  AND id IN 
+	  (SELECT 
+	    sys_permission_id 
+	  FROM
+	    sys_role_permission 
+	  WHERE sys_role_id IN 
+	    (SELECT 
+	      sys_role_id 
+	    FROM
+	      sys_user_role 
+	    WHERE sys_user_id = #{id}))
+  </select>
+  <!-- 根据用户id查询菜单 -->
+  <select id="findMenuListByUserId"  parameterType="string" resultType="cn.itcast.zjw.shiro.po.SysPermission">
+  		SELECT 
+	  <include refid="Base_Column_List"/>
+	FROM
+	  sys_permission 
+	WHERE TYPE = 'menu' 
+	  AND id IN 
+	  (SELECT 
+	    sys_permission_id 
+	  FROM
+	    sys_role_permission 
+	  WHERE sys_role_id IN 
+	    (SELECT 
+	      sys_role_id 
+	    FROM
+	      sys_user_role 
+	    WHERE sys_user_id = #{id}))
+  </select>
 </mapper>

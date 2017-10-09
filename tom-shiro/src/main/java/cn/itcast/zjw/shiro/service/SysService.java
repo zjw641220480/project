@@ -6,7 +6,10 @@
  */
 package cn.itcast.zjw.shiro.service;
 
+import java.util.List;
+
 import cn.itcast.zjw.shiro.po.ActiveUser;
+import cn.itcast.zjw.shiro.po.SysPermission;
 import cn.itcast.zjw.shiro.po.SysUser;
 
 /** 
@@ -22,4 +25,8 @@ public interface SysService {
 	public ActiveUser authenticat(String userCode,String password) throws Exception;
 	//根据用户账号查询用户信息
 	public SysUser findSysUserByUserCode(String userCode) throws Exception;
+	//根据用户id，查询用户菜单
+	public List<SysPermission> findMenuListByUserId(String userId);
+	//根据用户id查询用户权限
+	public List<SysPermission> findPermissionListByUserId(String userId);
 }

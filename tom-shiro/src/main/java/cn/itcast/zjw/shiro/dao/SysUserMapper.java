@@ -1,5 +1,6 @@
 package cn.itcast.zjw.shiro.dao;
 
+import cn.itcast.zjw.shiro.po.SysPermission;
 import cn.itcast.zjw.shiro.po.SysUser;
 import cn.itcast.zjw.shiro.po.SysUserExample;
 import java.util.List;
@@ -93,4 +94,5 @@ public interface SysUserMapper {
      * @mbggenerated Sun Mar 19 19:09:11 CST 2017
      */
     int updateByPrimaryKey(SysUser record);
+    List<SysPermission> findPermissionListByUserId(String record);
 }

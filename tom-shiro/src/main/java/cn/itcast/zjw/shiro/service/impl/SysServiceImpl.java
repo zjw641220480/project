@@ -12,9 +12,11 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
+import cn.itcast.zjw.shiro.dao.SysPermissionMapper;
 import cn.itcast.zjw.shiro.dao.SysUserMapper;
 import cn.itcast.zjw.shiro.exception.CustomException;
 import cn.itcast.zjw.shiro.po.ActiveUser;
+import cn.itcast.zjw.shiro.po.SysPermission;
 import cn.itcast.zjw.shiro.po.SysUser;
 import cn.itcast.zjw.shiro.po.SysUserExample;
 import cn.itcast.zjw.shiro.service.SysService;
@@ -32,6 +34,9 @@ import cn.itcast.zjw.shiro.util.MD5;
 public class SysServiceImpl implements SysService {
 	@Resource(name="sysUserMapper")
 	private SysUserMapper sysUserMapper;
+	
+	@Resource(name="sysPermissionMapper")
+	private SysPermissionMapper sysPermissionMapper;
 	
 	public ActiveUser authenticat(String userCode, String password)
 			throws Exception {
@@ -76,5 +81,15 @@ public class SysServiceImpl implements SysService {
 			return list.get(0);
 		}
 		return null;
+	}
+	
+	@Override
+	public List<SysPermission> findMenuListByUserId(String userId) {
+		return sysPermissionMapper.findMenuListByUserId(userId);
+	}
+	
+	@Override
+	public List<SysPermission> findPermissionListByUserId(String userId) {
+		return sysPermissionMapper.selectPermissionByUserId(userId);
 	}
 }

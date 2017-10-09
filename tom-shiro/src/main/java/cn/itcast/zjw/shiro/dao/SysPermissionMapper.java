@@ -93,4 +93,8 @@ public interface SysPermissionMapper {
      * @mbggenerated Sun Mar 19 19:09:11 CST 2017
      */
     int updateByPrimaryKey(SysPermission record);
+    
+    List<SysPermission> selectPermissionByUserId(String userId);
+    
+    List<SysPermission> findMenuListByUserId(String userId);
 }

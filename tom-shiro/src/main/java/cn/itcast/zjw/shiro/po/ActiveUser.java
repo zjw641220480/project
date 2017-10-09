@@ -1,6 +1,7 @@
 package cn.itcast.zjw.shiro.po;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  *
@@ -17,6 +18,9 @@ public class ActiveUser implements Serializable{
 	private String userId;//用户id
 	private String userCode;//用户账号
 	private String userName;//用户名称
+	
+	private List<SysPermission> menus;
+	
 	public String getUserId() {
 		return userId;
 	}
@@ -34,6 +38,12 @@ public class ActiveUser implements Serializable{
 	}
 	public void setUserName(String userName) {
 		this.userName = userName;
+	}
+	public List<SysPermission> getMenus() {
+		return menus;
+	}
+	public void setMenus(List<SysPermission> menus) {
+		this.menus = menus;
 	}
 	
 }
