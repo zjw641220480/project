@@ -13,7 +13,7 @@ import org.springframework.core.env.Environment;
  * @author: Tom
  */
 @Configuration
-public class MyEnvironmentAware implements EnvironmentAware{
+public class MyEnvironmentAware/* implements EnvironmentAware*/{
 	//不能为static类型的
 	@Value("${spring.datasource.url}")
     private String myUrl;
@@ -25,7 +25,7 @@ public class MyEnvironmentAware implements EnvironmentAware{
 	public void setMyUrl(String myUrl) {
 		this.myUrl = myUrl;
 	}
-
+/*
 	@Override
 	public void setEnvironment(Environment environment) {
 		//打印注入的属性信息.
@@ -38,5 +38,5 @@ public class MyEnvironmentAware implements EnvironmentAware{
         RelaxedPropertyResolver relaxedPropertyResolver = new RelaxedPropertyResolver(environment,"spring.datasource.");
         System.out.println("spring.datasource.url="+relaxedPropertyResolver.getProperty("url"));
         System.out.println("spring.datasource.driverClassName="+relaxedPropertyResolver.getProperty("driverClassName"));
-	}
+	}*/
 }

@@ -22,13 +22,13 @@ public class RedisServiceImpl implements RedisService{
 	@Resource
     private RedisTemplate<String,String> redisTemplate;
 	
-	@Cacheable(value="demoInfo") //缓存,这里没有指定key.
+	//@Cacheable(value="demoInfo") //缓存,这里没有指定key.
 	@Override
 	public City getById(BigDecimal id) {
 		return cityMapper.selectByPrimaryKey(id);
 	}
 
-	@CacheEvict(value="demoInfo")
+	//@CacheEvict(value="demoInfo")
 	@Override
 	public void deleteById(BigDecimal id) {
 		 System.out.println("DemoInfoServiceImpl.delete().从缓存中删除.");

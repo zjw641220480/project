@@ -19,8 +19,8 @@ import org.springframework.data.redis.core.RedisTemplate;
  * @Time 2017年9月20日
  * @author: Tom
  */
-@Configuration
-@EnableCaching
+//@Configuration
+//@EnableCaching
 public class RedisCacheConfig extends CachingConfigurerSupport {
 	
 	/**

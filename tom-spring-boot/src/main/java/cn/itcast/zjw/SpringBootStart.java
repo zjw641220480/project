@@ -124,10 +124,10 @@ public class SpringBootStart extends BaseController{
 	@RequestMapping("/value")
 	public String testValue() {
 		MyEnvironmentAware aware = SpringUtil.getBean(MyEnvironmentAware.class);
-		WiselySettings settings = SpringUtil.getBean(WiselySettings.class);
+		/*WiselySettings settings = SpringUtil.getBean(WiselySettings.class);
 		System.out.println(settings.getName());
 		System.out.println(wiselySettings.getName());
-		System.out.println(wiselySettingsOther.getGender());
+		System.out.println(wiselySettingsOther.getGender());*/
 		return aware.getMyUrl();
 	}
 	/**
