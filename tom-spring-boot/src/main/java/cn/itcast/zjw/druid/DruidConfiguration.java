@@ -21,7 +21,7 @@ import com.alibaba.druid.support.http.WebStatFilter;
  * @author Administrator
  *
  */
-@Configuration
+
 public class DruidConfiguration {
 	/**
 	 * 

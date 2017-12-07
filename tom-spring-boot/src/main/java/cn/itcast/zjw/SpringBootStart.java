@@ -15,7 +15,6 @@ import cn.itcast.zjw.pojo.WiselySettings;
 import cn.itcast.zjw.pojo.WiselySettingsOther;
 @ServletComponentScan //druid使用自己编写servlet和filter,listener的时候才需要这个注解；也可以作为相应servlet的注入注解
 //@ImportResource("spring/applicationContext.xml")
-@RestController
 @MapperScan(basePackages = {"cn.itcast.zjw.mappers" })
 @SpringBootApplication//等价于@Configuration，@EnableAutoConfiguration和@ComponentScan
 @EnableConfigurationProperties({WiselySettings.class,WiselySettingsOther.class})
