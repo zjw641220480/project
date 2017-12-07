@@ -11,11 +11,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.MultipartConfigFactory;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import cn.itcast.zjw.SpringBootStart;
-import cn.itcast.zjw.config.MyEnvironmentAware;
 import cn.itcast.zjw.datasource.simple.Shanhy;
 import cn.itcast.zjw.pojo.City;
 import cn.itcast.zjw.pojo.WiselySettings;
@@ -23,9 +22,8 @@ import cn.itcast.zjw.pojo.WiselySettingsOther;
 import cn.itcast.zjw.service.CityService;
 import cn.itcast.zjw.service.RedisService;
 import cn.itcast.zjw.servlet.MyServlet;
-import cn.itcast.zjw.util.SpringUtil;
 
-@Controller
+@RestController
 public class TestController extends BaseController{
 	private Logger logger = LoggerFactory.getLogger(SpringBootStart.class);
 	
@@ -90,23 +88,6 @@ public class TestController extends BaseController{
 	}
 	/**
 	 * 
-	 * @Method:testValue
-	 * @Description:获取配置文件中相关属性的值
-	 * @Time 2017年9月19日 下午6:45:42
-	 * @author: Tom
-	 * @return
-	 */
-	@RequestMapping("/value")
-	public String testValue() {
-		MyEnvironmentAware aware = SpringUtil.getBean(MyEnvironmentAware.class);
-		/*WiselySettings settings = SpringUtil.getBean(WiselySettings.class);
-		System.out.println(settings.getName());
-		System.out.println(wiselySettings.getName());
-		System.out.println(wiselySettingsOther.getGender());*/
-		return aware.getMyUrl();
-	}
-	/**
-	 * 
 	 * @Title:multipartConfigElement
 	 * @Description:对文件上传的一些限制
 	 * @return
@@ -144,4 +125,5 @@ public class TestController extends BaseController{
 	public void delCityByRedis() {
 		redisService.deleteById(new BigDecimal("1"));
 	}
+    
 }

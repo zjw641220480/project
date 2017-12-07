@@ -4,9 +4,6 @@ import java.math.BigDecimal;
 
 import javax.annotation.Resource;
 
-import org.springframework.cache.annotation.CacheEvict;
-import org.springframework.cache.annotation.Cacheable;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
 import cn.itcast.zjw.mappers.CityMapper;
@@ -18,9 +15,6 @@ public class RedisServiceImpl implements RedisService{
 
 	@Resource
 	private CityMapper cityMapper;
-	
-	@Resource
-    private RedisTemplate<String,String> redisTemplate;
 	
 	//@Cacheable(value="demoInfo") //缓存,这里没有指定key.
 	@Override

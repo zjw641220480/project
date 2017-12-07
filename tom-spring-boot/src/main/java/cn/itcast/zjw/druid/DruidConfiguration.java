@@ -9,6 +9,7 @@ import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.support.http.StatViewServlet;
@@ -68,7 +69,7 @@ public class DruidConfiguration {
 	/**
 	 * 
 	 * 注册dataSouce，这里只是一个简单的例子，只注入了部分参数，其它自行注入。
-	 * 编程方式注入dataSource，如果同时进行了编程式的注入和配置的注入，配置的就无效了。跟这个类本身的作用不大
+	 * 多数据源的时候这个需要注入，并且加入@Primary注解
 	 * @param driver
 	 * @param url
 	 * @param username
@@ -76,7 +77,8 @@ public class DruidConfiguration {
 	 * @param maxActive
 	 * @return
 	 */
-	/*@Bean
+	@Bean(name="druid", destroyMethod = "close", initMethod = "init")  
+	@Primary
 	public DataSource druidDataSource(@Value("${spring.datasource.driver-class-name}") String driver,
 			@Value("${spring.datasource.url}") String url, @Value("${spring.datasource.username}") String username,
 			@Value("${spring.datasource.password}") String password) {
@@ -93,5 +95,5 @@ public class DruidConfiguration {
 			e.printStackTrace();
 		}
 		return druidDataSource;
-	}*/
+	}
 }
