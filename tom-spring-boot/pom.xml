@@ -11,7 +11,7 @@
 	<groupId>com.itcast</groupId>
 	<artifactId>tom-spring-boot</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 	<name>tom-spring-boot Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<properties>
@@ -22,6 +22,11 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -75,6 +80,11 @@
 			<groupId>tk.mybatis</groupId>
 			<artifactId>mapper</artifactId>
 			<version>3.4.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>1.8.9</version>
 		</dependency>
 		<!-- 逆向工程需要的jar包 http://mvnrepository.com/artifact/org.mybatis.generator/mybatis-generator-core -->
 		<dependency>
