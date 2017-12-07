@@ -76,17 +76,15 @@ public class DruidConfiguration {
 	 * @param maxActive
 	 * @return
 	 */
-	@Bean
+	/*@Bean
 	public DataSource druidDataSource(@Value("${spring.datasource.driver-class-name}") String driver,
 			@Value("${spring.datasource.url}") String url, @Value("${spring.datasource.username}") String username,
-			@Value("${spring.datasource.password}") String password,
-			@Value("${spring.datasource.max-active}") int maxActive) {
+			@Value("${spring.datasource.password}") String password) {
 		DruidDataSource druidDataSource = new DruidDataSource();
 		druidDataSource.setDriverClassName(driver);
 		druidDataSource.setUrl(url);
 		druidDataSource.setUsername(username);
 		druidDataSource.setPassword(password);
-		druidDataSource.setMaxActive(maxActive);
 		System.out.println(
 				"==============DruidConfiguration.druidDataSource(),url=" + url + ",username=" + username + ",password=" + password);
 		try {
@@ -95,5 +93,5 @@ public class DruidConfiguration {
 			e.printStackTrace();
 		}
 		return druidDataSource;
-	}
+	}*/
 }

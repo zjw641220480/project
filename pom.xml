@@ -45,12 +45,7 @@
 			<artifactId>taglibs-standard-impl</artifactId>
 			<version>1.2.5</version>
 		</dependency>
-		<!-- log,其中已经包括有log4j的jar包 -->
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-log4j12</artifactId>
-			<version>${stlf.version}</version>
-		</dependency>
+		
 		<!-- druid连接 -->
 		<dependency>
 			<groupId>com.alibaba</groupId>
