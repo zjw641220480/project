@@ -63,7 +63,7 @@ public class RedisController {
 	 */
 	@RequestMapping("/getByUtil")
 	public Object getByUtil() {
-		System.out.println("RedisController.getByUtil()");
+		logger.info("RedisController.getByUtil()");
 		redisUtils.set("getByUtil", "value");
 		return redisUtils.get("getByUtil");
 	}
